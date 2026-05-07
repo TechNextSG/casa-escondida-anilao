@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+# Low-value pages — noindex in HTML, also blocked here for crawl efficiency
+Disallow: /privacy-policy.html
+Disallow: /terms-of-service.html
+
+# Blog post template — JS-rendered, noindex in HTML
+Disallow: /blog-post.html
+
 Sitemap: https://www.casaescondida-anilao.com/sitemap.xml

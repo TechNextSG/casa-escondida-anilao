@@ -1,0 +1,22 @@
+{
+  "name": "Casa Escondida Anilao Resort & Dive Center",
+  "short_name": "Casa Escondida",
+  "description": "PADI 5-Star Resort & Dive Center in Anilao, Mabini, Batangas Philippines. World-class macro diving, ocean-front rooms, island excursions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#083E5C",
+  "theme_color": "#083E5C",
+  "icons": [
+    {
+      "src": "images/Logo/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/Logo/logo-color.png",
+      "sizes": "1000x500",
+      "type": "image/png"
+    }
+  ]
+}
