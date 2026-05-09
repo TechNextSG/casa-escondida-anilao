@@ -705,6 +705,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-size:0.95rem; color:var(--text-secondary);
       line-height:1.85; max-width:520px;
     }
+    /* About section: full text on desktop, short on mobile */
+    .about-text-short { display: none; }
 
     /* ── Scroll Progress Bar ── */
     #scroll-progress {
@@ -1720,6 +1722,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width: 768px) {
     /* Smaller hero title */
     .hero-h1 { font-size: clamp(1.5rem, 5.5vw, 2rem) !important; line-height: 1.1 !important; }
+    .about-text-full { display: none !important; }
+    .about-text-short { display: block !important; }
     .hero-sub { font-size: 0.85rem !important; }
 
     /* Smaller section headings */
@@ -2225,11 +2229,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="rvr">
           <div class="eyebrow">Our Story</div>
           <h2 class="sec-title">A Hidden <em>Paradise</em><br>in Batangas</h2>
-          <p class="sec-lead" style="margin-bottom:1.2rem">
-            Nestled along the shores of Brgy. Ligaya in Mabini, Batangas, Casa Escondida — <em style="font-style:italic;color:var(--text-secondary)">"The Hidden House"</em> — is an intimate resort and professional dive center where world-class diving meets genuine Filipino warmth.
-          </p>
-          <p class="sec-lead">
-            Anilao is the birthplace of Philippine scuba diving and a legendary macro photography destination. Our resort places you at the heart of this underwater kingdom — vibrant coral gardens, rare critters, and breathtaking marine biodiversity await.
+          <!-- Desktop: full text -->
+          <div class="about-text-full">
+            <p class="sec-lead" style="margin-bottom:1.2rem">
+              Nestled along the shores of Brgy. Ligaya in Mabini, Batangas, Casa Escondida — <em style="font-style:italic;color:var(--text-secondary)">"The Hidden House"</em> — is an intimate resort and professional dive center where world-class diving meets genuine Filipino warmth.
+            </p>
+            <p class="sec-lead">
+              Anilao is the birthplace of Philippine scuba diving and a legendary macro photography destination. Our resort places you at the heart of this underwater kingdom — vibrant coral gardens, rare critters, and breathtaking marine biodiversity await.
+            </p>
+          </div>
+          <!-- Mobile: short version -->
+          <p class="sec-lead about-text-short">
+            Casa Escondida — <em style="font-style:italic;color:var(--text-secondary)">"The Hidden House"</em> — is an intimate resort &amp; PADI dive center in Anilao, Batangas. World-class macro diving meets genuine Filipino warmth.
           </p>
           <div class="stars-line">
             <span class="star-g">★</span><span class="star-g">★</span><span class="star-g">★</span><span class="star-g">★</span><span class="star-g">★</span>
