@@ -707,6 +707,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     /* About section: full text on desktop, short on mobile */
     .about-text-short { display: none; }
+    /* Hero H1: desktop/mobile variants */
+    .h1-desk { display: inline; }
+    .h1-mob  { display: none; }
 
     /* ── Scroll Progress Bar ── */
     #scroll-progress {
@@ -1448,7 +1451,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .c { padding:0 1.5rem; }
       #nav, #nav.scrolled { padding:1rem 1.5rem; }
       .pad { padding:5rem 0; }
-      .hero-h1 { font-size: clamp(1.8rem, 8vw, 3rem); }
+      .hero-h1 { font-size: clamp(2.2rem, 9.5vw, 3.2rem); }
       .hero-rating { display:none; }
       .services-grid { grid-template-columns:1fr; grid-template-rows:auto; }
       .services-grid .svc-card { grid-column:auto!important; grid-row:auto!important; height:240px; }
@@ -1721,7 +1724,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* ── Mobile layout fixes (≤768px) ── */
   @media (max-width: 768px) {
     /* Smaller hero title */
-    .hero-h1 { font-size: clamp(1.8rem, 8vw, 3rem) !important; line-height: 1.1 !important; }
+    .hero-h1 { font-size: clamp(2.2rem, 9.5vw, 3.2rem) !important; line-height: 1.08 !important; }
+    .h1-desk { display: none !important; }
+    .h1-mob  { display: block !important; }
     .about-text-full { display: none !important; }
     .about-text-short { display: block !important; }
     .hero-sub { font-size: 0.85rem !important; }
@@ -1874,8 +1879,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-tag::before { width: 18px !important; }
 
     .hero-h1 {
-      font-size: clamp(1.8rem, 8vw, 3rem) !important;
-      line-height: 1.1 !important;
+      font-size: clamp(2.2rem, 9.5vw, 3.2rem) !important;
+      line-height: 1.08 !important;
       margin-bottom: 0.5rem !important;
       letter-spacing: -0.02em !important;
     }
@@ -2129,7 +2134,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Hero Content -->
     <div class="hero-content">
       <div class="hero-tag">Anilao · Mabini · Batangas</div>
-      <h1 class="hero-h1">Casa Escondida<br><em>Anilao&nbsp;Dive&nbsp;Resort</em></h1>
+      <h1 class="hero-h1">
+        <span class="h1-desk">Casa<br><em>Escondida</em></span>
+        <span class="h1-mob">Casa Escondida<br><em>Anilao&nbsp;Dive&nbsp;Resort</em></span>
+      </h1>
       <p class="hero-sub">Where the Ocean Becomes Home</p>
       <div class="hero-btns">
         <a href="#booking" class="btn-hero-primary">Reserve Your Stay</a>
