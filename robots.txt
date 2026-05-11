@@ -8,4 +8,7 @@ Disallow: /terms-of-service.html
 # Blog post template — JS-rendered, noindex in HTML
 Disallow: /blog-post.html
 
+# Google Translate generates /en/ prefix URLs — not real pages
+Disallow: /en/
+
 Sitemap: https://www.casaescondida-anilao.com/sitemap.xml
