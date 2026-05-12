@@ -295,10 +295,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* ── Google Translate: hide banner bar, prevent body offset ── */
     #google_translate_element { position:fixed; left:-9999px; top:-9999px; opacity:0; pointer-events:none; }
-    iframe.goog-te-banner-frame { display:none !important; }
+    iframe.goog-te-banner-frame,.goog-te-banner-frame { display:none !important; visibility:hidden !important; }
+    .skiptranslate>iframe { display:none !important; }
     .goog-te-balloon-frame { display:none !important; }
     #goog-gt-tt { display:none !important; }
     body { top:0 !important; }
+    body.translated-ltr,body.translated-rtl { top:0 !important; }
 
     /* ── Language Switcher ── */
     .lang-switcher{display:flex;align-items:center;border:1px solid rgba(255,255,255,.22);border-radius:2px;overflow:hidden;}
@@ -3664,6 +3666,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="google_translate_element" style="display:none;position:absolute;left:-9999px;"></div>
 <script>
 function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'en,zh-CN,tl',autoDisplay:false},'google_translate_element');}
+function _hideGTBar(){var f=document.querySelector('iframe.goog-te-banner-frame');if(f)f.style.display='none';if(document.body){document.body.style.top='0';document.body.style.marginTop='0';}}
+_hideGTBar();
+new MutationObserver(_hideGTBar).observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:['style']});
 (function(){
   function getCookieLang(){var m=document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);return m?m[1]:'en';}
   function setLang(code){
