@@ -113,12 +113,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="location.html"      class="mob-link">Location</a>
   <div class="mobile-nav-divider"></div>
   <a href="blog.html"          class="mob-link">Blog</a>
-    <div class="mobile-nav-divider"></div>
-    <div class="mob-lang">
-      <button class="lang-btn" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="zh-CN">中文</button>
-      <button class="lang-btn" data-lang="tl">FIL</button>
-    </div>
   <a href="index.html#booking" class="mob-link mobile-nav-cta">Book Now</a>
 </nav>
 
@@ -146,11 +140,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span id="themeLabel" style="font-size:.68rem;letter-spacing:.1em">Night</span>
     </button>
     <a href="index.html#booking" class="btn-book">Book Now</a>
-    <div class="lang-switcher" role="group" aria-label="Select language">
-      <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
-      <button class="lang-btn" data-lang="zh-CN" aria-label="Chinese">中文</button>
-      <button class="lang-btn" data-lang="tl" aria-label="Filipino">FIL</button>
-    </div>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
@@ -515,29 +504,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 })();
 </script>
 
-<!-- ── Google Translate ── -->
-<div id="google_translate_element" style="display:none;position:absolute;left:-9999px;"></div>
-<script>
-function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'en,zh-CN,tl',autoDisplay:false},'google_translate_element');}
-function _hideGTBar(){var f=document.querySelector('iframe.goog-te-banner-frame');if(f)f.style.display='none';if(document.body){document.body.style.top='0';document.body.style.marginTop='0';}}
-_hideGTBar();
-new MutationObserver(_hideGTBar).observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:['style']});
-(function(){
-  function getCookieLang(){var m=document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);return m?m[1]:'en';}
-  function setLang(code){
-    var clr='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
-    document.cookie=clr;document.cookie=clr+'; domain='+location.hostname;document.cookie=clr+'; domain=.'+location.hostname;
-    if(code!=='en'){var exp=new Date();exp.setFullYear(exp.getFullYear()+1);var v='googtrans=/en/'+code+'; expires='+exp.toUTCString()+'; path=/';document.cookie=v;document.cookie=v+'; domain='+location.hostname;document.cookie=v+'; domain=.'+location.hostname;}
-    location.reload();
-  }
-  var cur=getCookieLang();
-  document.querySelectorAll('.lang-btn').forEach(function(btn){
-    var lang=btn.getAttribute('data-lang');
-    if(lang===cur)btn.classList.add('active');
-    btn.addEventListener('click',function(){if(lang!==cur)setLang(lang);});
-  });
-})();
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 </body>
 </html>
