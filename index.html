@@ -2031,6 +2031,174 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
 
+  /* ═══════════════════════════════════════════
+     BOOKING POPUP MODAL
+  ═══════════════════════════════════════════ */
+  .bk-overlay {
+    position: fixed; inset: 0; z-index: 10000;
+    background: rgba(4,8,15,0.78);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.5rem;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  .bk-overlay.open {
+    opacity: 1; pointer-events: all;
+  }
+  .bk-modal {
+    position: relative;
+    background: rgba(7,14,26,0.97);
+    border: 1px solid rgba(77,194,232,0.22);
+    border-radius: 10px;
+    padding: 2.8rem 2.6rem 2.2rem;
+    width: 100%; max-width: 540px;
+    max-height: 92vh; overflow-y: auto;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.7), 0 0 0 1px rgba(77,194,232,0.06);
+    transform: translateY(28px) scale(0.97);
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease;
+    opacity: 0;
+  }
+  .bk-overlay.open .bk-modal {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  [data-theme="day"] .bk-overlay { background: rgba(10,22,44,0.72); }
+  [data-theme="day"] .bk-modal {
+    background: #fff;
+    border-color: rgba(26,107,152,0.18);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.22);
+  }
+
+  /* Close button */
+  .bk-close {
+    position: absolute; top: 1.1rem; right: 1.3rem;
+    width: 34px; height: 34px;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.55);
+    transition: background 0.22s, color 0.22s, transform 0.3s;
+  }
+  .bk-close:hover { background: rgba(255,255,255,0.14); color: #fff; transform: rotate(90deg); }
+  [data-theme="day"] .bk-close { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.12); color: rgba(0,0,0,0.45); }
+  [data-theme="day"] .bk-close:hover { background: rgba(0,0,0,0.1); color: #0d1e2e; }
+
+  /* Modal header */
+  .bk-eyebrow {
+    font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--accent); display: flex; align-items: center; gap: 0.6rem;
+    margin-bottom: 0.55rem;
+  }
+  .bk-eyebrow::before { content:''; width:20px; height:1px; background:var(--accent); opacity:0.6; }
+  .bk-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem,3vw,2.2rem);
+    font-weight: 300; color: #fff; line-height: 1.15;
+    margin-bottom: 0.35rem;
+  }
+  [data-theme="day"] .bk-title { color: #0d1e2e; }
+  .bk-title em {
+    font-style: italic;
+    background: linear-gradient(90deg, rgba(77,194,232,0.95) 0%, #e8c56a 40%, rgba(77,194,232,0.9) 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  [data-theme="day"] .bk-title em {
+    background: linear-gradient(90deg, #1a6b98 0%, #b8862a 40%, #1a6b98 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .bk-sub {
+    font-size: 0.83rem; color: rgba(255,255,255,0.48);
+    margin-bottom: 1.7rem; line-height: 1.65;
+  }
+  [data-theme="day"] .bk-sub { color: rgba(13,30,46,0.52); }
+
+  /* Form layout */
+  .bk-form { display: flex; flex-direction: column; gap: 1rem; }
+  .bk-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .bk-btn {
+    background: var(--accent); color: #fff; border: none;
+    padding: 1rem; border-radius: 3px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+    cursor: pointer; margin-top: 0.3rem;
+    transition: background 0.3s, transform 0.22s, box-shadow 0.3s;
+    width: 100%;
+  }
+  .bk-btn:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(77,194,232,0.3); }
+  .bk-btn:active { transform: translateY(0); }
+  .bk-note {
+    font-size: 0.72rem; color: rgba(255,255,255,0.32);
+    text-align: center; margin-top: 0.5rem;
+  }
+  [data-theme="day"] .bk-note { color: rgba(13,30,46,0.38); }
+  .bk-note a { color: var(--accent); text-decoration: none; }
+  .bk-note a:hover { text-decoration: underline; }
+
+  /* Day mode input overrides inside modal */
+  [data-theme="day"] .bk-modal .b-input {
+    background: rgba(13,30,46,0.05);
+    border-color: rgba(13,30,46,0.15);
+    color: #0d1e2e;
+  }
+  [data-theme="day"] .bk-modal .b-input::placeholder { color: rgba(13,30,46,0.35); }
+  [data-theme="day"] .bk-modal .b-input:focus { border-color: var(--accent); }
+  [data-theme="day"] .bk-modal .b-label { color: rgba(13,30,46,0.55); }
+  [data-theme="day"] .bk-modal select.b-input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(13,30,46,0.5)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  }
+  [data-theme="day"] .bk-modal select.b-input option { background: #f5f0ea; color: #0d1e2e; }
+  [data-theme="day"] .bk-modal .b-input[type="date"]::-webkit-calendar-picker-indicator { filter: none; opacity: 0.5; }
+
+  /* Success state */
+  .bk-success { text-align: center; padding: 1.5rem 0 0.5rem; display: none; }
+  .bk-success.show { display: block; }
+  .bk-check {
+    width: 60px; height: 60px;
+    background: rgba(77,194,232,0.1); border: 1.5px solid var(--accent);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.2rem;
+    animation: bkCheckIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+  }
+  @keyframes bkCheckIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .bk-check svg { width: 28px; height: 28px; stroke: var(--accent); stroke-width: 2.5; fill: none; }
+  .bk-success-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem; font-weight: 300; color: #fff;
+    margin-bottom: 0.55rem;
+  }
+  [data-theme="day"] .bk-success-title { color: #0d1e2e; }
+  .bk-success-sub {
+    font-size: 0.85rem; color: rgba(255,255,255,0.52);
+    line-height: 1.75; max-width: 300px; margin: 0 auto 1.4rem;
+  }
+  [data-theme="day"] .bk-success-sub { color: rgba(13,30,46,0.52); }
+  .bk-close-btn {
+    background: transparent; border: 1px solid rgba(77,194,232,0.4);
+    color: var(--accent); padding: 0.65rem 1.8rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    border-radius: 2px; cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .bk-close-btn:hover { background: rgba(77,194,232,0.1); border-color: var(--accent); }
+
+  /* Error */
+  .bk-error {
+    background: rgba(220,60,60,0.1); border: 1px solid rgba(220,60,60,0.35);
+    border-radius: 3px; padding: 0.65rem 0.9rem;
+    font-size: 0.78rem; color: #e07070; display: none;
+  }
+  .bk-error.show { display: block; }
+
+  /* Mobile */
+  @media (max-width: 560px) {
+    .bk-modal { padding: 2.2rem 1.4rem 1.8rem; }
+    .bk-row { grid-template-columns: 1fr; gap: 1rem; }
+  }
+
   /* ── Cursor off on touch (pointer:coarse covers all phones/tablets) ── */
   @media (pointer: coarse) {
     #cur-dot, #cur-ring,
@@ -2095,7 +2263,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span id="themeLabel" style="font-size:0.68rem;letter-spacing:0.1em">Night</span>
       </button>
 
-      <a href="#booking" class="btn-nav-cta">Book Now</a>
+      <a href="#booking" class="btn-nav-cta" id="navBookNow">Book Now</a>
       <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
@@ -2115,7 +2283,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="location.html" class="mob-link">Location</a>
     <div class="mobile-nav-divider"></div>
     <a href="blog.html"    class="mob-link">Blog</a>
-    <a href="#booking"  class="mob-link mobile-nav-cta">Book Now</a>
+    <a href="#booking" class="mob-link mobile-nav-cta" id="mobBookNow">Book Now</a>
   </nav>
 
   <!-- ═══ HERO ═══ -->
@@ -2140,7 +2308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </h1>
       <p class="hero-sub">Where the Ocean Becomes Home</p>
       <div class="hero-btns">
-        <a href="#booking" class="btn-hero-primary">Reserve Your Stay</a>
+        <a href="#booking" class="btn-hero-primary" id="openBookingModal">Reserve Your Stay</a>
         <a href="#dive" class="btn-hero-ghost">Explore Diving</a>
       </div>
     </div>
@@ -3315,6 +3483,202 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 
 
+
+<!-- ═══ BOOKING POPUP MODAL ═══ -->
+<div class="bk-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bkModalTitle" aria-hidden="true">
+  <div class="bk-modal">
+    <button class="bk-close" id="bookingModalClose" aria-label="Close booking form">
+      <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+
+    <div class="bk-eyebrow">Reservations</div>
+    <h2 class="bk-title" id="bkModalTitle">Book Your <em>Stay</em></h2>
+    <p class="bk-sub">Fill in your details and we'll confirm your reservation within 24 hours.</p>
+
+    <div class="bk-error" id="bkModalError"></div>
+
+    <form class="bk-form" id="bkModalForm" novalidate>
+      <div class="bk-row">
+        <div class="b-field">
+          <label for="bk-name" class="b-label">Full Name</label>
+          <input type="text" id="bk-name" name="name" class="b-input" placeholder="Your full name" required autocomplete="name" />
+        </div>
+        <div class="b-field">
+          <label for="bk-phone" class="b-label">Contact Number</label>
+          <input type="tel" id="bk-phone" name="phone" class="b-input" placeholder="+63 9XX XXX XXXX" required autocomplete="tel" />
+        </div>
+      </div>
+      <div class="b-field">
+        <label for="bk-email" class="b-label">Email Address</label>
+        <input type="email" id="bk-email" name="email" class="b-input" placeholder="your@email.com" required autocomplete="email" />
+      </div>
+      <div class="bk-row">
+        <div class="b-field">
+          <label for="bk-checkin" class="b-label">Check-in Date</label>
+          <input type="date" id="bk-checkin" name="checkin" class="b-input" required />
+        </div>
+        <div class="b-field">
+          <label for="bk-guests" class="b-label">Number of Guests</label>
+          <select id="bk-guests" name="guests" class="b-input" aria-label="Number of guests">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5+">5+ Guests</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="bk-btn">Send Reservation Request</button>
+      <p class="bk-note">Or message us on <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer">Facebook</a> · <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer">Booking.com</a></p>
+    </form>
+
+    <div class="bk-success" id="bkModalSuccess">
+      <div class="bk-check">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>
+      </div>
+      <div class="bk-success-title">Reservation Received!</div>
+      <p class="bk-success-sub">Thank you — we'll get back to you within 24 hours to confirm your stay at Casa Escondida.</p>
+      <button class="bk-close-btn" id="bkSuccessClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── Booking Popup Modal ── */
+(function(){
+  var overlay = document.getElementById('bookingModal');
+  var form    = document.getElementById('bkModalForm');
+  var success = document.getElementById('bkModalSuccess');
+  var errBox  = document.getElementById('bkModalError');
+  var dateInp = document.getElementById('bk-checkin');
+
+  /* Set minimum check-in date to today */
+  if(dateInp){
+    dateInp.setAttribute('min', new Date().toISOString().split('T')[0]);
+  }
+
+  function openModal(){
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    /* Focus first input after animation */
+    setTimeout(function(){ var f=form.querySelector('input'); if(f) f.focus(); }, 380);
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  /* Triggers: hero CTA, nav Book Now, mobile Book Now */
+  ['openBookingModal','navBookNow','mobBookNow'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  /* Close on X button */
+  var closeBtn = document.getElementById('bookingModalClose');
+  if(closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  /* Close on success "Close" button */
+  var sucClose = document.getElementById('bkSuccessClose');
+  if(sucClose) sucClose.addEventListener('click', function(){
+    closeModal();
+    setTimeout(function(){
+      success.classList.remove('show');
+      form.style.display = '';
+      form.reset();
+      if(errBox) errBox.classList.remove('show');
+    }, 350);
+  });
+
+  /* Close on overlay backdrop click (not modal card) */
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeModal();
+  });
+
+  /* Close on Escape */
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  });
+
+  /* Form submit */
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      /* Clear errors */
+      form.querySelectorAll('.b-input').forEach(function(i){ i.classList.remove('invalid'); });
+      if(errBox) errBox.classList.remove('show');
+
+      /* Validate required fields */
+      var invalids = [].slice.call(form.querySelectorAll('[required]')).filter(function(i){ return !i.validity.valid; });
+      if(invalids.length){
+        invalids.forEach(function(i){ i.classList.add('invalid'); });
+        if(errBox){
+          errBox.textContent = invalids.length === 1
+            ? 'Please fill in the highlighted field.'
+            : 'Please fill in all ' + invalids.length + ' required fields.';
+          errBox.classList.add('show');
+        }
+        invalids[0].focus();
+        return;
+      }
+
+      /* Collect values */
+      var guestName = document.getElementById('bk-name').value.trim();
+      var phone     = document.getElementById('bk-phone').value.trim();
+      var email     = document.getElementById('bk-email').value.trim();
+      var checkin   = document.getElementById('bk-checkin').value;
+      var guests    = document.getElementById('bk-guests').value;
+
+      /* Disable button while sending */
+      var btn = form.querySelector('.bk-btn');
+      if(btn){ btn.textContent = 'Sending…'; btn.disabled = true; }
+
+      /* ── Send email notification via Web3Forms ── */
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'REPLACE_WITH_WEB3FORMS_KEY',   /* ← replace after getting key */
+          subject: 'New Booking Inquiry — Casa Escondida Anilao',
+          from_name: 'Casa Escondida Website',
+          Name: guestName,
+          'Contact Number': phone,
+          'Email Address': email,
+          'Check-in Date': checkin,
+          'Number of Guests': guests,
+          message: [
+            'New reservation inquiry received from the website.',
+            '',
+            'Name:             ' + guestName,
+            'Contact Number:   ' + phone,
+            'Email:            ' + email,
+            'Check-in Date:    ' + checkin,
+            'Number of Guests: ' + guests
+          ].join('\n')
+        })
+      })
+      .catch(function(err){
+        /* Silently log — still show success so user isn't blocked */
+        console.warn('[Booking] Email notification error:', err);
+      })
+      .finally(function(){
+        form.style.display = 'none';
+        success.classList.add('show');
+        if(errBox) errBox.classList.remove('show');
+      });
+    });
+  }
+})();
+</script>
 
 <!-- ── Auto-translate based on browser/system language ── -->
 <div id="google_translate_element"></div>
