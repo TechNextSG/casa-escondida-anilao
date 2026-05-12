@@ -1339,6 +1339,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* Booking eyebrow / title utility classes */
     .booking-eyebrow { justify-content:center; color:rgba(77,194,232,0.9); }
     .booking-title { color:#fff; text-align:center; font-size:clamp(2.5rem,5vw,4.5rem); }
+    /* ── Section booking CTA buttons ── */
+    .btn-book-sm {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      padding: 0.72rem 1.7rem;
+      background: var(--accent); color: #fff; border: none;
+      border-radius: 2px; cursor: pointer; text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase;
+      transition: background 0.25s, transform 0.22s, box-shadow 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .btn-book-sm::after {
+      content: '→'; margin-left: 0.2rem;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+    .btn-book-sm:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(77,194,232,0.28); }
+    .btn-book-sm:hover::after { transform: translateX(3px); }
+    .btn-book-sm:active { transform: translateY(0); }
+    .btn-book-sm.gold-cta { background: var(--gold); color: #1a1204; }
+    .btn-book-sm.gold-cta:hover { background: #f0d17a; box-shadow: 0 6px 20px rgba(232,197,106,0.28); }
+    /* Rooms: two-button row */
+    .rm-btns { display: flex; gap: 0.6rem; margin-top: 1.4rem; }
+    .rm-btns .rm-btn { flex: 1; margin-top: 0; }
+    .rm-btns .btn-book-sm { flex: 1; justify-content: center; }
+
     /* Outline button variant used in gallery & reviews */
     .btn-outline-sm {
       display:inline-block; margin-top:1.5rem;
@@ -2543,6 +2569,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="tag">Free WiFi</span>
             <span class="tag">31 Rooms</span>
           </div>
+          <div style="margin-top:2rem">
+            <button class="btn-book-sm open-booking-modal">Book Your Stay</button>
+          </div>
         </div>
       </div>
     </div>
@@ -2560,6 +2589,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p style="font-size:0.92rem;color:rgba(255,255,255,0.65);line-height:1.8;max-width:480px" class="rv">
             Anilao is where Philippine scuba diving was born — and remains one of the world's finest dive destinations for coral diversity and macro life. Our professional PADI dive center puts you at the epicenter.
           </p>
+          <div style="margin-top:2rem" class="rv">
+            <button class="btn-book-sm open-booking-modal">Book a Dive Package</button>
+          </div>
         </div>
       </div>
     </div>
@@ -2574,7 +2606,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2 class="sec-title">Everything You <em>Need</em></h2>
         <p class="sec-lead" style="margin:0 auto">From professional diving to poolside dining and island excursions — every detail of your Casa Escondida experience is thoughtfully curated.</p>
       </div>
-      <div class="services-grid">
+      <div class="services-grid" id="servicesGrid">
         <div class="svc-card rv" style="transition-delay:0s">
           <div class="svc-photo"><img src="images/Nature%20Folder/Hawksbill%20sea%20turtle.webp" alt="Hawksbill sea turtle diving Anilao" loading="lazy" decoding="async" width="800" height="533" /></div>
           <span class="svc-badge">Dive Center</span>
@@ -2624,6 +2656,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
       </div>
+      <div style="text-align:center;margin-top:3rem" class="rv">
+        <button class="btn-book-sm open-booking-modal">Book Your Experience</button>
+      </div>
     </div>
   </section>
 
@@ -2651,7 +2686,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <span class="rm-feat">18 sqm</span><span class="rm-feat">2 Single Beds</span>
               <span class="rm-feat">Air Con</span><span class="rm-feat">Rain Shower</span>
             </div>
-            <a href="rooms.html" class="rm-btn">View Room</a>
+            <div class="rm-btns">
+              <a href="rooms.html" class="rm-btn">View Room</a>
+              <button class="btn-book-sm open-booking-modal">Book Now</button>
+            </div>
           </div>
         </div>
 
@@ -2667,7 +2705,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <span class="rm-feat">18 sqm</span><span class="rm-feat">1 Double Bed</span>
               <span class="rm-feat">Air Con</span><span class="rm-feat">Rain Shower</span>
             </div>
-            <a href="rooms.html" class="rm-btn">View Room</a>
+            <div class="rm-btns">
+              <a href="rooms.html" class="rm-btn">View Room</a>
+              <button class="btn-book-sm open-booking-modal">Book Now</button>
+            </div>
           </div>
         </div>
 
@@ -2685,7 +2726,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <span class="rm-feat" style="background:rgba(232,197,106,0.1);border-color:rgba(232,197,106,0.25);color:var(--gold)">Sea View</span>
               <span class="rm-feat" style="background:rgba(232,197,106,0.1);border-color:rgba(232,197,106,0.25);color:var(--gold)">2 Double Beds</span>
             </div>
-            <a href="rooms.html" class="rm-btn" style="background:var(--gold);color:#1a1204;">View Room</a>
+            <div class="rm-btns">
+              <a href="rooms.html" class="rm-btn" style="background:var(--gold);color:#1a1204;border-color:var(--gold)">View Room</a>
+              <button class="btn-book-sm gold-cta open-booking-modal">Book Now</button>
+            </div>
           </div>
         </div>
       </div>
@@ -2705,6 +2749,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="rvr">
           <p class="sec-lead">Every corner of Casa Escondida tells a story — from the brilliant corals beneath the surface to the warm glow of a beach BBQ at sunset. This is Anilao at its finest.</p>
           <a href="https://www.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer" class="btn-hero-ghost btn-outline-sm">More on Facebook →</a>
+          <div style="margin-top:1rem">
+            <button class="btn-book-sm open-booking-modal">Book Your Stay</button>
+          </div>
         </div>
       </div>
 
@@ -2811,6 +2858,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div style="text-align:center;margin-top:2.5rem" class="rv">
         <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="btn-hero-ghost btn-outline-sm">Read All 81 Reviews on TripAdvisor →</a>
+        <div style="margin-top:1.2rem">
+          <button class="btn-book-sm open-booking-modal">Join Our Guests — Book Now</button>
+        </div>
       </div>
     </div>
   </section>
@@ -3705,10 +3755,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.body.style.overflow = '';
   }
 
-  /* Triggers: hero CTA, nav Book Now, mobile Book Now */
+  /* Triggers: hero CTA, nav Book Now, mobile Book Now + all .open-booking-modal */
   ['openBookingModal','navBookNow','mobBookNow'].forEach(function(id){
     var el = document.getElementById(id);
     if(!el) return;
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      openModal();
+    });
+  });
+  document.querySelectorAll('.open-booking-modal').forEach(function(el){
     el.addEventListener('click', function(e){
       e.preventDefault();
       openModal();
