@@ -300,6 +300,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     #goog-gt-tt { display:none !important; }
     body { top:0 !important; }
 
+    /* ── Language Switcher ── */
+    .lang-switcher{display:flex;align-items:center;border:1px solid rgba(255,255,255,.22);border-radius:2px;overflow:hidden;}
+    .lang-btn{background:none;border:none;border-right:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.65);font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;padding:.3rem .52rem;font-family:'DM Sans',sans-serif;transition:background .2s,color .2s;white-space:nowrap;line-height:1;}
+    .lang-btn:last-child{border-right:none;}
+    .lang-btn:hover{background:rgba(255,255,255,.12);color:#fff;}
+    .lang-btn.active{background:var(--accent);color:#fff;}
+    [data-theme="day"] .lang-switcher{border-color:rgba(0,0,0,.15);}
+    [data-theme="day"] .lang-btn{color:rgba(0,0,0,.5);border-right-color:rgba(0,0,0,.15);}
+    [data-theme="day"] .lang-btn:hover{background:rgba(0,0,0,.07);color:var(--text);}
+    [data-theme="day"] .lang-btn.active{background:var(--accent);color:#fff;}
+    @media(max-width:768px){.lang-switcher{display:none;}}
+    .mob-lang{display:flex;gap:.5rem;padding:.8rem 2rem;}
+    .mob-lang .lang-btn{border:1px solid rgba(255,255,255,.2);border-radius:2px;padding:.4rem .8rem;color:rgba(255,255,255,.7);}
+    [data-theme="day"] .mob-lang .lang-btn{border-color:rgba(0,0,0,.15);color:rgba(0,0,0,.5);}
+    .mob-lang .lang-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+
     /* Hamburger: clean up focus ring after mouse/touch click while keeping keyboard ring */
     .nav-hamburger:focus { outline: none; }
     .nav-hamburger:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
@@ -2262,6 +2278,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </button>
 
       <a href="#booking" class="btn-nav-cta" id="navBookNow">Book Now</a>
+      <div class="lang-switcher" role="group" aria-label="Select language">
+        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang="zh-CN" aria-label="Chinese">中文</button>
+        <button class="lang-btn" data-lang="tl" aria-label="Filipino">FIL</button>
+      </div>
       <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
@@ -2281,6 +2302,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="location.html" class="mob-link">Location</a>
     <div class="mobile-nav-divider"></div>
     <a href="blog.html"    class="mob-link">Blog</a>
+    <div class="mobile-nav-divider"></div>
+    <div class="mob-lang">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="zh-CN">中文</button>
+      <button class="lang-btn" data-lang="tl">FIL</button>
+    </div>
     <a href="#booking" class="mob-link mobile-nav-cta" id="mobBookNow">Book Now</a>
   </nav>
 
@@ -3633,38 +3660,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 })();
 </script>
 
-<!-- ── Auto-translate based on browser/system language ── -->
-<div id="google_translate_element"></div>
+<!-- ── Google Translate ── -->
+<div id="google_translate_element" style="display:none;position:absolute;left:-9999px;"></div>
 <script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      autoDisplay: false
-    }, 'google_translate_element');
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'en,zh-CN,tl',autoDisplay:false},'google_translate_element');}
+(function(){
+  function getCookieLang(){var m=document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);return m?m[1]:'en';}
+  function setLang(code){
+    var clr='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+    document.cookie=clr;document.cookie=clr+'; domain='+location.hostname;document.cookie=clr+'; domain=.'+location.hostname;
+    if(code!=='en'){var exp=new Date();exp.setFullYear(exp.getFullYear()+1);var v='googtrans=/en/'+code+'; expires='+exp.toUTCString()+'; path=/';document.cookie=v;document.cookie=v+'; domain='+location.hostname;document.cookie=v+'; domain=.'+location.hostname;}
+    location.reload();
   }
-
-  (function () {
-    /* Detect browser language */
-    var nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-
-    /* Skip if already English */
-    if (nav === 'en' || nav.indexOf('en-') === 0) return;
-
-    /* Map browser codes → Google Translate codes */
-    var gt;
-    if      (nav === 'zh-tw' || nav === 'zh-hk') gt = 'zh-TW';
-    else if (nav.indexOf('zh') === 0)             gt = 'zh-CN';
-    else if (nav === 'fil')                       gt = 'tl';
-    else                                          gt = nav.split('-')[0];
-
-    /* Set googtrans cookie so widget auto-translates on load */
-    var exp = new Date(); exp.setFullYear(exp.getFullYear() + 1);
-    var val = '/en/' + gt;
-    var cookie = 'googtrans=' + val + '; expires=' + exp.toUTCString() + '; path=/';
-    document.cookie = cookie;
-    document.cookie = cookie + '; domain=' + location.hostname;
-    document.cookie = cookie + '; domain=.' + location.hostname;
-  })();
+  var cur=getCookieLang();
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    var lang=btn.getAttribute('data-lang');
+    if(lang===cur)btn.classList.add('active');
+    btn.addEventListener('click',function(){if(lang!==cur)setLang(lang);});
+  });
+})();
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 </body>
