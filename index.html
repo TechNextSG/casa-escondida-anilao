@@ -2139,18 +2139,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* Day mode input overrides inside modal */
   [data-theme="day"] .bk-modal .b-input {
-    background: rgba(13,30,46,0.05);
-    border-color: rgba(13,30,46,0.15);
+    background-color: #ede9e3;
+    background-image: none;         /* clear the dark-mode white arrow SVG */
+    border: 1px solid rgba(13,30,46,0.18);
     color: #0d1e2e;
   }
-  [data-theme="day"] .bk-modal .b-input::placeholder { color: rgba(13,30,46,0.35); }
-  [data-theme="day"] .bk-modal .b-input:focus { border-color: var(--accent); }
-  [data-theme="day"] .bk-modal .b-label { color: rgba(13,30,46,0.55); }
+  [data-theme="day"] .bk-modal .b-input::placeholder { color: rgba(13,30,46,0.38); }
+  [data-theme="day"] .bk-modal .b-input:focus {
+    border-color: var(--accent);
+    background-color: #e6e1da;
+    outline: none;
+  }
+  [data-theme="day"] .bk-modal .b-label { color: rgba(13,30,46,0.58); }
+  /* Select: solid bg + dark chevron, all background sub-properties explicit */
   [data-theme="day"] .bk-modal select.b-input {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(13,30,46,0.5)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-color: #ede9e3;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230d1e2e' stroke-opacity='.5' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
   }
   [data-theme="day"] .bk-modal select.b-input option { background: #f5f0ea; color: #0d1e2e; }
-  [data-theme="day"] .bk-modal .b-input[type="date"]::-webkit-calendar-picker-indicator { filter: none; opacity: 0.5; }
+  [data-theme="day"] .bk-modal .b-input[type="date"]::-webkit-calendar-picker-indicator { filter: none; opacity: 0.45; }
 
   /* Success state */
   .bk-success { text-align: center; padding: 1.5rem 0 0.5rem; display: none; }
