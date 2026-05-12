@@ -3642,33 +3642,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var btn = form.querySelector('.bk-btn');
       if(btn){ btn.textContent = 'Sending…'; btn.disabled = true; }
 
-      /* ── Send email notification via Web3Forms ── */
-      fetch('https://api.web3forms.com/submit', {
+      /* ── Send email notification via Vercel proxy → Brevo ── */
+      fetch('https://technext-landing-page.vercel.app/api/casa-booking', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: 'REPLACE_WITH_WEB3FORMS_KEY',   /* ← replace after getting key */
-          subject: 'New Booking Inquiry — Casa Escondida Anilao',
-          from_name: 'Casa Escondida Website',
-          Name: guestName,
-          'Contact Number': phone,
-          'Email Address': email,
-          'Check-in Date': checkin,
-          'Number of Guests': guests,
-          message: [
-            'New reservation inquiry received from the website.',
-            '',
-            'Name:             ' + guestName,
-            'Contact Number:   ' + phone,
-            'Email:            ' + email,
-            'Check-in Date:    ' + checkin,
-            'Number of Guests: ' + guests
-          ].join('\n')
+          name:    guestName,
+          phone:   phone,
+          email:   email,
+          checkin: checkin,
+          guests:  guests
         })
       })
       .catch(function(err){
-        /* Silently log — still show success so user isn't blocked */
-        console.warn('[Booking] Email notification error:', err);
+        console.warn('[Booking] Notification error:', err);
       })
       .finally(function(){
         form.style.display = 'none';
