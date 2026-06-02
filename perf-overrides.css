@@ -15,17 +15,10 @@
   visibility: hidden !important;
 }
 
-/* ── 2. KILL all continuous text/icon shimmer animations ── */
-.dv-h1 em,
-.hero-h1 em,
-.sec-title em {
-  animation: none !important;
-  background: none !important;
-  -webkit-text-fill-color: currentColor !important;
-  color: var(--accent) !important;
-  background-clip: unset !important;
-  -webkit-background-clip: unset !important;
-}
+/* ── 2. Hero em gradient text — intentionally kept (glint is CSS-only, low cost) ── */
+/* .dv-h1 em, .hero-h1 em etc. gradient animations are ALLOWED — they are
+   the primary visual text effect on all hero sections and are CSS background-position
+   only (no GPU compositing). Do NOT kill them here. */
 
 /* ── 3. KILL specific looping decorative animations ── */
 [class*="diver"],
