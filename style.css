@@ -106,8 +106,11 @@
     /* White links over dark hero; theme colour when scrolled */
     .nav-links a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:400;transition:color .35s;position:relative;padding-bottom:2px;}
     #nav.scrolled .nav-links a{color:var(--text);}
-    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width .35s ease;}
-    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:#4dc2e8;transition:width .35s ease;}
+    /* Over hero (transparent nav): always teal — readable on dark backgrounds */
+    .nav-links a:hover,.nav-links a.active{color:#4dc2e8;}
+    /* When scrolled (solid bg): use theme accent */
+    #nav.scrolled .nav-links a:hover,#nav.scrolled .nav-links a.active{color:var(--accent);}
     .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
     .nav-right{display:flex;align-items:center;gap:1rem;}
     .theme-toggle{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.25);border-radius:30px;padding:.3rem .8rem;cursor:pointer;transition:all .35s;font-size:.72rem;letter-spacing:.08em;color:rgba(255,255,255,0.85);white-space:nowrap;}
