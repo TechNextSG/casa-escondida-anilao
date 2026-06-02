@@ -146,7 +146,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* CSS animation timing tokens */
     :root {
       --dur-hero:    18s;
-      --dur-marquee: 22s;
+      --dur-marquee: 35s;
       --dur-float:   5.5s;
       --dur-ray:     7s;
       --dur-reveal:  0.9s;
@@ -757,7 +757,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ═══════════════════════════════════════════ */
     .marquee-strip {
       background:#04080f; overflow:hidden;
-      padding:0.85rem 0;
+      padding:0.55rem 0;
       border-top:1px solid rgba(77,194,232,0.18);
       border-bottom:1px solid rgba(77,194,232,0.18);
     }
@@ -769,16 +769,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     [data-theme="day"] .marquee-item { color:var(--accent); }
     [data-theme="day"] .marquee-dot { background:var(--accent); opacity:0.4; }
     .marquee-inner {
-      display:flex; gap:3rem; animation:marquee var(--dur-marquee) linear infinite;
+      display:flex; gap:1.5rem; animation:marquee var(--dur-marquee) linear infinite;
       width:max-content; will-change:transform;
     }
     @keyframes marquee { from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
     .marquee-item {
       display:flex; align-items:center; gap:0.6rem;
-      font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase;
+      font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase;
       color:rgba(77,194,232,0.85); white-space:nowrap; font-weight:400;
     }
-    .marquee-dot { width:4px; height:4px; border-radius:50%; background:rgba(77,194,232,0.4); }
+    .marquee-dot { width:3px; height:3px; border-radius:50%; background:rgba(77,194,232,0.4); }
 
     /* ═══════════════════════════════════════════
        ABOUT
@@ -2238,23 +2238,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- ═══ MARQUEE ═══ -->
   <div class="marquee-strip">
-    <div class="marquee-inner" id="marqueeInner">
+    <div class="marquee-inner">
       <div class="marquee-item"><span class="marquee-dot"></span> PADI Certified Dive Center</div>
       <div class="marquee-item"><span class="marquee-dot"></span> 30+ Dive Sites</div>
       <div class="marquee-item"><span class="marquee-dot"></span> Travelers' Choice Award</div>
       <div class="marquee-item"><span class="marquee-dot"></span> Free Breakfast Included</div>
       <div class="marquee-item"><span class="marquee-dot"></span> Island BBQ Experience</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> 31 Rooms & Suites</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> 31 Rooms &amp; Suites</div>
       <div class="marquee-item"><span class="marquee-dot"></span> Anilao, Batangas Philippines</div>
       <div class="marquee-item"><span class="marquee-dot"></span> #1 Special Inn in Mabini</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Ocean-Front Resort</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Private Jetty Access</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Night Diving Available</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Nitrox &amp; Equipment Rental</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Pool &amp; Beach Access</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> 4.5★ TripAdvisor Rating</div>
       <div class="marquee-item"><span class="marquee-dot"></span> PADI Certified Dive Center</div>
       <div class="marquee-item"><span class="marquee-dot"></span> 30+ Dive Sites</div>
       <div class="marquee-item"><span class="marquee-dot"></span> Travelers' Choice Award</div>
       <div class="marquee-item"><span class="marquee-dot"></span> Free Breakfast Included</div>
       <div class="marquee-item"><span class="marquee-dot"></span> Island BBQ Experience</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> 31 Rooms & Suites</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> 31 Rooms &amp; Suites</div>
       <div class="marquee-item"><span class="marquee-dot"></span> Anilao, Batangas Philippines</div>
       <div class="marquee-item"><span class="marquee-dot"></span> #1 Special Inn in Mabini</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Ocean-Front Resort</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Private Jetty Access</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Night Diving Available</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Nitrox &amp; Equipment Rental</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Pool &amp; Beach Access</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> 4.5★ TripAdvisor Rating</div>
     </div>
   </div>
 
