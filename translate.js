@@ -355,11 +355,12 @@
     wrapper.innerHTML =
       '<button class="lang-btn" aria-haspopup="listbox" aria-expanded="false" '
       + 'aria-label="Select language" '
-      + 'style="display:flex;align-items:center;gap:5px;background:transparent;'
-      + 'border:1px solid rgba(255,255,255,0.3);border-radius:20px;'
-      + 'padding:4px 10px 4px 8px;cursor:pointer;color:inherit;font-size:0.7rem;'
-      + 'letter-spacing:0.08em;text-transform:uppercase;line-height:1;'
-      + 'transition:border-color .2s,background .2s;">'
+      + 'style="display:flex;align-items:center;gap:5px;'
+      + 'background:rgba(255,255,255,0.07);'
+      + 'border:1px solid rgba(255,255,255,0.25);border-radius:20px;'
+      + 'padding:4px 10px 4px 8px;cursor:pointer;color:rgba(255,255,255,0.85);font-size:0.72rem;'
+      + 'letter-spacing:0.08em;white-space:nowrap;line-height:1;font-family:inherit;'
+      + 'transition:border-color .3s,background .3s,color .3s;">'
       + globeSVG
       + '<span class="lang-current">' + label + '</span>'
       + '</button>'
@@ -382,18 +383,43 @@
       + '</li>'
       + '</ul>';
 
-    /* ----- 3c. Insert into .nav-right before .btn-book / #navBookNow ----- */
+    /* ----- 3c. Insert BEFORE theme toggle (swap order: lang | theme | book) ----- */
     var navRight = document.querySelector('.nav-right');
     if (navRight) {
-      var btnBook = navRight.querySelector('.btn-nav-cta, #navBookNow, .btn-book');
-      if (btnBook) {
-        navRight.insertBefore(wrapper, btnBook);
+      /* Try to insert before the theme toggle button */
+      var themeToggle = navRight.querySelector('#themeBtn, .theme-toggle, [id*="theme"]');
+      if (themeToggle) {
+        navRight.insertBefore(wrapper, themeToggle);
       } else {
-        navRight.appendChild(wrapper);
+        /* fallback: before Book Now */
+        var btnBook = navRight.querySelector('.btn-nav-cta, #navBookNow, .btn-book');
+        if (btnBook) navRight.insertBefore(wrapper, btnBook);
+        else navRight.appendChild(wrapper);
       }
     } else {
-      /* Fallback: append to body if nav not found */
       document.body.appendChild(wrapper);
+    }
+
+    /* ----- 3c2. Theme-aware button styling ----- */
+    function syncLangBtnTheme() {
+      var isDark = document.documentElement.getAttribute('data-theme') !== 'day';
+      var b = wrapper.querySelector('.lang-btn');
+      if (!b) return;
+      if (isDark) {
+        b.style.background   = 'rgba(255,255,255,0.07)';
+        b.style.borderColor  = 'rgba(255,255,255,0.25)';
+        b.style.color        = 'rgba(255,255,255,0.85)';
+      } else {
+        b.style.background   = 'rgba(0,0,0,0.05)';
+        b.style.borderColor  = 'var(--border,rgba(0,0,0,0.15))';
+        b.style.color        = 'var(--text,#0d1e2e)';
+      }
+    }
+    syncLangBtnTheme();
+    var _nav = document.getElementById('nav');
+    if (_nav) {
+      new MutationObserver(syncLangBtnTheme)
+        .observe(document.documentElement, { attributes:true, attributeFilter:['data-theme'] });
     }
 
     /* ----- 3d. References to interactive elements ----- */

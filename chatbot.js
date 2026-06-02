@@ -69,6 +69,7 @@
       background: #0d1e2e;
       border-radius: 20px;
       box-shadow: 0 12px 48px rgba(0,0,0,0.45);
+      border: 1px solid rgba(77,194,232,0.15);
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -148,15 +149,15 @@
       color: #fff;
     }
 
-    /* Suggestions */
+    /* Suggestions — sits ABOVE the input row */
     #ce-suggestions {
-      padding: 10px 12px 6px;
+      padding: 8px 12px;
       display: flex;
-      gap: 7px;
-      overflow-x: auto;
+      gap: 6px;
+      flex-wrap: wrap;
       flex-shrink: 0;
-      scrollbar-width: none;
-      border-bottom: 1px solid rgba(77,194,232,0.1);
+      border-top: 1px solid rgba(77,194,232,0.12);
+      background: rgba(4,8,15,0.3);
     }
     #ce-suggestions::-webkit-scrollbar { display: none; }
     .ce-suggest-btn {
@@ -437,15 +438,18 @@
 
   // ── Suggested Questions ──────────────────────────────────────
   const SUGGESTIONS = [
-    'How do I book a room?',
-    'What PADI courses do you offer?',
-    'How far is Anilao from Manila?',
-    "What's included in the room rate?",
-    'Do you have dive equipment for rent?',
-    'What are your check-in times?',
-    'Tell me about your dive sites',
-    'Do you have night diving?',
-    'What are your guest reviews?'
+    'How to book a room?',
+    'PADI courses available?',
+    'Distance from Manila?',
+    "What's in the room rate?",
+    'Dive gear for rent?',
+    'Check-in / check-out time?',
+    'Best dive sites?',
+    'Night diving available?',
+    'What are the reviews?',
+    'Island BBQ experience?',
+    'Transfer from Manila?',
+    'How many rooms?'
   ];
 
   const GREETING = "Hi! 👋 Welcome to Casa Escondida Anilao. I'm your resort assistant — ask me anything about diving, rooms, or how to get here!";
@@ -531,9 +535,9 @@
           <button id="ce-close-btn" aria-label="Close chat">&#x2715;</button>
         </div>
 
-        <div id="ce-suggestions"></div>
-
         <div id="ce-messages" role="log" aria-live="polite"></div>
+
+        <div id="ce-suggestions"></div>
 
         <div id="ce-input-row">
           <input id="ce-input" type="text" placeholder="Ask about diving, rooms, or how to get here…" maxlength="300" autocomplete="off" />
@@ -555,38 +559,58 @@
     var sendBtn    = document.getElementById('ce-send-btn');
     var suggestEl  = document.getElementById('ce-suggestions');
 
-    var isOpen       = false;
-    var greeted      = false;
-    var suggRotateIdx = 0;
-    var suggTimer    = null;
+    var isOpen    = false;
+    var greeted   = false;
+    var suggPool  = [];   // shuffled queue
+    var suggUsed  = [];   // used this cycle
 
-    // ── Suggestions rotation ──
-    function renderSuggestions(start) {
-      suggestEl.innerHTML = '';
-      var count = Math.min(3, SUGGESTIONS.length);
-      for (var i = 0; i < count; i++) {
-        var idx = (start + i) % SUGGESTIONS.length;
-        (function (text) {
-          var b = document.createElement('button');
-          b.className = 'ce-suggest-btn';
-          b.textContent = text;
-          b.addEventListener('click', function () { sendMessage(text); });
-          suggestEl.appendChild(b);
-        })(SUGGESTIONS[idx]);
+    // ── Fisher-Yates shuffle ──
+    function shuffle(arr) {
+      var a = arr.slice();
+      for (var i = a.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = a[i]; a[i] = a[j]; a[j] = t;
       }
+      return a;
     }
 
-    function startSuggRotation() {
-      renderSuggestions(suggRotateIdx);
-      suggTimer = setInterval(function () {
-        suggRotateIdx = (suggRotateIdx + 3) % SUGGESTIONS.length;
-        renderSuggestions(suggRotateIdx);
-      }, 8000);
+    // ── Get next 3 unique suggestions ──
+    function nextBatch() {
+      // Refill pool when fewer than 3 remain (avoid repeating within a cycle)
+      if (suggPool.length < 3) {
+        var remaining = SUGGESTIONS.filter(function(s) {
+          return suggUsed.indexOf(s) === -1;
+        });
+        // If we've exhausted all, reset cycle
+        if (remaining.length < 3) {
+          suggUsed = [];
+          remaining = SUGGESTIONS.slice();
+        }
+        suggPool = shuffle(remaining);
+      }
+      var batch = suggPool.splice(0, 3);
+      batch.forEach(function(s) { suggUsed.push(s); });
+      return batch;
     }
 
-    function stopSuggRotation() {
-      if (suggTimer) { clearInterval(suggTimer); suggTimer = null; }
+    function renderSuggestions() {
+      suggestEl.innerHTML = '';
+      var batch = nextBatch();
+      batch.forEach(function(text) {
+        var b = document.createElement('button');
+        b.className = 'ce-suggest-btn';
+        b.textContent = text;
+        b.addEventListener('click', function() {
+          sendMessage(text);
+          // After user picks a question, show 3 fresh ones
+          setTimeout(renderSuggestions, 400);
+        });
+        suggestEl.appendChild(b);
+      });
     }
+
+    function startSuggRotation() { renderSuggestions(); }
+    function stopSuggRotation()  { /* no timer needed */ }
 
     // ── Message helpers ──
     function appendMessage(text, role) {
@@ -677,12 +701,48 @@
     btn.addEventListener('click', function () { isOpen ? closeChat() : openChat(); });
     closeBtn.addEventListener('click', closeChat);
 
-    // close on backdrop click (outside window)
+    // close on backdrop click
     document.addEventListener('click', function (e) {
       if (isOpen && !window_.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
         closeChat();
       }
     });
+
+    // ── Theme awareness (day / night) ──
+    function applyTheme() {
+      var isDark = document.documentElement.getAttribute('data-theme') !== 'day';
+      window_.style.background   = isDark ? '#0d1e2e' : '#ffffff';
+      window_.style.color        = isDark ? '#e8f4f8' : '#0d1e2e';
+      window_.style.borderColor  = isDark ? 'rgba(77,194,232,0.18)' : 'rgba(0,0,0,0.1)';
+      window_.style.boxShadow    = isDark
+        ? '0 12px 48px rgba(0,0,0,0.5)'
+        : '0 8px 32px rgba(0,0,0,0.18)';
+      var header = document.getElementById('ce-chat-header');
+      if (header) {
+        header.style.background  = isDark ? 'linear-gradient(135deg,#0d1e2e,#122839)'
+                                          : 'linear-gradient(135deg,#f5f9fc,#e8f4f8)';
+        header.style.borderColor = isDark ? 'rgba(77,194,232,0.2)' : 'rgba(77,194,232,0.15)';
+      }
+      var msgs = document.getElementById('ce-messages');
+      if (msgs) msgs.style.background = isDark ? 'transparent' : '#f8fbfd';
+      var inputRow = document.getElementById('ce-input-row');
+      if (inputRow) {
+        inputRow.style.borderColor = isDark ? 'rgba(77,194,232,0.15)' : 'rgba(0,0,0,0.08)';
+        inputRow.style.background  = isDark ? '#0d1e2e' : '#ffffff';
+      }
+      var inp = document.getElementById('ce-input');
+      if (inp) {
+        inp.style.color = isDark ? '#e8f4f8' : '#0d1e2e';
+        inp.style.background = 'transparent';
+      }
+      var sugg = document.getElementById('ce-suggestions');
+      if (sugg) sugg.style.background = isDark ? 'rgba(4,8,15,0.3)' : 'rgba(77,194,232,0.04)';
+    }
+    applyTheme();
+
+    // Watch for theme changes
+    var themeObserver = new MutationObserver(applyTheme);
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   }
 
   if (document.readyState === 'loading') {
