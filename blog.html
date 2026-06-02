@@ -139,7 +139,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .blog-h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-  font-weight: 400; line-height: 1.1; margin-bottom: 1rem; color: #ffffff; text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+  font-weight: 400; line-height: 1.1; margin-bottom: 1rem; color: #ffffff; text-shadow: 0 2px 20px rgba(0,0,0,.6),0 0 40px rgba(255,255,255,.10);
+  animation: heroTitleGlow 3.5s ease-in-out infinite;
 }
 .blog-h1 em {
   font-style: italic;
@@ -153,6 +154,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .blog-sub {
   color: rgba(255,255,255,0.95); text-shadow: 0 1px 8px rgba(0,0,0,0.45); font-size: .95rem;
   max-width: 520px; margin: 0 auto 2rem; line-height: 1.7;
+  animation: heroSubIn .9s cubic-bezier(.22,1,.36,1) .35s both;
 }
 .blog-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 1.5rem; flex-wrap: wrap; }
 .blog-stat { text-align: center; }
@@ -332,13 +334,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO -->
 <header class="blog-hero">
-  <div class="blog-eyebrow">Casa Escondida · Anilao, Batangas</div>
+  <div class="blog-eyebrow hero-eyebrow-anim">Casa Escondida · Anilao, Batangas</div>
   <h1 class="blog-h1">Dive Blog &amp; <em>Marine Life Guides</em></h1>
   <p class="blog-sub">Dive guides, marine life spotting tips, resort stories, and travel advice from Anilao — the macro diving capital of the Philippines.</p>
   <div class="blog-stats">
     <div class="blog-stat"><div class="blog-stat-n">20</div><div class="blog-stat-l">Articles</div></div>
     <div class="blog-stat"><div class="blog-stat-n">8</div><div class="blog-stat-l">Categories</div></div>
     <div class="blog-stat"><div class="blog-stat-n">30+</div><div class="blog-stat-l">Dive Sites Covered</div></div>
+  </div>
+  <div class="hero-ctas">
+    <a href="/#booking" class="hero-cta-primary">Book Your Stay</a>
+    <a href="dive.html" class="hero-cta-ghost">Explore Diving →</a>
   </div>
 </header>
 

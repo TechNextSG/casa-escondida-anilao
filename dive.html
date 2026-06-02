@@ -86,7 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.2rem, 4.5vw, 3.6rem);
       font-weight: 400; line-height: 1.1;
-      margin-bottom: 1rem; color: #ffffff; text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+      margin-bottom: 1rem; color: #ffffff; text-shadow: 0 2px 20px rgba(0,0,0,.6),0 0 40px rgba(255,255,255,.10);animation:heroTitleGlow 3.5s ease-in-out infinite;
     }
     .dv-h1 em {
       font-style: italic;
@@ -98,7 +98,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     @keyframes glint { 0%,90%,100%{background-position:200% center;} 40%{background-position:-100% center;} }
     .dv-sub {
-      color: rgba(255,255,255,0.95); text-shadow: 0 1px 8px rgba(0,0,0,0.45); font-size: .95rem;
+      color: rgba(255,255,255,0.95); text-shadow: 0 1px 8px rgba(0,0,0,0.45);animation:heroSubIn .9s cubic-bezier(.22,1,.36,1) .35s both; font-size: .95rem;
       max-width: 520px; margin: 0 auto 2rem; line-height: 1.7;
     }
     .dv-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 1.5rem; flex-wrap: wrap; }
@@ -497,7 +497,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="dv-hero-overlay" aria-hidden="true"></div>
   <!-- Content -->
   <div class="dv-hero-content">
-    <div class="dv-eyebrow">PADI 5-Star Dive Center · Anilao, Batangas</div>
+    <div class="dv-eyebrow hero-eyebrow-anim">PADI 5-Star Dive Center · Anilao, Batangas</div>
     <h1 class="dv-h1">Scuba Diving<br><em>Anilao, Batangas</em></h1>
     <p class="dv-sub">One of the world’s top macro-diving destinations — fun dives, PADI courses, and night dives right from our private jetty.</p>
     <div class="dv-stats">
@@ -505,6 +505,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="dv-stat"><div class="dv-stat-n">18–40m</div><div class="dv-stat-l">Depth Range</div></div>
       <div class="dv-stat"><div class="dv-stat-n">PADI</div><div class="dv-stat-l">Certified</div></div>
       <div class="dv-stat"><div class="dv-stat-n">4.5★</div><div class="dv-stat-l">Rated</div></div>
+    </div>
+    <div class="hero-ctas">
+      <a href="#courses" class="hero-cta-primary">Explore Courses</a>
+      <a href="#packages" class="hero-cta-ghost">View Dive Packages →</a>
     </div>
   </div>
 </header>

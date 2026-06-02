@@ -86,7 +86,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .g-h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-  font-weight: 400; line-height: 1.1; margin-bottom: 1rem; color: #ffffff; text-shadow:0 2px 16px rgba(0,0,0,0.55);
+  font-weight: 400; line-height: 1.1; margin-bottom: 1rem; color: #ffffff; text-shadow:0 2px 20px rgba(0,0,0,.6),0 0 40px rgba(255,255,255,.10);
+  animation:heroTitleGlow 3.5s ease-in-out infinite;
 }
 .g-h1 em {
   font-style: italic;
@@ -100,6 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .g-sub {
   color: rgba(255,255,255,0.95);text-shadow:0 1px 8px rgba(0,0,0,0.45); font-size: .95rem;
   max-width: 520px; margin: 0 auto 2rem; line-height: 1.7;
+  animation:heroSubIn .9s cubic-bezier(.22,1,.36,1) .35s both;
 }
 .g-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 1.5rem; flex-wrap: wrap; }
 .g-stat { text-align: center; }
@@ -454,7 +456,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="g-hero-overlay" aria-hidden="true"></div>
     <!-- Content -->
     <div class="g-hero-content">
-      <div class="g-eyebrow">Photo &amp; Video Gallery</div>
+      <div class="g-eyebrow hero-eyebrow-anim">Photo &amp; Video Gallery</div>
       <h1 class="g-h1">Life at <em>Casa Escondida</em></h1>
       <p class="g-sub">Real photos and videos from our Facebook and Instagram — dive life, resort moments, and the underwater world of Anilao.</p>
       <div class="g-stats">
@@ -462,6 +464,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="g-stat"><div class="g-stat-n">30+</div><div class="g-stat-l">Dive Sites</div></div>
         <div class="g-stat"><div class="g-stat-n">81</div><div class="g-stat-l">TripAdvisor Reviews</div></div>
         <div class="g-stat"><div class="g-stat-n">4.5★</div><div class="g-stat-l">Overall Rating</div></div>
+      </div>
+      <div class="hero-ctas">
+        <a href="https://www.instagram.com/casaescondidaanilao/" target="_blank" rel="noopener" class="hero-cta-primary">Follow on Instagram</a>
+        <a href="/#booking" class="hero-cta-ghost">Book Your Stay →</a>
       </div>
     </div>
   </header>

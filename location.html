@@ -77,7 +77,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .loc-h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-      font-weight: 400; line-height: 1.1; margin-bottom: 1rem; color: #ffffff; text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+      font-weight: 400; line-height: 1.1; margin-bottom: 1rem; color: #ffffff; text-shadow: 0 2px 20px rgba(0,0,0,.6),0 0 40px rgba(255,255,255,.10);
+      animation:heroTitleGlow 3.5s ease-in-out infinite;
     }
     .loc-h1 em {
       font-style: italic;
@@ -91,6 +92,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .loc-sub {
       color: rgba(255,255,255,0.95); text-shadow: 0 1px 8px rgba(0,0,0,0.45); font-size: .95rem;
       max-width: 540px; margin: 0 auto 2rem; line-height: 1.7;
+      animation: heroSubIn .9s cubic-bezier(.22,1,.36,1) .35s both;
     }
     .loc-hero-actions { display: flex; justify-content: center; gap: .8rem; flex-wrap: wrap; margin-top: 1rem; }
     .loc-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 2rem; flex-wrap: wrap; }
@@ -543,12 +545,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- HERO -->
   <header class="loc-hero">
-    <div class="loc-eyebrow">Find Us</div>
+    <div class="loc-eyebrow hero-eyebrow-anim">Find Us</div>
     <h1 class="loc-h1">How to Get to <em>Anilao, Batangas</em></h1>
     <p class="loc-sub">Tucked between jungle-clad hills and coral-rich waters in Brgy. Ligaya, Mabini — just two hours south of Manila.</p>
-    <div class="loc-hero-actions">
-      <a href="https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao+Resort+%26+Dive+Center,+Mabini,+Batangas" target="_blank" rel="noopener noreferrer" class="loc-btn-primary">Get Directions →</a>
-      <a href="#contact" class="loc-btn-ghost">Contact Us</a>
+    <div class="loc-hero-actions hero-ctas">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao+Resort+%26+Dive+Center,+Mabini,+Batangas" target="_blank" rel="noopener noreferrer" class="loc-btn-primary hero-cta-primary">Get Directions →</a>
+      <a href="#contact" class="loc-btn-ghost hero-cta-ghost">Contact Us</a>
     </div>
     <div class="loc-stats">
       <div class="loc-stat"><div class="loc-stat-n">140km</div><div class="loc-stat-l">From Manila</div></div>
