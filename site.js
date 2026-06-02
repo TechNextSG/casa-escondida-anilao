@@ -69,6 +69,18 @@
     });
   })();
 
+  /* ── NAV SCROLLED STATE (transparent → solid) ────────── */
+  (function () {
+    var nav = document.getElementById('nav');
+    if (!nav) return;
+    function updateScrolled() {
+      if (window.scrollY > 60) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }
+    updateScrolled();
+    window.addEventListener('scroll', updateScrolled, { passive: true });
+  })();
+
   /* ── NAV HIDE-ON-SCROLL-DOWN ──────────────────────────── */
   (function () {
     var nav = document.getElementById('nav');
