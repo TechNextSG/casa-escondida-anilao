@@ -814,10 +814,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .dive-hero-photo:hover img { transform:scale(1.03); filter:brightness(0.75); }
     .dive-hero-overlay {
       position:absolute; inset:0;
-      background:linear-gradient(90deg,rgba(4,8,15,0.85) 0%,rgba(4,8,15,0.4) 55%,transparent 100%);
+      background:linear-gradient(90deg,rgba(4,8,15,0.88) 0%,rgba(4,8,15,0.5) 55%,transparent 100%);
       display:flex; align-items:center;
     }
-    .dive-hero-text { padding:0 4rem; max-width:620px; }
+    /* Match .c container spacing so left edge aligns with other sections */
+    .dive-hero-text {
+      width:100%; max-width:1200px; margin:0 auto; padding:0 4rem;
+    }
+    .dive-hero-text-inner { max-width:580px; }
     .dive-layout { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
 
     /* Dive photo grid */
