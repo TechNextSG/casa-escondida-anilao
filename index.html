@@ -422,10 +422,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-tag::before { content:''; width:28px; height:1px; background:#fff; opacity:0.7; }
     .hero-h1 {
       font-family:'Playfair Display', serif;
-      font-size:clamp(3rem,6vw,5.5rem);
-      font-weight:300; line-height:0.92;
+      font-size:clamp(3.8rem,8vw,7.5rem);
+      font-weight:300; line-height:1;
       color:#fff; letter-spacing:-0.02em;
-      margin-bottom:0.5rem; text-shadow:0 2px 40px rgba(0,0,0,0.5);
+      margin-bottom:0.6rem;
+      text-shadow:0 2px 40px rgba(0,0,0,0.5),0 0 80px rgba(255,255,255,.12);
+      animation:heroTitleIn 1.1s cubic-bezier(0.16,1,0.3,1) 0.1s both, heroTitleGlow 3.5s ease-in-out 1.2s infinite;
+      white-space:nowrap;
+    }
+    @keyframes heroTitleIn {
+      from{ opacity:0; transform:translateY(28px) scale(0.96); filter:blur(6px); }
+      to  { opacity:1; transform:translateY(0) scale(1); filter:blur(0); }
     }
     .hero-h1 em {
       font-style:italic;
@@ -864,6 +871,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
        SERVICES
     ═══════════════════════════════════════════ */
     #services { background:var(--bg-primary); }
+    /* ── Services Carousel ── */
+    .svc-carousel-wrap { position:relative; overflow:hidden; border-radius:8px; }
+    .svc-carousel-track { display:flex; transition:transform .7s cubic-bezier(0.25,0.46,0.45,0.94); will-change:transform; }
+    .svc-slide { flex:0 0 calc(33.333% - 5.4px); margin-right:8px; height:360px; flex-shrink:0; }
+    .svc-slide:last-child { margin-right:0; }
+    .svc-slide .svc-card { height:100%; border-radius:6px; cursor:default; }
+    .svc-arrow {
+      position:absolute; top:50%; transform:translateY(-50%); z-index:10;
+      width:44px; height:44px; border-radius:50%;
+      background:rgba(4,8,15,.65); border:1px solid rgba(255,255,255,.25);
+      color:#fff; font-size:1.6rem; line-height:1; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      transition:background .2s, border-color .2s; padding:0;
+    }
+    .svc-arrow:hover { background:rgba(77,194,232,.7); border-color:rgba(77,194,232,.8); }
+    .svc-prev { left:1rem; } .svc-next { right:1rem; }
+    .svc-dots { display:flex; justify-content:center; gap:.5rem; margin-top:1.4rem; }
+    .svc-dot {
+      width:8px; height:8px; border-radius:50%; border:none; cursor:pointer;
+      background:rgba(255,255,255,.25); transition:background .25s, transform .25s;
+      padding:0;
+    }
+    .svc-dot.active { background:var(--accent); transform:scale(1.35); }
+    @media(max-width:768px){
+      .svc-slide { flex:0 0 100%; margin-right:0; height:300px; }
+    }
     .services-grid { display:grid; grid-template-columns:repeat(12,1fr); grid-template-rows:340px 260px; gap:8px; }
     .svc-card { background:#04080f; padding:0; position:relative; overflow:hidden; border-radius:6px; border:1px solid var(--border); cursor:zoom-in; transition:border-color .35s; }
     .svc-card:hover { border-color:rgba(77,194,232,0.3); }
@@ -2152,8 +2185,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-content">
       <div class="hero-tag">Anilao · Mabini · Batangas</div>
       <h1 class="hero-h1">
-        <span class="h1-desk">Casa<br><em>Escondida</em></span>
-        <span class="h1-mob">Casa Escondida<br><em>Anilao&nbsp;Dive&nbsp;Resort</em></span>
+        <span class="h1-desk">Casa <em>Escondida</em></span>
+        <span class="h1-mob">Casa <em>Escondida</em></span>
       </h1>
       <p class="hero-sub">Where the Ocean Becomes Home</p>
       <div class="hero-btns">
@@ -2342,58 +2375,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2 class="sec-title">Everything You <em>Need</em></h2>
         <p class="sec-lead" style="margin:0 auto">From professional diving to poolside dining and island excursions — every detail of your Casa Escondida experience is thoughtfully curated.</p>
       </div>
-      <div class="services-grid" id="servicesGrid">
-        <div class="svc-card rv" style="transition-delay:0s">
-          <div class="svc-photo"><img src="images/Nature%20Folder/Hawksbill%20sea%20turtle.webp" alt="Hawksbill sea turtle diving Anilao" loading="lazy" decoding="async" width="800" height="533" /></div>
-          <span class="svc-badge">Dive Center</span>
-          <div class="svc-content">
-            <div class="svc-name">Professional Dive Center</div>
-            <p class="svc-desc">Full-service PADI dive center with seasoned divemasters — your gateway to Anilao's legendary marine world.</p>
-          </div>
+      <!-- Auto-advancing carousel -->
+      <div class="svc-carousel-wrap">
+        <button class="svc-arrow svc-prev" id="svcPrev" aria-label="Previous">&#8249;</button>
+        <button class="svc-arrow svc-next" id="svcNext" aria-label="Next">&#8250;</button>
+        <div class="svc-carousel-track" id="svcTrack">
+          <div class="svc-slide"><div class="svc-card">
+            <div class="svc-photo"><img src="images/Nature%20Folder/Hawksbill%20sea%20turtle.webp" alt="PADI Dive Center Anilao" loading="lazy" decoding="async" width="800" height="533"/></div>
+            <span class="svc-badge">Dive Center</span>
+            <div class="svc-content"><div class="svc-name">Professional Dive Center</div><p class="svc-desc">Full-service PADI dive center with seasoned divemasters — your gateway to Anilao's legendary marine world.</p></div>
+          </div></div>
+          <div class="svc-slide"><div class="svc-card">
+            <div class="svc-photo"><img src="images/Home%20Page%20Image%20Gallery/1.webp" alt="Resort pool and beach" loading="lazy" decoding="async" width="800" height="533"/></div>
+            <span class="svc-badge">Beach &amp; Pool</span>
+            <div class="svc-content"><div class="svc-name">Pool &amp; Beach Access</div><p class="svc-desc">Unwind by the pool with sweeping ocean views or step directly onto the beach for warm Batangas Bay waters.</p></div>
+          </div></div>
+          <div class="svc-slide"><div class="svc-card">
+            <div class="svc-photo"><img src="images/Home%20Page%20Image%20Gallery/5.webp" alt="Resort restaurant dining" loading="lazy" decoding="async" width="800" height="533"/></div>
+            <span class="svc-badge">Restaurant</span>
+            <div class="svc-content"><div class="svc-name">Restaurant &amp; Bar</div><p class="svc-desc">Fresh Filipino and international cuisine, cold drinks at our oceanside bar, and the legendary island BBQ experience.</p></div>
+          </div></div>
+          <div class="svc-slide"><div class="svc-card">
+            <div class="svc-photo"><img src="images/rooms/03.%20Suite%20with%20Sea%20View/Suiteroom_New.jpg" alt="Ocean view suite room" loading="lazy" decoding="async" width="800" height="533"/></div>
+            <span class="svc-badge">Accommodation</span>
+            <div class="svc-content"><div class="svc-name">Comfortable Rooms</div><p class="svc-desc">24 ocean-side rooms thoughtfully appointed for the diving traveler — fall asleep to waves, wake up ready to dive.</p></div>
+          </div></div>
+          <div class="svc-slide"><div class="svc-card">
+            <div class="svc-photo"><img src="images/Home%20Page%20Image%20Gallery/7.webp" alt="Island excursions boat" loading="lazy" decoding="async" width="800" height="533"/></div>
+            <span class="svc-badge">Excursions</span>
+            <div class="svc-content"><div class="svc-name">Island Excursions</div><p class="svc-desc">Boat trips, snorkeling, and sunset cruises across the Philippines' most biodiverse bay — adventures for every traveler.</p></div>
+          </div></div>
+          <div class="svc-slide"><div class="svc-card">
+            <div class="svc-photo"><img src="images/Home%20Page%20Image%20Gallery/9.webp" alt="Resort events WiFi" loading="lazy" decoding="async" width="800" height="533"/></div>
+            <span class="svc-badge">Events &amp; WiFi</span>
+            <div class="svc-content"><div class="svc-name">Events &amp; Connectivity</div><p class="svc-desc">Free high-speed WiFi resort-wide. Conference facilities for retreats, team-building, and special celebrations.</p></div>
+          </div></div>
         </div>
-        <div class="svc-card rv" style="transition-delay:0.07s">
-          <div class="svc-photo"><img src="images/Home%20Page%20Image%20Gallery/1.webp" alt="Resort beachfront and pool" loading="lazy" decoding="async" width="800" height="533" /></div>
-          <span class="svc-badge">Beach &amp; Pool</span>
-          <div class="svc-content">
-            <div class="svc-name">Pool &amp; Beach Access</div>
-            <p class="svc-desc">Unwind by the pool with sweeping ocean views or step directly onto the beach for warm Batangas Bay waters.</p>
-          </div>
-        </div>
-        <div class="svc-card rv" style="transition-delay:0.14s">
-          <div class="svc-photo"><img src="images/Home%20Page%20Image%20Gallery/5.webp" alt="Resort restaurant and dining" loading="lazy" decoding="async" width="800" height="533" /></div>
-          <span class="svc-badge">Restaurant</span>
-          <div class="svc-content">
-            <div class="svc-name">Restaurant &amp; Bar</div>
-            <p class="svc-desc">Fresh Filipino and international cuisine, cold drinks at our oceanside bar, and the legendary island BBQ experience.</p>
-          </div>
-        </div>
-        <div class="svc-card rv" style="transition-delay:0.21s">
-          <div class="svc-photo"><img src="images/rooms/03.%20Suite%20with%20Sea%20View/Suiteroom_New.jpg" alt="Suite with Sea View room interior" loading="lazy" decoding="async" width="800" height="533" /></div>
-          <span class="svc-badge">Accommodation</span>
-          <div class="svc-content">
-            <div class="svc-name">Comfortable Rooms</div>
-            <p class="svc-desc">24 ocean-side rooms thoughtfully appointed for the diving traveler — fall asleep to waves, wake up ready to dive.</p>
-          </div>
-        </div>
-        <div class="svc-card rv" style="transition-delay:0.28s">
-          <div class="svc-photo"><img src="images/Home%20Page%20Image%20Gallery/7.webp" alt="Island hopping and boat excursions" loading="lazy" decoding="async" width="800" height="533" /></div>
-          <span class="svc-badge">Excursions</span>
-          <div class="svc-content">
-            <div class="svc-name">Island Excursions</div>
-            <p class="svc-desc">Boat trips, snorkeling, and sunset cruises across the Philippines' most biodiverse bay — adventures for every traveler.</p>
-          </div>
-        </div>
-        <div class="svc-card rv" style="transition-delay:0.35s">
-          <div class="svc-photo"><img src="images/Home%20Page%20Image%20Gallery/9.webp" alt="Resort events and gatherings" loading="lazy" decoding="async" width="800" height="533" /></div>
-          <span class="svc-badge">Events &amp; WiFi</span>
-          <div class="svc-content">
-            <div class="svc-name">Events &amp; Connectivity</div>
-            <p class="svc-desc">Free high-speed WiFi resort-wide. Conference facilities for retreats, team-building, and special celebrations.</p>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:3rem" class="rv">
-        <button class="btn-book-sm open-booking-modal">Book Your Experience</button>
+        <div class="svc-dots" id="svcDots"></div>
       </div>
     </div>
   </section>
@@ -3123,6 +3141,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (e.key === 'ArrowLeft' && cur > 0) { cur--; update(); }
       if (e.key === 'ArrowRight' && cur < items.length - 1) { cur++; update(); }
     });
+  })();
+  </script>
+
+  <script>
+  /* ── Services Carousel ── */
+  (function(){
+    var track = document.getElementById('svcTrack');
+    var dotsWrap = document.getElementById('svcDots');
+    if(!track || !dotsWrap) return;
+
+    var slides = track.querySelectorAll('.svc-slide');
+    var total = slides.length; // 6
+    var visibleCount = window.innerWidth <= 768 ? 1 : 3;
+    var current = 0;
+    var timer;
+
+    /* Build dots */
+    for(var i = 0; i < total; i++){
+      var d = document.createElement('button');
+      d.className = 'svc-dot' + (i===0?' active':'');
+      d.setAttribute('aria-label','Go to slide '+(i+1));
+      (function(idx){ d.addEventListener('click', function(){ goTo(idx); resetTimer(); }); })(i);
+      dotsWrap.appendChild(d);
+    }
+
+    function goTo(idx){
+      current = ((idx % total) + total) % total;
+      var slideW = slides[0].offsetWidth + 8; /* width + gap */
+      if(window.innerWidth <= 768) slideW = slides[0].offsetWidth;
+      track.style.transform = 'translateX(-'+(current * slideW)+'px)';
+      dotsWrap.querySelectorAll('.svc-dot').forEach(function(d,i){
+        d.classList.toggle('active', i===current);
+      });
+    }
+
+    function resetTimer(){
+      clearInterval(timer);
+      timer = setInterval(function(){ goTo(current+1); }, 3500);
+    }
+
+    document.getElementById('svcPrev').addEventListener('click', function(){ goTo(current-1); resetTimer(); });
+    document.getElementById('svcNext').addEventListener('click', function(){ goTo(current+1); resetTimer(); });
+
+    /* Pause on hover */
+    track.parentElement.addEventListener('mouseenter', function(){ clearInterval(timer); });
+    track.parentElement.addEventListener('mouseleave', resetTimer);
+
+    /* Touch swipe */
+    var touchStartX = 0;
+    track.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+    track.addEventListener('touchend', function(e){
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 50){ goTo(diff > 0 ? current+1 : current-1); resetTimer(); }
+    }, {passive:true});
+
+    /* Recalculate on resize */
+    window.addEventListener('resize', function(){ goTo(current); }, {passive:true});
+
+    resetTimer();
   })();
   </script>
 
