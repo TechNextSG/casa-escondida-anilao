@@ -84,7 +84,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .dv-h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-size: clamp(1.8rem, 3.8vw, 3.2rem); white-space: nowrap;
       font-weight: 400; line-height: 1.1;
       margin-bottom: 1rem; color: #ffffff; text-shadow: 0 2px 20px rgba(0,0,0,.6),0 0 40px rgba(255,255,255,.10);animation:heroTitleGlow 3.5s ease-in-out infinite;
     }
@@ -110,7 +110,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     @keyframes heroStatIn{ from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:none;} }
     .dv-stat-n { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 300; color: #4dc2e8; }
     .dv-stat-l { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,0.82); margin-top: .2rem; }
-    @media(max-width:768px){ .dv-hero{ padding:7rem 1.5rem 3rem; } .dv-stats{ gap:1.5rem; } }
+    @media(max-width:768px){ .dv-hero{ padding:7rem 1.5rem 3rem; } .dv-stats{ gap:1.5rem; } .dv-h1{ white-space:normal; font-size:clamp(1.5rem,7vw,2.2rem); } }
 
     /* ── SHARED SECTION LAYOUT ── */
     .sec-wrap{max-width:1200px;margin:0 auto;padding:5rem 2rem;}
@@ -524,7 +524,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Content -->
   <div class="dv-hero-content">
     <div class="dv-eyebrow hero-eyebrow-anim">PADI 5-Star Dive Center · Anilao, Batangas</div>
-    <h1 class="dv-h1">Scuba Diving<br><em>Anilao, Batangas</em></h1>
+    <h1 class="dv-h1">Scuba Diving <em>Anilao, Batangas</em></h1>
     <p class="dv-sub">One of the world’s top macro-diving destinations — fun dives, PADI courses, and night dives right from our private jetty.</p>
     <div class="dv-stats">
       <div class="dv-stat"><div class="dv-stat-n">30+</div><div class="dv-stat-l">Dive Sites</div></div>
