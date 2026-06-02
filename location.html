@@ -398,6 +398,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     @keyframes marqueeScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
     .marquee-item{display:flex;align-items:center;gap:.5rem;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(77,194,232,.85);white-space:nowrap;font-weight:400;}
     .marquee-dot{width:3px;height:3px;border-radius:50%;background:rgba(77,194,232,.4);flex-shrink:0;}
+    /* Hero animations + CTA buttons */
+    @keyframes heroTitleGlow{0%,100%{text-shadow:0 2px 20px rgba(0,0,0,.6),0 0 40px rgba(255,255,255,.10);}50%{text-shadow:0 2px 20px rgba(0,0,0,.6),0 0 60px rgba(255,255,255,.22),0 0 120px rgba(77,200,232,.18);}}
+    @keyframes heroSubIn{from{opacity:0;transform:translateY(18px);filter:blur(4px);}to{opacity:1;transform:none;filter:none;}}
+    @keyframes heroEyebrowIn{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:none;}}
+    .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;}
+    @media(max-width:768px){.hero-ctas{flex-direction:column;align-items:stretch;max-width:320px;margin-left:auto;margin-right:auto;}}
+    .hero-cta-primary{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--accent);color:#fff !important;padding:.9rem 2.2rem;border-radius:2px;font-family:"DM Sans",sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none !important;font-weight:500;transition:background .3s,transform .3s,box-shadow .3s;border:none;cursor:pointer;}
+    .hero-cta-primary::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);transform:skewX(-20deg);}
+    .hero-cta-primary:hover{background:var(--accent-d) !important;transform:translateY(-3px);box-shadow:0 10px 30px rgba(77,200,232,.35);}
+    .hero-cta-primary:hover::after{animation:btnShimmer .65s ease forwards;}
+    .hero-cta-primary:active{transform:translateY(0) scale(.97) !important;transition-duration:.1s !important;}
+    .hero-cta-ghost{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:1.5px solid rgba(255,255,255,.65);color:#fff !important;background:rgba(255,255,255,.06);padding:.9rem 2.2rem;border-radius:2px;font-family:"DM Sans",sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none !important;font-weight:500;transition:border-color .3s,background .3s,transform .3s;cursor:pointer;}
+    .hero-cta-ghost::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.12);transform:scaleX(0);transform-origin:left;transition:transform .32s ease;}
+    .hero-cta-ghost:hover{border-color:rgba(255,255,255,1) !important;transform:translateY(-3px);background:rgba(255,255,255,.12) !important;}
+    .hero-cta-ghost:hover::before{transform:scaleX(1);}
+    .hero-cta-ghost:active{transform:translateY(0) scale(.97) !important;transition-duration:.1s !important;}
 </style>
 
   <!-- Schema: LocalBusiness + ContactPage -->
