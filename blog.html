@@ -115,6 +115,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .bf-more{font-size:.75rem;color:#fff;background:var(--accent);padding:.45rem 1.2rem;border-radius:4px;text-decoration:none;font-weight:500;transition:background .25s;}
     .bf-more:hover{background:var(--accent-d);}
     @media(max-width:768px){.blog-featured{grid-template-columns:1fr;}.bf-thumb{min-height:200px;}.bf-body{padding:1.4rem 1.3rem;}}
+
+/* ── Blog Hero ── */
+.blog-hero {
+  padding: 9rem 4rem 3.5rem;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(4,8,15,0.45) 0%, rgba(4,8,15,0.72) 100%),
+              url('images/background/493830810_1210639744402021_2792086324574288650_n.webp') center 30% / cover no-repeat;
+  border-bottom: 1px solid var(--border);
+}
+.blog-eyebrow {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font-size: .65rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1rem;
+}
+.blog-eyebrow::before, .blog-eyebrow::after {
+  content: ''; width: 24px; height: 1px; background: var(--accent); opacity: .5;
+}
+.blog-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 400; line-height: 1.1; margin-bottom: 1rem; color: #f0f4f8;
+}
+.blog-h1 em {
+  font-style: italic;
+  background: linear-gradient(90deg, #4dc2e8 30%, #e8c56a 55%, #4dc2e8 70%);
+  background-size: 300% auto;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glint 4s ease-in-out infinite;
+}
+@keyframes glint { 0%,90%,100%{background-position:200% center;} 40%{background-position:-100% center;} }
+.blog-sub {
+  color: rgba(240,244,248,0.82); font-size: .95rem;
+  max-width: 520px; margin: 0 auto 2rem; line-height: 1.7;
+}
+.blog-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 1.5rem; flex-wrap: wrap; }
+.blog-stat { text-align: center; }
+.blog-stat-n { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 300; color: var(--accent); }
+.blog-stat-l { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(240,244,248,0.6); margin-top: .2rem; }
+@media(max-width:768px){ .blog-hero{ padding:7rem 1.5rem 3rem; } .blog-stats{ gap:1.5rem; } }
   </style>
 
   <!-- Schema: Blog + BlogPosting ItemList -->
@@ -277,13 +317,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 <!-- HERO -->
-<section class="pg-hero" style="padding:8rem 0 4rem;background:var(--bg2);border-bottom:1px solid var(--border);">
-  <div class="c">
-    <div class="eyebrow" style="margin-bottom:0.6rem;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600">Casa Escondida</div>
-    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:300;color:var(--text)">Anilao Dive Blog &amp; <em style="font-style:italic;color:var(--gold)">Marine Life Guides</em></h1>
-    <p style="color:var(--text2);margin-top:0.8rem;max-width:520px;font-size:.92rem;line-height:1.7">Dive guides, marine life spotting tips, resort stories, and travel advice from Anilao, Batangas — the macro diving capital of the Philippines.</p>
+<header class="blog-hero">
+  <div class="blog-eyebrow">Casa Escondida · Anilao, Batangas</div>
+  <h1 class="blog-h1">Dive Blog &amp; <em>Marine Life Guides</em></h1>
+  <p class="blog-sub">Dive guides, marine life spotting tips, resort stories, and travel advice from Anilao — the macro diving capital of the Philippines.</p>
+  <div class="blog-stats rv">
+    <div class="blog-stat"><div class="blog-stat-n">20</div><div class="blog-stat-l">Articles</div></div>
+    <div class="blog-stat"><div class="blog-stat-n">8</div><div class="blog-stat-l">Categories</div></div>
+    <div class="blog-stat"><div class="blog-stat-n">30+</div><div class="blog-stat-l">Dive Sites Covered</div></div>
   </div>
-</section>
+</header>
 
 <!-- BLOG SECTION -->
 <section style="background:var(--bg);padding:5rem 0 6rem;">

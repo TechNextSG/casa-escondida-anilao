@@ -53,62 +53,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" /></noscript>
   <style>
 /* ── HERO ── */
-    .dv-hero{position:relative;height:100vh;height:100svh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end;}
-    .dv-hero-photo{position:absolute;inset:0;}
-    .dv-hero-photo video,.dv-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(.65);}
-    .dv-hero-photo img{position:absolute;inset:0;}
-    .dv-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(4,8,15,.92) 0%,rgba(4,8,15,.4) 50%,rgba(4,8,15,.15) 100%);}
-    [data-theme="day"] .dv-hero-overlay{background:linear-gradient(to top,rgba(30,60,90,.85) 0%,rgba(30,60,90,.35) 50%,transparent 100%);}
-    .dv-hero-content{position:relative;z-index:2;padding:0 4rem 5rem;max-width:860px;}
-    .dv-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;opacity:0;animation:fadeUp .8s ease .3s forwards;}
-    .dv-eyebrow::before{content:'';width:30px;height:1px;background:var(--accent);opacity:.6;}
-    .dv-h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5.5vw,4.2rem);font-weight:300;line-height:1.1;color:#fff;margin-bottom:1.2rem;opacity:0;animation:fadeUp .9s ease .5s forwards;}
-    .dv-h1 em{
-      font-style:italic;
-      background:linear-gradient(90deg,
-        rgba(77,194,232,0.95) 0%,
-        #e8c56a 28%,
-        rgba(77,194,232,0.9) 52%,
-        #c8e8f5 72%,
-        rgba(77,194,232,0.95) 100%
-      );
-      background-size:300% auto;
-      -webkit-background-clip:text;
-      background-clip:text;
-      -webkit-text-fill-color:transparent;
-      animation:heroGlint 5s ease-in-out infinite;
+    .dv-hero {
+      padding: 9rem 4rem 3.5rem;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(4,8,15,0.45) 0%, rgba(4,8,15,0.72) 100%),
+                  url('images/Nature Folder/Chromodoris willani.webp') center 30% / cover no-repeat;
+      border-bottom: 1px solid var(--border);
     }
-    @keyframes heroGlint{0%,100%{background-position:0% center;}50%{background-position:200% center;}}
-    .dv-sub{font-size:1rem;color:rgba(255,255,255,.75);line-height:1.7;max-width:560px;margin-bottom:2.2rem;opacity:0;animation:fadeUp .9s ease .7s forwards;}
-    .dv-hero-btns{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .9s ease .9s forwards;}
-    .dv-btn-primary{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;padding:.75rem 2rem;border-radius:2px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .3s,box-shadow .3s;line-height:1;position:relative;overflow:hidden;}
-    .dv-btn-primary::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);transform:skewX(-20deg);}
-    .dv-btn-primary:hover{background:var(--accent-d);transform:translateY(-3px);box-shadow:0 8px 24px rgba(77,194,232,.3);}
-    .dv-btn-primary:hover::after{animation:btnShimmer .65s ease forwards;}
-    .dv-btn-primary:active{transform:translateY(0) scale(.97)!important;transition-duration:.1s!important;}
-    .dv-btn-ghost{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.35);color:#fff;padding:.75rem 2rem;border-radius:2px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:border-color .3s,background .3s,transform .3s;line-height:1;position:relative;overflow:hidden;}
-    .dv-btn-ghost::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.1);transform:scaleX(0);transform-origin:left;transition:transform .32s ease;}
-    .dv-btn-ghost:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.07);transform:translateY(-3px);}
-    .dv-btn-ghost:hover::before{transform:scaleX(1);}
-    .dv-btn-ghost:active{transform:translateY(0) scale(.97)!important;transition-duration:.1s!important;}
-    [data-theme="day"] .dv-btn-primary{color:#fff !important;}
-    [data-theme="day"] .dv-btn-ghost{color:#fff !important;}
-    .dv-hero-stats{position:absolute;bottom:2rem;right:4rem;display:flex;gap:2.5rem;z-index:2;opacity:0;animation:fadeUp .9s ease 1.1s forwards;}
-    .dv-stat{text-align:right;}
-    .dv-stat-n{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:300;color:#fff;line-height:1;}
-    .dv-stat-l{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:.2rem;}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
-    @media(max-width:768px){
-      .dv-hero{flex-direction:column;justify-content:flex-end;align-items:stretch;}
-      .dv-hero-content{padding:0 1.5rem 1.5rem;}
-      .dv-h1{font-size:2.1rem;}
-      .dv-sub{font-size:.88rem;margin-bottom:1.5rem;}
-      .dv-hero-btns{flex-direction:column;align-items:stretch;}
-      .dv-btn-primary,.dv-btn-ghost{width:100%;text-align:center;}
-      .dv-hero-stats{position:static;justify-content:flex-start;padding:1rem 1.5rem 2.5rem;gap:2.5rem;border-top:1px solid rgba(255,255,255,.12);}
-      .dv-stat{text-align:left;}
-      .dv-stat-n{font-size:1.5rem;}
+    .dv-eyebrow {
+      display: inline-flex; align-items: center; gap: .6rem;
+      font-size: .65rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1rem;
     }
+    .dv-eyebrow::before, .dv-eyebrow::after {
+      content: ''; width: 24px; height: 1px;
+      background: var(--accent); opacity: .5;
+    }
+    .dv-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-weight: 400; line-height: 1.1;
+      margin-bottom: 1rem; color: #f0f4f8;
+    }
+    .dv-h1 em {
+      font-style: italic;
+      background: linear-gradient(90deg, #4dc2e8 30%, #e8c56a 55%, #4dc2e8 70%);
+      background-size: 300% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glint 4s ease-in-out infinite;
+    }
+    @keyframes glint { 0%,90%,100%{background-position:200% center;} 40%{background-position:-100% center;} }
+    .dv-sub {
+      color: rgba(240,244,248,0.82); font-size: .95rem;
+      max-width: 520px; margin: 0 auto 2rem; line-height: 1.7;
+    }
+    .dv-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .dv-stat { text-align: center; }
+    .dv-stat-n { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 300; color: var(--accent); }
+    .dv-stat-l { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(240,244,248,0.6); margin-top: .2rem; }
+    @media(max-width:768px){ .dv-hero{ padding:7rem 1.5rem 3rem; } .dv-stats{ gap:1.5rem; } }
 
     /* ── SHARED SECTION LAYOUT ── */
     .sec-wrap{max-width:1200px;margin:0 auto;padding:5rem 2rem;}
@@ -480,31 +464,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 <!-- ═══ HERO ═══ -->
-<section class="dv-hero">
-  <div class="dv-hero-photo">
-    <video autoplay muted loop playsinline preload="auto" aria-hidden="true"
-           poster="images/Nature Folder/Chromodoris willani.webp">
-      <source src="images/dive-hero.mp4" type="video/mp4" />
-    </video>
-    <!-- Fallback image for browsers that can't play video -->
-    <img src="images/Nature Folder/Chromodoris willani.webp" alt="Scuba diving in Anilao, Batangas Philippines" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080" />
-  </div>
-  <div class="dv-hero-overlay"></div>
-  <div class="dv-hero-content">
-    <div class="dv-eyebrow">PADI 5-Star Dive Center · Scuba Diving Anilao, Batangas</div>
-    <h1 class="dv-h1">Scuba Diving<br><em>Anilao,&nbsp;Batangas</em></h1>
-    <p class="dv-sub">One of the world's top macro-diving destinations — fun dives, PADI courses, and night dives right from our private jetty in Anilao, Batangas.</p>
-    <div class="dv-hero-btns">
-      <a href="#courses" class="dv-btn-primary">Explore Courses</a>
-      <a href="#packages" class="dv-btn-ghost">View Dive Packages</a>
-    </div>
-  </div>
-  <div class="dv-hero-stats">
+<header class="dv-hero">
+  <div class="dv-eyebrow">PADI 5-Star Dive Center · Anilao, Batangas</div>
+  <h1 class="dv-h1">Scuba Diving<br><em>Anilao, Batangas</em></h1>
+  <p class="dv-sub">One of the world’s top macro-diving destinations — fun dives, PADI courses, and night dives right from our private jetty.</p>
+  <div class="dv-stats rv">
     <div class="dv-stat"><div class="dv-stat-n">30+</div><div class="dv-stat-l">Dive Sites</div></div>
     <div class="dv-stat"><div class="dv-stat-n">18–40m</div><div class="dv-stat-l">Depth Range</div></div>
     <div class="dv-stat"><div class="dv-stat-n">PADI</div><div class="dv-stat-l">Certified</div></div>
+    <div class="dv-stat"><div class="dv-stat-n">4.5★</div><div class="dv-stat-l">Rated</div></div>
   </div>
-</section>
+</header>
 
 <!-- ═══ DIVE CENTER OVERVIEW ═══ -->
 <section class="overview-section">
@@ -1159,4 +1129,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 
 </body>
-</html>
+</html>
