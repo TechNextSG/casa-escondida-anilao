@@ -104,7 +104,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   animation:heroSubIn .9s cubic-bezier(.22,1,.36,1) .35s both;
 }
 .g-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 1.5rem; flex-wrap: wrap; }
-.g-stat { text-align: center; }
+.g-stat { text-align: center; animation:heroStatIn .6s ease both; }
+.g-stats .g-stat:nth-child(1){animation-delay:.4s;}
+.g-stats .g-stat:nth-child(2){animation-delay:.55s;}
+.g-stats .g-stat:nth-child(3){animation-delay:.7s;}
+.g-stats .g-stat:nth-child(4){animation-delay:.85s;}
+@keyframes heroStatIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
 .g-stat-n { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 300; color: #4dc2e8; }
 .g-stat-l { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,0.82); margin-top: .2rem; }
 @media(max-width:768px){ .g-hero{ padding:7rem 1.5rem 3rem; } .g-stats{ gap:1.5rem; } }
@@ -1742,7 +1747,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }, { threshold: 0.1 });
   document.querySelectorAll('.rv').forEach(el => ro.observe(el));
 
-;
+  /* ── Scroll reveal: extended selector + immediate rAF pass ── */
+  (function(){
+    var els=document.querySelectorAll('.rv,.rvl,.rvr,.rvs,.rvp');
+    var obs=new IntersectionObserver(function(entries,o){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');o.unobserve(e.target);}});},{threshold:0.08,rootMargin:'100px 0px 0px 0px'});
+    els.forEach(function(el){obs.observe(el);});
+    requestAnimationFrame(function(){els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight+150)el.classList.add('on');});});
+  })();
 
   /* ── Instagram image-only frame sizer ──
      After embed.js loads each iframe, read its height and size the

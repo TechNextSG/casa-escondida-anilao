@@ -157,7 +157,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   animation: heroSubIn .9s cubic-bezier(.22,1,.36,1) .35s both;
 }
 .blog-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 1.5rem; flex-wrap: wrap; }
-.blog-stat { text-align: center; }
+.blog-stat { text-align: center; animation:heroStatIn .6s ease both; }
+.blog-stats .blog-stat:nth-child(1){animation-delay:.4s;}
+.blog-stats .blog-stat:nth-child(2){animation-delay:.55s;}
+.blog-stats .blog-stat:nth-child(3){animation-delay:.7s;}
+@keyframes heroStatIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
 .blog-stat-n { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 300; color: #4dc2e8; }
 .blog-stat-l { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,0.82); margin-top: .2rem; }
 @media(max-width:768px){ .blog-hero{ padding:7rem 1.5rem 3rem; } .blog-stats{ gap:1.5rem; } }
@@ -543,6 +547,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var nav=document.getElementById('nav'),lastY=0,ticking=false;
   function update(){var y=window.scrollY;if(y<120)nav.classList.remove('nav-hidden');else if(y>lastY+6)nav.classList.add('nav-hidden');else if(y<lastY-6)nav.classList.remove('nav-hidden');lastY=y;ticking=false;}
   window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(update);ticking=true;}},{passive:true});
+})();
+
+/* ── Scroll reveal: extended selector + immediate rAF pass ── */
+(function(){
+  var els=document.querySelectorAll('.rv,.rvl,.rvr,.rvs,.rvp');
+  var obs=new IntersectionObserver(function(entries,o){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');o.unobserve(e.target);}});},{threshold:0.08,rootMargin:'100px 0px 0px 0px'});
+  els.forEach(function(el){obs.observe(el);});
+  requestAnimationFrame(function(){els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight+150)el.classList.add('on');});});
 })();
 
 </script>
