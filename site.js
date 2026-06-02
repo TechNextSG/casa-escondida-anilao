@@ -139,4 +139,15 @@
     });
   })();
 
+  // Dynamically load translation and chatbot scripts
+  (function(){
+    var scripts = ['translate.js', 'chatbot.js'];
+    scripts.forEach(function(src){
+      var s = document.createElement('script');
+      s.src = src;
+      s.defer = true;
+      document.head.appendChild(s);
+    });
+  })();
+
 })();

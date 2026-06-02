@@ -449,24 +449,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       -webkit-text-fill-color:transparent;
       animation:heroGlint 5s ease-in-out infinite;
     }
-    [data-theme="day"] .hero-h1 em {
-      background:linear-gradient(90deg,
-        #1a6b98 0%,
-        #b8862a 28%,
-        #1a6b98 52%,
-        #3a7a9c 72%,
-        #1a6b98 100%
-      );
-      background-size:300% auto;
-      -webkit-background-clip:text;
-      background-clip:text;
-      -webkit-text-fill-color:transparent;
-      animation:heroGlint 5s ease-in-out infinite;
-    }
-    @keyframes heroGlint {
-      0%,100% { background-position:0% center; }
-      50%      { background-position:200% center; }
-    }
+    /* Day mode uses same bright gradient as night — hero always has dark overlay */
     .hero-sub {
       font-family:'Cormorant', serif;
       font-size:clamp(1.1rem,2.5vw,1.6rem);
