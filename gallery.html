@@ -280,6 +280,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .cta-soc{display:flex;align-items:center;gap:.6rem;padding:.7rem 1.6rem;border-radius:2px;border:1px solid var(--border);text-decoration:none;color:var(--text2);font-size:.78rem;letter-spacing:.08em;transition:all .3s;}
     .cta-soc:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
     .cta-soc svg{width:16px;height:16px;}
+
+    /* Marquee strip */
+    .marquee-strip{background:#04080f;overflow:hidden;padding:.55rem 0;border-top:1px solid rgba(77,194,232,.18);border-bottom:1px solid rgba(77,194,232,.18);}
+    [data-theme="day"] .marquee-strip{background:var(--bg);border-top-color:rgba(0,0,0,.08);border-bottom-color:rgba(0,0,0,.08);}
+    [data-theme="day"] .marquee-item{color:var(--accent);}
+    [data-theme="day"] .marquee-dot{background:var(--accent);opacity:.4;}
+    .marquee-inner{display:flex;gap:1.5rem;animation:marqueeScroll 35s linear infinite;width:max-content;will-change:transform;}
+    .marquee-strip:hover .marquee-inner{animation-play-state:paused;}
+    @keyframes marqueeScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    .marquee-item{display:flex;align-items:center;gap:.5rem;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(77,194,232,.85);white-space:nowrap;font-weight:400;}
+    .marquee-dot{width:3px;height:3px;border-radius:50%;background:rgba(77,194,232,.4);flex-shrink:0;}
 </style>
 
   <!-- Schema: ImageGallery -->
