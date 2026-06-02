@@ -387,6 +387,17 @@
       .btn, .btn-primary, .btn-outline { padding: 0.75rem 1.25rem; font-size: 0.78rem; }
     }
 
+    /* ── Gallery arrow buttons: min tap target on mobile ── */
+    @media(max-width:768px) {
+      .rm-gallery-btn {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px;
+        min-height: 36px;
+        font-size: 1.3rem !important;
+      }
+    }
+
 
   
   
@@ -637,5 +648,130 @@
     .rv-quote, .foot-desc, p { letter-spacing: 0 !important; }
   }
 
-  
+  /* ═══════════════════════════════════════════
+     MOBILE FIXES — targeted corrections
+  ═══════════════════════════════════════════ */
+
+  /* ── 1. Font sizes: raise sub-threshold text to readable minimums on mobile ── */
+  @media(max-width:768px) {
+
+    /* eyebrow labels — were 0.58rem (~9px), raise to 0.72rem */
+    .eyebrow, .sec-eyebrow {
+      font-size: 0.72rem !important;
+    }
+
+    /* marquee text — was 0.65rem, raise to 0.72rem */
+    .marquee-item {
+      font-size: 0.72rem !important;
+    }
+
+    /* service card description — was 0.68rem (~10.9px), raise to 0.82rem */
+    .svc-desc {
+      font-size: 0.82rem !important;
+    }
+
+    /* room description — was 0.72rem, raise to 0.80rem */
+    .rm-desc {
+      font-size: 0.80rem !important;
+    }
+
+    /* footer heading labels — were 0.55rem, raise to 0.68rem */
+    .foot-h {
+      font-size: 0.68rem !important;
+    }
+
+    /* footer copy/legal — were 0.62rem, raise to 0.72rem */
+    .foot-copy {
+      font-size: 0.72rem !important;
+    }
+    .foot-legal a {
+      font-size: 0.72rem !important;
+    }
+  }
+
+  /* ── 2. Button touch targets: ensure min 44px tap height ── */
+  @media(max-width:768px) {
+
+    .btn, .btn-primary, .btn-outline {
+      min-height: 44px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .hero-cta-primary, .hero-cta-ghost {
+      min-height: 48px !important;
+      padding-top: 0.85rem !important;
+      padding-bottom: 0.85rem !important;
+    }
+
+    .rm-btn-primary, .rm-btn-ghost {
+      min-height: 48px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .cta-btn-main, .cta-btn-outline {
+      min-height: 48px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .pkg-cta {
+      min-height: 44px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    /* Dive page CTA buttons */
+    .dv-btn-primary, .dv-btn-ghost {
+      min-height: 48px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+  }
+
+  /* ── 3. Carousel arrows: move below card to prevent text overlap on mobile ── */
+  @media(max-width:768px) {
+    .svc-carousel-wrap {
+      padding-bottom: 3.5rem;
+    }
+    .svc-arrow {
+      top: auto !important;
+      transform: none !important;
+      bottom: 0.5rem !important;
+    }
+    .svc-prev {
+      left: calc(50% - 54px) !important;
+    }
+    .svc-next {
+      right: calc(50% - 54px) !important;
+    }
+  }
+
+  /* ── 4. platform-card: override min-width on small screens to prevent overflow ── */
+  @media(max-width:480px) {
+    .platform-card {
+      min-width: 0 !important;
+      width: 100%;
+      max-width: 100% !important;
+    }
+    .reviews-strip-inner {
+      flex-direction: column !important;
+      align-items: stretch !important;
+    }
+  }
+
+  /* ── 5. Services: desktop grid hidden on mobile — carousel takes over ── */
+  @media(max-width:768px) {
+    .services-grid {
+      display: none !important;
+    }
+  }
+
+
 
