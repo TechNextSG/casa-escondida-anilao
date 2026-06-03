@@ -128,10 +128,10 @@
     [data-theme="day"] .toggle-track{background:rgba(232,197,106,.2);border-color:var(--gold);}
     .toggle-icon{font-size:.85rem;line-height:1;}
     /* Shared nav CTA button — used on all pages */
-    .btn-book,.btn-nav-cta{background:var(--accent);color:#fff;padding:.42rem 1.35rem;border-radius:30px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .2s,box-shadow .2s;font-weight:600;white-space:nowrap;border:none;cursor:pointer;}
-    .btn-book:hover,.btn-nav-cta:hover{background:var(--accent-d);transform:translateY(-1px);box-shadow:0 4px 16px rgba(77,194,232,.4);}
-    /* Keep consistent color in all nav states — no teal override */
-    #nav .btn-book,#nav .btn-nav-cta{background:var(--accent);}
+    .btn-book,.btn-nav-cta{background:rgba(77,194,232,0.92);color:#fff;padding:.42rem 1.35rem;border-radius:30px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .2s,box-shadow .2s;font-weight:600;white-space:nowrap;border:none;cursor:pointer;}
+    .btn-book:hover,.btn-nav-cta:hover{background:#4dc2e8;transform:translateY(-1px);}
+    /* Scrolled state: use theme accent (day=navy, night=teal) */
+    #nav.scrolled .btn-book,#nav.scrolled .btn-nav-cta{background:var(--accent);}
     @keyframes btnShimmer{0%{left:-120%}100%{left:160%}}
     @keyframes btnRipple{to{transform:scale(4.5);opacity:0}}
     .btn-ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.25);transform:scale(0);animation:btnRipple .7s ease-out forwards;pointer-events:none;}
