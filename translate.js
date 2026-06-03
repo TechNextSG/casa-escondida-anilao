@@ -354,7 +354,230 @@
       '.loc-btn-primary':   { en:'Get Directions →', zh:'获取路线 →' },
       '.loc-btn-ghost':     { en:'Contact Us', zh:'联系我们' },
       /* Theme toggle label */
-      '#themeLabel':        { en:'', zh:'' }  /* keep as-is */
+      '#themeLabel':        { en:'', zh:'' },  /* keep as-is */
+
+      /* ── HOMEPAGE — About section ── */
+      '.about-grid .eyebrow':                 { en:'Our Story', zh:'我们的故事' },
+      '.about-tags ~ .eyebrow':               { en:'Our Story', zh:'我们的故事' },
+      '.about-title, #about h2.sec-title':    { en:'A Hidden Paradise, Discovered', zh:'发现隐秘天堂' },
+      '#about .sec-sub, .about-sub':          { en:'Nestled along the shores of Anilao — the birthplace of Philippine diving — Casa Escondida offers an intimate escape for divers and dreamers alike.', zh:'卡萨艾斯孔迪达坐落于阿尼劳海岸——菲律宾潜水发源地，为潜水爱好者与度假旅客提供私密惬意的避世体验。' },
+
+      /* ── HOMEPAGE — Services section ── */
+      '#services .eyebrow, .services-eyebrow': { en:'Amenities & Services', zh:'设施与服务' },
+      '#services h2.sec-title':               { en:'Everything You Need', zh:'一应俱全' },
+      '#services .sec-sub':                   { en:'From thrilling dives to relaxed beachside afternoons — Casa Escondida is your complete destination.', zh:'从刺激的潜水体验到悠闲的海滩时光——卡萨艾斯孔迪达是您的全能度假目的地。' },
+
+      /* ── HOMEPAGE — Rooms section ── */
+      '#rooms .eyebrow':                      { en:'Accommodation', zh:'住宿' },
+      '#rooms h2.sec-title':                  { en:'Our Rooms', zh:'客房介绍' },
+      '#rooms .sec-sub':                      { en:'Comfortable, air-conditioned retreats designed to rest and recharge after a day of adventure.', zh:'舒适宜人的空调客房，专为冒险一天后的休憩与恢复精心设计。' },
+
+      /* ── HOMEPAGE — Gallery section ── */
+      '#gallery .eyebrow':                    { en:'Gallery', zh:'图库' },
+      '#gallery h2.sec-title':                { en:'Life at Casa Escondida', zh:'卡萨艾斯孔迪达的生活' },
+      '#gallery .sec-sub':                    { en:'A glimpse of life at Casa Escondida — above and below the water.', zh:'水上水下，感受卡萨艾斯孔迪达的精彩生活。' },
+
+      /* ── HOMEPAGE — Reviews section ── */
+      '#reviews .eyebrow':                    { en:'What Our Guests Say', zh:'宾客点评' },
+      '#reviews h2.sec-title':                { en:'Loved by Divers', zh:'深受潜水爱好者喜爱' },
+
+      /* ── HOMEPAGE — Booking CTA section ── */
+      '#booking .eyebrow, .booking-eyebrow':  { en:'Reserve Your Stay', zh:'预订住宿' },
+      '#booking h2.sec-title':                { en:'Book Your Stay', zh:'预订您的住宿' },
+      '#booking .sec-sub':                    { en:'Fill in your details and we will get back to you within 24 hours.', zh:'请填写您的信息，我们将在24小时内与您联系。' },
+
+      /* ── HOMEPAGE — Stats strip ── */
+      '.stat-label, .stats-label':            { en:'', zh:'' },  /* handled per-stat below */
+      '.stat-item:nth-child(1) .stat-label':  { en:'Dive Sites', zh:'潜点数量' },
+      '.stat-item:nth-child(2) .stat-label':  { en:'Years Experience', zh:'从业年限' },
+      '.stat-item:nth-child(3) .stat-label':  { en:'Happy Guests', zh:'满意宾客' },
+      '.stat-item:nth-child(4) .stat-label':  { en:'Star Rating', zh:'星级评分' },
+
+      /* ── FOOTER — all pages ── */
+      '.foot-h':                              { en:'', zh:'' },  /* handled per-column below */
+      '.foot-col:nth-child(1) .foot-h':       { en:'Explore', zh:'探索' },
+      '.foot-col:nth-child(2) .foot-h':       { en:'Dive & Stay', zh:'潜水与住宿' },
+      '.foot-col:nth-child(3) .foot-h':       { en:'Reviews', zh:'宾客评价' },
+      '.foot-col:nth-child(4) .foot-h, .foot-col.foot-contact .foot-h': { en:'Contact', zh:'联系我们' },
+      '.foot-copy':                           { en:'All rights reserved.', zh:'版权所有。' },
+      '.foot-tagline, .foot-desc':            { en:'Your hidden paradise in Anilao.', zh:'您在阿尼劳的世外桃源。' },
+      '.foot-legal a[href*="privacy"]':       { en:'Privacy Policy', zh:'隐私政策' },
+      '.foot-legal a[href*="terms"]':         { en:'Terms of Service', zh:'服务条款' },
+
+      /* ── ROOMS.HTML — Room names & descriptions ── */
+      '.rv-card:nth-of-type(1) .rv-name, .room-card:nth-of-type(1) .room-name':
+                                              { en:'Standard Double / Twin', zh:'标准双人/双床房' },
+      '.rv-card:nth-of-type(1) .rv-desc, .room-card:nth-of-type(1) .room-desc':
+                                              { en:'Comfortable and cosy with garden or partial sea views. Perfect for solo travellers or couples seeking value.', zh:'温馨舒适，享花园景或局部海景，是独行旅客或情侣的理想之选。' },
+      '.rv-card:nth-of-type(2) .rv-name, .room-card:nth-of-type(2) .room-name':
+                                              { en:'Deluxe Room', zh:'豪华客房' },
+      '.rv-card:nth-of-type(2) .rv-desc, .room-card:nth-of-type(2) .room-desc':
+                                              { en:'Spacious sea-view room with a private balcony. Wake up to the ocean every morning.', zh:'宽敞的海景客房配备私人阳台，每天清晨伴着海景醒来。' },
+      '.rv-card:nth-of-type(3) .rv-name, .room-card:nth-of-type(3) .room-name':
+                                              { en:'Suite with Sea View', zh:'海景套房' },
+      '.rv-card:nth-of-type(3) .rv-desc, .room-card:nth-of-type(3) .room-desc':
+                                              { en:'Our most premium room — wide ocean views, enhanced amenities, and extra space to unwind.', zh:'我们最尊贵的房型——宽阔无垠的海景、高端配置，以及充裕的休闲空间。' },
+
+      /* Rooms page — inclusions strip ── */
+      '.incl-item:nth-child(1), .inclusion-item:nth-child(1)': { en:'Daily Breakfast', zh:'每日早餐' },
+      '.incl-item:nth-child(2), .inclusion-item:nth-child(2)': { en:'Free Wi-Fi', zh:'免费无线网络' },
+      '.incl-item:nth-child(3), .inclusion-item:nth-child(3)': { en:'Air Conditioning', zh:'空调' },
+      '.incl-item:nth-child(4), .inclusion-item:nth-child(4)': { en:'Private Bathroom', zh:'独立卫浴' },
+      '.incl-item:nth-child(5), .inclusion-item:nth-child(5)': { en:'Sea or Garden View', zh:'海景或花园景' },
+      '.incl-item:nth-child(6), .inclusion-item:nth-child(6)': { en:'Beach Access', zh:'海滩使用权' },
+
+      /* Rooms page — policy section ── */
+      '.policy-title, .room-policy h3':       { en:'Booking Policy', zh:'预订须知' },
+      '.policy-item:nth-child(1), .policy-row:nth-child(1)': { en:'Check-in: 2:00 PM', zh:'入住时间：下午2时' },
+      '.policy-item:nth-child(2), .policy-row:nth-child(2)': { en:'Check-out: 12:00 PM', zh:'退房时间：中午12时' },
+      '.policy-item:nth-child(3), .policy-row:nth-child(3)': { en:'Cancellation: 48 hours notice required', zh:'取消政策：须提前48小时通知' },
+
+      /* ── DIVE.HTML — Course names & descriptions ── */
+      '.course-card:nth-of-type(1) .course-name, .dive-course:nth-of-type(1) .course-title':
+                                              { en:'Open Water Diver', zh:'开放水域潜水员' },
+      '.course-card:nth-of-type(1) .course-desc':
+                                              { en:'The world\'s most popular scuba certification. Learn to dive in 3–4 days with our PADI instructors.', zh:'全球最受欢迎的水肺潜水认证。跟随我们的PADI教练，3至4天即可完成学习。' },
+      '.course-card:nth-of-type(2) .course-name, .dive-course:nth-of-type(2) .course-title':
+                                              { en:'Advanced Open Water', zh:'高级开放水域潜水员' },
+      '.course-card:nth-of-type(2) .course-desc':
+                                              { en:'Expand your skills with 5 adventure dives including deep and navigation.', zh:'通过5次探险潜水（含深潜与导航）提升您的潜水技能。' },
+      '.course-card:nth-of-type(3) .course-name, .dive-course:nth-of-type(3) .course-title':
+                                              { en:'Rescue Diver', zh:'救援潜水员' },
+      '.course-card:nth-of-type(3) .course-desc':
+                                              { en:'Develop problem-solving skills and learn to prevent and manage dive emergencies.', zh:'培养应急处理能力，学习预防与处理潜水紧急情况。' },
+      '.course-card:nth-of-type(4) .course-name, .dive-course:nth-of-type(4) .course-title':
+                                              { en:'Divemaster', zh:'潜水长' },
+      '.course-card:nth-of-type(4) .course-desc':
+                                              { en:'Turn your passion into a profession. The first level of PADI professional training.', zh:'将热情转化为职业。PADI专业资格培训的第一阶段。' },
+
+      /* Dive page — package names ── */
+      '.pkg-name:nth-of-type(1), .package-title:nth-of-type(1)': { en:'Fun Dive Package', zh:'休闲潜水套餐' },
+      '.pkg-name:nth-of-type(2), .package-title:nth-of-type(2)': { en:'Night Dive Add-on', zh:'夜潜附加选项' },
+      '.pkg-name:nth-of-type(3), .package-title:nth-of-type(3)': { en:'Discover Scuba Diving', zh:'体验水肺潜水' },
+
+      /* Dive page — equipment list items ── */
+      '.equip-item:nth-child(1)':             { en:'BCD', zh:'浮力补偿装置（BCD）' },
+      '.equip-item:nth-child(2)':             { en:'Regulator', zh:'调节器' },
+      '.equip-item:nth-child(3)':             { en:'Wetsuit', zh:'潜水服' },
+      '.equip-item:nth-child(4)':             { en:'Fins', zh:'脚蹼' },
+      '.equip-item:nth-child(5)':             { en:'Mask & Snorkel', zh:'潜水镜与通气管' },
+      '.equip-item:nth-child(6)':             { en:'Tank & Weights', zh:'气瓶与配重' },
+      '.equip-item:nth-child(7)':             { en:'Dive Computer', zh:'潜水电脑表' },
+      '.equip-item:nth-child(8)':             { en:'Underwater Torch', zh:'水下手电筒' },
+
+      /* Dive page — FAQ questions ── */
+      '.faq-q:nth-of-type(1), .faq-question:nth-of-type(1)': { en:'Do I need experience to dive in Anilao?', zh:'在阿尼劳潜水需要有经验吗？' },
+      '.faq-q:nth-of-type(2), .faq-question:nth-of-type(2)': { en:'What is the best time to dive in Anilao?', zh:'阿尼劳最佳潜水季节是什么时候？' },
+      '.faq-q:nth-of-type(3), .faq-question:nth-of-type(3)': { en:'What equipment do you provide?', zh:'你们提供哪些潜水装备？' },
+      '.faq-q:nth-of-type(4), .faq-question:nth-of-type(4)': { en:'How many dive sites are accessible from the resort?', zh:'度假村可前往多少个潜点？' },
+
+      /* ── LOCATION.HTML — Section headings ── */
+      '#getting-here .sec-eyebrow, .loc-section:nth-of-type(1) .eyebrow': { en:'Getting Here', zh:'如何抵达' },
+      '#transport .sec-eyebrow, .loc-section:nth-of-type(2) .eyebrow':    { en:'Transport Options', zh:'交通方式' },
+      '#contact .sec-eyebrow, .loc-contact .eyebrow':                     { en:'Contact', zh:'联系我们' },
+
+      /* Location page — route names ── */
+      '.route-name:nth-of-type(1), .transport-option:nth-of-type(1) .route-title':
+                                              { en:'By Private Car', zh:'自驾前往' },
+      '.route-name:nth-of-type(2), .transport-option:nth-of-type(2) .route-title':
+                                              { en:'By Bus', zh:'乘坐巴士' },
+      '.route-name:nth-of-type(3), .transport-option:nth-of-type(3) .route-title':
+                                              { en:'By Shuttle', zh:'乘坐班车' },
+
+      /* Location page — FAQ ── */
+      '.loc-faq .faq-q:nth-of-type(1)':      { en:'How far is Anilao from Manila?', zh:'阿尼劳距马尼拉有多远？' },
+      '.loc-faq .faq-q:nth-of-type(2)':      { en:'Is there a direct bus to Mabini?', zh:'有直达马比尼的巴士吗？' },
+      '.loc-faq .faq-q:nth-of-type(3)':      { en:'Can you arrange airport transfers?', zh:'你们可以安排机场接送吗？' },
+
+      /* Location page — contact form labels & placeholders ── */
+      'label[for="loc-name"]':                { en:'Your Name', zh:'您的姓名' },
+      'label[for="loc-email"]':               { en:'Email Address', zh:'电子邮箱' },
+      'label[for="loc-phone"]':               { en:'Phone Number', zh:'联系电话' },
+      'label[for="loc-message"]':             { en:'Message', zh:'留言内容' },
+      'input#loc-name':                       { en:'', zh:'' },  /* placeholder via data-i18n-placeholder */
+      '.contact-form-submit, .loc-form-btn':  { en:'Send Message', zh:'发送留言' },
+
+      /* Location page — quick contact strip ── */
+      '.quick-contact-item:nth-child(1) .qc-label': { en:'Phone', zh:'电话' },
+      '.quick-contact-item:nth-child(2) .qc-label': { en:'Email', zh:'邮箱' },
+      '.quick-contact-item:nth-child(3) .qc-label': { en:'Address', zh:'地址' },
+      '.quick-contact-item:nth-child(4) .qc-label': { en:'Hours', zh:'营业时间' },
+
+      /* ── GALLERY.HTML — Tab labels ── */
+      '.gallery-tab[data-tab="underwater"], .tab-btn[data-filter="underwater"]':
+                                              { en:'Underwater', zh:'水下摄影' },
+      '.gallery-tab[data-tab="facebook"], .tab-btn[data-filter="facebook"]':
+                                              { en:'Facebook', zh:'脸书精选' },
+      '.gallery-tab[data-tab="instagram"], .tab-btn[data-filter="instagram"]':
+                                              { en:'Instagram', zh:'Instagram' },
+      '.gallery-tab[data-tab="videos"], .tab-btn[data-filter="videos"]':
+                                              { en:'Videos', zh:'视频' },
+      '.gallery-tab[data-tab="all"], .tab-btn[data-filter="all"]':
+                                              { en:'All', zh:'全部' },
+
+      /* Gallery page — section headings ── */
+      '#gallery-hero .eyebrow, .gallery-eyebrow':   { en:'Photo & Video Gallery', zh:'照片与视频图库' },
+      '#gallery-hero h1, .g-hero-title':            { en:'Gallery', zh:'图库' },
+      '.gallery-section .eyebrow':                  { en:'Our World', zh:'我们的世界' },
+      '.gallery-section h2.sec-title':              { en:'Life at Casa Escondida', zh:'卡萨艾斯孔迪达的生活' },
+
+      /* ── BLOG.HTML — Filter buttons & controls ── */
+      '.filter-btn[data-cat="all"], .blog-filter[data-filter="all"]':
+                                              { en:'All Posts', zh:'全部文章' },
+      '.filter-btn[data-cat="diving"], .blog-filter[data-filter="diving"]':
+                                              { en:'Diving', zh:'潜水' },
+      '.filter-btn[data-cat="travel"], .blog-filter[data-filter="travel"]':
+                                              { en:'Travel', zh:'旅行' },
+      '.filter-btn[data-cat="marine"], .blog-filter[data-filter="marine"]':
+                                              { en:'Marine Life', zh:'海洋生物' },
+      '.filter-btn[data-cat="resort"], .blog-filter[data-filter="resort"]':
+                                              { en:'Resort', zh:'度假村' },
+      '.filter-btn[data-cat="tips"], .blog-filter[data-filter="tips"]':
+                                              { en:'Tips & Guides', zh:'攻略指南' },
+
+      /* Blog sort options ── */
+      '.sort-select option[value="newest"], .blog-sort option[value="newest"]':
+                                              { en:'Newest First', zh:'最新优先' },
+      '.sort-select option[value="oldest"], .blog-sort option[value="oldest"]':
+                                              { en:'Oldest First', zh:'最旧优先' },
+      '.sort-select option[value="popular"], .blog-sort option[value="popular"]':
+                                              { en:'Most Popular', zh:'最受欢迎' },
+
+      /* Blog section heading ── */
+      '.blog-section .eyebrow':              { en:'From the Blog', zh:'博客精选' },
+      '.blog-section h2.sec-title':          { en:'Stories & Guides', zh:'故事与指南' },
+      '.blog-read-more, .post-read-more':    { en:'Read More', zh:'阅读更多' },
+
+      /* ── COMMON — Booking form labels ── */
+      'label[for="checkin"], label[for="check-in"], label[for="checkIn"]':
+                                              { en:'Check-in', zh:'入住日期' },
+      'label[for="checkout"], label[for="check-out"], label[for="checkOut"]':
+                                              { en:'Check-out', zh:'退房日期' },
+      'label[for="guests"], label[for="num-guests"]':
+                                              { en:'Guests', zh:'入住人数' },
+      'label[for="name"], label[for="full-name"], label[for="guestName"]':
+                                              { en:'Your Name', zh:'您的姓名' },
+      'label[for="email"], label[for="guestEmail"]':
+                                              { en:'Email Address', zh:'电子邮箱' },
+      'label[for="phone"], label[for="guestPhone"]':
+                                              { en:'Phone Number', zh:'联系电话' },
+      'label[for="message"], label[for="guestMessage"]':
+                                              { en:'Message', zh:'留言内容' },
+
+      /* Booking form button ── */
+      '.booking-form .btn-submit, .booking-form button[type="submit"], #bookingForm .btn-primary':
+                                              { en:'Check Availability', zh:'查询空房' },
+      '.modal-submit, #bookingModal .btn-submit':
+                                              { en:'Check Availability', zh:'查询空房' },
+
+      /* Modal titles and close button ── */
+      '#bookingModal .modal-title, .booking-modal .modal-title':
+                                              { en:'Reserve Your Stay', zh:'预订住宿' },
+      '#bookingModal .modal-sub, .booking-modal .modal-sub':
+                                              { en:'Fill in your details and we will get back to you within 24 hours.', zh:'请填写您的信息，我们将在24小时内与您联系。' },
+      '.modal-close, .btn-modal-close, button.close-modal':
+                                              { en:'Close', zh:'关闭' },
+      '.modal-overlay .modal-title':          { en:'Reserve Your Stay', zh:'预订住宿' }
     };
 
     var zh = validLang === 'zh';
