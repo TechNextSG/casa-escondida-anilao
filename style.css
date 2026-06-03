@@ -379,9 +379,6 @@ html:hover::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.12);}
 
     /* ── Tap target helpers ── */
     @media(max-width:768px) {
-      .theme-toggle {
-        min-height: 44px; display: flex; align-items: center; gap: 6px;
-      }
       /* Safe-area padding for notch phones */
       #nav {
         padding-left: max(1.5rem, env(safe-area-inset-left));
