@@ -2142,26 +2142,40 @@
       document.body.appendChild(wrapper);
     }
 
-    /* ----- 3c2. Theme-aware button styling ----- */
+    /* ----- 3c2. Theme-aware + scroll-aware button styling ----- */
     function syncLangBtnTheme() {
-      var isDark = document.documentElement.getAttribute('data-theme') !== 'day';
+      var navEl   = document.getElementById('nav');
+      var isDark  = document.documentElement.getAttribute('data-theme') !== 'day';
+      var isScrolled = navEl && navEl.classList.contains('scrolled');
       var b = wrapper.querySelector('.lang-btn');
       if (!b) return;
-      if (isDark) {
-        b.style.background   = 'rgba(255,255,255,0.07)';
-        b.style.borderColor  = 'rgba(255,255,255,0.25)';
-        b.style.color        = 'rgba(255,255,255,0.85)';
+
+      if (!isScrolled) {
+        /* Over hero (transparent nav) — always white regardless of day/night */
+        b.style.background  = 'rgba(255,255,255,0.07)';
+        b.style.borderColor = 'rgba(255,255,255,0.25)';
+        b.style.color       = 'rgba(255,255,255,0.85)';
+      } else if (isDark) {
+        /* Scrolled + night mode — white on dark glass nav */
+        b.style.background  = 'rgba(255,255,255,0.07)';
+        b.style.borderColor = 'rgba(255,255,255,0.2)';
+        b.style.color       = 'rgba(255,255,255,0.85)';
       } else {
-        b.style.background   = 'rgba(0,0,0,0.05)';
-        b.style.borderColor  = 'var(--border,rgba(0,0,0,0.15))';
-        b.style.color        = 'var(--text,#0d1e2e)';
+        /* Scrolled + day mode — dark text on light solid nav */
+        b.style.background  = 'rgba(0,0,0,0.04)';
+        b.style.borderColor = 'rgba(0,0,0,0.15)';
+        b.style.color       = '#0d1e2e';
       }
     }
     syncLangBtnTheme();
+    /* Watch theme changes */
+    new MutationObserver(syncLangBtnTheme)
+      .observe(document.documentElement, { attributes:true, attributeFilter:['data-theme'] });
+    /* Watch nav scroll state (.scrolled class toggled by site.js) */
     var _nav = document.getElementById('nav');
     if (_nav) {
       new MutationObserver(syncLangBtnTheme)
-        .observe(document.documentElement, { attributes:true, attributeFilter:['data-theme'] });
+        .observe(_nav, { attributes:true, attributeFilter:['class'] });
     }
 
     /* ----- 3d. References to interactive elements ----- */
