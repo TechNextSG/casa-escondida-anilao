@@ -2027,6 +2027,8 @@
       try {
         var els = document.querySelectorAll(sel);
         els.forEach(function(el) {
+          /* Skip elements already handled by data-i18n (prevents SEL overwriting them) */
+          if (el.hasAttribute('data-i18n')) return;
           var txt = zh ? SEL[sel].zh : SEL[sel].en;
           if (txt && el.textContent.trim() !== '') {
             /* Only replace leaf nodes with simple text */
