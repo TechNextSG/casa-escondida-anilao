@@ -419,7 +419,7 @@
       form_submit_btn:    'Check Availability',
       form_success_title: 'Reservation Received!',
       form_success_sub:   "Thank you — we'll get back to you within 24 hours to confirm your stay.",
-      booking_note:       'Or reach us on Facebook · Booking.com · TripAdvisor',
+      booking_note:       'Or reach us on',
 
       /* ── FOOTER ── */
       foot_desc:          'A hidden paradise in Anilao, Batangas — where world-class Philippine diving meets exceptional hospitality on the shores of Batangas Bay.',
@@ -1256,7 +1256,7 @@
       form_submit_btn:    '查询空房',
       form_success_title: '预订申请已收到！',
       form_success_sub:   '感谢您——我们将在24小时内与您确认入住安排。',
-      booking_note:       '或通过以下渠道联系我们：Facebook · Booking.com · TripAdvisor',
+      booking_note:       '或通过以下渠道联系我们：',
 
       /* ── FOOTER ── */
       foot_desc:          '隐匿于八打雁省阿尼劳的世外桃源——世界级菲律宾潜水与卓越热情好客在八打雁湾畔交汇。',
