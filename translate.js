@@ -2156,19 +2156,19 @@
         b.style.background  = 'rgba(255,255,255,0.15)';
         b.style.borderColor = 'rgba(255,255,255,0.45)';
         b.style.color       = '#ffffff';
-        b.style.boxShadow   = '0 2px 8px rgba(0,0,0,0.2)';
+        b.style.boxShadow   = 'none';
       } else if (isDark) {
         /* Scrolled + NIGHT — deep dark pill with teal accent border */
         b.style.background  = 'rgba(8,18,32,0.88)';
         b.style.borderColor = 'rgba(77,194,232,0.45)';
         b.style.color       = '#e8f4f8';
-        b.style.boxShadow   = '0 2px 10px rgba(0,0,0,0.35)';
+        b.style.boxShadow   = 'none';
       } else {
         /* Scrolled + DAY — clean white pill with dark text */
         b.style.background  = 'rgba(255,255,255,0.95)';
         b.style.borderColor = 'rgba(0,0,0,0.12)';
         b.style.color       = '#0d1e2e';
-        b.style.boxShadow   = '0 1px 6px rgba(0,0,0,0.1)';
+        b.style.boxShadow   = 'none';
       }
     }
     /* ----- 3c3. Dropdown theme sync ----- */
