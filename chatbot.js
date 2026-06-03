@@ -909,12 +909,12 @@
       if (isOpen) renderSuggestions();
     }
 
-    // Watch for language changes via localStorage (storage event from other tabs)
-    // and also via a custom 'ce-lang-change' event dispatched by the language switcher
+    // Watch for language changes — translate.js dispatches 'ce:langchange' on same tab
+    document.addEventListener('ce:langchange', function() { applyLang(); });
+    // Also catch changes from other tabs via storage event
     window.addEventListener('storage', function(e) {
       if (e.key === 'ce-lang') applyLang();
     });
-    document.addEventListener('ce-lang-change', function() { applyLang(); });
 
     // Set initial translated text
     applyLang();
