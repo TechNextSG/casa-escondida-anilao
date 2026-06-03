@@ -2087,7 +2087,7 @@
     wrapper.setAttribute('style',
       'position:relative;display:inline-flex;align-items:center;');
 
-    var label = (savedLang === 'zh') ? '中文' : 'EN';
+    var label = (savedLang === 'zh') ? 'EN' : '中文';  /* show target lang */
 
     wrapper.innerHTML =
       '<button class="lang-btn" aria-haspopup="listbox" aria-expanded="false" '
@@ -2219,7 +2219,7 @@
     items.forEach(function (li) {
       function selectLang() {
         var lang = li.getAttribute('data-lang');
-        current.textContent = (lang === 'zh') ? '中文' : 'EN';
+        current.textContent = (lang === 'zh') ? 'EN' : '中文';  /* show target lang */
         markActive(lang);
         closeDropdown();
         applyTranslation(lang);
