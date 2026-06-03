@@ -140,11 +140,22 @@
   })();
 
   // Dynamically load translation and chatbot scripts
+  // Resolve paths relative to site.js itself (handles root and blog/* subdirectory pages)
   (function(){
-    var scripts = ['translate.js', 'chatbot.js'];
-    scripts.forEach(function(src){
+    var base = (function(){
+      var scripts = document.querySelectorAll('script[src]');
+      for (var i = 0; i < scripts.length; i++) {
+        var src = scripts[i].getAttribute('src') || '';
+        if (src.indexOf('site.js') !== -1) {
+          return src.replace(/site\.js([?#].*)?$/, '');
+        }
+      }
+      return '';
+    })();
+    var files = ['translate.js', 'chatbot.js'];
+    files.forEach(function(src){
       var s = document.createElement('script');
-      s.src = src;
+      s.src = base + src;
       s.defer = true;
       document.head.appendChild(s);
     });

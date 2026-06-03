@@ -679,7 +679,12 @@
       + '</ul>';
 
     /* ----- 3c. Insert BEFORE theme toggle (swap order: lang | theme | book) ----- */
-    var navRight = document.querySelector('.nav-right');
+    /* Try multiple nav container selectors for cross-page compatibility */
+    var navRight = document.querySelector('.nav-right')
+      || document.querySelector('.nav-controls')
+      || document.querySelector('.navbar-right')
+      || document.querySelector('#nav .nav-end')
+      || document.querySelector('#nav');
     if (navRight) {
       /* Try to insert before the theme toggle button */
       var themeToggle = navRight.querySelector('#themeBtn, .theme-toggle, [id*="theme"]');
