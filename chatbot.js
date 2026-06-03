@@ -615,11 +615,13 @@
     },
     {
       keywords: ['night dive', 'night diving', 'night'],
-      answer: 'Yes, we organize night dives at Casa Escondida Anilao! 🌙\n\nNight diving in Anilao is spectacular — you\'ll encounter mandarin fish, crabs, octopus, and other nocturnal marine life. Night dives are available for certified divers and are usually conducted at nearby sites. Ask us about scheduling when you book!'
+      answer: 'Yes, we organize night dives at Casa Escondida Anilao! 🌙\n\nNight diving in Anilao is spectacular — you\'ll encounter mandarin fish, crabs, octopus, and other nocturnal marine life. Night dives are available for certified divers and are usually conducted at nearby sites. Ask us about scheduling when you book!',
+      answerZh: '是的，我们提供夜间潜水！🌙\n\n阿尼劳夜潜令人叹为观止——您将遇到花斑连鳍鱼、螃蟹、章鱼等夜行海洋生物。夜潜适合持证潜水员，请预订时询问具体排期！'
     },
     {
       keywords: ['nitrox', 'enriched air', 'eanx'],
-      answer: 'Yes! Nitrox (Enriched Air) is available at Casa Escondida Anilao. 🧪\n\nNitrox allows longer bottom times and shorter surface intervals — perfect for multiple-dive days. You\'ll need a valid PADI Enriched Air Diver certification (or we can certify you here!). Contact us for nitrox fill pricing.'
+      answer: 'Yes! Nitrox (Enriched Air) is available at Casa Escondida Anilao. 🧪\n\nNitrox allows longer bottom times and shorter surface intervals — perfect for multiple-dive days. You\'ll need a valid PADI Enriched Air Diver certification (or we can certify you here!). Contact us for nitrox fill pricing.',
+      answerZh: '是的！我们提供氮氧混合气（富氧空气）。🧪\n\n氮氧混合气可延长底部时间、缩短水面休息间隔，非常适合多次潜水日。需持有效PADI富氧空气潜水员认证（也可在此参加培训）。联系我们了解充气费用。'
     },
     {
       keywords: ['location', 'where', 'address', 'mabini', 'batangas', 'anilao', 'place', 'find'],
@@ -650,31 +652,38 @@
     },
     {
       keywords: ['pool', 'swimming pool', 'swim'],
-      answer: 'Yes! Casa Escondida Anilao has a swimming pool for guests to enjoy. 🏊\n\nRelax by the pool with views of Balayan Bay between dives. Perfect for a refreshing dip when you\'re not exploring the underwater world!'
+      answer: 'Yes! Casa Escondida Anilao has a swimming pool for guests to enjoy. 🏊\n\nRelax by the pool with views of Balayan Bay between dives. Perfect for a refreshing dip when you\'re not exploring the underwater world!',
+      answerZh: '有的！卡萨埃斯孔迪达阿尼劳设有供宾客享用的游泳池。🏊\n\n在潜水间隙，可在泳池边欣赏巴拉扬湾美景，放松身心。不探索水下世界时，清爽畅游正是最佳选择！'
     },
     {
       keywords: ['restaurant', 'bar', 'drinks', 'snack', 'coffee', 'beverage'],
-      answer: 'Our on-site restaurant serves delicious Filipino and international dishes throughout the day. 🍽️\n\n☕ Breakfast (included in room rate)\n🍜 Lunch & dinner available\n🍹 Refreshments and beverages\n🏝️ Island BBQ — a signature Casa Escondida experience with fresh grilled seafood!\n\nAsk us about the island BBQ when you book your stay!'
+      answer: 'Our on-site restaurant serves delicious Filipino and international dishes throughout the day. 🍽️\n\n☕ Breakfast (included in room rate)\n🍜 Lunch & dinner available\n🍹 Refreshments and beverages\n🏝️ Island BBQ — a signature Casa Escondida experience with fresh grilled seafood!\n\nAsk us about the island BBQ when you book your stay!',
+      answerZh: '我们的餐厅全天供应美味菲律宾和国际美食。🍽️\n\n☕ 早餐（含在房价内）\n🍜 午餐与晚餐\n🍹 饮料与小食\n🏝️ 岛屿烧烤——卡萨埃斯孔迪达的招牌体验，提供新鲜烤海鲜！\n\n预订时可咨询岛屿烧烤详情。'
     },
     {
       keywords: ['bbq', 'barbecue', 'island bbq', 'island', 'picnic'],
-      answer: 'Our Island BBQ is one of the most loved experiences at Casa Escondida Anilao! 🏝️🔥\n\nWe take guests to a nearby island for a fresh seafood BBQ experience — grilled fish, squid, and more while surrounded by beautiful scenery. Ask us about availability and inclusions when you book!'
+      answer: 'Our Island BBQ is one of the most loved experiences at Casa Escondida Anilao! 🏝️🔥\n\nWe take guests to a nearby island for a fresh seafood BBQ experience — grilled fish, squid, and more while surrounded by beautiful scenery. Ask us about availability and inclusions when you book!',
+      answerZh: '岛屿烧烤是卡萨埃斯孔迪达最受欢迎的体验之一！🏝️🔥\n\n我们带宾客乘船前往附近小岛，享用新鲜海鲜烧烤——烤鱼、烤鱿鱼等，在绝美海景中尽享美食。预订时可咨询档期与套餐内容！'
     },
     {
       keywords: ['beach', 'beachfront', 'shoreline', 'sand', 'coast', 'waterfront'],
-      answer: 'Casa Escondida Anilao enjoys beautiful waterfront access along Balayan Bay. 🌊\n\nWhile Anilao is better known for its incredible diving than sandy beaches, guests enjoy stunning coastal scenery, boat access to dive sites, and relaxing sea views from the resort. The real magic is below the surface!'
+      answer: 'Casa Escondida Anilao enjoys beautiful waterfront access along Balayan Bay. 🌊\n\nWhile Anilao is better known for its incredible diving than sandy beaches, guests enjoy stunning coastal scenery, boat access to dive sites, and relaxing sea views from the resort. The real magic is below the surface!',
+      answerZh: '卡萨埃斯孔迪达阿尼劳坐拥巴拉扬湾的美丽海滨。🌊\n\n阿尼劳以绝佳潜水而非沙滩著称，宾客可尽享壮丽海岸风光、乘船直达潜点，以及度假村的迷人海景。真正的魔法在水面之下！'
     },
     {
       keywords: ['wifi', 'wi-fi', 'internet', 'connection', 'signal'],
-      answer: 'Yes! Free WiFi is available for all guests at Casa Escondida Anilao. 📶\n\nStay connected to share your amazing underwater photos with the world! Signal strength may vary in some areas of the resort.'
+      answer: 'Yes! Free WiFi is available for all guests at Casa Escondida Anilao. 📶\n\nStay connected to share your amazing underwater photos with the world! Signal strength may vary in some areas of the resort.',
+      answerZh: '有的！卡萨埃斯孔迪达阿尼劳为全体宾客提供免费WiFi。📶\n\n保持网络连接，随时分享精彩水下照片！部分区域信号强度可能有所不同。'
     },
     {
       keywords: ['check in', 'check-in', 'checkin', 'check out', 'check-out', 'checkout', 'arrival', 'departure', 'time', 'early', 'late'],
-      answer: 'Casa Escondida Anilao check-in/out times:\n\n🕑 Check-in: 2:00 PM\n🕛 Check-out: 12:00 PM (noon)\n\nEarly check-in and late check-out may be available depending on room availability — please request in advance when booking. We\'ll do our best to accommodate you!'
+      answer: 'Casa Escondida Anilao check-in/out times:\n\n🕑 Check-in: 2:00 PM\n🕛 Check-out: 12:00 PM (noon)\n\nEarly check-in and late check-out may be available depending on room availability — please request in advance when booking. We\'ll do our best to accommodate you!',
+      answerZh: '入住/退房时间：\n\n🕑 入住：下午2:00\n🕛 退房：中午12:00\n\n提前入住和延迟退房可根据房间情况安排，请预订时提前告知，我们将尽力配合！'
     },
     {
       keywords: ['policy', 'policies', 'cancellation', 'refund', 'children', 'kids', 'pet', 'pets', 'smoking'],
-      answer: 'For our current policies on cancellations, children, pets, and other house rules, please contact us directly:\n\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao\n🌐 casaescondida-anilao.com\n\nOur team will provide full details and ensure your stay meets all your needs!'
+      answer: 'For our current policies on cancellations, children, pets, and other house rules, please contact us directly:\n\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao\n🌐 casaescondida-anilao.com\n\nOur team will provide full details and ensure your stay meets all your needs!',
+      answerZh: '如需了解取消政策、携童、宠物及其他规定，请直接联系我们：\n\n📞 +63 977 837 2272\n💬 Facebook：CasaEscondidaAnilao\n🌐 casaescondida-anilao.com\n\n我们的团队将提供详细说明，确保您的入住体验完美顺畅！'
     },
     {
       keywords: ['review', 'reviews', 'rating', 'tripadvisor', 'google', 'feedback', 'testimonial', 'star', 'stars'],

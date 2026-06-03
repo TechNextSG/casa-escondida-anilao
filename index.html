@@ -223,7 +223,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* Scrolled in day mode → show color logo */
     [data-theme="day"] #nav.scrolled .nav-logo-day   { display:block; }
     [data-theme="day"] #nav.scrolled .nav-logo-night { display:none; }
-    .nav-links { display:flex; gap:2.2rem; list-style:none; }
+    .nav-links { display:flex; gap:2.2rem; list-style:none; justify-self:center; }
     .nav-links a {
       color:#ffffff; text-decoration:none;
       font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:400;
@@ -238,7 +238,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .nav-links a:hover { color:var(--accent); }
     .nav-links a:hover::after { width:100%; }
-    .nav-right { display:flex; align-items:center; gap:1rem; }
+    .nav-right { display:flex; align-items:center; gap:1rem; justify-self:end; }
 
     /* Day/Night Toggle */
     .theme-toggle {
@@ -861,7 +861,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* ── Services Carousel ── */
     .svc-carousel-wrap { position:relative; overflow:hidden; border-radius:8px; }
     .svc-carousel-track { display:flex; transition:transform .7s cubic-bezier(0.25,0.46,0.45,0.94); will-change:transform; }
-    .svc-slide { flex:0 0 calc(33.333% - 5.4px); margin-right:8px; height:360px; flex-shrink:0; }
+    /* Width set by JS for correct calculation */
+    .svc-slide { flex-shrink:0; margin-right:8px; height:360px; }
     .svc-slide:last-child { margin-right:0; }
     .svc-slide .svc-card { height:100%; border-radius:6px; cursor:default; }
     .svc-arrow {
@@ -3135,59 +3136,141 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 
   <script>
-  /* ── Services Carousel ── */
+  /* ── Services Carousel — Infinite Loop ── */
   (function(){
-    var track = document.getElementById('svcTrack');
+    var wrap     = document.querySelector('.svc-carousel-wrap');
+    var track    = document.getElementById('svcTrack');
     var dotsWrap = document.getElementById('svcDots');
-    if(!track || !dotsWrap) return;
+    if(!track || !dotsWrap || !wrap) return;
 
-    var slides = track.querySelectorAll('.svc-slide');
-    var total = slides.length; // 6
-    var visibleCount = window.innerWidth <= 768 ? 1 : 3;
-    var current = 0;
+    var origSlides = Array.from(track.querySelectorAll('.svc-slide'));
+    var origTotal  = origSlides.length; // 6
+    var isMobile   = function(){ return window.innerWidth <= 768; };
+    var PER_VIEW   = 3;
+    var GAP        = 8;
+    var current    = 0; // index into origSlides
     var timer;
+    var isTransitioning = false;
 
-    /* Build dots */
-    for(var i = 0; i < total; i++){
-      var d = document.createElement('button');
-      d.className = 'svc-dot' + (i===0?' active':'');
-      d.setAttribute('aria-label','Go to slide '+(i+1));
-      (function(idx){ d.addEventListener('click', function(){ goTo(idx); resetTimer(); }); })(i);
-      dotsWrap.appendChild(d);
+    /* ── Calculate slide width from wrapper ── */
+    function slideWidth(){
+      var mob = isMobile();
+      var per = mob ? 1 : PER_VIEW;
+      var g   = mob ? 0 : GAP;
+      return (wrap.offsetWidth - g * (per - 1)) / per;
     }
 
-    function goTo(idx){
-      current = ((idx % total) + total) % total;
-      var slideW = slides[0].offsetWidth + 8; /* width + gap */
-      if(window.innerWidth <= 768) slideW = slides[0].offsetWidth;
-      track.style.transform = 'translateX(-'+(current * slideW)+'px)';
-      dotsWrap.querySelectorAll('.svc-dot').forEach(function(d,i){
-        d.classList.toggle('active', i===current);
+    /* ── Set all slide widths explicitly (fixes % in flex bug) ── */
+    function setSlideSizes(){
+      var sw = slideWidth();
+      track.querySelectorAll('.svc-slide').forEach(function(s){
+        s.style.width    = sw + 'px';
+        s.style.minWidth = sw + 'px';
       });
     }
 
-    function resetTimer(){
-      clearInterval(timer);
-      timer = setInterval(function(){ goTo(current+1); }, 3500);
+    /* ── Clone first & last slides for seamless infinite loop ── */
+    (function buildClones(){
+      /* Prepend last PER_VIEW slides, append first PER_VIEW slides */
+      for(var i = origTotal - PER_VIEW; i < origTotal; i++){
+        var clone = origSlides[i].cloneNode(true);
+        clone.setAttribute('aria-hidden','true');
+        track.insertBefore(clone, track.firstChild);
+      }
+      for(var j = 0; j < PER_VIEW; j++){
+        var clone2 = origSlides[j].cloneNode(true);
+        clone2.setAttribute('aria-hidden','true');
+        track.appendChild(clone2);
+      }
+    })();
+
+    var allSlides = track.querySelectorAll('.svc-slide');
+    /* Real slides start at index PER_VIEW */
+    var realOffset = PER_VIEW;
+
+    /* ── Build dots (one per original slide) ── */
+    for(var i = 0; i < origTotal; i++){
+      var d = document.createElement('button');
+      d.className = 'svc-dot' + (i===0?' active':'');
+      d.setAttribute('aria-label','Go to slide '+(i+1));
+      (function(idx){ d.addEventListener('click', function(){ jumpTo(idx); resetTimer(); }); })(i);
+      dotsWrap.appendChild(d);
     }
 
-    document.getElementById('svcPrev').addEventListener('click', function(){ goTo(current-1); resetTimer(); });
-    document.getElementById('svcNext').addEventListener('click', function(){ goTo(current+1); resetTimer(); });
+    /* ── Position track at real slide idx (with animation) ── */
+    function goTo(idx, animate){
+      if(animate === false) track.style.transition = 'none';
+      else track.style.transition = 'transform .7s cubic-bezier(0.25,0.46,0.45,0.94)';
+
+      var sw = slideWidth() + GAP;
+      var absIdx = realOffset + idx;
+      track.style.transform = 'translateX(-' + (absIdx * sw) + 'px)';
+
+      /* Update dots */
+      var normalised = ((idx % origTotal) + origTotal) % origTotal;
+      dotsWrap.querySelectorAll('.svc-dot').forEach(function(dot, i){
+        dot.classList.toggle('active', i === normalised);
+      });
+    }
+
+    /* ── Jump to a dot click ── */
+    function jumpTo(idx){
+      current = idx;
+      goTo(current);
+    }
+
+    /* ── After transition ends, silently jump if on a clone ── */
+    track.addEventListener('transitionend', function(){
+      if(current < 0){
+        current = origTotal - 1;
+        goTo(current, false);
+        /* Force reflow to apply notransition instantly */
+        void track.offsetHeight;
+        track.style.transition = 'transform .7s cubic-bezier(0.25,0.46,0.45,0.94)';
+      } else if(current >= origTotal){
+        current = 0;
+        goTo(current, false);
+        void track.offsetHeight;
+        track.style.transition = 'transform .7s cubic-bezier(0.25,0.46,0.45,0.94)';
+      }
+    });
+
+    function prev(){ current--; goTo(current); }
+    function next(){ current++; goTo(current); }
+
+    function resetTimer(){
+      clearInterval(timer);
+      timer = setInterval(next, 3500);
+    }
+
+    document.getElementById('svcPrev').addEventListener('click', function(){ prev(); resetTimer(); });
+    document.getElementById('svcNext').addEventListener('click', function(){ next(); resetTimer(); });
 
     /* Pause on hover */
-    track.parentElement.addEventListener('mouseenter', function(){ clearInterval(timer); });
-    track.parentElement.addEventListener('mouseleave', resetTimer);
+    wrap.addEventListener('mouseenter', function(){ clearInterval(timer); });
+    wrap.addEventListener('mouseleave', resetTimer);
 
     /* Touch swipe */
-    var touchStartX = 0;
-    track.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+    var touchX = 0;
+    track.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; },{passive:true});
     track.addEventListener('touchend', function(e){
-      var diff = touchStartX - e.changedTouches[0].clientX;
-      if(Math.abs(diff) > 50){ goTo(diff > 0 ? current+1 : current-1); resetTimer(); }
-    }, {passive:true});
+      var diff = touchX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 50){ diff > 0 ? next() : prev(); resetTimer(); }
+    },{passive:true});
 
-    /* Recalculate on resize */
-    window.addEventListener('resize', function(){ goTo(current); }, {passive:true});
+    /* Init */
+    function init(){
+      setSlideSizes();
+      goTo(current, false);
+      void track.offsetHeight;
+      track.style.transition = 'transform .7s cubic-bezier(0.25,0.46,0.45,0.94)';
+    }
+
+    window.addEventListener('resize', function(){ setSlideSizes(); goTo(current, false); },{passive:true});
+
+    /* Run after layout */
+    if(document.readyState === 'complete') init();
+    else window.addEventListener('load', init);
 
     resetTimer();
   })();
