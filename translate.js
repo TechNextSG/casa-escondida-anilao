@@ -118,7 +118,7 @@
       check_availability: 'Check Availability',
 
       /* Exit popup */
-      exit_title:         'Wait — Don\'t Go Yet!',
+      exit_title:         'Wait — <em>are you sure?</em>',
       exit_sub:           'Enjoy 10% off your first stay when you book directly with us.',
       stay_btn:           'Claim My Discount',
       leave_btn:          'No Thanks',
@@ -195,6 +195,27 @@
       tab_facebook:         'Facebook',
       tab_instagram:        'Instagram',
       tab_videos:           'Videos',
+      gallery_stat_1:       'Instagram Posts',
+      gallery_stat_2:       'Dive Sites',
+      gallery_stat_3:       'TripAdvisor Reviews',
+      gallery_stat_4:       'Overall Rating',
+      gallery_hero_cta_ghost:   'Book Your Stay →',
+      gallery_hero_cta_primary: 'Follow on Instagram',
+      gallery_fb_eyebrow:   'Facebook',
+      gallery_fb_h2:        'Live from Our <em>Facebook Page</em>',
+      gallery_fb_sub:       'Real photos and posts direct from our official Facebook page — updated daily with dive conditions, guest shots, and resort news.',
+      gallery_fb_cta_p:     'See more photos, dive updates, and resort moments on our official Facebook page.',
+      gallery_fb_cta_btn:   'Follow Us on Facebook @CasaEscondidaAnilao',
+      gallery_ig_eyebrow:   'Instagram',
+      gallery_ig_h2:        'Follow Us on <em>Instagram</em>',
+      gallery_ig_sub:       'Real diving life, macro critters, underwater photography, and resort moments from @casaescondidaanilao.',
+      gallery_ig_cta_p:     'We have 802 posts on Instagram — follow us to see all the latest dives, critter spotting, and resort life.',
+      gallery_ig_cta_btn:   'View All on Instagram @casaescondidaanilao',
+      gallery_video_eyebrow:'Watch',
+      gallery_video_h2:     'Casa Escondida <em>on Video</em>',
+      gallery_video_sub:    "Real guest vlogs and official videos — see exactly what makes Casa Escondida Anilao's most-loved dive resort.",
+      gallery_cta_h2:       'Stay Connected',
+      gallery_cta_p:        'Follow Casa Escondida for daily dive updates, guest stories, and special offers.',
 
       /* ── NEW LOCATION PAGE KEYS ── */
       location_eyebrow:   'Find Us',
@@ -228,6 +249,12 @@
       blog_sort_popular:  'Most Popular',
       blog_read_more:     'Read →',
       blog_search_placeholder: 'Search posts…',
+      bf_featured_badge:  'Featured',
+      bf_eyebrow:         'Dive Guide',
+      bf_title:           'Best Dive Sites in Anilao, Batangas: The Complete 2026 Guide',
+      bf_excerpt:         "Anilao hosts over 50 named dive sites packed inside a coastline barely 10 km long — from the seamount walls of Kirby's Rock to the silty macro heaven of Secret Bay. Whether you're chasing nudibranchs, frogfish, or open-water pelagics, this guide maps every must-dive and tells you exactly what to expect below the surface.",
+      bf_date:            'April 20, 2026 · 8 min read',
+      bf_read_more:       'Read Article →',
 
       /* ── MARQUEE ── */
       marquee_1:          'PADI Certified Dive Center',
@@ -991,6 +1018,27 @@
       tab_facebook:         '脸书',
       tab_instagram:        '照片墙',
       tab_videos:           '视频',
+      gallery_stat_1:       'Instagram帖子',
+      gallery_stat_2:       '潜点数量',
+      gallery_stat_3:       'TripAdvisor评价',
+      gallery_stat_4:       '综合评分',
+      gallery_hero_cta_ghost:   '预订住宿 →',
+      gallery_hero_cta_primary: '关注Instagram',
+      gallery_fb_eyebrow:   'Facebook',
+      gallery_fb_h2:        '来自我们Facebook主页的实时动态',
+      gallery_fb_sub:       '直接来自我们官方Facebook主页的真实照片和帖子——每日更新潜水状况、宾客照片和度假村新闻。',
+      gallery_fb_cta_p:     '在我们的官方Facebook主页查看更多照片、潜水动态和度假村精彩瞬间。',
+      gallery_fb_cta_btn:   '关注我们的Facebook @CasaEscondidaAnilao',
+      gallery_ig_eyebrow:   'Instagram',
+      gallery_ig_h2:        '关注我们的Instagram',
+      gallery_ig_sub:       '来自@casaescondidaanilao的真实潜水生活、微距生物、水下摄影和度假村精彩时光。',
+      gallery_ig_cta_p:     '我们在Instagram上有802篇帖子——关注我们，随时查看最新潜水、生物发现和度假村生活。',
+      gallery_ig_cta_btn:   '在Instagram上查看全部 @casaescondidaanilao',
+      gallery_video_eyebrow:'观看',
+      gallery_video_h2:     '卡萨埃斯孔迪达视频专区',
+      gallery_video_sub:    '真实宾客视频博客和官方视频——亲眼见证是什么让卡萨埃斯孔迪达成为阿尼劳最受欢迎的潜水度假村。',
+      gallery_cta_h2:       '保持联系',
+      gallery_cta_p:        '关注卡萨埃斯孔迪达，获取每日潜水动态、宾客故事和特别优惠。',
 
       /* ── NEW LOCATION PAGE KEYS ── */
       location_eyebrow:   '找到我们',
@@ -1643,20 +1691,34 @@
       return fallback[key] !== undefined ? fallback[key] : key;
     }
 
-        /* data-i18n — preserve <em> glint animation */
+    /* data-i18n — handle text and glint <em>/<strong> children correctly */
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       const key = el.getAttribute('data-i18n');
       const val = t(key);
       if (!val) return;
       if (val.indexOf('<') !== -1) {
+        /* Translation contains HTML tags — use innerHTML */
         el.innerHTML = val;
       } else if (el.children.length === 0) {
+        /* Leaf node — safe to replace all text */
         el.textContent = val;
       } else {
-        for (var n = 0; n < el.childNodes.length; n++) {
-          if (el.childNodes[n].nodeType === 3 && el.childNodes[n].textContent.trim()) {
-            el.childNodes[n].textContent = val + ' ';
-            break;
+        /* Has child elements. If ALL children are decorative (em/strong/br/span),
+         * wipe them and set plain text — avoids leaving English em text in zh.
+         * Otherwise fall back to replacing the first text node only. */
+        var allDecorative = true;
+        var DECO = { EM:1, STRONG:1, BR:1, SPAN:1 };
+        for (var ci = 0; ci < el.children.length; ci++) {
+          if (!DECO[el.children[ci].tagName]) { allDecorative = false; break; }
+        }
+        if (allDecorative) {
+          el.textContent = val;
+        } else {
+          for (var n = 0; n < el.childNodes.length; n++) {
+            if (el.childNodes[n].nodeType === 3 && el.childNodes[n].textContent.trim()) {
+              el.childNodes[n].textContent = val + ' ';
+              break;
+            }
           }
         }
       }
