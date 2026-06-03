@@ -188,8 +188,11 @@
 
     @media(max-width:768px){
       #nav{padding:1rem 1.5rem;transition:none;}
-      .nav-links,.nav-right .btn-book{display:none !important;}
-      .nav-hamburger{display:flex;}
+      .nav-links,.nav-right .btn-book,.nav-right .btn-nav-cta{display:none !important;}
+      .nav-right{gap:.5rem;}
+      .nav-hamburger{display:flex !important;}
+      /* Hamburger bars always white over dark hero video */
+      .nav-hamburger span{background:#fff !important;}
       .c{padding:0 1.5rem;}
       .r-footer{padding:1.5rem;}
     }
