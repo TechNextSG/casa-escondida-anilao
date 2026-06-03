@@ -1,4 +1,4 @@
-/**
+﻿/**
  * translate.js — EN / ZH language switcher for Casa Escondida Anilao
  * Storage key : localStorage 'ce-lang'  (values: 'en' | 'zh')
  * HTML hooks  : data-i18n, data-i18n-placeholder, data-i18n-title
@@ -113,7 +113,7 @@
       terms:              'Terms of Service',
 
       /* Booking modal */
-      booking_title:      'Reserve Your Stay',
+      booking_title:      'Ready to <em>Dive In?</em>',
       booking_sub:        'Fill in your details and we will get back to you within 24 hours.',
       check_availability: 'Check Availability',
 
@@ -131,11 +131,11 @@
       hero_tag:           'Anilao · Mabini · Batangas',
       hero_sub_new:       'Where the Ocean Becomes Home',
       our_story:          'Our Story',
-      about_title:        'A Hidden Paradise in Batangas',
+      about_title:        'A Hidden <em>Paradise</em><br>in Batangas',
       about_p1:           'We are a boutique PADI 5-Star Dive Center and ocean-front resort nestled in the heart of Anilao — the birthplace of Philippine diving and one of the world\'s top macro-diving destinations.',
       about_p2:           'Whether you\'re here to earn your Open Water certification, chase nudibranch on a night dive, or simply unwind by the sea, Casa Escondida is your perfect base.',
       services_eyebrow:   'Amenities & Services',
-      everything_you_need: 'Everything You Need',
+      everything_you_need: 'Everything You <em>Need</em>',
       services_sub:       'From thrilling dives to relaxed beachside afternoons — Casa Escondida is your complete destination.',
       svc_name_1:         'PADI Dive Center',
       svc_name_2:         'Pool & Beach',
@@ -150,17 +150,17 @@
       svc_desc_5:         'Day trips to nearby islands, snorkelling tours, and island BBQ experiences.',
       svc_desc_6:         'Tailored packages for dive groups, corporate retreats, and private celebrations.',
       rooms_eyebrow:      'Accommodation',
-      rooms_heading:      'Rest & Recharge',
+      rooms_heading:      'Rest &amp; <em>Recharge</em>',
       rooms_lead:         'Choose from 24 ocean-side rooms designed for the diving traveler — fall asleep to the sound of waves, wake up ready to dive.',
-      rm_name_1:          'Standard Double or Twin Room',
-      rm_name_2:          'Deluxe Double or Twin Room',
-      rm_name_3:          'Suite with Sea View',
+      rm_name_1:          'Standard <em>Double or Twin</em> Room',
+      rm_name_2:          'Deluxe <em>Double or Twin</em> Room',
+      rm_name_3:          'Suite <em>with Sea View</em>',
       reviews_eyebrow:    'What Our Guests Say',
-      reviews_title:      'Loved by Divers',
+      reviews_title:      'What Our <em>Guests</em> Say',
       gallery_eyebrow:    'Gallery',
-      gallery_title:      'Life at Casa Escondida',
+      gallery_title:      'Life at <em>Casa<br>Escondida</em>',
       location_eyebrow_home: 'Find Your Way to Anilao',
-      location_home_title: 'Two Hours from Manila, a World Away',
+      location_home_title: 'Find Your Way to <em>Anilao</em>',
       foot_h_1:           'Explore',
       foot_h_2:           'Dive & Stay',
       foot_h_3:           'Reviews',
@@ -171,25 +171,25 @@
       rooms_page_eyebrow: 'Accommodation',
       rooms_h1:           'Rooms & Suites',
       rooms_page_sub:     '24 ocean-side rooms designed for the diving traveler — fall asleep to the sound of waves, wake up ready to dive.',
-      rm_card_name_1:     'Standard Double or Twin Room',
-      rm_card_name_2:     'Deluxe Double or Twin Room',
-      rm_card_name_3:     'Suite with Sea View',
+      rm_card_name_1:     'Standard <em>Double or Twin</em> Room',
+      rm_card_name_2:     'Deluxe <em>Double or Twin</em> Room',
+      rm_card_name_3:     'Suite <em>with Sea View</em>',
       rm_card_desc_1:     'Comfortable and cosy with garden or partial sea views. Perfect for solo travellers or couples seeking value.',
       rm_card_desc_2:     'Spacious sea-view room with a private balcony. Wake up to the ocean every morning.',
       rm_card_desc_3:     'Our most premium room — wide ocean views, enhanced amenities, and extra space to unwind.',
 
       /* ── NEW DIVE PAGE KEYS ── */
       dive_page_eyebrow:  'PADI 5-Star Dive Center',
-      dive_h1:            'Scuba Diving Anilao, Batangas',
+      dive_h1:            'Scuba Diving <em>Anilao, Batangas</em>',
       dive_page_sub:      'One of the world\'s top macro-diving destinations — fun dives, PADI courses, and night dives right from our private jetty.',
       dive_stat_1:        'Dive Sites',
-      dive_stat_2:        'Years Experience',
-      dive_stat_3:        'Happy Guests',
+      dive_stat_2:        'Depth Range',
+      dive_stat_3:        'Certified',
       dive_stat_4:        'Star Rating',
 
       /* ── NEW GALLERY PAGE KEYS ── */
       gallery_page_eyebrow: 'Photo & Video Gallery',
-      gallery_h1:           'Life at Casa Escondida',
+      gallery_h1:           'Life at <em>Casa Escondida</em>',
       gallery_page_sub:     'Real photos and videos from our Facebook and Instagram — dive life, resort moments, and the underwater world of Anilao.',
       tab_underwater:       'Underwater',
       tab_facebook:         'Facebook',
@@ -198,12 +198,12 @@
 
       /* ── NEW LOCATION PAGE KEYS ── */
       location_eyebrow:   'Find Us',
-      location_h1:        'How to Get to Anilao, Batangas',
+      location_h1:        'How to Get to <em>Anilao, Batangas</em>',
       location_page_sub:  'Tucked between jungle-clad hills and coral-rich waters in Brgy. Ligaya, Mabini — just two hours south of Manila.',
 
       /* ── NEW BLOG PAGE KEYS ── */
       blog_page_eyebrow:  'Casa Escondida · Anilao, Batangas',
-      blog_h1:            'Dive Blog & Marine Life Guides',
+      blog_h1:            'Dive Blog &amp; <em>Marine Life Guides</em>',
       blog_page_sub:      'Dive guides, marine life spotting tips, resort stories, and travel advice from Anilao — the macro diving capital of the Philippines.',
       blog_stat_1:        'Articles',
       blog_stat_2:        'Categories',
@@ -270,7 +270,7 @@
 
       /* ── DIVE SECTION (homepage) ── */
       dive_eyebrow:       'Dive Center',
-      dive_title:         "Dive Into Anilao's Legendary Depths",
+      dive_title:         "Dive Into <em>Anilao's</em><br>Legendary Depths",
       dive_sub:           "Anilao is where Philippine scuba diving was born — and remains one of the world's finest dive destinations for coral diversity and macro life. Our professional PADI dive center puts you at the epicenter.",
       dive_cta_primary:   'Book a Dive Package',
       dive_cta_secondary: 'Explore Dive Center →',
@@ -287,9 +287,9 @@
       rm_badge_1:         'Standard',
       rm_badge_2:         'Deluxe',
       rm_badge_3:         'Suite · Most Popular ★',
-      rm_name_1:          'Standard Double or Twin Room',
-      rm_name_2:          'Deluxe Double or Twin Room',
-      rm_name_3:          'Suite with Sea View',
+      rm_name_1:          'Standard <em>Double or Twin</em> Room',
+      rm_name_2:          'Deluxe <em>Double or Twin</em> Room',
+      rm_name_3:          'Suite <em>with Sea View</em>',
       rm_desc_1:          'Providing free toiletries, this twin/double room includes a private bathroom with a shower and a bidet. Features air conditioning, a tiled floor, and a flat-screen TV. The unit offers 2 beds.',
       rm_desc_2:          'The spacious twin/double room features air conditioning, a wardrobe, and a terrace with sea views, as well as a private bathroom boasting a shower. The unit has 2 double beds.',
       rm_desc_3:          'This suite offers a hot tub and comprises 1 living room, 1 separate bedroom, and 1 bathroom with a bath. Featuring a terrace with sea and pool views, air conditioning, and a flat-screen TV. The unit offers 2 double beds.',
@@ -441,7 +441,7 @@
 
       /* ── MODAL ── */
       modal_eyebrow:      'Reservations',
-      modal_title:        'Book Your Stay',
+      modal_title:        'Book Your <em>Stay</em>',
       modal_sub:          "Fill in your details and we'll confirm your reservation within 24 hours.",
       modal_label_name:   'Full Name',
       modal_label_phone:  'Contact Number',
@@ -481,7 +481,7 @@
       inc_frontdesk_title:'24/7 Front Desk',
       inc_frontdesk_desc: 'Round-the-clock assistance for check-ins, dive bookings, and queries.',
       rooms_sec_eyebrow:  'Choose Your Room',
-      rooms_sec_h2:       'Find Your Perfect Stay',
+      rooms_sec_h2:       'Find Your <em>Perfect Stay</em>',
       rooms_sec_sub:      'From cozy standard rooms to spacious ocean suites — every room includes breakfast and is steps from the water.',
       rm_badge_standard:  'Standard',
       rm_badge_deluxe:    'Deluxe',
@@ -519,7 +519,7 @@
       rm_btn_book:        'Book on Booking.com',
       rm_btn_inquire:     'Inquire',
       rooms_areas_eyebrow:'Explore the Property',
-      rooms_areas_h2:     'Resort Areas',
+      rooms_areas_h2:     'Resort <em>Areas</em>',
       rooms_areas_sub:    'Beyond your room — the spaces that complete the Casa Escondida experience.',
       area_bar_label:     'Bar & Lounge',
       area_bar_name_prefix:'The',
@@ -541,7 +541,7 @@
       area_beach_feat_4:  'Sunrise Spot',
       area_beach_feat_5:  'Direct Beach Entry',
       rooms_policies_eyebrow: 'Before You Book',
-      rooms_policies_h2:  'Resort Policies',
+      rooms_policies_h2:  'Resort <em>Policies</em>',
       pol_checkin_title:  'Check-In / Check-Out',
       pol_checkin_1:      'Check-in from 2:00 PM',
       pol_checkin_2:      'Check-out by 12:00 noon',
@@ -557,7 +557,7 @@
       pol_houserules_2:   'Pets not permitted in guest rooms',
       pol_houserules_3:   'Quiet hours from 10:00 PM',
       pol_houserules_4:   'Dive gear must be rinsed before entering rooms',
-      rooms_cta_h2:       'Ready to Book?',
+      rooms_cta_h2:       'Ready to <em>Book?</em>',
       rooms_cta_p:        'Contact us directly for dive & stay packages and group bookings.',
       rooms_cta_btn_main: 'Book Your Room',
       rooms_cta_btn_outline: 'Message on Facebook',
@@ -566,11 +566,11 @@
       dive_hero_cta_ghost:   'View Courses',
       dive_hero_cta_primary: 'Book Your Dive Stay',
       dive_overview_eyebrow: 'Our Dive Center',
-      dive_overview_h2:      'Where Every Dive Begins',
+      dive_overview_h2:      'Where Every <em>Dive Begins</em>',
       dive_overview_p1:      "Casa Escondida's PADI-certified dive center sits steps from your room. Our experienced divemasters and instructors know every reef, crevice, and critter in Anilao — so whether you're logging your first dive or your thousandth, you're in expert hands.",
       dive_overview_p2:      'Hot showers, full equipment rental, camera rinse stations, nitrox fills, and a private jetty for direct access to Anilao\'s legendary dive sites make every morning effortless.',
       dive_courses_eyebrow:  'PADI Courses',
-      dive_courses_h2:       'Learn to Dive, Level Up',
+      dive_courses_h2:       'Learn to Dive, <em>Level Up</em>',
       dive_courses_sub:      'From first-timers to experienced divers pursuing specialty certifications — our instructors guide you through every step.',
       dive_course1_level:    'Beginner',
       dive_course1_name:     'Discover Scuba Diving',
@@ -609,10 +609,10 @@
       dive_course6_detail2:  'Flexible timeline',
       dive_course6_detail3:  'Internship available',
       dive_eco_eyebrow:      'Ecosystem Library',
-      dive_eco_h2:           'What Awaits Below',
+      dive_eco_h2:           'What Awaits <em>Below</em>',
       dive_eco_sub:          'Anilao sits inside the Coral Triangle — the most biodiverse marine region on Earth. Browse the ecosystem we dive every day: colourful nudibranchs, reef fish schools, macro critters hidden in coral rubble, and the occasional turtle gliding past our jetty.',
       dive_pkgs_eyebrow:     'Dive Packages',
-      dive_pkgs_h2:          'Choose Your Dive Experience',
+      dive_pkgs_h2:          'Choose Your <em>Dive Experience</em>',
       dive_pkgs_sub:         'From single guided dives to full liveaboard-style packages — we have options for every diver and every schedule.',
       dive_pkg1_name:        'Day Diver',
       dive_pkg1_tagline:     'Perfect for certified guests & day visitors',
@@ -640,7 +640,7 @@
       dive_pkg3_feat4:       'Post-dive dinner at CE restaurant',
       dive_pkg3_feat5:       'Logbook signing & briefing',
       dive_equip_eyebrow:    'Equipment & Facilities',
-      dive_equip_h2:         'Everything You Need',
+      dive_equip_h2:         'Everything You <em>Need</em>',
       dive_equip_sub:        'Travelling light? Our full-service dive center has everything covered.',
       dive_equip1_name:      'BCD & Regulator',
       dive_equip1_note:      'All sizes available for daily rental',
@@ -658,7 +658,7 @@
       dive_equip7_note:      'Primary & backup torches for night dives',
       dive_equip8_name:      'Marine Conservation',
       dive_equip8_note:      'Active reef monitoring & protection',
-      dive_cta_h2:           'Ready to Take the Plunge?',
+      dive_cta_h2:           'Ready to <em>Take the Plunge?</em>',
       dive_cta_p:            "Whether you're a first-timer or a seasoned diver, the reefs of Anilao are waiting. Book your stay and dive package with us today.",
       dive_cta_btn_primary:  'Book Your Dive Stay',
       dive_cta_btn_ghost:    'How to Get Here →',
@@ -676,7 +676,7 @@
       location_qc_desk_lbl:    'Front Desk',
       location_qc_desk_val:    'Open 24 / 7',
       location_routes_eyebrow: 'Getting Here',
-      location_routes_h2:      'From Manila to Anilao',
+      location_routes_h2:      'From Manila to <em>Anilao</em>',
       location_routes_sub:     "Roughly two hours south of the capital — pick how you'd like to travel and we'll guide you step by step.",
       location_route_car:      'By Private Car',
       location_route_bus:      'By Bus + Tricycle',
@@ -718,7 +718,7 @@
       route_van_step4_desc:    'Arrive relaxed — welcome drink waiting, briefings scheduled, gear storage ready.',
       route_van_step4_meta:    'Arrived',
       location_transport_eyebrow: 'Your Options',
-      location_transport_h2:  'Choose How You Travel',
+      location_transport_h2:  'Choose How You <em>Travel</em>',
       location_transport_sub: 'Every route leads to the same hidden cove — pick the one that fits your schedule.',
       transport_car_name:     'Self-drive',
       transport_car_desc:     'The most direct option. Drive yourself south via SLEX & STAR tollways — about 2 hours from Makati with light traffic.',
@@ -739,10 +739,10 @@
       transport_bus_feat3:    'Total travel ~3–4 hrs',
       transport_bus_cta:      'Ask for route help',
       location_dist_eyebrow:  'Distances',
-      location_dist_h2:       'At a Glance',
+      location_dist_h2:       'At a <em>Glance</em>',
       location_dist_sub:      'Typical travel times to and from Casa Escondida — adjusted for normal weekday traffic.',
       location_nearby_eyebrow:'Neighborhood',
-      location_nearby_h2:     '30+ Dive Sites Within Minutes',
+      location_nearby_h2:     '30+ Dive Sites <em>Within Minutes</em>',
       location_nearby_sub:    'Anilao is world-renowned for its biodiversity. A short banca ride from our pier puts you on some of the richest muck and coral sites in the Philippines.',
       site_secret_bay_name:   'Secret Bay',
       site_secret_bay_desc:   'Muck-diving paradise — flamboyant cuttlefish, frogfish, and rare nudibranchs on black sand.',
@@ -769,7 +769,7 @@
       site_arthurs_desc:      'Classic Anilao site — gorgonians, schools of anthias, and macro critters on every ledge.',
       site_arthurs_tag1:      'Reef',
       location_contact_eyebrow: 'Get in Touch',
-      location_contact_h2:    'Talk to the Team',
+      location_contact_h2:    'Talk to the <em>Team</em>',
       location_contact_sub:   'Questions about dive packages, room availability, transfers, or groups? Drop us a line — we\'ll usually reply within a few hours.',
       cf_lbl_name:            'Name',
       cf_lbl_email:           'Email',
@@ -782,7 +782,7 @@
       cf_placeholder_message: 'Dates, number of guests, experience level, dive preferences...',
       cf_submit:              'Send Message',
       location_faq_eyebrow:   'Travel FAQs',
-      location_faq_h2:        'Before You Set Off',
+      location_faq_h2:        'Before You <em>Set Off</em>',
       location_faq_sub:       'Questions we hear often from guests planning their trip to Anilao.',
       faq_q1:  "What's the nearest airport?",
       faq_a1:  'Ninoy Aquino International Airport (NAIA / MNL) in Manila is the main gateway. The resort is about 130 km south — roughly a 2.5 hour drive. We can arrange a private van transfer from NAIA with 48 hours notice.',
@@ -798,7 +798,7 @@
       faq_a6:  'Absolutely. Many of our guests come for the ocean-front rooms, pool, Filipino cuisine, and quiet coastal setting. Non-divers are just as welcome — we have guided snorkeling, island hopping, and nearby attractions to explore.',
       faq_q7:  'Is there mobile signal and WiFi?',
       faq_a7:  'Globe and Smart both have reliable 4G signal in the area. Free Wi-Fi is available throughout the resort — rooms, restaurant, dive center, and common areas.',
-      location_cta_h2:        'See You in Anilao',
+      location_cta_h2:        'See You in <em>Anilao</em>',
       location_cta_p:         "Ready to make the trip? Book your stay and we'll handle the rest — directions, transfers, dive plans.",
       location_cta_btn_primary: 'Book Your Stay',
       location_cta_btn_ghost:   'Get Directions ↗',
@@ -954,7 +954,7 @@
       reviews_eyebrow:    '宾客点评',
       reviews_title:      '深受潜水者喜爱',
       gallery_eyebrow:    '图库',
-      gallery_title:      '卡萨埃斯孔迪达的生活',
+      gallery_title:      '生活在<em>卡萨埃斯孔迪达</em>',
       location_eyebrow_home: '前往阿尼劳',
       location_home_title: '距马尼拉两小时，换一个世界',
       foot_h_1:           '探索',
@@ -976,7 +976,7 @@
 
       /* ── NEW DIVE PAGE KEYS ── */
       dive_page_eyebrow:  'PADI五星潜水中心',
-      dive_h1:            '阿尼劳，八打雁省水肺潜水',
+      dive_h1:            '水肌潜水 <em>阿尼劳，八打雁省</em>',
       dive_page_sub:      '世界顶级微距潜水胜地之一——趣味潜水、PADI课程，以及从我们私人码头出发的夜间潜水。',
       dive_stat_1:        '潜点数量',
       dive_stat_2:        '从业年限',
@@ -985,7 +985,7 @@
 
       /* ── NEW GALLERY PAGE KEYS ── */
       gallery_page_eyebrow: '照片与视频图库',
-      gallery_h1:           '卡萨埃斯孔迪达的生活',
+      gallery_h1:           '生活在<em>卡萨埃斯孔迪达</em>',
       gallery_page_sub:     '来自我们Facebook和Instagram的真实照片和视频——潜水生活、度假时光和阿尼劳水下世界。',
       tab_underwater:       '水下世界',
       tab_facebook:         '脸书',
@@ -994,12 +994,12 @@
 
       /* ── NEW LOCATION PAGE KEYS ── */
       location_eyebrow:   '找到我们',
-      location_h1:        '如何前往八打雁省阿尼劳',
+      location_h1:        '如何前往<em>八打雁省阿尼劳</em>',
       location_page_sub:  '坐落在利加亚村马比尼的丛林山丘与珊瑚丰富海域之间——距马尼拉以南仅两小时车程。',
 
       /* ── NEW BLOG PAGE KEYS ── */
       blog_page_eyebrow:  '卡萨埃斯孔迪达 · 八打雁省阿尼劳',
-      blog_h1:            '潜水博客与海洋生物指南',
+      blog_h1:            '潜水博客与<em>海洋生物指南</em>',
       blog_page_sub:      '来自阿尼劳（菲律宾微距潜水之都）的潜水指南、海洋生物观察技巧、度假故事和旅行建议。',
       blog_stat_1:        '篇文章',
       blog_stat_2:        '个分类',
@@ -1024,6 +1024,12 @@
       blog_sort_popular:  '最热门',
       blog_read_more:     '阅读更多',
       blog_search_placeholder: '搜索文章…',
+      bf_featured_badge:  '精选',
+      bf_eyebrow:         '潜水指南',
+      bf_title:           '阿尼劳，八打雁省最佳潜点：2026年完整指南',
+      bf_excerpt:         "阿尼劳在不足10公里的海岸线上汇聚了50余处有名潜点——从Kirby's Rock的海底山峭壁，到秘密湾的砂泥微距天堂。无论您在追寻裸鳃类、躄鱼还是开放水域洄游鱼类，本指南将为您详细介绍每一处必潜之地及水下风貌。",
+      bf_date:            '2026年4月20日 · 阅读约8分钟',
+      bf_read_more:       '阅读文章 →',
 
       /* ── MARQUEE ── */
       marquee_1:          '认证PADI潜水中心',
@@ -1637,10 +1643,23 @@
       return fallback[key] !== undefined ? fallback[key] : key;
     }
 
-    /* data-i18n — text content */
+        /* data-i18n — preserve <em> glint animation */
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       const key = el.getAttribute('data-i18n');
-      el.textContent = t(key);
+      const val = t(key);
+      if (!val) return;
+      if (val.indexOf('<') !== -1) {
+        el.innerHTML = val;
+      } else if (el.children.length === 0) {
+        el.textContent = val;
+      } else {
+        for (var n = 0; n < el.childNodes.length; n++) {
+          if (el.childNodes[n].nodeType === 3 && el.childNodes[n].textContent.trim()) {
+            el.childNodes[n].textContent = val + ' ';
+            break;
+          }
+        }
+      }
     });
 
     /* data-i18n-placeholder — placeholder attribute */
