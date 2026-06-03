@@ -3,6 +3,17 @@
    (rooms / dive / gallery / location)
 ==================================================== */
 
+/* ── Transparent scrollbar — desktop & mobile ── */
+*{scrollbar-width:thin;scrollbar-color:transparent transparent;}
+*:hover{scrollbar-color:rgba(77,194,232,0.25) transparent;}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:transparent;border-radius:4px;}
+::-webkit-scrollbar-thumb:hover{background:rgba(77,194,232,0.3);}
+html:hover::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.12);}
+[data-theme="day"] html:hover::-webkit-scrollbar-thumb,
+[data-theme="day"]:hover::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.12);}
+
 
     /* ── Tokens ── */
     [data-theme="night"]{
