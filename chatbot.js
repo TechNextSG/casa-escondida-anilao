@@ -182,10 +182,10 @@
     #ce-messages {
       flex: 1;
       overflow-y: auto;
-      padding: 14px 12px;
+      padding: 16px 14px 10px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 14px;
       scrollbar-width: thin;
       scrollbar-color: rgba(77,194,232,0.3) transparent;
     }
@@ -226,11 +226,12 @@
       margin-top: 2px;
     }
     .ce-bubble {
-      padding: 10px 14px;
+      padding: 13px 16px;
       border-radius: 16px;
       font-size: 13.5px;
-      line-height: 1.55;
+      line-height: 1.7;
       max-width: 100%;
+      word-break: break-word;
     }
     .ce-msg.ce-user .ce-bubble {
       background: linear-gradient(135deg, #4dc2e8 0%, #2fa8d4 100%);
@@ -243,6 +244,47 @@
       border: 1px solid rgba(77,194,232,0.2);
       border-bottom-left-radius: 4px;
     }
+
+    /* Action CTA Cards */
+    .ce-cta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-top: 10px;
+      padding-left: 38px;
+    }
+    .ce-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 10px;
+      background: rgba(77,194,232,0.12);
+      border: 1px solid rgba(77,194,232,0.35);
+      color: #4dc2e8;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .18s, border-color .18s, transform .15s;
+      animation: ce-msg-in 0.22s ease;
+    }
+    .ce-cta-btn:hover {
+      background: rgba(77,194,232,0.22);
+      border-color: #4dc2e8;
+      transform: translateX(3px);
+    }
+    .ce-cta-btn.ce-cta-primary {
+      background: linear-gradient(135deg,#4dc2e8,#2fa8d4);
+      border-color: transparent;
+      color: #fff;
+    }
+    .ce-cta-btn.ce-cta-primary:hover {
+      background: linear-gradient(135deg,#5dd2f8,#3fb8e4);
+      transform: translateX(3px);
+    }
+    .ce-cta-icon { font-size: 15px; flex-shrink: 0; }
+    .ce-cta-arrow { margin-left: auto; opacity: .6; font-size: 12px; }
 
     /* Typing Indicator */
     .ce-typing {
@@ -336,15 +378,27 @@
   const KB = [
     {
       keywords: ['book', 'booking', 'reservation', 'reserve', 'availability', 'available', 'stay', 'visit'],
-      answer: 'To book a room at Casa Escondida Anilao, you can:\n📞 Call us at +63 977 837 2272\n💬 Message us on Facebook: fb.com/CasaEscondidaAnilao\n🌐 Visit casaescondida-anilao.com\n\nWe recommend booking in advance, especially during peak season (Dec–May). We\'ll check availability and confirm your reservation right away!'
+      answer: 'To book a room at Casa Escondida Anilao:\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao\n\nWe recommend booking in advance (peak: Dec–May). We\'ll confirm your reservation right away!',
+      cta: [
+        { label: 'Book Your Stay', url: '/#booking', icon: '📅', primary: true },
+        { label: 'View Room Types', url: 'rooms.html', icon: '🛏️' }
+      ]
     },
     {
       keywords: ['rate', 'rates', 'price', 'pricing', 'cost', 'fee', 'how much', 'budget'],
-      answer: 'Room rates at Casa Escondida Anilao vary by room type and season. We offer competitive pricing that includes breakfast for two. For the most accurate rates and package deals, please contact us directly:\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao\n\nWe also have special dive packages that bundle accommodation with diving!'
+      answer: 'Room rates vary by type and season — all include breakfast for two. We also have dive+stay packages. Contact us for the latest rates:\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao',
+      cta: [
+        { label: 'See Room Options', url: 'rooms.html', icon: '🛏️', primary: true },
+        { label: 'Book & Check Rates', url: '/#booking', icon: '📅' }
+      ]
     },
     {
       keywords: ['room', 'rooms', 'accommodation', 'suite', 'deluxe', 'standard', 'type', 'types', 'sea view', 'seaview'],
-      answer: 'Casa Escondida Anilao offers comfortable sea-view rooms and suites with stunning views of Balayan Bay. Features include:\n\n🛏️ Multiple room types from standard to deluxe suites\n🌊 Most rooms with sea views\n🍳 Breakfast for two included\n❄️ Air-conditioning & hot shower\n📶 Free WiFi\n\nCapacity varies by room type. Contact us for specific room details and availability!'
+      answer: 'We offer sea-view rooms and suites with views of Balayan Bay:\n\n🛏️ Standard Double/Twin\n🌊 Deluxe Sea View\n✨ Suite with Sea View\n🍳 Breakfast for two included\n❄️ A/C, hot shower, free WiFi',
+      cta: [
+        { label: 'Explore All Rooms', url: 'rooms.html', icon: '🛏️', primary: true },
+        { label: 'Book Now', url: '/#booking', icon: '📅' }
+      ]
     },
     {
       keywords: ['breakfast', 'meal', 'food', 'include', 'included', 'dining', 'eat'],
@@ -352,15 +406,26 @@
     },
     {
       keywords: ['padi', 'dive', 'diving', 'course', 'courses', 'certification', 'certify', 'learn', 'divemaster', 'open water', 'advanced', 'rescue', 'scuba'],
-      answer: 'As a PADI 5-Star Dive Resort, we offer a full range of PADI courses:\n\n🎓 Open Water Diver (beginner)\n🎓 Advanced Open Water Diver\n🎓 Rescue Diver\n🎓 Divemaster\n🎓 Various specialty courses\n🤿 Fun dives for certified divers\n\nAnilao is the birthplace of scuba diving in the Philippines with world-class macro diving. Contact us to enroll!'
+      answer: 'As a PADI 5-Star Dive Center, we offer:\n\n🎓 Open Water Diver · Advanced OW\n🎓 Rescue Diver · Divemaster\n🎓 Specialty courses\n🤿 Fun dives for certified divers\n\nAnilao is the birthplace of Philippine scuba diving!',
+      cta: [
+        { label: 'Explore Dive Center', url: 'dive.html', icon: '🤿', primary: true },
+        { label: 'Book a Dive Package', url: '/#booking', icon: '📅' }
+      ]
     },
     {
       keywords: ['dive site', 'dive sites', 'sites', 'spot', 'spots', 'where dive', 'anilao dive'],
-      answer: 'Anilao boasts 30+ world-class dive sites accessible from Casa Escondida! 🐠\n\nHighlights include:\n• Beatrice Rock – famous for nudibranch\n• Kirby\'s Rock – stunning coral formations\n• Cathedral Rock – swim-throughs & pelagics\n• Twin Rocks – macro photography heaven\n• Arthur\'s Rock, Sepoc, Maricaban Island and many more!\n\nAnilao is renowned globally for macro photography and rich marine biodiversity.'
+      answer: 'Anilao has 30+ world-class dive sites! 🐠\n\n• Beatrice Rock – nudibranchs\n• Kirby\'s Rock – coral formations\n• Cathedral Rock – swim-throughs\n• Twin Rocks – macro photography\n• Arthur\'s Rock, Sepoc & more!\n\nRenowned globally for macro photography.',
+      cta: [
+        { label: 'See All Dive Sites', url: 'dive.html#sites', icon: '🗺️', primary: true },
+        { label: 'Book Dive Package', url: '/#booking', icon: '📅' }
+      ]
     },
     {
       keywords: ['equipment', 'gear', 'rent', 'rental', 'bcd', 'regulator', 'wetsuit', 'fins', 'mask'],
-      answer: 'Yes! We offer complete dive equipment rental at Casa Escondida Anilao:\n\n🤿 BCD, regulator, wetsuit, fins, mask & booties\n📷 Underwater camera rentals available\n\nAll equipment is well-maintained and regularly serviced. Bring your own gear if you prefer — we have secure storage. Contact us for rental rates!'
+      answer: 'Yes! Full dive gear rental available:\n\n🤿 BCD, regulator, wetsuit, fins, mask\n📷 Underwater camera rentals\n\nAll equipment is well-maintained. You can also bring your own gear.',
+      cta: [
+        { label: 'View Dive Packages', url: 'dive.html#packages', icon: '🤿', primary: true }
+      ]
     },
     {
       keywords: ['night dive', 'night diving', 'night'],
@@ -372,15 +437,27 @@
     },
     {
       keywords: ['location', 'where', 'address', 'mabini', 'batangas', 'anilao', 'place', 'find'],
-      answer: 'Casa Escondida Anilao is located in Mabini, Batangas, Philippines — in the heart of Anilao, the birthplace of Philippine diving! 📍\n\nMabini, Batangas\nPhilippines\n\nAnilao is a barangay in the municipality of Mabini, along the western coast of Batangas facing Balayan Bay.'
+      answer: 'Casa Escondida is in Mabini, Batangas — the heart of Anilao, birthplace of Philippine diving! 📍\n\nBrgy. Ligaya, Mabini, Batangas 4202, Philippines',
+      cta: [
+        { label: 'View Map & Directions', url: 'location.html', icon: '📍', primary: true },
+        { label: 'Get Directions', url: 'https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao', icon: '🗺️' }
+      ]
     },
     {
       keywords: ['manila', 'far', 'distance', 'km', 'kilometers', 'hour', 'hours', 'drive', 'how long', 'travel time'],
-      answer: 'Casa Escondida Anilao is approximately 140 km south of Manila. 🚗\n\n⏱️ Travel time: 2–3 hours from Manila (depending on traffic)\n🛣️ Route: SLEX → Star Tollway → Batangas → Mabini (Anilao)\n\nWe recommend leaving early morning to avoid Metro Manila traffic. The scenic coastal drive is part of the experience!'
+      answer: '~140 km south of Manila 🚗\n\n⏱️ 2–3 hours by car\n🛣️ SLEX → Star Tollway → Batangas → Mabini\n\nLeave early to beat Metro traffic!',
+      cta: [
+        { label: 'Full Directions Guide', url: 'location.html', icon: '🗺️', primary: true },
+        { label: 'Open Google Maps', url: 'https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao', icon: '📍' }
+      ]
     },
     {
       keywords: ['transport', 'transportation', 'van', 'bus', 'tricycle', 'jeepney', 'get there', 'how to get', 'directions', 'shuttle'],
-      answer: 'How to get to Casa Escondida Anilao:\n\n🚐 Private Van (recommended): We can arrange a private transfer from Manila. Contact us for rates.\n\n🚌 Bus + Tricycle:\n1. Take a JAM/DLTB bus from Buendia/Cubao to Batangas City\n2. Take a bus or van to Mabini (Anilao)\n3. Ride a tricycle to the resort\n\nPlease contact us for exact directions and van transfer arrangements!'
+      answer: 'How to get here:\n\n🚐 Private van (recommended) — we can arrange from Manila\n🚌 Bus + Tricycle:\n1. JAM/DLTB bus → Batangas City\n2. Bus/van → Mabini (Anilao)\n3. Tricycle to the resort',
+      cta: [
+        { label: 'Full Transport Guide', url: 'location.html', icon: '🚐', primary: true },
+        { label: 'Contact for Transfer', url: 'location.html#contact', icon: '📞' }
+      ]
     },
     {
       keywords: ['pool', 'swimming pool', 'swim'],
@@ -412,15 +489,27 @@
     },
     {
       keywords: ['review', 'reviews', 'rating', 'tripadvisor', 'google', 'feedback', 'testimonial', 'star', 'stars'],
-      answer: 'Casa Escondida Anilao is highly rated by guests! ⭐\n\n⭐ TripAdvisor: 4.5 / 5\n⭐ Google: 4.7 / 5\n\nGuests consistently praise our dive operations, friendly staff, delicious food, and stunning location. We\'re proud to be one of Anilao\'s top-rated dive resorts!'
+      answer: 'Highly rated by guests! ⭐\n\n⭐ TripAdvisor: 4.5 / 5 (81 reviews)\n⭐ Google: 4.7 / 5 (230+ reviews)\n\nGuests love our diving, staff, food, and stunning location!',
+      cta: [
+        { label: 'Read TripAdvisor Reviews', url: 'https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753', icon: '⭐', primary: true },
+        { label: 'Google Reviews', url: 'https://www.google.com/maps/place/Casa+Escondida+Anilao', icon: '🌟' }
+      ]
     },
     {
       keywords: ['package', 'packages', 'deal', 'deals', 'all inclusive', 'promo', 'special', 'bundle'],
-      answer: 'Casa Escondida Anilao offers various dive and accommodation packages:\n\n🤿 Dive packages bundling stays with unlimited boat dives\n🎓 Course packages (PADI certification + accommodation)\n🏝️ Island BBQ packages\n💑 Couple and group rates\n\nPackages and promos change seasonally. Contact us for the latest deals:\n📞 +63 977 837 2272 | 💬 CasaEscondidaAnilao on Facebook'
+      answer: 'We offer various packages:\n\n🤿 Dive + Stay (unlimited boat dives)\n🎓 PADI Course + Accommodation\n🏝️ Island BBQ packages\n💑 Couple & group rates\n\nPackages change seasonally — contact us for current deals!',
+      cta: [
+        { label: 'View Dive Packages', url: 'dive.html#packages', icon: '🤿', primary: true },
+        { label: 'Book a Package', url: '/#booking', icon: '📅' }
+      ]
     },
     {
       keywords: ['contact', 'call', 'phone', 'number', 'facebook', 'email', 'message', 'reach', 'inquire', 'inquiry'],
-      answer: 'Get in touch with Casa Escondida Anilao:\n\n📞 Phone/Viber/WhatsApp: +63 977 837 2272\n💬 Facebook: fb.com/CasaEscondidaAnilao\n🌐 Website: casaescondida-anilao.com\n\nWe typically respond within a few hours. You can also message us directly on Facebook Messenger for quick replies!'
+      answer: 'Get in touch:\n\n📞 +63 977 837 2272\n💬 fb.com/CasaEscondidaAnilao\n🌐 casaescondida-anilao.com\n\nWe reply within a few hours. Facebook Messenger is fastest!',
+      cta: [
+        { label: 'Contact Page', url: 'location.html#contact', icon: '✉️', primary: true },
+        { label: 'Message on Facebook', url: 'https://www.facebook.com/CasaEscondidaAnilao', icon: '💬' }
+      ]
     },
     {
       keywords: ['group', 'groups', 'corporate', 'team building', 'event', 'party', 'birthday', 'anniversary'],
@@ -559,10 +648,11 @@
     var sendBtn    = document.getElementById('ce-send-btn');
     var suggestEl  = document.getElementById('ce-suggestions');
 
-    var isOpen    = false;
-    var greeted   = false;
-    var suggPool  = [];   // shuffled queue
-    var suggUsed  = [];   // used this cycle
+    var isOpen       = false;
+    var greeted      = false;
+    var suggPool     = [];   // shuffled queue
+    var suggUsed     = [];   // used this cycle
+    var answeredQs   = [];   // questions already answered — never show again
 
     // ── Fisher-Yates shuffle ──
     function shuffle(arr) {
@@ -574,21 +664,21 @@
       return a;
     }
 
-    // ── Get next 3 unique suggestions ──
+    // ── Get next 3 unique suggestions (never show answered ones again) ──
     function nextBatch() {
-      // Refill pool when fewer than 3 remain (avoid repeating within a cycle)
-      if (suggPool.length < 3) {
-        var remaining = SUGGESTIONS.filter(function(s) {
-          return suggUsed.indexOf(s) === -1;
-        });
-        // If we've exhausted all, reset cycle
-        if (remaining.length < 3) {
-          suggUsed = [];
-          remaining = SUGGESTIONS.slice();
-        }
-        suggPool = shuffle(remaining);
+      // Eligible = not answered AND not in current cycle
+      var eligible = SUGGESTIONS.filter(function(s) {
+        return answeredQs.indexOf(s) === -1;
+      });
+      // If all remaining are exhausted within this cycle, reset cycle (but keep answered filter)
+      var pool = eligible.filter(function(s) { return suggUsed.indexOf(s) === -1; });
+      if (pool.length < 3) {
+        suggUsed = [];
+        pool = eligible.slice();
       }
-      var batch = suggPool.splice(0, 3);
+      if (pool.length === 0) return [];   // all questions answered
+      var shuffled = shuffle(pool);
+      var batch = shuffled.slice(0, 3);
       batch.forEach(function(s) { suggUsed.push(s); });
       return batch;
     }
@@ -601,9 +691,7 @@
         b.className = 'ce-suggest-btn';
         b.textContent = text;
         b.addEventListener('click', function() {
-          sendMessage(text);
-          // After user picks a question, show 3 fresh ones
-          setTimeout(renderSuggestions, 400);
+          sendMessage(text);  // sendMessage now handles suggestion refresh
         });
         suggestEl.appendChild(b);
       });
@@ -659,18 +747,74 @@
       if (t) t.remove();
     }
 
+    // ── Render CTA action cards ──
+    function appendCTA(ctaList) {
+      if (!ctaList || !ctaList.length) return;
+      var row = document.createElement('div');
+      row.className = 'ce-cta-row';
+      ctaList.forEach(function(c) {
+        var a = document.createElement('a');
+        a.className = 'ce-cta-btn' + (c.primary ? ' ce-cta-primary' : '');
+        a.href = c.url;
+        a.target = c.url.startsWith('http') ? '_blank' : '_self';
+        a.rel = 'noopener noreferrer';
+        a.innerHTML =
+          '<span class="ce-cta-icon">' + (c.icon || '→') + '</span>'
+          + '<span>' + c.label + '</span>'
+          + '<span class="ce-cta-arrow">→</span>';
+        row.appendChild(a);
+      });
+      messages.appendChild(row);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    // ── Find KB entry (returns entry object, not just answer string) ──
+    function findEntry(query) {
+      var q = query.toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
+      var words = q.split(/\s+/).filter(Boolean);
+      if (!words.length) return null;
+      var best = null, bestScore = 0;
+      KB.forEach(function(entry) {
+        var matching = 0;
+        words.forEach(function(w) {
+          if (entry.keywords.some(function(k) {
+            return k.toLowerCase().includes(w) || w.includes(k.toLowerCase());
+          })) matching++;
+        });
+        var score = matching / words.length;
+        if (score > bestScore) { bestScore = score; best = entry; }
+      });
+      if (best && bestScore >= 0.3) return best;
+      var qFlat = q; var secondBest = null; var secondScore = 0;
+      KB.forEach(function(entry) {
+        var hits = 0;
+        entry.keywords.forEach(function(k) { if (qFlat.includes(k.toLowerCase())) hits++; });
+        if (hits > secondScore) { secondScore = hits; secondBest = entry; }
+      });
+      return (secondBest && secondScore > 0) ? secondBest : null;
+    }
+
     // ── Send message ──
     function sendMessage(text) {
       var q = (text || input.value).trim();
       if (!q) return;
       input.value = '';
+      // Mark as answered if it was a suggestion question
+      if (SUGGESTIONS.indexOf(q) !== -1 && answeredQs.indexOf(q) === -1) {
+        answeredQs.push(q);
+      }
       appendMessage(q, 'ce-user');
       showTyping();
       var delay = 600 + Math.random() * 400;
       setTimeout(function () {
         removeTyping();
-        var answer = findAnswer(q);
+        var entry = findEntry(q);
+        var answer = entry ? entry.answer : FALLBACK;
         appendMessage(answer, 'ce-bot');
+        // Render CTA action cards if entry has them
+        if (entry && entry.cta) appendCTA(entry.cta);
+        // Show fresh suggestions
+        setTimeout(renderSuggestions, 300);
       }, delay);
     }
 
