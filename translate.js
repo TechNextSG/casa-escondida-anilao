@@ -2106,19 +2106,18 @@
       + '<ul class="lang-dropdown" role="listbox" '
       + 'style="display:none;position:absolute;top:calc(100% + 6px);right:0;'
       + 'min-width:140px;list-style:none;margin:0;padding:4px 0;'
-      + 'background:#0d1e2e;border:1px solid rgba(77,194,232,0.2);'
-      + 'border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.45);z-index:9999;">'
+      + 'border-radius:10px;z-index:9999;transition:background .25s,border-color .25s;">'
       + '<li data-lang="en" role="option" tabindex="0" '
       + 'style="padding:10px 16px;cursor:pointer;font-size:0.78rem;letter-spacing:0.05em;'
-      + 'display:flex;align-items:center;gap:8px;transition:background .15s;color:#e8f4f8;">'
-      + '<span style="font-weight:600;min-width:28px;color:#4dc2e8;">EN</span>'
-      + '<span style="opacity:.8;">English</span>'
+      + 'display:flex;align-items:center;gap:8px;transition:background .15s;">'
+      + '<span class="lang-opt-code" style="font-weight:600;min-width:28px;color:#4dc2e8;">EN</span>'
+      + '<span class="lang-opt-name" style="opacity:.8;">English</span>'
       + '</li>'
       + '<li data-lang="zh" role="option" tabindex="0" '
       + 'style="padding:10px 16px;cursor:pointer;font-size:0.78rem;letter-spacing:0.05em;'
-      + 'display:flex;align-items:center;gap:8px;transition:background .15s;color:#e8f4f8;">'
-      + '<span style="font-weight:600;min-width:28px;color:#4dc2e8;">中文</span>'
-      + '<span style="opacity:.8;">普通话</span>'
+      + 'display:flex;align-items:center;gap:8px;transition:background .15s;">'
+      + '<span class="lang-opt-code" style="font-weight:600;min-width:28px;color:#4dc2e8;">中文</span>'
+      + '<span class="lang-opt-name" style="opacity:.8;">普通话</span>'
       + '</li>'
       + '</ul>';
 
@@ -2172,11 +2171,35 @@
         b.style.boxShadow   = '0 1px 6px rgba(0,0,0,0.1)';
       }
     }
+    /* ----- 3c3. Dropdown theme sync ----- */
+    function syncDropdownTheme() {
+      var isDark = document.documentElement.getAttribute('data-theme') !== 'day';
+      var d = wrapper.querySelector('.lang-dropdown');
+      if (!d) return;
+      if (isDark) {
+        /* Night — deep dark with teal border */
+        d.style.background = '#0a1628';
+        d.style.border     = '1px solid rgba(77,194,232,0.22)';
+        d.style.boxShadow  = '0 8px 28px rgba(0,0,0,0.5)';
+        wrapper.querySelectorAll('[data-lang]').forEach(function(li) {
+          li.style.color = '#e8f4f8';
+        });
+      } else {
+        /* Day — clean white card */
+        d.style.background = '#ffffff';
+        d.style.border     = '1px solid rgba(0,0,0,0.1)';
+        d.style.boxShadow  = '0 4px 20px rgba(0,0,0,0.12)';
+        wrapper.querySelectorAll('[data-lang]').forEach(function(li) {
+          li.style.color = '#0d1e2e';
+        });
+      }
+    }
+
     syncLangBtnTheme();
-    /* Watch theme changes */
-    new MutationObserver(syncLangBtnTheme)
+    syncDropdownTheme();
+    /* Watch theme + scroll changes */
+    new MutationObserver(function() { syncLangBtnTheme(); syncDropdownTheme(); })
       .observe(document.documentElement, { attributes:true, attributeFilter:['data-theme'] });
-    /* Watch nav scroll state (.scrolled class toggled by site.js) */
     var _nav = document.getElementById('nav');
     if (_nav) {
       new MutationObserver(syncLangBtnTheme)
@@ -2202,6 +2225,7 @@
 
     /* ----- 3f. Toggle dropdown ----- */
     function openDropdown() {
+      syncDropdownTheme();
       dropdown.style.display = 'block';
       btn.setAttribute('aria-expanded', 'true');
       /* Animate in */
