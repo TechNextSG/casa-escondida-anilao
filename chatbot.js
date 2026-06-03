@@ -954,7 +954,6 @@
       });
     }
 
-    buildSuggMap();
     function startSuggRotation() { renderSuggestions(); }
     function stopSuggRotation()  { /* no timer needed */ }
 
@@ -1033,6 +1032,7 @@
       for (var i = 0; i < zh.length && i < en.length; i++) { SUGG_MAP[zh[i]] = en[i]; }
     }
     function findEntryBySuggestion(q) { var eq = SUGG_MAP[q]; return eq ? findEntry(eq) : null; }
+    buildSuggMap(); // must be called AFTER var SUGG_MAP = {} above
 
     // ── Find KB entry (returns entry object, not just answer string) ──
     function findEntry(query) {
@@ -1111,7 +1111,7 @@
       stopSuggRotation();
     }
 
-    btn.addEventListener('click', function () { isOpen ? closeChat() : openChat(); });
+    btn.addEventListener('click', function (e) { e.stopPropagation(); isOpen ? closeChat() : openChat(); });
     closeBtn.addEventListener('click', closeChat);
 
     // close on backdrop click
