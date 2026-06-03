@@ -2089,17 +2089,17 @@
     wrapper.setAttribute('style',
       'position:relative;display:inline-flex;align-items:center;');
 
-    var label = (savedLang === 'zh') ? 'EN' : '中文';  /* show target lang */
+    var label = (savedLang === 'zh') ? '中文' : 'EN';  /* show current lang */
 
     wrapper.innerHTML =
       '<button class="lang-btn" aria-haspopup="listbox" aria-expanded="false" '
       + 'aria-label="Select language" '
-      + 'style="display:flex;align-items:center;gap:5px;'
-      + 'background:rgba(255,255,255,0.07);'
-      + 'border:1px solid rgba(255,255,255,0.25);border-radius:20px;'
-      + 'padding:4px 10px 4px 8px;cursor:pointer;color:rgba(255,255,255,0.85);font-size:0.72rem;'
-      + 'letter-spacing:0.08em;white-space:nowrap;line-height:1;font-family:inherit;'
-      + 'transition:border-color .3s,background .3s,color .3s;">'
+      + 'style="display:flex;align-items:center;gap:6px;'
+      + 'background:rgba(255,255,255,0.12);'
+      + 'border:1.5px solid rgba(255,255,255,0.35);border-radius:30px;'
+      + 'padding:5px 13px 5px 10px;cursor:pointer;color:#ffffff;font-size:0.73rem;'
+      + 'font-weight:500;letter-spacing:0.06em;white-space:nowrap;line-height:1;font-family:inherit;'
+      + 'transition:border-color .25s,background .25s,color .25s,box-shadow .25s;">'
       + globeSVG
       + '<span class="lang-current">' + label + '</span>'
       + '</button>'
@@ -2146,27 +2146,30 @@
 
     /* ----- 3c2. Theme-aware + scroll-aware button styling ----- */
     function syncLangBtnTheme() {
-      var navEl   = document.getElementById('nav');
-      var isDark  = document.documentElement.getAttribute('data-theme') !== 'day';
+      var navEl      = document.getElementById('nav');
+      var isDark     = document.documentElement.getAttribute('data-theme') !== 'day';
       var isScrolled = navEl && navEl.classList.contains('scrolled');
       var b = wrapper.querySelector('.lang-btn');
       if (!b) return;
 
       if (!isScrolled) {
-        /* Over hero (transparent nav) — always white regardless of day/night */
-        b.style.background  = 'rgba(255,255,255,0.07)';
-        b.style.borderColor = 'rgba(255,255,255,0.25)';
-        b.style.color       = 'rgba(255,255,255,0.85)';
+        /* Over hero (transparent nav) — frosted white pill over dark video */
+        b.style.background  = 'rgba(255,255,255,0.15)';
+        b.style.borderColor = 'rgba(255,255,255,0.45)';
+        b.style.color       = '#ffffff';
+        b.style.boxShadow   = '0 2px 8px rgba(0,0,0,0.2)';
       } else if (isDark) {
-        /* Scrolled + night mode — white on dark glass nav */
-        b.style.background  = 'rgba(255,255,255,0.07)';
-        b.style.borderColor = 'rgba(255,255,255,0.2)';
-        b.style.color       = 'rgba(255,255,255,0.85)';
+        /* Scrolled + NIGHT — deep dark pill with teal accent border */
+        b.style.background  = 'rgba(8,18,32,0.88)';
+        b.style.borderColor = 'rgba(77,194,232,0.45)';
+        b.style.color       = '#e8f4f8';
+        b.style.boxShadow   = '0 2px 10px rgba(0,0,0,0.35)';
       } else {
-        /* Scrolled + day mode — dark text on light solid nav */
-        b.style.background  = 'rgba(0,0,0,0.04)';
-        b.style.borderColor = 'rgba(0,0,0,0.15)';
+        /* Scrolled + DAY — clean white pill with dark text */
+        b.style.background  = 'rgba(255,255,255,0.95)';
+        b.style.borderColor = 'rgba(0,0,0,0.12)';
         b.style.color       = '#0d1e2e';
+        b.style.boxShadow   = '0 1px 6px rgba(0,0,0,0.1)';
       }
     }
     syncLangBtnTheme();
@@ -2235,7 +2238,7 @@
     items.forEach(function (li) {
       function selectLang() {
         var lang = li.getAttribute('data-lang');
-        current.textContent = (lang === 'zh') ? 'EN' : '中文';  /* show target lang */
+        current.textContent = (lang === 'zh') ? '中文' : 'EN';  /* show current lang */
         markActive(lang);
         closeDropdown();
         applyTranslation(lang);
