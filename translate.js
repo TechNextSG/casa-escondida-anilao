@@ -31,6 +31,12 @@
       reserve_stay:       'Reserve Your Stay',
       explore_diving:     'Explore Diving',
 
+      /* Nav link keys (used on legal pages + any page with data-i18n on nav) */
+      nav_about:    'About',    nav_rooms:    'Rooms',
+      nav_dive:     'Dive',     nav_gallery:  'Gallery',
+      nav_location: 'Location', nav_blog:     'Blog',
+      nav_book:     'Book Now',
+
       /* About */
       our_story:          'Our Story',
       about_title:        'A Hidden Paradise, Discovered',
@@ -884,6 +890,12 @@
       hero_sub:           'PADI潜水度假村及海滨休闲胜地，位于八打雁省马比尼。门前即有30余处世界级潜点。',
       reserve_stay:       '预订住宿',
       explore_diving:     '探索潜水',
+
+      /* Nav link keys */
+      nav_about:    '关于我们', nav_rooms:    '客房',
+      nav_dive:     '潜水',     nav_gallery:  '图库',
+      nav_location: '位置',     nav_blog:     '博客',
+      nav_book:     '立即预订',
 
       /* About */
       our_story:          '我们的故事',
