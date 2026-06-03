@@ -706,29 +706,72 @@
   ];
 
   // ── Suggested Questions ──────────────────────────────────────
-  const SUGGESTIONS = [
-    'How to book a room?',
-    'PADI courses available?',
-    'Distance from Manila?',
-    "What's in the room rate?",
-    'Dive gear for rent?',
-    'Check-in / check-out time?',
-    'Best dive sites?',
-    'Night diving available?',
-    'What are the reviews?',
-    'Island BBQ experience?',
-    'Transfer from Manila?',
-    'How many rooms?'
-  ];
+  // Resolved at runtime via I18N — see I18N.en.suggestions / I18N.zh.suggestions
+  function getSuggestions() { return t('suggestions'); }
 
-  const GREETING = "Hi! 👋 Welcome to Casa Escondida Anilao. I'm your resort assistant — ask me anything about diving, rooms, or how to get here!";
-  const FALLBACK  = "I'd be happy to help! For this question, please contact us directly:\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao\n🌐 casaescondida-anilao.com";
+  // ── Language helpers ─────────────────────────────────────────
+  function getChatLang() {
+    return localStorage.getItem('ce-lang') || 'en';
+  }
+
+  const I18N = {
+    en: {
+      headerSub:   'Resort Assistant · Usually replies instantly',
+      placeholder: 'Ask about diving, rooms, or how to get here…',
+      footer:      'Powered by <a href="https://casaescondida-anilao.com" target="_blank">casaescondida-anilao.com</a>',
+      greeting:    "Hi! 👋 Welcome to Casa Escondida Anilao. I'm your resort assistant — ask me anything about diving, rooms, or how to get here!",
+      fallback:    "I'd be happy to help! For this question, please contact us directly:\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao\n🌐 casaescondida-anilao.com",
+      suggestions: [
+        'How to book a room?',
+        'PADI courses available?',
+        'Distance from Manila?',
+        "What's in the room rate?",
+        'Dive gear for rent?',
+        'Check-in / check-out time?',
+        'Best dive sites?',
+        'Night diving available?',
+        'What are the reviews?',
+        'Island BBQ experience?',
+        'Transfer from Manila?',
+        'How many rooms?'
+      ]
+    },
+    zh: {
+      headerSub:   '度假村助手 · 通常即时回复',
+      placeholder: '询问潜水、客房或如何到达...',
+      footer:      '由 <a href="https://casaescondida-anilao.com" target="_blank">casaescondida-anilao.com</a> 提供技术支持',
+      greeting:    '您好！👋 欢迎来到 Casa Escondida Anilao。我是您的度假村助手——欢迎询问潜水、客房或如何到达的任何问题！',
+      fallback:    '很乐意为您提供帮助！对于这个问题，请直接联系我们：\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao\n🌐 casaescondida-anilao.com',
+      suggestions: [
+        '如何预订房间？',
+        '有哪些PADI课程？',
+        '距马尼拉多远？',
+        '房价包含什么？',
+        '可以租借潜水装备吗？',
+        '入住/退房时间？',
+        '最佳潜水点有哪些？',
+        '可以夜潜吗？',
+        '客人评价如何？',
+        '岛屿烧烤体验？',
+        '马尼拉如何前往？',
+        '共有多少间客房？'
+      ]
+    }
+  };
+
+  function t(key) {
+    var lang = getChatLang();
+    return (I18N[lang] || I18N.en)[key] || I18N.en[key];
+  }
+
+  const GREETING = I18N.en.greeting;
+  const FALLBACK  = I18N.en.fallback;
 
   // ── Fuzzy Matching ───────────────────────────────────────────
   function findAnswer(query) {
     const q = query.toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
     const words = q.split(/\s+/).filter(Boolean);
-    if (!words.length) return FALLBACK;
+    if (!words.length) return t('fallback');
 
     let best = null;
     let bestScore = 0;
@@ -767,7 +810,7 @@
     });
     if (secondBest && secondScore > 0) return secondBest.answer;
 
-    return FALLBACK;
+    return t('fallback');
   }
 
   // ── Build DOM ────────────────────────────────────────────────
@@ -798,7 +841,7 @@
           <div class="ce-header-avatar">🤿</div>
           <div class="ce-header-text">
             <div class="ce-header-title">Casa Escondida Anilao</div>
-            <div class="ce-header-sub">Resort Assistant · Usually replies instantly</div>
+            <div class="ce-header-sub" id="ce-header-sub"></div>
           </div>
           <div class="ce-online-dot" title="Online"></div>
           <button id="ce-close-btn" aria-label="Close chat">&#x2715;</button>
@@ -809,14 +852,14 @@
         <div id="ce-suggestions"></div>
 
         <div id="ce-input-row">
-          <input id="ce-input" type="text" placeholder="Ask about diving, rooms, or how to get here…" maxlength="300" autocomplete="off" />
+          <input id="ce-input" type="text" maxlength="300" autocomplete="off" />
           <button id="ce-send-btn" aria-label="Send message">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
             </svg>
           </button>
         </div>
-        <div id="ce-footer">Powered by <a href="https://casaescondida-anilao.com" target="_blank">casaescondida-anilao.com</a></div>
+        <div id="ce-footer"></div>
       </div>
     `;
 
@@ -834,18 +877,41 @@
     var suggUsed     = [];   // used this cycle
     var answeredQs   = [];   // questions already answered — never show again
 
+    // ── Apply current language to all translatable UI elements ──
+    function applyLang() {
+      var headerSub = document.getElementById('ce-header-sub');
+      var footer    = document.getElementById('ce-footer');
+      if (headerSub) headerSub.textContent = t('headerSub');
+      if (input)     input.placeholder     = t('placeholder');
+      if (footer)    footer.innerHTML      = t('footer');
+      // Re-render suggestion chips in the new language (reset used cycle)
+      suggUsed = [];
+      if (isOpen) renderSuggestions();
+    }
+
+    // Watch for language changes via localStorage (storage event from other tabs)
+    // and also via a custom 'ce-lang-change' event dispatched by the language switcher
+    window.addEventListener('storage', function(e) {
+      if (e.key === 'ce-lang') applyLang();
+    });
+    document.addEventListener('ce-lang-change', function() { applyLang(); });
+
+    // Set initial translated text
+    applyLang();
+
     // ── Fisher-Yates shuffle ──
     function shuffle(arr) {
       var a = arr.slice();
       for (var i = a.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
-        var t = a[i]; a[i] = a[j]; a[j] = t;
+        var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
       }
       return a;
     }
 
     // ── Get next 3 unique suggestions (never show answered ones again) ──
     function nextBatch() {
+      var SUGGESTIONS = getSuggestions();
       // Eligible = not answered AND not in current cycle
       var eligible = SUGGESTIONS.filter(function(s) {
         return answeredQs.indexOf(s) === -1;
@@ -979,8 +1045,9 @@
       var q = (text || input.value).trim();
       if (!q) return;
       input.value = '';
-      // Mark as answered if it was a suggestion question
-      if (SUGGESTIONS.indexOf(q) !== -1 && answeredQs.indexOf(q) === -1) {
+      // Mark as answered if it was a suggestion chip (any language)
+      var allSugg = getSuggestions();
+      if (allSugg.indexOf(q) !== -1 && answeredQs.indexOf(q) === -1) {
         answeredQs.push(q);
       }
       appendMessage(q, 'ce-user');
@@ -989,7 +1056,7 @@
       setTimeout(function () {
         removeTyping();
         var entry = findEntry(q);
-        var answer = entry ? entry.answer : FALLBACK;
+        var answer = entry ? entry.answer : t('fallback');
         appendMessage(answer, 'ce-bot');
         // Render CTA action cards if entry has them
         if (entry && entry.cta) appendCTA(entry.cta);
@@ -1011,7 +1078,7 @@
       startSuggRotation();
       if (!greeted) {
         greeted = true;
-        setTimeout(function () { appendMessage(GREETING, 'ce-bot'); }, 300);
+        setTimeout(function () { appendMessage(t('greeting'), 'ce-bot'); }, 300);
       }
       setTimeout(function () { input.focus(); }, 350);
     }
