@@ -521,7 +521,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ═══ HERO ═══ -->
 <header class="dv-hero">
   <!-- Looping background video -->
-  <video class="dv-hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="images/background/594413266_1405022098297117_5892045775093709556_n.webp">
+  <video class="dv-hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true" poster="images/background/594413266_1405022098297117_5892045775093709556_n.webp">
     <source src="images/03.%20Dive%20-%20Hero%20Section/Cinematic_Image_output_v1mp4_p1KKuVQX.mp4" type="video/mp4" />
   </video>
   <!-- Dark gradient overlay -->
@@ -588,7 +588,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p data-i18n="dive_overview_p2">Hot showers, full equipment rental, camera rinse stations, nitrox fills, and a private jetty for direct access to Anilao's legendary dive sites make every morning effortless.</p>
       </div>
       <div class="overview-image rvl rvl-d2">
-        <img src="images/Nature Folder/Peacock Mantis Shrimp.webp" alt="Peacock mantis shrimp — Anilao macro diving" loading="lazy" decoding="async" width="800" height="533" />
+        <img src="images/Nature Folder/Peacock Mantis Shrimp.webp" alt="Peacock mantis shrimp — Anilao macro diving" loading="eager" decoding="async" width="800" height="533" />
         <div class="ov-padi-badge">
           <div class="ov-padi-logo">PADI</div>
           <div class="ov-padi-text">5-Star Dive Center<br>Anilao, Batangas</div>
@@ -735,7 +735,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="eco-modal-inner">
     <div class="eco-modal-photo">
       <button class="eco-modal-close" id="ecoModalClose" aria-label="Close detail">&times;</button>
-      <img decoding="async" loading="lazy" id="ecoModalImg" src="" alt="" />
+      <img decoding="async" loading="eager" id="ecoModalImg" src="" alt="" />
     </div>
     <div class="eco-modal-body">
       <div class="eco-modal-cat" id="ecoModalCat"></div>
@@ -877,7 +877,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ═══ CTA BAND ═══ -->
 <section class="dive-cta">
   <div class="dive-cta-bg">
-    <img src="images/Nature Folder/sea fan coral.webp" alt="Anilao sea fan coral reef" loading="lazy" decoding="async" width="800" height="533" />
+    <img src="images/Nature Folder/sea fan coral.webp" alt="Anilao sea fan coral reef" loading="eager" decoding="async" width="800" height="533" />
   </div>
   <div class="dive-cta-overlay"></div>
   <div class="dive-cta-content rvl">
@@ -1165,7 +1165,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if(!list.length){ grid.innerHTML = '<div class="eco-empty">No species in this category yet.</div>'; return; }
       grid.innerHTML = list.map(s => `
         <button type="button" class="eco-card" data-id="${s.id}" aria-label="View details for ${s.name}">
-          <img decoding="async" src="${s.img}" alt="${s.name} — ${s.sci}" loading="lazy" />
+          <img decoding="async" src="${s.img}" alt="${s.name} — ${s.sci}" loading="eager" />
           <div class="eco-card-cat">${s.catLabel}</div>
           <div class="eco-card-rarity ${s.rarityClass}">${s.rarity}</div>
           <div class="eco-card-label">

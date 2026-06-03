@@ -544,9 +544,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- HERO -->
   <header class="loc-hero">
     <!-- Looping background video -->
-    <video class="loc-hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="images/background/594413266_1405022098297117_5892045775093709556_n.webp">
+    <video class="loc-hero-video" id="locHeroVid" autoplay muted loop playsinline preload="auto" aria-hidden="true" poster="images/background/594413266_1405022098297117_5892045775093709556_n.webp">
       <source src="images/location-hero.mp4" type="video/mp4" />
     </video>
+    <script>
+    (function(){
+      var v = document.getElementById('locHeroVid');
+      if (!v) return;
+      function tryPlay(){ v.muted=true; v.play().catch(function(){}); }
+      v.addEventListener('canplay', tryPlay);
+      v.addEventListener('loadeddata', tryPlay);
+      v.addEventListener('loadedmetadata', tryPlay);
+      tryPlay();
+      setTimeout(tryPlay, 500);
+      setTimeout(tryPlay, 1500);
+    })();
+    </script>
     <!-- Dark gradient overlay -->
     <div class="loc-hero-overlay" aria-hidden="true"></div>
     <!-- Content -->
@@ -886,7 +899,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="loc-map-badge">Anilao · Mabini · Batangas</div>
       <iframe
         src="https://maps.google.com/maps?q=Casa+Escondida+Anilao+Resort+%26+Dive+Center,+Mabini,+Batangas&t=&z=15&ie=UTF8&iwloc=&output=embed"
-        loading="lazy"
+        loading="eager"
         referrerpolicy="no-referrer-when-downgrade"
         title="Casa Escondida Anilao — Google Map"
         allowfullscreen></iframe>

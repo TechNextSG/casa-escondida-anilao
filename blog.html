@@ -949,7 +949,7 @@ function renderPosts() {
     const displayCatLabel = (isZh && CAT_LABELS_ZH[p.cat]) ? CAT_LABELS_ZH[p.cat] : p.catLabel;
     return `<article class="blog-card">
   <div class="bc-thumb">
-    <img src="${p.img}" alt="${displayTitle}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    <img src="${p.img}" alt="${displayTitle}" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
     <div class="bc-thumb-tag">${displayCatLabel}</div>
   </div>
   <div class="bc-body">
