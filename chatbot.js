@@ -585,7 +585,8 @@
     },
     {
       keywords: ['breakfast', 'meal', 'food', 'include', 'included', 'dining', 'eat'],
-      answer: 'Yes! Breakfast for two guests is included in all room rates at Casa Escondida Anilao. 🍽️\n\nOur restaurant also serves lunch and dinner featuring Filipino and international cuisine. Don\'t miss our famous island BBQ experience where we grill fresh seafood on a nearby island!'
+      answer: 'Yes! Breakfast for two guests is included in all room rates at Casa Escondida Anilao. 🍽️\n\nOur restaurant also serves lunch and dinner featuring Filipino and international cuisine. Don\'t miss our famous island BBQ experience where we grill fresh seafood on a nearby island!',
+      answerZh: '是的！卡萨埃斯孔迪达阿尼劳所有房型均含双人早餐。🍽️\n\n我们的餐厅全天供应菲律宾及国际美食的午餐和晚餐。别忘了体验我们著名的岛屿烧烤——在附近小岛上享用新鲜烤海鲜！'
     },
     {
       keywords: ['padi', 'dive', 'diving', 'course', 'courses', 'certification', 'certify', 'learn', 'divemaster', 'open water', 'advanced', 'rescue', 'scuba'],
@@ -718,11 +719,13 @@
     },
     {
       keywords: ['weather', 'season', 'best time', 'when visit', 'monsoon', 'typhoon', 'summer'],
-      answer: 'Best time to visit Casa Escondida Anilao:\n\n☀️ Peak season: December to May (dry season, calm seas, excellent visibility)\n🌧️ Wet season: June to November (some typhoon risk, but diving still possible most days)\n\n✨ Pro tip: Visibility is often best from November to May, with water temperatures around 27–30°C year-round. Anilao is a year-round destination!'
+      answer: 'Best time to visit Casa Escondida Anilao:\n\n☀️ Peak season: December to May (dry season, calm seas, excellent visibility)\n🌧️ Wet season: June to November (some typhoon risk, but diving still possible most days)\n\n✨ Pro tip: Visibility is often best from November to May, with water temperatures around 27–30°C year-round. Anilao is a year-round destination!',
+      answerZh: '卡萨埃斯孔迪达阿尼劳最佳造访时间：\n\n☀️ 旺季：12月至5月（旱季，海况平稳，能见度极佳）\n🌧️ 雨季：6月至11月（偶有台风，但大多数日子仍可潜水）\n\n✨ 专业建议：11月至5月能见度最佳，全年水温约27–30°C。阿尼劳是全年可游的潜水胜地！'
     },
     {
       keywords: ['certification', 'certified', 'non diver', 'beginner', 'first time', 'try', 'discover', 'dsd'],
-      answer: 'Never dived before? No problem! 🤿\n\nAt Casa Escondida Anilao you can:\n\n🌊 Try a Discover Scuba Diving (DSD) experience — no prior experience needed!\n🎓 Enroll in the PADI Open Water Diver course — get fully certified in 3–4 days\n\nOur experienced PADI instructors will guide you every step of the way. Anilao\'s calm, clear waters are perfect for beginners!'
+      answer: 'Never dived before? No problem! 🤿\n\nAt Casa Escondida Anilao you can:\n\n🌊 Try a Discover Scuba Diving (DSD) experience — no prior experience needed!\n🎓 Enroll in the PADI Open Water Diver course — get fully certified in 3–4 days\n\nOur experienced PADI instructors will guide you every step of the way. Anilao\'s calm, clear waters are perfect for beginners!',
+      answerZh: '从未潜过水？没问题！🤿\n\n在卡萨埃斯孔迪达阿尼劳，您可以：\n\n🌊 体验探索水肺潜水（DSD）——无需任何经验！\n🎓 参加PADI开放水域潜水员课程——3至4天即可完成认证\n\n我们经验丰富的PADI教练将全程陪伴引导。阿尼劳清澈平静的海水是初学者的理想之地！'
     }
   ];
 
