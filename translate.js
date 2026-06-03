@@ -301,6 +301,78 @@
       el.setAttribute('aria-label', t(key));
     });
 
+    /* ── Selector-based translation (no data-i18n attributes needed) ── */
+    var SEL = {
+      /* Nav links */
+      '.nav-links a[href="#about"],.nav-links a[href="/"]':      { en:'About',    zh:'关于我们' },
+      '.nav-links a[href="rooms.html"]':                         { en:'Rooms',    zh:'客房' },
+      '.nav-links a[href="dive.html"]':                          { en:'Dive',     zh:'潜水' },
+      '.nav-links a[href="gallery.html"]':                       { en:'Gallery',  zh:'图库' },
+      '.nav-links a[href="location.html"]':                      { en:'Location', zh:'位置' },
+      '.nav-links a[href="blog.html"]':                          { en:'Blog',     zh:'博客' },
+      /* Mobile nav */
+      '.mob-link[href="#about"]':   { en:'About',    zh:'关于我们' },
+      '.mob-link[href="rooms.html"]':  { en:'Rooms',    zh:'客房' },
+      '.mob-link[href="dive.html"]':   { en:'Dive',     zh:'潜水' },
+      '.mob-link[href="gallery.html"]':{ en:'Gallery',  zh:'图库' },
+      '.mob-link[href="location.html"]':{ en:'Location', zh:'位置' },
+      '.mob-link[href="blog.html"]':   { en:'Blog',     zh:'博客' },
+      /* Book Now / CTA buttons */
+      '.btn-book,.btn-nav-cta,#navBookNow': { en:'Book Now', zh:'立即预订' },
+      '.mobile-nav-cta':    { en:'Book Now', zh:'立即预订' },
+      /* Homepage hero */
+      '.hero-tag':          { en:'Anilao · Mabini · Batangas', zh:'阿尼劳 · 马比尼 · 八打雁' },
+      '.hero-sub':          { en:'Where the Ocean Becomes Home', zh:'海洋即是家园' },
+      '.btn-hero-primary#openBookingModal,.hero-btns .btn-hero-primary':
+                            { en:'Reserve Your Stay', zh:'预订住宿' },
+      '.hero-btns .btn-hero-ghost,.btn-hero-ghost[href="#dive"]':
+                            { en:'Explore Diving', zh:'探索潜水' },
+      /* Rooms hero */
+      '.r-eyebrow':         { en:'Accommodation', zh:'住宿' },
+      '.r-sub':             { en:'24 ocean-side rooms designed for the diving traveler — fall asleep to the sound of waves, wake up ready to dive.',
+                              zh:'24间海景客房专为潜水旅行者设计——伴着海浪声入眠，醒来即可投身大海。' },
+      /* Dive hero */
+      '.dv-eyebrow':        { en:'PADI 5-Star Dive Center · Anilao, Batangas', zh:'PADI五星潜水中心 · 阿尼劳，八打雁' },
+      '.dv-sub':            { en:'One of the world\'s top macro-diving destinations — fun dives, PADI courses, and night dives right from our private jetty.',
+                              zh:'世界顶级微距潜水胜地之一——趣味潜水、PADI课程，以及从我们私人码头出发的夜间潜水。' },
+      /* Gallery hero */
+      '.g-eyebrow':         { en:'Photo & Video Gallery', zh:'照片与视频图库' },
+      '.g-sub':             { en:'Real photos and videos from our Facebook and Instagram — dive life, resort moments, and the underwater world of Anilao.',
+                              zh:'来自我们Facebook和Instagram的真实照片和视频——潜水生活、度假时光和阿尼劳水下世界。' },
+      /* Location hero */
+      '.loc-eyebrow':       { en:'Find Us', zh:'找到我们' },
+      '.loc-sub':           { en:'Tucked between jungle-clad hills and coral-rich waters in Brgy. Ligaya, Mabini — just two hours south of Manila.',
+                              zh:'坐落在利加亚村马比尼的丛林山丘与珊瑚丰富海域之间——距马尼拉以南仅两小时车程。' },
+      '.loc-stat-l:nth-child(1)': { en:'From Manila', zh:'距马尼拉' },
+      /* Blog hero */
+      '.blog-eyebrow':      { en:'Casa Escondida · Anilao, Batangas', zh:'卡萨埃斯孔迪达 · 八打雁阿尼劳' },
+      '.blog-sub':          { en:'Dive guides, marine life spotting tips, resort stories, and travel advice from Anilao — the macro diving capital of the Philippines.',
+                              zh:'来自阿尼劳（菲律宾微距潜水之都）的潜水指南、海洋生物观察技巧、度假故事和旅行建议。' },
+      /* Common CTA */
+      '.hero-cta-primary[href="/#booking"],.hero-cta-primary[href="/"]':
+                            { en:'Book Your Stay', zh:'预订住宿' },
+      '.loc-btn-primary':   { en:'Get Directions →', zh:'获取路线 →' },
+      '.loc-btn-ghost':     { en:'Contact Us', zh:'联系我们' },
+      /* Theme toggle label */
+      '#themeLabel':        { en:'', zh:'' }  /* keep as-is */
+    };
+
+    var zh = validLang === 'zh';
+    Object.keys(SEL).forEach(function(sel) {
+      try {
+        var els = document.querySelectorAll(sel);
+        els.forEach(function(el) {
+          var txt = zh ? SEL[sel].zh : SEL[sel].en;
+          if (txt && el.textContent.trim() !== '') {
+            /* Only replace leaf nodes with simple text */
+            if (!el.querySelector('em,strong,span,svg,img')) {
+              el.textContent = txt;
+            }
+          }
+        });
+      } catch(e) {}
+    });
+
     /* Body class for per-language CSS overrides (e.g. font stacks) */
     document.body.classList.toggle('lang-zh', validLang === 'zh');
     document.body.classList.toggle('lang-en', validLang === 'en');

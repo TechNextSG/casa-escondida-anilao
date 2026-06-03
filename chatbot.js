@@ -238,9 +238,9 @@
       border-bottom-right-radius: 4px;
     }
     .ce-msg.ce-bot .ce-bubble {
-      background: rgba(255,255,255,0.07);
-      color: rgba(255,255,255,0.9);
-      border: 1px solid rgba(77,194,232,0.15);
+      background: rgba(13,30,46,0.88);
+      color: #e8f4f8;
+      border: 1px solid rgba(77,194,232,0.2);
       border-bottom-left-radius: 4px;
     }
 
@@ -711,32 +711,35 @@
     // ── Theme awareness (day / night) ──
     function applyTheme() {
       var isDark = document.documentElement.getAttribute('data-theme') !== 'day';
-      window_.style.background   = isDark ? '#0d1e2e' : '#ffffff';
-      window_.style.color        = isDark ? '#e8f4f8' : '#0d1e2e';
-      window_.style.borderColor  = isDark ? 'rgba(77,194,232,0.18)' : 'rgba(0,0,0,0.1)';
-      window_.style.boxShadow    = isDark
-        ? '0 12px 48px rgba(0,0,0,0.5)'
-        : '0 8px 32px rgba(0,0,0,0.18)';
+      // Window
+      window_.style.background  = isDark ? '#0d1e2e' : '#f8fafc';
+      window_.style.borderColor = isDark ? 'rgba(77,194,232,0.18)' : 'rgba(0,0,0,0.1)';
+      window_.style.boxShadow   = isDark ? '0 12px 48px rgba(0,0,0,0.5)' : '0 8px 32px rgba(0,0,0,0.18)';
+      // Header
       var header = document.getElementById('ce-chat-header');
       if (header) {
-        header.style.background  = isDark ? 'linear-gradient(135deg,#0d1e2e,#122839)'
-                                          : 'linear-gradient(135deg,#f5f9fc,#e8f4f8)';
-        header.style.borderColor = isDark ? 'rgba(77,194,232,0.2)' : 'rgba(77,194,232,0.15)';
+        header.style.background  = isDark ? 'linear-gradient(135deg,#0d1e2e,#122839)' : 'linear-gradient(135deg,#0d1e2e,#1a3050)';
+        header.style.borderColor = 'rgba(77,194,232,0.2)';
       }
+      // Messages area
       var msgs = document.getElementById('ce-messages');
-      if (msgs) msgs.style.background = isDark ? 'transparent' : '#f8fbfd';
+      if (msgs) msgs.style.background = isDark ? 'transparent' : '#f0f4f8';
+      // Bot bubbles — fix invisible text in day mode
+      msgs && msgs.querySelectorAll('.ce-msg.ce-bot .ce-bubble').forEach(function(b) {
+        b.style.background = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(13,30,46,0.92)';
+        b.style.color      = '#e8f4f8';  /* always light — bubble is always dark */
+      });
+      // Input row
       var inputRow = document.getElementById('ce-input-row');
       if (inputRow) {
-        inputRow.style.borderColor = isDark ? 'rgba(77,194,232,0.15)' : 'rgba(0,0,0,0.08)';
+        inputRow.style.borderColor = isDark ? 'rgba(77,194,232,0.15)' : 'rgba(0,0,0,0.1)';
         inputRow.style.background  = isDark ? '#0d1e2e' : '#ffffff';
       }
       var inp = document.getElementById('ce-input');
-      if (inp) {
-        inp.style.color = isDark ? '#e8f4f8' : '#0d1e2e';
-        inp.style.background = 'transparent';
-      }
+      if (inp) { inp.style.color = isDark ? '#e8f4f8' : '#0d1e2e'; }
+      // Suggestions
       var sugg = document.getElementById('ce-suggestions');
-      if (sugg) sugg.style.background = isDark ? 'rgba(4,8,15,0.3)' : 'rgba(77,194,232,0.04)';
+      if (sugg) sugg.style.background = isDark ? 'rgba(4,8,15,0.3)' : 'rgba(13,30,46,0.04)';
     }
     applyTheme();
 
