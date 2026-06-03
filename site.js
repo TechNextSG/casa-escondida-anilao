@@ -162,3 +162,10 @@
   })();
 
 })();
+
+/* ── SERVICE WORKER — cache all pages + assets on first load ── */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  });
+}
