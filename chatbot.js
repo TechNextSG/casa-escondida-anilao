@@ -559,25 +559,28 @@
     {
       keywords: ['book', 'booking', 'reservation', 'reserve', 'availability', 'available', 'stay', 'visit'],
       answer: 'To book a room at Casa Escondida Anilao:\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao\n\nWe recommend booking in advance (peak: Dec–May). We\'ll confirm your reservation right away!',
+      answerZh: '预订卡萨埃斯孔迪达阿尼劳客房：\n📞 致电 +63 977 837 2272\n💬 Facebook私信：CasaEscondidaAnilao\n\n建议提前预订，旺季（12月至5月）尤为重要。',
       cta: [
-        { label: 'Book Your Stay', url: '/#booking', icon: '📅', primary: true },
-        { label: 'View Room Types', url: 'rooms.html', icon: '🛏️' }
+        { label: 'Book Your Stay', labelZh: '预订住宿', url: '/#booking', icon: '📅', primary: true },
+        { label: 'View Room Types', labelZh: '查看房型', url: 'rooms.html', icon: '🛏️' }
       ]
     },
     {
       keywords: ['rate', 'rates', 'price', 'pricing', 'cost', 'fee', 'how much', 'budget'],
       answer: 'Room rates vary by type and season — all include breakfast for two. We also have dive+stay packages. Contact us for the latest rates:\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao',
+      answerZh: '房价因房型和季节而异，所有房型均含双人早餐。我们还提供潜水套餐。\n📞 +63 977 837 2272',
       cta: [
-        { label: 'See Room Options', url: 'rooms.html', icon: '🛏️', primary: true },
-        { label: 'Book & Check Rates', url: '/#booking', icon: '📅' }
+        { label: 'See Room Options', labelZh: '查看房间选项', url: 'rooms.html', icon: '🛏️', primary: true },
+        { label: 'Book & Check Rates', labelZh: '预订并查询价格', url: '/#booking', icon: '📅' }
       ]
     },
     {
       keywords: ['room', 'rooms', 'accommodation', 'suite', 'deluxe', 'standard', 'type', 'types', 'sea view', 'seaview'],
       answer: 'We offer sea-view rooms and suites with views of Balayan Bay:\n\n🛏️ Standard Double/Twin\n🌊 Deluxe Sea View\n✨ Suite with Sea View\n🍳 Breakfast for two included\n❄️ A/C, hot shower, free WiFi',
+      answerZh: '我们提供可欣赏巴拉扬湾美景的海景客房和套房：\n\n🛏️ 标准双人间/双床间\n🌊 豪华海景客房\n✨ 海景套房\n🍳 含双人早餐\n❄️ 空调、热水淋浴、免费WiFi',
       cta: [
-        { label: 'Explore All Rooms', url: 'rooms.html', icon: '🛏️', primary: true },
-        { label: 'Book Now', url: '/#booking', icon: '📅' }
+        { label: 'Explore All Rooms', labelZh: '浏览所有客房', url: 'rooms.html', icon: '🛏️', primary: true },
+        { label: 'Book Now', labelZh: '立即预订', url: '/#booking', icon: '📅' }
       ]
     },
     {
@@ -587,24 +590,27 @@
     {
       keywords: ['padi', 'dive', 'diving', 'course', 'courses', 'certification', 'certify', 'learn', 'divemaster', 'open water', 'advanced', 'rescue', 'scuba'],
       answer: 'As a PADI 5-Star Dive Center, we offer:\n\n🎓 Open Water Diver · Advanced OW\n🎓 Rescue Diver · Divemaster\n🎓 Specialty courses\n🤿 Fun dives for certified divers\n\nAnilao is the birthplace of Philippine scuba diving!',
+      answerZh: '作为PADI五星潜水中心，我们提供：\n\n🎓 开放水域潜水员（初级）\n🎓 进阶开放水域潜水员\n🎓 救援潜水员 · 潜水长\n🎓 各类专长课程\n🤿 持证潜水员休闲潜水\n\n阿尼劳是菲律宾水肺潜水的发源地！',
       cta: [
-        { label: 'Explore Dive Center', url: 'dive.html', icon: '🤿', primary: true },
-        { label: 'Book a Dive Package', url: '/#booking', icon: '📅' }
+        { label: 'Explore Dive Center', labelZh: '探索潜水中心', url: 'dive.html', icon: '🤿', primary: true },
+        { label: 'Book a Dive Package', labelZh: '预订潜水套餐', url: '/#booking', icon: '📅' }
       ]
     },
     {
       keywords: ['dive site', 'dive sites', 'sites', 'spot', 'spots', 'where dive', 'anilao dive'],
       answer: 'Anilao has 30+ world-class dive sites! 🐠\n\n• Beatrice Rock – nudibranchs\n• Kirby\'s Rock – coral formations\n• Cathedral Rock – swim-throughs\n• Twin Rocks – macro photography\n• Arthur\'s Rock, Sepoc & more!\n\nRenowned globally for macro photography.',
+      answerZh: '阿尼劳拥有30多个世界级潜水点！🐠\n\n• 碧翠斯礁 – 裸鳃动物天堂\n• 科比礁 – 珊瑚奇观\n• 教堂礁 – 穿越岩洞\n• 双礁 – 微距摄影圣地\n• 亚瑟礁、塞波克等更多！',
       cta: [
-        { label: 'See All Dive Sites', url: 'dive.html#sites', icon: '🗺️', primary: true },
-        { label: 'Book Dive Package', url: '/#booking', icon: '📅' }
+        { label: 'See All Dive Sites', labelZh: '查看所有潜点', url: 'dive.html#sites', icon: '🗺️', primary: true },
+        { label: 'Book Dive Package', labelZh: '预订潜水套餐', url: '/#booking', icon: '📅' }
       ]
     },
     {
       keywords: ['equipment', 'gear', 'rent', 'rental', 'bcd', 'regulator', 'wetsuit', 'fins', 'mask'],
       answer: 'Yes! Full dive gear rental available:\n\n🤿 BCD, regulator, wetsuit, fins, mask\n📷 Underwater camera rentals\n\nAll equipment is well-maintained. You can also bring your own gear.',
+      answerZh: '是的！我们提供完整潜水装备租借：\n\n🤿 浮力调节装置、调节器、潜水衣、脚蹼、面镜\n📷 水下相机租借\n\n所有设备均定期维护保养。',
       cta: [
-        { label: 'View Dive Packages', url: 'dive.html#packages', icon: '🤿', primary: true }
+        { label: 'View Dive Packages', labelZh: '查看潜水套餐', url: 'dive.html#packages', icon: '🤿', primary: true }
       ]
     },
     {
@@ -618,25 +624,28 @@
     {
       keywords: ['location', 'where', 'address', 'mabini', 'batangas', 'anilao', 'place', 'find'],
       answer: 'Casa Escondida is in Mabini, Batangas — the heart of Anilao, birthplace of Philippine diving! 📍\n\nBrgy. Ligaya, Mabini, Batangas 4202, Philippines',
+      answerZh: '卡萨埃斯孔迪达位于菲律宾八打雁省马比尼市——阿尼劳心脏地带，菲律宾潜水的发源地！📍\n\n八打雁省利加亚村，马比尼4202，菲律宾',
       cta: [
-        { label: 'View Map & Directions', url: 'location.html', icon: '📍', primary: true },
-        { label: 'Get Directions', url: 'https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao', icon: '🗺️' }
+        { label: 'View Map & Directions', labelZh: '查看地图和路线', url: 'location.html', icon: '📍', primary: true },
+        { label: 'Get Directions', labelZh: '获取路线', url: 'https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao', icon: '🗺️' }
       ]
     },
     {
       keywords: ['manila', 'far', 'distance', 'km', 'kilometers', 'hour', 'hours', 'drive', 'how long', 'travel time'],
       answer: '~140 km south of Manila 🚗\n\n⏱️ 2–3 hours by car\n🛣️ SLEX → Star Tollway → Batangas → Mabini\n\nLeave early to beat Metro traffic!',
+      answerZh: '距马尼拉以南约140公里 🚗\n\n⏱️ 自驾约2至3小时\n🛣️ 路线：南吕宋高速公路→星型收费公路→八打雁→马比尼',
       cta: [
-        { label: 'Full Directions Guide', url: 'location.html', icon: '🗺️', primary: true },
-        { label: 'Open Google Maps', url: 'https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao', icon: '📍' }
+        { label: 'Full Directions Guide', labelZh: '完整路线指南', url: 'location.html', icon: '🗺️', primary: true },
+        { label: 'Open Google Maps', labelZh: '打开谷歌地图', url: 'https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao', icon: '📍' }
       ]
     },
     {
       keywords: ['transport', 'transportation', 'van', 'bus', 'tricycle', 'jeepney', 'get there', 'how to get', 'directions', 'shuttle'],
       answer: 'How to get here:\n\n🚐 Private van (recommended) — we can arrange from Manila\n🚌 Bus + Tricycle:\n1. JAM/DLTB bus → Batangas City\n2. Bus/van → Mabini (Anilao)\n3. Tricycle to the resort',
+      answerZh: '前往方式：\n\n🚐 私人面包车（推荐）——我们可从马尼拉安排接送\n🚌 巴士+三轮车：\n1. 乘坐JAM/DLTB巴士→八打雁城\n2. 转乘→马比尼（阿尼劳）\n3. 乘三轮车前往度假村',
       cta: [
-        { label: 'Full Transport Guide', url: 'location.html', icon: '🚐', primary: true },
-        { label: 'Contact for Transfer', url: 'location.html#contact', icon: '📞' }
+        { label: 'Full Transport Guide', labelZh: '完整路线指南', url: 'location.html', icon: '🚐', primary: true },
+        { label: 'Contact for Transfer', labelZh: '联系安排接送', url: 'location.html#contact', icon: '📞' }
       ]
     },
     {
@@ -670,25 +679,28 @@
     {
       keywords: ['review', 'reviews', 'rating', 'tripadvisor', 'google', 'feedback', 'testimonial', 'star', 'stars'],
       answer: 'Highly rated by guests! ⭐\n\n⭐ TripAdvisor: 4.5 / 5 (81 reviews)\n⭐ Google: 4.7 / 5 (230+ reviews)\n\nGuests love our diving, staff, food, and stunning location!',
+      answerZh: '深受宾客好评！⭐\n\n⭐ TripAdvisor：4.5/5（81条点评）\n⭐ 谷歌：4.7/5（230+条点评）\n\n宾客对潜水服务、员工、餐饮和美景赞不绝口！',
       cta: [
-        { label: 'Read TripAdvisor Reviews', url: 'https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753', icon: '⭐', primary: true },
-        { label: 'Google Reviews', url: 'https://www.google.com/maps/place/Casa+Escondida+Anilao', icon: '🌟' }
+        { label: 'Read TripAdvisor Reviews', labelZh: '阅读TripAdvisor点评', url: 'https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753', icon: '⭐', primary: true },
+        { label: 'Google Reviews', labelZh: '谷歌评价', url: 'https://www.google.com/maps/place/Casa+Escondida+Anilao', icon: '🌟' }
       ]
     },
     {
       keywords: ['package', 'packages', 'deal', 'deals', 'all inclusive', 'promo', 'special', 'bundle'],
       answer: 'We offer various packages:\n\n🤿 Dive + Stay (unlimited boat dives)\n🎓 PADI Course + Accommodation\n🏝️ Island BBQ packages\n💑 Couple & group rates\n\nPackages change seasonally — contact us for current deals!',
+      answerZh: '我们提供多种套餐：\n\n🤿 潜水住宿套餐（含无限次船潜）\n🎓 PADI课程+住宿套餐\n🏝️ 岛屿烧烤套餐\n💑 情侣及团体优惠',
       cta: [
         { label: 'View Dive Packages', url: 'dive.html#packages', icon: '🤿', primary: true },
-        { label: 'Book a Package', url: '/#booking', icon: '📅' }
+        { label: 'Book a Package', labelZh: '预订套餐', url: '/#booking', icon: '📅' }
       ]
     },
     {
       keywords: ['contact', 'call', 'phone', 'number', 'facebook', 'email', 'message', 'reach', 'inquire', 'inquiry'],
       answer: 'Get in touch:\n\n📞 +63 977 837 2272\n💬 fb.com/CasaEscondidaAnilao\n🌐 casaescondida-anilao.com\n\nWe reply within a few hours. Facebook Messenger is fastest!',
+      answerZh: '联系方式：\n\n📞 +63 977 837 2272\n💬 fb.com/CasaEscondidaAnilao\n🌐 casaescondida-anilao.com\n\nFacebook Messenger回复最快！',
       cta: [
-        { label: 'Contact Page', url: 'location.html#contact', icon: '✉️', primary: true },
-        { label: 'Message on Facebook', url: 'https://www.facebook.com/CasaEscondidaAnilao', icon: '💬' }
+        { label: 'Contact Page', labelZh: '联系页面', url: 'location.html#contact', icon: '✉️', primary: true },
+        { label: 'Message on Facebook', labelZh: 'Facebook发信息', url: 'https://www.facebook.com/CasaEscondidaAnilao', icon: '💬' }
       ]
     },
     {
@@ -764,8 +776,7 @@
     return (I18N[lang] || I18N.en)[key] || I18N.en[key];
   }
 
-  const GREETING = I18N.en.greeting;
-  const FALLBACK  = I18N.en.fallback;
+  // GREETING and FALLBACK are language-aware at runtime
 
   // ── Fuzzy Matching ───────────────────────────────────────────
   function findAnswer(query) {
@@ -943,6 +954,7 @@
       });
     }
 
+    buildSuggMap();
     function startSuggRotation() { renderSuggestions(); }
     function stopSuggRotation()  { /* no timer needed */ }
 
@@ -994,7 +1006,7 @@
     }
 
     // ── Render CTA action cards ──
-    function appendCTA(ctaList) {
+    function appendCTA(ctaList, lang) { lang = lang || getChatLang();
       if (!ctaList || !ctaList.length) return;
       var row = document.createElement('div');
       row.className = 'ce-cta-row';
@@ -1006,13 +1018,21 @@
         a.rel = 'noopener noreferrer';
         a.innerHTML =
           '<span class="ce-cta-icon">' + (c.icon || '→') + '</span>'
-          + '<span>' + c.label + '</span>'
+          + '<span>' + ((lang === 'zh' && c.labelZh) ? c.labelZh : c.label) + '</span>'
           + '<span class="ce-cta-arrow">→</span>';
         row.appendChild(a);
       });
       messages.appendChild(row);
       messages.scrollTop = messages.scrollHeight;
     }
+
+    // Chinese suggestion chips bridge
+    var SUGG_MAP = {};
+    function buildSuggMap() {
+      var en = I18N.en.suggestions; var zh = I18N.zh.suggestions;
+      for (var i = 0; i < zh.length && i < en.length; i++) { SUGG_MAP[zh[i]] = en[i]; }
+    }
+    function findEntryBySuggestion(q) { var eq = SUGG_MAP[q]; return eq ? findEntry(eq) : null; }
 
     // ── Find KB entry (returns entry object, not just answer string) ──
     function findEntry(query) {
@@ -1055,11 +1075,13 @@
       var delay = 600 + Math.random() * 400;
       setTimeout(function () {
         removeTyping();
-        var entry = findEntry(q);
-        var answer = entry ? entry.answer : t('fallback');
+        var entry = findEntry(q) || findEntryBySuggestion(q);
+        var lang = getChatLang();
+        var answer = entry
+          ? (lang === 'zh' && entry.answerZh ? entry.answerZh : entry.answer)
+          : t('fallback');
         appendMessage(answer, 'ce-bot');
-        // Render CTA action cards if entry has them
-        if (entry && entry.cta) appendCTA(entry.cta);
+        if (entry && entry.cta) appendCTA(entry.cta, lang);
         // Show fresh suggestions
         setTimeout(renderSuggestions, 300);
       }, delay);
