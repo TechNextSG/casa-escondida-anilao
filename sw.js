@@ -4,7 +4,7 @@
    subsequent page navigation is served instantly from cache.
    ============================================================ */
 
-const CACHE_VERSION = 'ce-v4';
+const CACHE_VERSION = 'ce-v5';
 
 /* ── Resources to precache immediately on install ── */
 const PRECACHE_URLS = [
