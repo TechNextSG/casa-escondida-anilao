@@ -223,7 +223,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* Scrolled in day mode → show color logo */
     [data-theme="day"] #nav.scrolled .nav-logo-day   { display:block; }
     [data-theme="day"] #nav.scrolled .nav-logo-night { display:none; }
-    .nav-links { display:flex; gap:2.2rem; list-style:none; justify-self:center; }
+    .nav-links { display:flex; gap:2.2rem; list-style:none; position:absolute; left:50%; transform:translateX(-50%); }
     .nav-links a {
       color:#ffffff; text-decoration:none;
       font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:400;
@@ -238,7 +238,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .nav-links a:hover { color:var(--accent); }
     .nav-links a:hover::after { width:100%; }
-    .nav-right { display:flex; align-items:center; gap:1rem; justify-self:end; }
+    .nav-right { display:flex; align-items:center; gap:1rem; }
 
     /* Day/Night Toggle */
     .theme-toggle {
