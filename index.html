@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <link rel="preload" as="image" href="images/Hero%20Image/generate_different_angle_202604220023.webp" type="image/webp" />
@@ -22,7 +22,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </script>
   <script>(function(){var t=localStorage.getItem('ce-theme')||'night';document.documentElement.setAttribute('data-theme',t);})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Casa Escondida Anilao — Resort & Dive Center</title>
+  <title>Casa Escondida Anilao | Dive Resort & PADI Center Batangas</title>
   <!-- Google Search Console verification -->
   <meta name="google-site-verification" content="JTjFK4PF6PDzTKUXVwq6hiY-evJeR3Uc-K8-57q9Kyo" />
   <!-- Canonical -->
@@ -37,12 +37,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.casaescondida-anilao.com/" />
-  <meta property="og:title" content="Casa Escondida Anilao — Resort & Dive Center" />
+  <meta property="og:title" content="Casa Escondida Anilao | Dive Resort & PADI Center Batangas" />
   <meta property="og:description" content="World-class PADI dive center in Anilao, Batangas. Ocean-front rooms, island BBQ, 30+ dive sites. Travelers' Choice Award winner." />
   <meta property="og:image" content="https://www.casaescondida-anilao.com/images/background/493830810_1210639744402021_2792086324574288650_n.jpg" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Casa Escondida Anilao — Resort & Dive Center" />
+  <meta name="twitter:title" content="Casa Escondida Anilao | Dive Resort & PADI Center Batangas" />
   <meta name="twitter:description" content="World-class PADI dive center in Anilao, Batangas. Ocean-front rooms, island BBQ, 30+ dive sites." />
   <meta name="twitter:image" content="https://www.casaescondida-anilao.com/images/background/493830810_1210639744402021_2792086324574288650_n.jpg" />
   <!-- Schema: Hotel + LocalBusiness -->
@@ -146,7 +146,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* CSS animation timing tokens */
     :root {
       --dur-hero:    18s;
-      --dur-marquee: 22s;
+      --dur-marquee: 35s;
       --dur-float:   5.5s;
       --dur-ray:     7s;
       --dur-reveal:  0.9s;
@@ -194,7 +194,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     #nav {
       position:fixed; inset:0 0 auto 0; z-index:200;
       display:flex; align-items:center; justify-content:space-between;
-      padding:1.4rem 4rem;
+      padding:0.75rem 4rem;
       transition: transform 0.38s cubic-bezier(0.4,0,0.2,1),
                   padding  0.45s ease,
                   background 0.45s ease,
@@ -223,7 +223,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* Scrolled in day mode → show color logo */
     [data-theme="day"] #nav.scrolled .nav-logo-day   { display:block; }
     [data-theme="day"] #nav.scrolled .nav-logo-night { display:none; }
-    .nav-links { display:flex; gap:2.2rem; list-style:none; }
+    .nav-links { display:flex; gap:2.2rem; list-style:none; position:absolute; left:50%; transform:translateX(-50%); }
     .nav-links a {
       color:#ffffff; text-decoration:none;
       font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:400;
@@ -242,55 +242,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* Day/Night Toggle */
     .theme-toggle {
-      display:flex; align-items:center; gap:0.5rem;
-      background:rgba(255,255,255,0.12);
-      border:1px solid rgba(255,255,255,0.28);
+      display:flex; align-items:center; gap:0.35rem;
+      background:rgba(255,255,255,0.15);
+      border:1.5px solid rgba(255,255,255,0.45);
       border-radius:30px;
-      padding:0.3rem 0.8rem;
+      padding:0.32rem 0.85rem 0.32rem 0.65rem;
       cursor:pointer;
-      transition:all 0.35s;
-      font-size:0.72rem; letter-spacing:0.08em;
+      transition:all 0.25s;
+      font-size:0.73rem; font-weight:500; letter-spacing:0.06em;
       color:#fff;
       white-space:nowrap;
     }
-    #nav.scrolled .theme-toggle {
-      background:var(--bg-card);
-      border-color:var(--border);
-      color:var(--text-secondary);
-    }
-    .theme-toggle:hover { border-color:var(--accent); color:var(--accent); }
+    [data-theme="day"] #nav.scrolled .theme-toggle { background:rgba(255,255,255,0.95); border-color:rgba(0,0,0,0.12); color:#0d1e2e; }
+    [data-theme="night"] #nav.scrolled .theme-toggle { background:rgba(8,18,32,0.88); border-color:rgba(77,194,232,0.45); color:#e8f4f8; }
+    .theme-toggle:hover { border-color:#4dc2e8 !important; color:#4dc2e8 !important; }
     .toggle-track {
-      width:34px; height:18px;
+      width:26px; height:14px;
       background:var(--accent-glow);
       border:1px solid var(--border-accent);
-      border-radius:9px; position:relative;
+      border-radius:7px; position:relative;
       transition:background 0.4s;
       flex-shrink:0;
     }
     .toggle-thumb {
       position:absolute; top:2px; left:2px;
-      width:12px; height:12px;
+      width:9px; height:9px;
       background:var(--accent);
       border-radius:50%;
       transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1), background 0.4s;
     }
-    [data-theme="day"] .toggle-thumb { transform:translateX(16px); background:var(--gold); }
+    [data-theme="day"] .toggle-thumb { transform:translateX(12px); background:var(--gold); }
     [data-theme="day"] .toggle-track { background:var(--gold-subtle); border-color:var(--gold); }
-    .toggle-icon { font-size:0.85rem; line-height:1; }
+    .toggle-icon { font-size:0.78rem; line-height:1; }
 
-    .btn-nav-cta {
-      background:var(--accent);
-      color:#fff; border:none;
-      padding:0.55rem 1.5rem;
-      border-radius:2px;
-      font-family:'DM Sans',sans-serif;
-      font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase;
-      text-decoration:none; cursor:pointer;
-      transition:background 0.3s, transform 0.2s;
+    /* ── Nav Book Now button — inline for guaranteed render ── */
+    #navBookNow, #nav .btn-nav-cta {
+      background: rgba(77,194,232,0.92) !important;
+      color: #ffffff !important;
+      padding: 0.42rem 1.35rem !important;
+      border-radius: 30px !important;
+      font-size: 0.72rem !important;
+      letter-spacing: 0.1em !important;
+      text-transform: uppercase !important;
+      text-decoration: none !important;
+      font-weight: 600 !important;
+      white-space: nowrap !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      border: none !important;
+      cursor: pointer !important;
+      transition: background 0.3s, transform 0.2s !important;
     }
-    .btn-nav-cta:hover { background:var(--accent-dark); transform:translateY(-1px); }
-    /* Scrolled state: keep the button filled in all themes */
-    #nav.scrolled .btn-nav-cta { background:var(--accent); color:#fff; }
+    #nav.scrolled #navBookNow, #nav.scrolled .btn-nav-cta {
+      background: var(--accent) !important;
+    }
+    #navBookNow:hover, #nav .btn-nav-cta:hover {
+      background: #4dc2e8 !important;
+      transform: translateY(-1px) !important;
+    }
+    @media(max-width:768px){
+      #navBookNow, #nav .btn-nav-cta { display:none !important; }
+    }
 
     /* Hamburger: clean up focus ring after mouse/touch click while keeping keyboard ring */
     .nav-hamburger:focus { outline: none; }
@@ -320,20 +332,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ═══════════════════════════════════════════ */
     #hero {
       position:relative; width:100%; height:100vh;height:100svh; min-height:680px;
-      overflow:hidden; display:flex; align-items:flex-end;
+      overflow:hidden; display:flex; align-items:flex-end; justify-content:center;
     }
-    .hero-photo {
-      position:absolute; inset:-50px;
-      background:url('images/Hero%20Image/generate_different_angle_202604220023.webp') 64% 62%/145% no-repeat;
-      animation:dayFloat 22s ease-in-out infinite alternate;
-      will-change:transform;
-    }
-    @keyframes dayFloat {
-      0%   { transform:scale(1.0)  translateY(0)    translateX(0); }
-      35%  { transform:scale(1.02) translateY(-8px) translateX(6px); }
-      70%  { transform:scale(1.01) translateY(-14px) translateX(10px); }
-      100% { transform:scale(1.0)  translateY(-18px) translateX(12px); }
-    }
+    .hero-photo { position:absolute; inset:0; overflow:hidden; }
+    .hero-photo video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+    @media(max-width:768px){ .hero-photo video { object-position:72% center; } }
+    /* @keyframes dayFloat removed — replaced by video */
     .hero-photo::before {
       content:'';
       position:absolute; inset:0;
@@ -341,20 +345,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       opacity:0;
       transition:opacity 1.2s ease;
     }
-    [data-theme="night"] .hero-photo {
-      transform:scale(1.08) translateX(0);
-      animation:diverSwim var(--dur-hero) ease-in-out infinite alternate;
-      will-change: transform;
-    }
     [data-theme="night"] .hero-photo::before {
       opacity:1;
     }
-    @keyframes diverSwim {
-      0%   { transform:scale(1.08) translateX(0)     translateY(0); }
-      40%  { transform:scale(1.05) translateX(-18px) translateY(-8px); }
-      70%  { transform:scale(1.07) translateX(-30px) translateY(-15px); }
-      100% { transform:scale(1.04) translateX(-42px) translateY(-22px); }
-    }
+    /* @keyframes diverSwim removed — replaced by video */
     .hero-overlay {
       position:absolute; inset:0;
       background:var(--hero-overlay);
@@ -369,7 +363,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       position:absolute; top:-5%; width:2px; height:110%;
       background:linear-gradient(180deg,rgba(255,255,255,0.18) 0%,rgba(77,194,232,0.1) 50%,transparent 100%);
       filter:blur(8px); transform-origin:top center;
-      animation:rayPulse 7s ease-in-out infinite;
+      animation:none;
     }
     .h-ray:nth-child(1){ left:12%; width:70px; transform:rotate(-10deg); animation-delay:0s; animation-duration:8s; opacity:0.5; }
     .h-ray:nth-child(2){ left:28%; width:35px; transform:rotate(-4deg); animation-delay:1.2s; animation-duration:6s; opacity:0.35; }
@@ -377,10 +371,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .h-ray:nth-child(4){ left:60%; width:50px; transform:rotate(8deg); animation-delay:2s; animation-duration:7s; opacity:0.4; }
     .h-ray:nth-child(5){ left:76%; width:65px; transform:rotate(-5deg); animation-delay:0.8s; animation-duration:8.5s; opacity:0.45; }
     .h-ray:nth-child(6){ left:88%; width:40px; transform:rotate(12deg); animation-delay:1.8s; animation-duration:6.5s; opacity:0.3; }
-    @keyframes rayPulse {
-      0%,100%{ opacity:var(--op,0.4); }
-      50%{ opacity:calc(var(--op,0.4)*1.7); }
-    }
 
     /* Bubbles */
     .hero-bubbles { position:absolute; inset:0; pointer-events:none; }
@@ -414,11 +404,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .diver-aura {
       position:absolute; inset:-40px;
       background:radial-gradient(circle,rgba(77,194,232,0.12) 0%,transparent 70%);
-      animation:auraPulse 4s ease-in-out infinite;
-    }
-    @keyframes auraPulse {
-      0%,100%{ opacity:0.7; transform:scale(1); }
-      50%    { opacity:1; transform:scale(1.15); }
+      animation:none;
     }
     .diver-svg { width:100%; height:100%; filter:drop-shadow(0 0 24px rgba(77,194,232,0.45)); }
 
@@ -426,6 +412,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-content {
       position:relative; z-index:10;
       width:100%; padding:0 4rem 6rem;
+      text-align:center;
       animation:heroIn 1.2s cubic-bezier(0.16,1,0.3,1) 0.2s both;
     }
     @keyframes heroIn {
@@ -440,10 +427,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-tag::before { content:''; width:28px; height:1px; background:#fff; opacity:0.7; }
     .hero-h1 {
       font-family:'Playfair Display', serif;
-      font-size:clamp(3rem,6vw,5.5rem);
-      font-weight:300; line-height:0.92;
+      font-size:clamp(3.2rem,7vw,6.5rem);
+      font-weight:300; line-height:1;
       color:#fff; letter-spacing:-0.02em;
-      margin-bottom:0.5rem; text-shadow:0 2px 40px rgba(0,0,0,0.5);
+      margin-bottom:0.6rem;
+      text-shadow:0 2px 40px rgba(0,0,0,0.5),0 0 80px rgba(255,255,255,.12);
+      animation:heroTitleIn 1.1s cubic-bezier(0.16,1,0.3,1) 0.1s both;
+      white-space:nowrap;
+    }
+    @keyframes heroTitleIn {
+      from{ opacity:0; transform:translateY(28px) scale(0.96); filter:blur(6px); }
+      to  { opacity:1; transform:translateY(0) scale(1); filter:blur(0); }
     }
     .hero-h1 em {
       font-style:italic;
@@ -460,24 +454,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       -webkit-text-fill-color:transparent;
       animation:heroGlint 5s ease-in-out infinite;
     }
-    [data-theme="day"] .hero-h1 em {
-      background:linear-gradient(90deg,
-        #1a6b98 0%,
-        #b8862a 28%,
-        #1a6b98 52%,
-        #3a7a9c 72%,
-        #1a6b98 100%
-      );
-      background-size:300% auto;
-      -webkit-background-clip:text;
-      background-clip:text;
-      -webkit-text-fill-color:transparent;
-      animation:heroGlint 5s ease-in-out infinite;
-    }
-    @keyframes heroGlint {
-      0%,100% { background-position:0% center; }
-      50%      { background-position:200% center; }
-    }
+    /* Day mode uses same bright gradient as night — hero always has dark overlay */
     .hero-sub {
       font-family:'Cormorant', serif;
       font-size:clamp(1.1rem,2.5vw,1.6rem);
@@ -485,7 +462,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color:rgba(255,255,255,0.88); margin-bottom:2.8rem;
       letter-spacing:0.05em;
     }
-    .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; }
+    .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
     .btn-hero-primary {
       position:relative; overflow:hidden;
       background:var(--accent); color:#fff; border:none;
@@ -544,29 +521,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     @keyframes btnShimmer { 0%{left:-120%} 100%{left:160%} }
     @keyframes btnRipple  { to{transform:scale(4.5);opacity:0} }
 
-    /* Hero rating pills — group of two cards */
-    .hero-rating {
-      position:absolute; bottom:5.5rem; right:4rem; z-index:10;
-      display:flex; gap:0.7rem;
-      animation:heroIn 1.2s cubic-bezier(0.16,1,0.3,1) 0.5s both;
-    }
-    .hr-card {
-      text-decoration:none; color:inherit; cursor:pointer;
-      background:rgba(255,255,255,0.08);
-      backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-      border:1px solid rgba(255,255,255,0.15);
-      border-radius:6px; padding:0.9rem 1.2rem;
+    /* ── Reviews strip (between marquee and About) ── */
+    .reviews-strip { background:var(--bg); border-bottom:1px solid var(--border); padding:2rem 2rem; }
+    .reviews-strip-inner { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; max-width:1100px; margin:0 auto; }
+    .platform-card {
       display:flex; align-items:center; gap:0.85rem;
-      transition:background 0.3s, border-color 0.3s, transform 0.3s;
+      background:var(--card); border:1px solid var(--border); border-radius:8px;
+      padding:1rem 1.4rem; text-decoration:none; color:var(--text);
+      transition:transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+      min-width:190px; flex:1; max-width:240px;
     }
-    .hr-card:hover { background:rgba(255,255,255,0.14); border-color:rgba(255,255,255,0.28); transform:translateY(-2px); }
-    .hr-logo { width:26px; height:26px; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
-    .hr-logo svg { width:100%; height:100%; display:block; }
-    .hr-stars { color:#f5c842; font-size:0.95rem; letter-spacing:1px; }
-    .hr-label { font-size:0.82rem; color:rgba(255,255,255,0.8); line-height:1.4; }
-    .hr-label strong { display:block; color:#fff; font-size:1rem; font-weight:500; }
-    .hr-count { color:rgba(255,255,255,0.55); font-size:0.7rem; letter-spacing:0.04em; margin-top:0.18rem; }
-    @media(max-width:768px){ .hero-rating { display:none; } }
+    .platform-card:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.12); border-color:var(--border2); }
+    .platform-logo { width:30px; height:30px; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+    .platform-logo svg { width:100%; height:100%; display:block; }
+    .platform-stars { color:#f5c842; font-size:0.85rem; letter-spacing:1px; margin-bottom:0.18rem; }
+    .platform-score { font-size:1rem; font-weight:600; color:var(--text); line-height:1.2; }
+    .platform-label { font-size:0.74rem; color:var(--text2); line-height:1.45; }
+    .platform-count { font-size:0.67rem; color:var(--text3); margin-top:0.12rem; }
+    @media(max-width:600px){ .reviews-strip-inner{ flex-direction:column; align-items:stretch; } .platform-card{ max-width:100%; } }
 
 
     /* ═══════════════════════════════════════════
@@ -757,7 +729,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ═══════════════════════════════════════════ */
     .marquee-strip {
       background:#04080f; overflow:hidden;
-      padding:0.85rem 0;
+      padding:0.55rem 0;
       border-top:1px solid rgba(77,194,232,0.18);
       border-bottom:1px solid rgba(77,194,232,0.18);
     }
@@ -769,16 +741,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     [data-theme="day"] .marquee-item { color:var(--accent); }
     [data-theme="day"] .marquee-dot { background:var(--accent); opacity:0.4; }
     .marquee-inner {
-      display:flex; gap:3rem; animation:marquee var(--dur-marquee) linear infinite;
+      display:flex; gap:1.5rem; animation:marquee var(--dur-marquee) linear infinite;
       width:max-content; will-change:transform;
     }
     @keyframes marquee { from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
     .marquee-item {
       display:flex; align-items:center; gap:0.6rem;
-      font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase;
+      font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase;
       color:rgba(77,194,232,0.85); white-space:nowrap; font-weight:400;
     }
-    .marquee-dot { width:4px; height:4px; border-radius:50%; background:rgba(77,194,232,0.4); }
+    .marquee-dot { width:3px; height:3px; border-radius:50%; background:rgba(77,194,232,0.4); }
 
     /* ═══════════════════════════════════════════
        ABOUT
@@ -847,10 +819,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .dive-hero-photo:hover img { transform:scale(1.03); filter:brightness(0.75); }
     .dive-hero-overlay {
       position:absolute; inset:0;
-      background:linear-gradient(90deg,rgba(4,8,15,0.85) 0%,rgba(4,8,15,0.4) 55%,transparent 100%);
+      background:linear-gradient(90deg,rgba(4,8,15,0.88) 0%,rgba(4,8,15,0.5) 55%,transparent 100%);
       display:flex; align-items:center;
     }
-    .dive-hero-text { padding:0 4rem; max-width:620px; }
+    /* Match .c container spacing so left edge aligns with other sections */
+    .dive-hero-text {
+      width:100%; max-width:1200px; margin:0 auto; padding:0 4rem;
+    }
+    .dive-hero-text-inner { max-width:580px; }
     .dive-layout { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
 
     /* Dive photo grid */
@@ -887,6 +863,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
        SERVICES
     ═══════════════════════════════════════════ */
     #services { background:var(--bg-primary); }
+    /* ── Services Carousel ── */
+    .svc-carousel-wrap { position:relative; overflow:hidden; border-radius:8px; }
+    .svc-carousel-track { display:flex; transition:transform .7s cubic-bezier(0.25,0.46,0.45,0.94); will-change:transform; }
+    /* Width set by JS for correct calculation */
+    .svc-slide { flex-shrink:0; margin-right:8px; height:360px; }
+    .svc-slide:last-child { margin-right:0; }
+    .svc-slide .svc-card { height:100%; border-radius:6px; cursor:default; }
+    .svc-arrow {
+      position:absolute; top:50%; transform:translateY(-50%); z-index:10;
+      width:44px; height:44px; border-radius:50%;
+      background:rgba(4,8,15,.65); border:1px solid rgba(255,255,255,.25);
+      color:#fff; font-size:1.6rem; line-height:1; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      transition:background .2s, border-color .2s; padding:0;
+    }
+    .svc-arrow:hover { background:rgba(77,194,232,.7); border-color:rgba(77,194,232,.8); }
+    .svc-prev { left:1rem; } .svc-next { right:1rem; }
+    .svc-dots { display:flex; justify-content:center; gap:.5rem; margin-top:1.4rem; }
+    .svc-dot {
+      width:8px; height:8px; border-radius:50%; border:none; cursor:pointer;
+      background:rgba(255,255,255,.25); transition:background .25s, transform .25s;
+      padding:0;
+    }
+    .svc-dot.active { background:var(--accent); transform:scale(1.35); }
+    @media(max-width:768px){
+      .svc-slide { flex:0 0 100%; margin-right:0; height:300px; }
+    }
     .services-grid { display:grid; grid-template-columns:repeat(12,1fr); grid-template-rows:340px 260px; gap:8px; }
     .svc-card { background:#04080f; padding:0; position:relative; overflow:hidden; border-radius:6px; border:1px solid var(--border); cursor:zoom-in; transition:border-color .35s; }
     .svc-card:hover { border-color:rgba(77,194,232,0.3); }
@@ -1039,7 +1042,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition:border-color 0.3s, transform 0.3s, background 0.3s;
     }
     .rv-card:hover { border-color:var(--border-accent); transform:translateY(-5px); background:var(--bg-card-hover); z-index:10; }
-    .rv-stars { color:var(--gold); font-size:0.85rem; letter-spacing:1px; margin-bottom:1rem; }
+    .platform-stars { color:var(--gold); font-size:0.85rem; letter-spacing:1px; margin-bottom:1rem; }
     .rv-quote {
       font-family:'Playfair Display',serif; font-style:italic;
       font-size:1rem; color:var(--text-primary); line-height:1.75; margin-bottom:1.4rem;
@@ -1493,9 +1496,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* ── Tap target helpers ── */
     @media(max-width:768px) {
-      .theme-toggle {
-        min-height: 44px; display: flex; align-items: center; gap: 6px;
-      }
       /* Safe-area padding for notch phones */
       #nav {
         padding-left: max(1.5rem, env(safe-area-inset-left));
@@ -1762,17 +1762,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       opacity: 0.9 !important;
     }
 
-    /* Rays — bright pulse + blur shift for visible wave effect */
-    @keyframes rayPulseMobile {
-      0%,100% { opacity: 0.4;  filter: blur(10px); }
-      30%     { opacity: 1.0;  filter: blur(2px);  }
-      65%     { opacity: 0.65; filter: blur(6px);  }
-    }
-    .h-ray {
-      animation-name: rayPulseMobile !important;
-      animation-duration: 2.8s !important;
-      opacity: 0.8 !important;
-    }
+    .h-ray { animation: none !important; }
 
     /* ── MOBILE PERF: nav backdrop-filter is the most expensive GPU effect ── */
     #nav.scrolled {
@@ -1792,23 +1782,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       75%  { transform: scale(1.10) translateY(-14px) translateX(10px); }
       100% { transform: scale(1.08) translateY(-6px)  translateX(-5px); }
     }
-    .hero-photo,
-    [data-theme="night"] .hero-photo {
-      animation: heroWaveMobile 10s ease-in-out infinite alternate !important;
-      will-change: transform !important;
-      background-position: 60% 30% !important;
-      background-size: cover !important;
-    }
-    .hero-photo::before,
-    [data-theme="night"] .hero-photo::before {
-      background-position: 60% 30% !important;
-      background-size: cover !important;
-    }
-    [data-theme="day"] .hero-photo {
-      background-image: url('images/Hero Image/hf_20260427_125509_05a0eb7e-3e2e-4dab-85fb-e077fd155f4c.webp') !important;
-      background-position: 60% 25% !important;
-      background-size: cover !important;
-    }
+    /* hero-photo mobile bg overrides removed — replaced by video */
 
     /* ── background-attachment:fixed causes full repaint on scroll + iOS parallax glitch ── */
     [data-theme="night"] { background-attachment: scroll !important; }
@@ -1993,105 +1967,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .bk-row { grid-template-columns: 1fr; gap: 1rem; }
   }
 
-  /* ═══════════════════════════════════════════
-     EXIT INTENT POPUP
-  ═══════════════════════════════════════════ */
-  .exit-overlay {
-    position: fixed; inset: 0; z-index: 10100;
-    background: rgba(4,8,15,0.88);
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    display: flex; align-items: center; justify-content: center;
-    padding: 1.5rem;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-  .exit-overlay.open { opacity: 1; pointer-events: all; }
-  .exit-modal {
-    background: rgba(7,14,26,0.97);
-    border: 1px solid rgba(77,194,232,0.2);
-    border-radius: 12px;
-    padding: 2.8rem 2.4rem 2.2rem;
-    width: 100%; max-width: 420px;
-    text-align: center;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.7), 0 0 60px rgba(77,194,232,0.06);
-    transform: translateY(20px) scale(0.97);
-    transition: transform 0.38s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease;
-    opacity: 0;
-  }
-  .exit-overlay.open .exit-modal { transform: translateY(0) scale(1); opacity: 1; }
-  [data-theme="day"] .exit-overlay { background: rgba(10,20,40,0.82); }
-  [data-theme="day"] .exit-modal {
-    background: #fff;
-    border-color: rgba(26,107,152,0.15);
-    box-shadow: 0 40px 100px rgba(0,0,0,0.2);
-  }
-
-  /* Icon */
-  .exit-icon {
-    width: 64px; height: 64px; margin: 0 auto 1.5rem;
-    background: rgba(77,194,232,0.1);
-    border: 1.5px solid rgba(77,194,232,0.3);
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    animation: exitIconPulse 2.5s ease-in-out infinite;
-  }
-  @keyframes exitIconPulse {
-    0%,100% { box-shadow: 0 0 0 0 rgba(77,194,232,0.25); }
-    50%      { box-shadow: 0 0 0 10px rgba(77,194,232,0); }
-  }
-  .exit-icon svg { width: 28px; height: 28px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
-  [data-theme="day"] .exit-icon { background: rgba(26,107,152,0.08); border-color: rgba(26,107,152,0.25); }
-
-  /* Text */
-  .exit-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.5rem,3vw,1.9rem);
-    font-weight: 300; color: #fff; line-height: 1.2;
-    margin-bottom: 0.75rem;
-  }
-  [data-theme="day"] .exit-title { color: #0d1e2e; }
-  .exit-title em {
-    font-style: italic;
-    background: linear-gradient(90deg, rgba(77,194,232,0.95) 0%, #e8c56a 50%, rgba(77,194,232,0.9) 100%);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  [data-theme="day"] .exit-title em {
-    background: linear-gradient(90deg, #1a6b98 0%, #b8862a 50%, #1a6b98 100%);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .exit-sub {
-    font-size: 0.9rem; color: rgba(255,255,255,0.52);
-    line-height: 1.7; margin-bottom: 2rem;
-  }
-  [data-theme="day"] .exit-sub { color: rgba(13,30,46,0.55); }
-  .exit-sub strong { color: rgba(255,255,255,0.85); font-weight: 500; }
-  [data-theme="day"] .exit-sub strong { color: #0d1e2e; }
-
-  /* Buttons */
-  .exit-cta {
-    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-    width: 100%; padding: 1rem 1.5rem;
-    background: var(--accent); color: #fff; border: none;
-    border-radius: 3px; cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
-    margin-bottom: 1rem;
-    transition: background 0.25s, transform 0.22s, box-shadow 0.25s;
-  }
-  .exit-cta:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(77,194,232,0.3); }
-  .exit-cta svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; transition: transform 0.2s; }
-  .exit-cta:hover svg { transform: translateX(3px); }
-  .exit-dismiss {
-    display: block; width: 100%; padding: 0.5rem;
-    background: none; border: none; cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.82rem; color: rgba(255,255,255,0.35);
-    transition: color 0.2s;
-  }
-  .exit-dismiss:hover { color: rgba(255,255,255,0.65); }
-  [data-theme="day"] .exit-dismiss { color: rgba(13,30,46,0.38); }
-  [data-theme="day"] .exit-dismiss:hover { color: rgba(13,30,46,0.65); }
 
 
   </style>
@@ -2101,6 +1976,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script defer src="visitor-tracking.js"></script>
   <script defer src="lazy-images.js"></script>
   <link rel="stylesheet" href="perf-overrides.css" /><script defer src="site.js"></script>
+  <link rel="prefetch" href="rooms.html" />
+  <link rel="prefetch" href="dive.html" />
+  <link rel="prefetch" href="gallery.html" />
+  <link rel="prefetch" href="location.html" />
+  <link rel="prefetch" href="blog.html" />
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -2172,7 +2052,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- ═══ HERO ═══ -->
   <section id="hero" aria-label="Hero — Casa Escondida Anilao">
-    <div class="hero-photo" role="img" aria-label="Diver swimming underwater — Anilao dive site"></div>
+    <div class="hero-photo" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="auto" poster="images/Hero%20Image/generate_different_angle_202604220023.webp">
+        <source src="images/home-hero.mp4" type="video/mp4" />
+      </video>
+    </div>
     <div class="hero-overlay" aria-hidden="true"></div>
 
     <div class="hero-rays" aria-hidden="true">
@@ -2185,76 +2069,110 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Hero Content -->
     <div class="hero-content">
-      <div class="hero-tag">Anilao · Mabini · Batangas</div>
+      <div class="hero-tag" data-i18n="hero_tag">Anilao · Mabini · Batangas</div>
       <h1 class="hero-h1">
-        <span class="h1-desk">Casa<br><em>Escondida</em></span>
-        <span class="h1-mob">Casa Escondida<br><em>Anilao&nbsp;Dive&nbsp;Resort</em></span>
+        <span class="h1-desk">Casa <em>Escondida</em></span>
+        <span class="h1-mob">Casa <em>Escondida</em></span>
       </h1>
-      <p class="hero-sub">Where the Ocean Becomes Home</p>
+      <p class="hero-sub" data-i18n="hero_sub">Where the Ocean Becomes Home</p>
       <div class="hero-btns">
-        <a href="#booking" class="btn-hero-primary" id="openBookingModal">Reserve Your Stay</a>
-        <a href="#dive" class="btn-hero-ghost">Explore Diving</a>
+        <a href="#booking" class="btn-hero-primary" id="openBookingModal" data-i18n="hero_cta_primary">Reserve Your Stay</a>
+        <a href="#dive" class="btn-hero-ghost" data-i18n="hero_cta_secondary">Explore Diving</a>
       </div>
-    </div>
-
-    <!-- Rating pills -->
-    <div class="hero-rating">
-      <!-- TripAdvisor -->
-      <a class="hr-card" href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" aria-label="Read our TripAdvisor reviews">
-        <div class="hr-logo" aria-label="TripAdvisor">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="11" fill="#00AA6C"/>
-            <circle cx="8" cy="12" r="3.2" fill="#fff"/>
-            <circle cx="16" cy="12" r="3.2" fill="#fff"/>
-            <circle cx="8" cy="12" r="1.2" fill="#000"/>
-            <circle cx="16" cy="12" r="1.2" fill="#000"/>
-          </svg>
-        </div>
-        <div>
-          <div class="hr-stars">★★★★★</div>
-          <div class="hr-label"><strong>4.5 / 5</strong>TripAdvisor · Travelers'<br>Choice Award Winner</div>
-          <div class="hr-count">81 reviews</div>
-        </div>
-      </a>
-      <!-- Google -->
-      <a class="hr-card" href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.8816857,17z/data=!3m1!4b1!4m9!3m8!1s0x33bda9eff584af69:0x81011df456c41163!5m2!4m1!1i2!8m2!3d13.7277078!4d120.884266!16s%2Fg%2F11cmh4mhpm?entry=ttu&g_ep=EgoyMDI2MDQxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Read our Google Business reviews">
-        <div class="hr-logo" aria-label="Google">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-          </svg>
-        </div>
-        <div>
-          <div class="hr-stars">★★★★★</div>
-          <div class="hr-label"><strong>4.7 / 5</strong>Google Business<br>Highly Rated</div>
-          <div class="hr-count">230+ reviews</div>
-        </div>
-      </a>
     </div>
 
   </section>
 
   <!-- ═══ MARQUEE ═══ -->
   <div class="marquee-strip">
-    <div class="marquee-inner" id="marqueeInner">
-      <div class="marquee-item"><span class="marquee-dot"></span> PADI Certified Dive Center</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> 30+ Dive Sites</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Travelers' Choice Award</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Free Breakfast Included</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Island BBQ Experience</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> 31 Rooms & Suites</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Anilao, Batangas Philippines</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> #1 Special Inn in Mabini</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> PADI Certified Dive Center</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> 30+ Dive Sites</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Travelers' Choice Award</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Free Breakfast Included</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Island BBQ Experience</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> 31 Rooms & Suites</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Anilao, Batangas Philippines</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> #1 Special Inn in Mabini</div>
+    <div class="marquee-inner">
+      <div class="marquee-item" data-i18n="marquee_1"><span class="marquee-dot"></span> PADI Certified Dive Center</div>
+      <div class="marquee-item" data-i18n="marquee_2"><span class="marquee-dot"></span> 30+ Dive Sites</div>
+      <div class="marquee-item" data-i18n="marquee_3"><span class="marquee-dot"></span> Travelers' Choice Award</div>
+      <div class="marquee-item" data-i18n="marquee_4"><span class="marquee-dot"></span> Free Breakfast Included</div>
+      <div class="marquee-item" data-i18n="marquee_5"><span class="marquee-dot"></span> Island BBQ Experience</div>
+      <div class="marquee-item" data-i18n="marquee_6"><span class="marquee-dot"></span> 31 Rooms &amp; Suites</div>
+      <div class="marquee-item" data-i18n="marquee_7"><span class="marquee-dot"></span> Anilao, Batangas Philippines</div>
+      <div class="marquee-item" data-i18n="marquee_8"><span class="marquee-dot"></span> #1 Special Inn in Mabini</div>
+      <div class="marquee-item" data-i18n="marquee_9"><span class="marquee-dot"></span> Ocean-Front Resort</div>
+      <div class="marquee-item" data-i18n="marquee_10"><span class="marquee-dot"></span> Private Jetty Access</div>
+      <div class="marquee-item" data-i18n="marquee_11"><span class="marquee-dot"></span> Night Diving Available</div>
+      <div class="marquee-item" data-i18n="marquee_12"><span class="marquee-dot"></span> Nitrox &amp; Equipment Rental</div>
+      <div class="marquee-item" data-i18n="marquee_13"><span class="marquee-dot"></span> Pool &amp; Beach Access</div>
+      <div class="marquee-item" data-i18n="marquee_14"><span class="marquee-dot"></span> 4.5★ TripAdvisor Rating</div>
+      <div class="marquee-item" data-i18n="marquee_1"><span class="marquee-dot"></span> PADI Certified Dive Center</div>
+      <div class="marquee-item" data-i18n="marquee_2"><span class="marquee-dot"></span> 30+ Dive Sites</div>
+      <div class="marquee-item" data-i18n="marquee_3"><span class="marquee-dot"></span> Travelers' Choice Award</div>
+      <div class="marquee-item" data-i18n="marquee_4"><span class="marquee-dot"></span> Free Breakfast Included</div>
+      <div class="marquee-item" data-i18n="marquee_5"><span class="marquee-dot"></span> Island BBQ Experience</div>
+      <div class="marquee-item" data-i18n="marquee_6"><span class="marquee-dot"></span> 31 Rooms &amp; Suites</div>
+      <div class="marquee-item" data-i18n="marquee_7"><span class="marquee-dot"></span> Anilao, Batangas Philippines</div>
+      <div class="marquee-item" data-i18n="marquee_8"><span class="marquee-dot"></span> #1 Special Inn in Mabini</div>
+      <div class="marquee-item" data-i18n="marquee_9"><span class="marquee-dot"></span> Ocean-Front Resort</div>
+      <div class="marquee-item" data-i18n="marquee_10"><span class="marquee-dot"></span> Private Jetty Access</div>
+      <div class="marquee-item" data-i18n="marquee_11"><span class="marquee-dot"></span> Night Diving Available</div>
+      <div class="marquee-item" data-i18n="marquee_12"><span class="marquee-dot"></span> Nitrox &amp; Equipment Rental</div>
+      <div class="marquee-item" data-i18n="marquee_13"><span class="marquee-dot"></span> Pool &amp; Beach Access</div>
+      <div class="marquee-item" data-i18n="marquee_14"><span class="marquee-dot"></span> 4.5★ TripAdvisor Rating</div>
+    </div>
+  </div>
+
+  <!-- ═══ REVIEWS STRIP ═══ -->
+  <div class="reviews-strip">
+    <div class="reviews-strip-inner">
+
+      <!-- TripAdvisor -->
+      <a class="platform-card" href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer">
+        <div class="platform-logo">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#00AA6C"/><circle cx="8" cy="12" r="3.2" fill="#fff"/><circle cx="16" cy="12" r="3.2" fill="#fff"/><circle cx="8" cy="12" r="1.2" fill="#000"/><circle cx="16" cy="12" r="1.2" fill="#000"/></svg>
+        </div>
+        <div>
+          <div class="platform-stars" data-i18n="platform_stars_ta">★★★★★</div>
+          <div class="platform-score" data-i18n="platform_score_ta">4.5 / 5</div>
+          <div class="platform-label" data-i18n="platform_label_ta">TripAdvisor · Travelers'<br>Choice Award Winner</div>
+          <div class="platform-count" data-i18n="platform_count_ta">81 reviews</div>
+        </div>
+      </a>
+
+      <!-- Google -->
+      <a class="platform-card" href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z" target="_blank" rel="noopener noreferrer">
+        <div class="platform-logo">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div>
+          <div class="platform-stars" data-i18n="platform_stars_google">★★★★★</div>
+          <div class="platform-score" data-i18n="platform_score_google">4.7 / 5</div>
+          <div class="platform-label" data-i18n="platform_label_google">Google Business<br>Highly Rated</div>
+          <div class="platform-count" data-i18n="platform_count_google">230+ reviews</div>
+        </div>
+      </a>
+
+      <!-- Facebook -->
+      <a class="platform-card" href="https://web.facebook.com/CasaEscondidaAnilao/reviews" target="_blank" rel="noopener noreferrer">
+        <div class="platform-logo">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#1877F2"/><path d="M15.5 8h-2c-.3 0-.5.2-.5.5V10h2.5l-.4 2H13v6h-2v-6H9v-2h2V8.5C11 6.6 12.1 5.5 14 5.5h1.5V8z" fill="#fff"/></svg>
+        </div>
+        <div>
+          <div class="platform-stars" data-i18n="platform_stars_fb">★★★★★</div>
+          <div class="platform-score" data-i18n="platform_score_fb">5.0 / 5</div>
+          <div class="platform-label" data-i18n="platform_label_fb">Facebook<br>Recommended</div>
+          <div class="platform-count" data-i18n="platform_count_fb">See all reviews</div>
+        </div>
+      </a>
+
+      <!-- Booking.com -->
+      <a class="platform-card" href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html#tab-reviews" target="_blank" rel="noopener noreferrer">
+        <div class="platform-logo">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#003580"/><text x="5" y="17" font-size="14" font-weight="bold" fill="white" font-family="Arial">B.</text></svg>
+        </div>
+        <div>
+          <div class="platform-stars" data-i18n="platform_stars_bdc">★★★★★</div>
+          <div class="platform-score" data-i18n="platform_score_bdc">8.6 / 10</div>
+          <div class="platform-label" data-i18n="platform_label_bdc">Booking.com<br>Fabulous</div>
+          <div class="platform-count" data-i18n="platform_count_bdc">See all reviews</div>
+        </div>
+      </a>
+
     </div>
   </div>
 
@@ -2265,49 +2183,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="about-grid">
         <div class="about-photos rvl">
           <div class="ap-1">
-            <img src="images/Home%20page%20images/491998608_1209966191136043_7351523782871887230_n.webp" alt="Casa Escondida pool deck and ocean view" loading="lazy" decoding="async" width="600" height="450" />
+            <img src="images/Home%20page%20images/491998608_1209966191136043_7351523782871887230_n.webp" alt="Casa Escondida pool deck and ocean view" loading="eager" decoding="async" width="600" height="450" />
             <div class="ap-badge"><span class="ap-badge-num">#1</span><div class="ap-badge-lbl">Special Inn<br>in Mabini</div></div>
           </div>
           <div class="ap-3">
-            <img src="images/Home%20page%20images/492124461_1209520584513937_9142311961370399204_n.webp" alt="Casa Escondida open-air restaurant interior" loading="lazy" decoding="async" width="600" height="450" />
+            <img src="images/Home%20page%20images/492124461_1209520584513937_9142311961370399204_n.webp" alt="Casa Escondida open-air restaurant interior" loading="eager" decoding="async" width="600" height="450" />
             <span class="ap-label">Restaurant</span>
           </div>
           <div class="ap-4">
-            <img src="images/Home%20page%20images/492190603_1209897824476213_275333914585297642_n.webp" alt="Private beach with ocean view" loading="lazy" decoding="async" width="600" height="450" />
+            <img src="images/Home%20page%20images/492190603_1209897824476213_275333914585297642_n.webp" alt="Private beach with ocean view" loading="eager" decoding="async" width="600" height="450" />
             <span class="ap-label">Beach</span>
           </div>
           <div class="ap-2">
-            <img src="images/Home%20page%20images/492007809_1209897901142872_8728664288821625163_n.webp" alt="Sandy lounge area with umbrella chairs" loading="lazy" decoding="async" width="600" height="450" />
+            <img src="images/Home%20page%20images/492007809_1209897901142872_8728664288821625163_n.webp" alt="Sandy lounge area with umbrella chairs" loading="eager" decoding="async" width="600" height="450" />
             <span class="ap-label">Lounge</span>
           </div>
           <div class="ap-5">
-            <img src="images/Home%20page%20images/492220080_1209520591180603_6824898703744859298_n.webp" alt="Casa Escondida restaurant at night with warm lanterns" loading="lazy" decoding="async" width="600" height="450" />
+            <img src="images/Home%20page%20images/492220080_1209520591180603_6824898703744859298_n.webp" alt="Casa Escondida restaurant at night with warm lanterns" loading="eager" decoding="async" width="600" height="450" />
             <span class="ap-label">Dining</span>
           </div>
         </div>
 
         <div class="rvr">
-          <div class="eyebrow">Our Story</div>
-          <h2 class="sec-title">A Hidden <em>Paradise</em><br>in Batangas</h2>
+          <div class="eyebrow" data-i18n="our_story">Our Story</div>
+          <h2 class="sec-title" data-i18n="about_title">A Hidden <em>Paradise</em><br>in Batangas</h2>
           <!-- Desktop: full text -->
           <div class="about-text-full">
-            <p class="sec-lead" style="margin-bottom:1.2rem">
+            <p class="sec-lead" style="margin-bottom:1.2rem" data-i18n="about_p1">
               Nestled along the shores of Brgy. Ligaya in Mabini, Batangas, Casa Escondida — <em style="font-style:italic;color:var(--text-secondary)">"The Hidden House"</em> — is an intimate resort and professional dive center where world-class diving meets genuine Filipino warmth.
             </p>
-            <p class="sec-lead">
+            <p class="sec-lead" data-i18n="about_p2">
               Anilao is the birthplace of Philippine scuba diving and a legendary macro photography destination. Our resort places you at the heart of this underwater kingdom — vibrant coral gardens, rare critters, and breathtaking marine biodiversity await.
             </p>
           </div>
           <!-- Mobile: short version -->
-          <p class="sec-lead about-text-short">
+          <p class="sec-lead about-text-short" data-i18n="about_p_short">
             Casa Escondida — <em style="font-style:italic;color:var(--text-secondary)">"The Hidden House"</em> — is an intimate resort &amp; PADI dive center in Anilao, Batangas. World-class macro diving meets genuine Filipino warmth.
           </p>
           <div class="stars-line">
             <span class="star-g">★</span><span class="star-g">★</span><span class="star-g">★</span><span class="star-g">★</span><span class="star-g">★</span>
-            <span class="stars-label">4.5 · 81 TripAdvisor Reviews</span>
+            <span class="stars-label" data-i18n="about_stars_label">4.5 · 81 TripAdvisor Reviews</span>
           </div>
           <div style="margin-top:2rem">
-            <button class="btn-book-sm open-booking-modal">Book Your Stay</button>
+            <button class="btn-book-sm open-booking-modal" data-i18n="about_cta">Book Your Stay</button>
           </div>
         </div>
       </div>
@@ -2318,85 +2236,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section id="dive" class="pad" style="padding-top:0;padding-bottom:0">
     <!-- Full-bleed hero photo -->
     <div class="dive-hero-photo">
-      <img decoding="async" src="images/background/generate_different_angle,_202604212351.webp" alt="Scuba diver with sea turtles underwater Anilao" loading="lazy" width="1920" height="1080" />
+      <img decoding="async" src="images/background/generate_different_angle,_202604212351.webp" alt="Scuba diver with sea turtles underwater Anilao" loading="eager" width="1920" height="1080" />
       <div class="dive-hero-overlay">
         <div class="dive-hero-text">
-          <div class="eyebrow rv" style="color:rgba(77,194,232,0.9)">Dive Center</div>
-          <h2 class="sec-title rv" style="color:#fff;font-size:clamp(2.2rem,5vw,4.2rem)">Dive Into <em>Anilao's</em><br>Legendary Depths</h2>
-          <p style="font-size:0.92rem;color:rgba(255,255,255,0.65);line-height:1.8;max-width:480px" class="rv">
-            Anilao is where Philippine scuba diving was born — and remains one of the world's finest dive destinations for coral diversity and macro life. Our professional PADI dive center puts you at the epicenter.
-          </p>
-          <div style="margin-top:2rem" class="rv">
-            <button class="btn-book-sm open-booking-modal">Book a Dive Package</button>
+          <div class="dive-hero-text-inner">
+            <div class="eyebrow hero-eyebrow-anim" style="color:rgba(255,255,255,0.9)" data-i18n="dive_eyebrow">Dive Center</div>
+            <h2 class="sec-title" style="color:#fff;font-size:clamp(2.2rem,5vw,4.2rem);animation:heroTitleIn 1.1s cubic-bezier(0.16,1,0.3,1) .15s both;" data-i18n="dive_title">Dive Into <em>Anilao's</em><br>Legendary Depths</h2>
+            <p style="font-size:0.92rem;color:rgba(255,255,255,0.82);line-height:1.8;max-width:480px;animation:heroSubIn .9s cubic-bezier(.22,1,.36,1) .4s both;text-shadow:0 1px 8px rgba(0,0,0,.4);" data-i18n="dive_sub">
+              Anilao is where Philippine scuba diving was born — and remains one of the world's finest dive destinations for coral diversity and macro life. Our professional PADI dive center puts you at the epicenter.
+            </p>
+            <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;animation:heroSubIn .9s cubic-bezier(.22,1,.36,1) .6s both;">
+              <a href="dive.html" class="btn-hero-primary" data-i18n="dive_cta_primary">Book a Dive Package</a>
+              <a href="dive.html" class="btn-hero-ghost" data-i18n="dive_cta_secondary">Explore Dive Center →</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-  </section>
-
-  <!-- ═══ SERVICES ═══ -->
-  <section id="services" class="pad">
-    <div class="c">
-      <div style="text-align:center;max-width:620px;margin:0 auto 4.5rem" class="rv">
-        <div class="eyebrow" style="justify-content:center">Amenities &amp; Services</div>
-        <h2 class="sec-title">Everything You <em>Need</em></h2>
-        <p class="sec-lead" style="margin:0 auto">From professional diving to poolside dining and island excursions — every detail of your Casa Escondida experience is thoughtfully curated.</p>
-      </div>
-      <div class="services-grid" id="servicesGrid">
-        <div class="svc-card rv" style="transition-delay:0s">
-          <div class="svc-photo"><img src="images/Nature%20Folder/Hawksbill%20sea%20turtle.webp" alt="Hawksbill sea turtle diving Anilao" loading="lazy" decoding="async" width="800" height="533" /></div>
-          <span class="svc-badge">Dive Center</span>
-          <div class="svc-content">
-            <div class="svc-name">Professional Dive Center</div>
-            <p class="svc-desc">Full-service PADI dive center with seasoned divemasters — your gateway to Anilao's legendary marine world.</p>
-          </div>
-        </div>
-        <div class="svc-card rv" style="transition-delay:0.07s">
-          <div class="svc-photo"><img src="images/Home%20Page%20Image%20Gallery/1.webp" alt="Resort beachfront and pool" loading="lazy" decoding="async" width="800" height="533" /></div>
-          <span class="svc-badge">Beach &amp; Pool</span>
-          <div class="svc-content">
-            <div class="svc-name">Pool &amp; Beach Access</div>
-            <p class="svc-desc">Unwind by the pool with sweeping ocean views or step directly onto the beach for warm Batangas Bay waters.</p>
-          </div>
-        </div>
-        <div class="svc-card rv" style="transition-delay:0.14s">
-          <div class="svc-photo"><img src="images/Home%20Page%20Image%20Gallery/5.webp" alt="Resort restaurant and dining" loading="lazy" decoding="async" width="800" height="533" /></div>
-          <span class="svc-badge">Restaurant</span>
-          <div class="svc-content">
-            <div class="svc-name">Restaurant &amp; Bar</div>
-            <p class="svc-desc">Fresh Filipino and international cuisine, cold drinks at our oceanside bar, and the legendary island BBQ experience.</p>
-          </div>
-        </div>
-        <div class="svc-card rv" style="transition-delay:0.21s">
-          <div class="svc-photo"><img src="images/rooms/03.%20Suite%20with%20Sea%20View/Suiteroom_New.jpg" alt="Suite with Sea View room interior" loading="lazy" decoding="async" width="800" height="533" /></div>
-          <span class="svc-badge">Accommodation</span>
-          <div class="svc-content">
-            <div class="svc-name">Comfortable Rooms</div>
-            <p class="svc-desc">31 ocean-side rooms thoughtfully appointed for the diving traveler — fall asleep to waves, wake up ready to dive.</p>
-          </div>
-        </div>
-        <div class="svc-card rv" style="transition-delay:0.28s">
-          <div class="svc-photo"><img src="images/Home%20Page%20Image%20Gallery/7.webp" alt="Island hopping and boat excursions" loading="lazy" decoding="async" width="800" height="533" /></div>
-          <span class="svc-badge">Excursions</span>
-          <div class="svc-content">
-            <div class="svc-name">Island Excursions</div>
-            <p class="svc-desc">Boat trips, snorkeling, and sunset cruises across the Philippines' most biodiverse bay — adventures for every traveler.</p>
-          </div>
-        </div>
-        <div class="svc-card rv" style="transition-delay:0.35s">
-          <div class="svc-photo"><img src="images/Home%20Page%20Image%20Gallery/9.webp" alt="Resort events and gatherings" loading="lazy" decoding="async" width="800" height="533" /></div>
-          <span class="svc-badge">Events &amp; WiFi</span>
-          <div class="svc-content">
-            <div class="svc-name">Events &amp; Connectivity</div>
-            <p class="svc-desc">Free high-speed WiFi resort-wide. Conference facilities for retreats, team-building, and special celebrations.</p>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:3rem" class="rv">
-        <button class="btn-book-sm open-booking-modal">Book Your Experience</button>
-      </div>
-    </div>
   </section>
 
   <!-- ═══ ROOMS ═══ -->
@@ -2404,76 +2261,76 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="c">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1rem;flex-wrap:wrap;gap:1.5rem">
         <div class="rv">
-          <div class="eyebrow">Accommodation</div>
-          <h2 class="sec-title" style="margin-bottom:0">Rest &amp; <em>Recharge</em></h2>
+          <div class="eyebrow" data-i18n="rooms_eyebrow">Accommodation</div>
+          <h2 class="sec-title" style="margin-bottom:0" data-i18n="rooms_heading">Rest &amp; <em>Recharge</em></h2>
         </div>
-        <p class="sec-lead rv" style="max-width:400px;margin-bottom:0">31 ocean-side rooms designed for the diving traveler — fall asleep to the sound of waves, wake up ready to dive.</p>
+        <p class="sec-lead rv" style="max-width:400px;margin-bottom:0" data-i18n="rooms_lead">31 ocean-side rooms designed for the diving traveler — fall asleep to the sound of waves, wake up ready to dive.</p>
       </div>
 
       <div class="rooms-grid">
         <div class="rm-card rv">
           <div class="rm-photo">
-            <img decoding="async" src="images/rooms/01.%20Standard%20Double%20or%20Twin%20Room/1.jpg" alt="Standard Twin room" loading="lazy" width="700" height="467" />
-            <div class="rm-badge">Standard</div>
+            <img decoding="async" src="images/rooms/01.%20Standard%20Double%20or%20Twin%20Room/1.jpg" alt="Standard Twin room" loading="eager" width="700" height="467" />
+            <div class="rm-badge" data-i18n="rm_badge_1">Standard</div>
           </div>
           <div class="rm-info">
-            <div class="rm-name">Standard <em>Double or Twin</em> Room</div>
-            <p class="rm-desc">Providing free toiletries, this twin/double room includes a private bathroom with a shower and a bidet. Features air conditioning, a tiled floor, and a flat-screen TV. The unit offers 2 beds.</p>
+            <div class="rm-name" data-i18n="rm_name_1">Standard <em>Double or Twin</em> Room</div>
+            <p class="rm-desc" data-i18n="rm_desc_1">Providing free toiletries, this twin/double room includes a private bathroom with a shower and a bidet. Features air conditioning, a tiled floor, and a flat-screen TV. The unit offers 2 beds.</p>
             <div class="rm-feats">
-              <span class="rm-feat">18 sqm</span><span class="rm-feat">2 Single Beds</span>
-              <span class="rm-feat">Air Con</span><span class="rm-feat">Private Bathroom</span>
-              <span class="rm-feat">Free WiFi</span>
+              <span class="rm-feat" data-i18n="rm_feat_1_1">18 sqm</span><span class="rm-feat" data-i18n="rm_feat_1_2">2 Single Beds</span>
+              <span class="rm-feat" data-i18n="rm_feat_1_3">Air Con</span><span class="rm-feat" data-i18n="rm_feat_1_4">Private Bathroom</span>
+              <span class="rm-feat" data-i18n="rm_feat_1_5">Free WiFi</span>
             </div>
             <div class="rm-btns">
-              <a href="rooms.html" class="rm-btn">View Room</a>
-              <button class="btn-book-sm open-booking-modal">Book Now</button>
+              <a href="rooms.html" class="rm-btn" data-i18n="rm_view_btn">View Room</a>
+              <button class="btn-book-sm open-booking-modal" data-i18n="rm_book_btn">Book Now</button>
             </div>
           </div>
         </div>
 
         <div class="rm-card rv" style="transition-delay:0.1s">
           <div class="rm-photo">
-            <img decoding="async" src="images/rooms/02.%20Deluxe%20Double%20or%20Twin%20Room/628966346.jpg" alt="Deluxe Double room" loading="lazy" width="700" height="467" />
-            <div class="rm-badge">Deluxe</div>
+            <img decoding="async" src="images/rooms/02.%20Deluxe%20Double%20or%20Twin%20Room/628966346.jpg" alt="Deluxe Double room" loading="eager" width="700" height="467" />
+            <div class="rm-badge" data-i18n="rm_badge_2">Deluxe</div>
           </div>
           <div class="rm-info">
-            <div class="rm-name">Deluxe <em>Double or Twin</em> Room</div>
-            <p class="rm-desc">The spacious twin/double room features air conditioning, a wardrobe, and a terrace with sea views, as well as a private bathroom boasting a shower. The unit has 2 double beds.</p>
+            <div class="rm-name" data-i18n="rm_name_2">Deluxe <em>Double or Twin</em> Room</div>
+            <p class="rm-desc" data-i18n="rm_desc_2">The spacious twin/double room features air conditioning, a wardrobe, and a terrace with sea views, as well as a private bathroom boasting a shower. The unit has 2 double beds.</p>
             <div class="rm-feats">
-              <span class="rm-feat">40 sqm</span><span class="rm-feat">2 Double Beds</span>
-              <span class="rm-feat">Sea View</span><span class="rm-feat">Balcony</span>
-              <span class="rm-feat">Free WiFi</span>
+              <span class="rm-feat" data-i18n="rm_feat_2_1">40 sqm</span><span class="rm-feat" data-i18n="rm_feat_2_2">2 Double Beds</span>
+              <span class="rm-feat" data-i18n="rm_feat_2_3">Sea View</span><span class="rm-feat" data-i18n="rm_feat_2_4">Balcony</span>
+              <span class="rm-feat" data-i18n="rm_feat_2_5">Free WiFi</span>
             </div>
             <div class="rm-btns">
-              <a href="rooms.html" class="rm-btn">View Room</a>
-              <button class="btn-book-sm open-booking-modal">Book Now</button>
+              <a href="rooms.html" class="rm-btn" data-i18n="rm_view_btn">View Room</a>
+              <button class="btn-book-sm open-booking-modal" data-i18n="rm_book_btn">Book Now</button>
             </div>
           </div>
         </div>
 
         <div class="rm-card rv" style="transition-delay:0.2s;border-color:rgba(232,197,106,0.3);">
           <div class="rm-photo">
-            <img decoding="async" src="images/rooms/03.%20Suite%20with%20Sea%20View/Suiteroom_New.jpg" alt="Suite with Sea View room" loading="lazy" width="700" height="467" />
-            <div class="rm-badge" style="border-color:rgba(232,197,106,0.5);color:var(--gold)">Suite · Most Popular ★</div>
+            <img decoding="async" src="images/rooms/03.%20Suite%20with%20Sea%20View/Suiteroom_New.jpg" alt="Suite with Sea View room" loading="eager" width="700" height="467" />
+            <div class="rm-badge" style="border-color:rgba(232,197,106,0.5);color:var(--gold)" data-i18n="rm_badge_3">Suite · Most Popular ★</div>
           </div>
           <div class="rm-info">
-            <div class="rm-name" style="color:var(--gold)">Suite <em>with Sea View</em></div>
-            <p class="rm-desc">This suite offers a hot tub and comprises 1 living room, 1 separate bedroom, and 1 bathroom with a bath. Featuring a terrace with sea and pool views, air conditioning, and a flat-screen TV. The unit offers 2 double beds.</p>
+            <div class="rm-name" style="color:var(--gold)" data-i18n="rm_name_3">Suite <em>with Sea View</em></div>
+            <p class="rm-desc" data-i18n="rm_desc_3">This suite offers a hot tub and comprises 1 living room, 1 separate bedroom, and 1 bathroom with a bath. Featuring a terrace with sea and pool views, air conditioning, and a flat-screen TV. The unit offers 2 double beds.</p>
             <div class="rm-feats">
-              <span class="rm-feat" style="background:rgba(232,197,106,0.1);border-color:rgba(232,197,106,0.25);color:var(--gold)">50 sqm</span>
-              <span class="rm-feat" style="background:rgba(232,197,106,0.1);border-color:rgba(232,197,106,0.25);color:var(--gold)">Sea View</span>
-              <span class="rm-feat" style="background:rgba(232,197,106,0.1);border-color:rgba(232,197,106,0.25);color:var(--gold)">Hot Tub</span>
-              <span class="rm-feat" style="background:rgba(232,197,106,0.1);border-color:rgba(232,197,106,0.25);color:var(--gold)">2 Double Beds</span>
+              <span class="rm-feat" style="background:rgba(232,197,106,0.1);border-color:rgba(232,197,106,0.25);color:var(--gold)" data-i18n="rm_feat_3_1">50 sqm</span>
+              <span class="rm-feat" style="background:rgba(232,197,106,0.1);border-color:rgba(232,197,106,0.25);color:var(--gold)" data-i18n="rm_feat_3_2">Sea View</span>
+              <span class="rm-feat" style="background:rgba(232,197,106,0.1);border-color:rgba(232,197,106,0.25);color:var(--gold)" data-i18n="rm_feat_3_3">Hot Tub</span>
+              <span class="rm-feat" style="background:rgba(232,197,106,0.1);border-color:rgba(232,197,106,0.25);color:var(--gold)" data-i18n="rm_feat_3_4">2 Double Beds</span>
             </div>
             <div class="rm-btns">
-              <a href="rooms.html" class="rm-btn" style="background:var(--gold);color:#1a1204;border-color:var(--gold)">View Room</a>
-              <button class="btn-book-sm gold-cta open-booking-modal">Book Now</button>
+              <a href="rooms.html" class="rm-btn" style="background:var(--gold);color:#1a1204;border-color:var(--gold)" data-i18n="rm_view_btn">View Room</a>
+              <button class="btn-book-sm gold-cta open-booking-modal" data-i18n="rm_book_btn">Book Now</button>
             </div>
           </div>
         </div>
       </div>
 
-      <p class="rv" style="text-align:center;margin-top:2rem;font-size:0.78rem;color:var(--text-muted)">Breakfast included for all guests · Non-smoking rooms available · <a href="#booking" style="color:var(--accent);text-decoration:none">Contact us for dive &amp; stay packages →</a></p>
+      <p class="rv" style="text-align:center;margin-top:2rem;font-size:0.78rem;color:var(--text-muted)" data-i18n="rooms_note">Breakfast included for all guests · Non-smoking rooms available · <a href="#booking" style="color:var(--accent);text-decoration:none">Contact us for dive &amp; stay packages →</a></p>
     </div>
   </section>
 
@@ -2482,71 +2339,73 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="c">
       <div class="gallery-intro">
         <div class="rvl">
-          <div class="eyebrow">Gallery</div>
-          <h2 class="sec-title">Life at <em>Casa<br>Escondida</em></h2>
+          <div class="eyebrow" data-i18n="gallery_eyebrow">Gallery</div>
+          <h2 class="sec-title" data-i18n="gallery_title">Life at <em>Casa<br>Escondida</em></h2>
         </div>
         <div class="rvr">
-          <p class="sec-lead">Every corner of Casa Escondida tells a story — from the brilliant corals beneath the surface to the warm glow of a beach BBQ at sunset. This is Anilao at its finest.</p>
-          <a href="https://www.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer" class="btn-hero-ghost btn-outline-sm">More on Facebook →</a>
-          <div style="margin-top:1rem">
-            <button class="btn-book-sm open-booking-modal">Book Your Stay</button>
-          </div>
+          <p class="sec-lead" data-i18n="gallery_lead">Every corner of Casa Escondida tells a story — from the brilliant corals beneath the surface to the warm glow of a beach BBQ at sunset. This is Anilao at its finest.</p>
         </div>
       </div>
 
       <div class="mosaic rv">
         <div class="mo">
-          <img src="images/Home%20Page%20Image%20Gallery/646376888_1482336827232310_2364966813783416231_n.jpg" alt="Casa Escondida resort view" loading="lazy" decoding="async" width="1080" height="1351" />
-          <div class="mo-cap"><span class="mo-cap-text">Casa Escondida</span></div>
+          <img src="images/Home%20Page%20Image%20Gallery/646376888_1482336827232310_2364966813783416231_n.jpg" alt="Casa Escondida resort view" loading="eager" decoding="async" width="1080" height="1351" />
+          <div class="mo-cap"><span class="mo-cap-text" data-i18n="mo_cap_1">Casa Escondida</span></div>
         </div>
         <div class="mo">
-          <img src="images/Home%20Page%20Image%20Gallery/655612345_1495321572600502_4959112056126896847_n.jpg" alt="Beachfront terrace at Casa Escondida" loading="lazy" decoding="async" width="1080" height="1351" />
-          <div class="mo-cap"><span class="mo-cap-text">Beachfront Terrace</span></div>
+          <img src="images/Home%20Page%20Image%20Gallery/655612345_1495321572600502_4959112056126896847_n.jpg" alt="Beachfront terrace at Casa Escondida" loading="eager" decoding="async" width="1080" height="1351" />
+          <div class="mo-cap"><span class="mo-cap-text" data-i18n="mo_cap_2">Beachfront Terrace</span></div>
         </div>
         <div class="mo">
-          <img src="images/Home%20Page%20Image%20Gallery/657044060_1504147005051292_6651211094410107959_n.jpg" alt="Resort pool and lounge area" loading="lazy" decoding="async" width="1080" height="811" />
-          <div class="mo-cap"><span class="mo-cap-text">Pool & Lounge</span></div>
+          <img src="images/Home%20Page%20Image%20Gallery/657044060_1504147005051292_6651211094410107959_n.jpg" alt="Resort pool and lounge area" loading="eager" decoding="async" width="1080" height="811" />
+          <div class="mo-cap"><span class="mo-cap-text" data-i18n="mo_cap_3">Pool & Lounge</span></div>
         </div>
         <div class="mo">
-          <img src="images/Home%20Page%20Image%20Gallery/658269471_1504146971717962_1237187316818094033_n.jpg" alt="Dining at Casa Escondida Anilao" loading="lazy" decoding="async" width="1440" height="1080" />
-          <div class="mo-cap"><span class="mo-cap-text">Resort Restaurant</span></div>
+          <img src="images/Home%20Page%20Image%20Gallery/658269471_1504146971717962_1237187316818094033_n.jpg" alt="Dining at Casa Escondida Anilao" loading="eager" decoding="async" width="1440" height="1080" />
+          <div class="mo-cap"><span class="mo-cap-text" data-i18n="mo_cap_4">Resort Restaurant</span></div>
         </div>
         <div class="mo">
-          <img src="images/Home%20Page%20Image%20Gallery/670918150_1514754097323916_4490297454281878213_n.jpg" alt="Dive boat heading to Anilao dive sites" loading="lazy" decoding="async" width="1440" height="1080" />
-          <div class="mo-cap"><span class="mo-cap-text">Dive Boat</span></div>
+          <img src="images/Home%20Page%20Image%20Gallery/670918150_1514754097323916_4490297454281878213_n.jpg" alt="Dive boat heading to Anilao dive sites" loading="eager" decoding="async" width="1440" height="1080" />
+          <div class="mo-cap"><span class="mo-cap-text" data-i18n="mo_cap_5">Dive Boat</span></div>
         </div>
         <div class="mo">
-          <img src="images/Home%20Page%20Image%20Gallery/679583189_1527313692734623_636931405471932032_n.jpg" alt="Beach deck walkway at Casa Escondida" loading="lazy" decoding="async" width="1440" height="1077" />
-          <div class="mo-cap"><span class="mo-cap-text">Beach Deck</span></div>
+          <img src="images/Home%20Page%20Image%20Gallery/679583189_1527313692734623_636931405471932032_n.jpg" alt="Beach deck walkway at Casa Escondida" loading="eager" decoding="async" width="1440" height="1077" />
+          <div class="mo-cap"><span class="mo-cap-text" data-i18n="mo_cap_6">Beach Deck</span></div>
         </div>
         <div class="mo">
-          <img src="images/Home%20Page%20Image%20Gallery/686469229_1533656842100308_4495039138409170965_n.jpg" alt="Large dive group at Casa Escondida" loading="lazy" decoding="async" width="1080" height="1350" />
-          <div class="mo-cap"><span class="mo-cap-text">Dive Community</span></div>
+          <img src="images/Home%20Page%20Image%20Gallery/686469229_1533656842100308_4495039138409170965_n.jpg" alt="Large dive group at Casa Escondida" loading="eager" decoding="async" width="1080" height="1350" />
+          <div class="mo-cap"><span class="mo-cap-text" data-i18n="mo_cap_7">Dive Community</span></div>
         </div>
         <div class="mo">
-          <img src="images/Home%20Page%20Image%20Gallery/686944997_1533656835433642_7798954760234512261_n.jpg" alt="Divers suited up and ready at Casa Escondida" loading="lazy" decoding="async" width="1080" height="1350" />
-          <div class="mo-cap"><span class="mo-cap-text">Ready to Dive</span></div>
+          <img src="images/Home%20Page%20Image%20Gallery/686944997_1533656835433642_7798954760234512261_n.jpg" alt="Divers suited up and ready at Casa Escondida" loading="eager" decoding="async" width="1080" height="1350" />
+          <div class="mo-cap"><span class="mo-cap-text" data-i18n="mo_cap_8">Ready to Dive</span></div>
         </div>
         <div class="mo">
-          <img src="images/Home%20Page%20Image%20Gallery/687049692_1533656832100309_2957923661179892116_n.jpg" alt="Dive group photo at Casa Escondida" loading="lazy" decoding="async" width="939" height="1173" />
-          <div class="mo-cap"><span class="mo-cap-text">Dive Adventures</span></div>
+          <img src="images/Home%20Page%20Image%20Gallery/687049692_1533656832100309_2957923661179892116_n.jpg" alt="Dive group photo at Casa Escondida" loading="eager" decoding="async" width="939" height="1173" />
+          <div class="mo-cap"><span class="mo-cap-text" data-i18n="mo_cap_9">Dive Adventures</span></div>
         </div>
         <div class="mo">
-          <img src="images/Home%20Page%20Image%20Gallery/687953366_1533656838766975_4153196408447429727_n.jpg" alt="Dive team group shot Anilao" loading="lazy" decoding="async" width="1081" height="1080" />
-          <div class="mo-cap"><span class="mo-cap-text">Dive Groups</span></div>
+          <img src="images/Home%20Page%20Image%20Gallery/687953366_1533656838766975_4153196408447429727_n.jpg" alt="Dive team group shot Anilao" loading="eager" decoding="async" width="1081" height="1080" />
+          <div class="mo-cap"><span class="mo-cap-text" data-i18n="mo_cap_10">Dive Groups</span></div>
         </div>
         <div class="mo">
-          <img src="images/Home%20Page%20Image%20Gallery/690079775_1536848128447846_2366817063410709591_n.jpg" alt="Guests at Casa Escondida resort" loading="lazy" decoding="async" width="1193" height="893" />
-          <div class="mo-cap"><span class="mo-cap-text">Resort Life</span></div>
+          <img src="images/Home%20Page%20Image%20Gallery/690079775_1536848128447846_2366817063410709591_n.jpg" alt="Guests at Casa Escondida resort" loading="eager" decoding="async" width="1193" height="893" />
+          <div class="mo-cap"><span class="mo-cap-text" data-i18n="mo_cap_11">Resort Life</span></div>
         </div>
         <div class="mo">
-          <img src="images/Home%20Page%20Image%20Gallery/692065502_1536848061781186_7772037231590369676_n.jpg" alt="Pool diving training at Casa Escondida" loading="lazy" decoding="async" width="1440" height="1080" />
-          <div class="mo-cap"><span class="mo-cap-text">Pool Training</span></div>
+          <img src="images/Home%20Page%20Image%20Gallery/692065502_1536848061781186_7772037231590369676_n.jpg" alt="Pool diving training at Casa Escondida" loading="eager" decoding="async" width="1440" height="1080" />
+          <div class="mo-cap"><span class="mo-cap-text" data-i18n="mo_cap_12">Pool Training</span></div>
         </div>
         <div class="mo">
-          <img src="images/Home%20Page%20Image%20Gallery/692581217_1536852048447454_6489732352322496465_n.jpg" alt="Scuba training session in the pool" loading="lazy" decoding="async" width="2048" height="1152" />
-          <div class="mo-cap"><span class="mo-cap-text">Dive Training</span></div>
+          <img src="images/Home%20Page%20Image%20Gallery/692581217_1536852048447454_6489732352322496465_n.jpg" alt="Scuba training session in the pool" loading="eager" decoding="async" width="2048" height="1152" />
+          <div class="mo-cap"><span class="mo-cap-text" data-i18n="mo_cap_13">Dive Training</span></div>
         </div>
+      </div>
+
+      <!-- Gallery CTAs — below images -->
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem;">
+        <a href="https://www.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer" class="btn-hero-ghost btn-outline-sm" data-i18n="gallery_fb_btn">More on Facebook →</a>
+        <button class="btn-book-sm open-booking-modal" data-i18n="gallery_cta">Book Your Stay</button>
       </div>
     </div>
   </section>
@@ -2555,58 +2414,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section id="reviews" class="pad">
     <div class="c">
       <div style="text-align:center;margin-bottom:1rem" class="rv">
-        <div class="eyebrow" style="justify-content:center">Guest Reviews</div>
-        <h2 class="sec-title">What Our <em>Guests</em> Say</h2>
+        <div class="eyebrow" style="justify-content:center" data-i18n="reviews_eyebrow">Guest Reviews</div>
+        <h2 class="sec-title" data-i18n="reviews_title">What Our <em>Guests</em> Say</h2>
       </div>
 
       <div class="reviews-top rv">
         <div class="reviews-score">
           <div class="rs-num">4.5</div>
           <div class="rs-stars">★★★★★</div>
-          <div class="rs-count">81 TripAdvisor Reviews</div>
-          <div class="rs-award">🏆 Travelers' Choice</div>
+          <div class="rs-count" data-i18n="reviews_count">81 TripAdvisor Reviews</div>
+          <div class="rs-award" data-i18n="reviews_award">🏆 Travelers' Choice</div>
         </div>
         <div class="rating-bars">
-          <div class="rb-row"><span class="rb-label">Cleanliness</span><div class="rb-track"><div class="rb-fill" style="width:94%"></div></div><span class="rb-val">4.7</span></div>
-          <div class="rb-row"><span class="rb-label">Service</span><div class="rb-track"><div class="rb-fill" style="width:92%"></div></div><span class="rb-val">4.6</span></div>
-          <div class="rb-row"><span class="rb-label">Location</span><div class="rb-track"><div class="rb-fill" style="width:92%"></div></div><span class="rb-val">4.6</span></div>
-          <div class="rb-row"><span class="rb-label">Sleep Quality</span><div class="rb-track"><div class="rb-fill" style="width:92%"></div></div><span class="rb-val">4.6</span></div>
-          <div class="rb-row"><span class="rb-label">Rooms</span><div class="rb-track"><div class="rb-fill" style="width:88%"></div></div><span class="rb-val">4.4</span></div>
-          <div class="rb-row"><span class="rb-label">Value</span><div class="rb-track"><div class="rb-fill" style="width:82%"></div></div><span class="rb-val">4.1</span></div>
+          <div class="rb-row"><span class="rb-label" data-i18n="rb_cleanliness">Cleanliness</span><div class="rb-track"><div class="rb-fill" style="width:94%"></div></div><span class="rb-val">4.7</span></div>
+          <div class="rb-row"><span class="rb-label" data-i18n="rb_service">Service</span><div class="rb-track"><div class="rb-fill" style="width:92%"></div></div><span class="rb-val">4.6</span></div>
+          <div class="rb-row"><span class="rb-label" data-i18n="rb_location">Location</span><div class="rb-track"><div class="rb-fill" style="width:92%"></div></div><span class="rb-val">4.6</span></div>
+          <div class="rb-row"><span class="rb-label" data-i18n="rb_sleep_quality">Sleep Quality</span><div class="rb-track"><div class="rb-fill" style="width:92%"></div></div><span class="rb-val">4.6</span></div>
+          <div class="rb-row"><span class="rb-label" data-i18n="rb_rooms">Rooms</span><div class="rb-track"><div class="rb-fill" style="width:88%"></div></div><span class="rb-val">4.4</span></div>
+          <div class="rb-row"><span class="rb-label" data-i18n="rb_value">Value</span><div class="rb-track"><div class="rb-fill" style="width:82%"></div></div><span class="rb-val">4.1</span></div>
         </div>
       </div>
 
       <div class="reviews-grid" style="margin-top:3.5rem">
         <div class="rv-card rv">
-          <div class="rv-stars">★★★★★</div>
-          <p class="rv-quote">Exceptional hospitality — the staff went above and beyond at every turn. The buffet was incredibly diverse and delicious. Woke up to an amazing view of the pool and the sea.</p>
+          <div class="platform-stars" data-i18n="rv_stars_1">★★★★★</div>
+          <p class="rv-quote" data-i18n="rv_quote_1">Exceptional hospitality — the staff went above and beyond at every turn. The buffet was incredibly diverse and delicious. Woke up to an amazing view of the pool and the sea.</p>
           <div class="rv-author">
             <div class="rv-av">MR</div>
-            <div><div class="rv-name">Maria R.</div><div class="rv-meta">March 2025</div><div class="rv-source">TripAdvisor</div></div>
+            <div><div class="rv-name" data-i18n="rv_name_1">Maria R.</div><div class="rv-meta" data-i18n="rv_meta_1">March 2025</div><div class="rv-source" data-i18n="rv_source_1">TripAdvisor</div></div>
           </div>
         </div>
         <div class="rv-card rv" style="transition-delay:0.1s">
-          <div class="rv-stars">★★★★★</div>
-          <p class="rv-quote">The dive center is top-notch. Our divemaster was incredibly professional and knowledgeable. Hot showers at the dive shop were such a thoughtful touch after cold morning dives.</p>
+          <div class="platform-stars" data-i18n="rv_stars_2">★★★★★</div>
+          <p class="rv-quote" data-i18n="rv_quote_2">The dive center is top-notch. Our divemaster was incredibly professional and knowledgeable. Hot showers at the dive shop were such a thoughtful touch after cold morning dives.</p>
           <div class="rv-author">
             <div class="rv-av">JT</div>
-            <div><div class="rv-name">James T.</div><div class="rv-meta">February 2025</div><div class="rv-source">TripAdvisor</div></div>
+            <div><div class="rv-name" data-i18n="rv_name_2">James T.</div><div class="rv-meta" data-i18n="rv_meta_2">February 2025</div><div class="rv-source" data-i18n="rv_source_2">TripAdvisor</div></div>
           </div>
         </div>
         <div class="rv-card rv" style="transition-delay:0.2s">
-          <div class="rv-stars">★★★★★</div>
-          <p class="rv-quote">The island BBQ dinner was the highlight of our whole trip. The food was amazing, the atmosphere magical. Dive sites around Anilao are absolutely world-class.</p>
+          <div class="platform-stars" data-i18n="rv_stars_3">★★★★★</div>
+          <p class="rv-quote" data-i18n="rv_quote_3">The island BBQ dinner was the highlight of our whole trip. The food was amazing, the atmosphere magical. Dive sites around Anilao are absolutely world-class.</p>
           <div class="rv-author">
             <div class="rv-av">SL</div>
-            <div><div class="rv-name">Sarah L.</div><div class="rv-meta">January 2025</div><div class="rv-source">TripAdvisor</div></div>
+            <div><div class="rv-name" data-i18n="rv_name_3">Sarah L.</div><div class="rv-meta" data-i18n="rv_meta_3">January 2025</div><div class="rv-source" data-i18n="rv_source_3">TripAdvisor</div></div>
           </div>
         </div>
       </div>
 
       <div style="text-align:center;margin-top:2.5rem" class="rv">
-        <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="btn-hero-ghost btn-outline-sm">Read All 81 Reviews on TripAdvisor →</a>
+        <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="btn-hero-ghost btn-outline-sm" data-i18n="reviews_read_all">Read All 81 Reviews on TripAdvisor →</a>
         <div style="margin-top:1.2rem">
-          <button class="btn-book-sm open-booking-modal">Join Our Guests — Book Now</button>
+          <button class="btn-book-sm open-booking-modal" data-i18n="reviews_cta">Join Our Guests — Book Now</button>
         </div>
       </div>
     </div>
@@ -2621,21 +2480,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <iframe
             src="https://maps.google.com/maps?q=13.7277078,120.884266&z=16&output=embed"
             allowfullscreen
-            loading="lazy"
+            loading="eager"
             referrerpolicy="no-referrer-when-downgrade"
             title="Casa Escondida Anilao Resort location on Google Maps"
           ></iframe>
           <div class="loc-map-link">
             <a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z/data=!4m9!3m8!1s0x33bda9eff584af69:0x81011df456c41163!5m2!4m1!1i2!8m2!3d13.7277078!4d120.884266!16s%2Fg%2F11cmh4mhpm?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="loc-map-btn">
-              View on Google Maps →
+              <span data-i18n="loc_map_btn">View on Google Maps →</span>
             </a>
           </div>
         </div>
 
         <div class="rvr">
-          <div class="eyebrow">Getting Here</div>
-          <h2 class="sec-title">Find Your Way to <em>Anilao</em></h2>
-          <p class="sec-lead">Located in the heart of Anilao — the Philippines' diving capital — Casa Escondida is easily reachable from Manila for a perfect weekend or week-long escape.</p>
+          <div class="eyebrow" data-i18n="location_eyebrow_home">Getting Here</div>
+          <h2 class="sec-title" data-i18n="location_home_title">Find Your Way to <em>Anilao</em></h2>
+          <p class="sec-lead" data-i18n="location_lead">Located in the heart of Anilao — the Philippines' diving capital — Casa Escondida is easily reachable from Manila for a perfect weekend or week-long escape.</p>
           <div class="loc-items">
 
             <div class="loc-item rv" style="--rv-delay:0ms">
@@ -2645,7 +2504,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <circle cx="12" cy="9" r="2.5"/>
                 </svg>
               </div>
-              <div><div class="loc-lbl">Address</div><div class="loc-val">Brgy. Ligaya, Mabini, Batangas Province, Philippines 4202</div></div>
+              <div><div class="loc-lbl" data-i18n="loc_lbl_address">Address</div><div class="loc-val" data-i18n="loc_val_address">Brgy. Ligaya, Mabini, Batangas Province, Philippines 4202</div></div>
             </div>
 
             <div class="loc-item rv" style="--rv-delay:80ms">
@@ -2654,7 +2513,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>
                 </svg>
               </div>
-              <div><div class="loc-lbl">From Manila Airport</div><div class="loc-val">88.5 km · Approx. 2–3 hours by car via STAR Tollway → Batangas City → Mabini</div></div>
+              <div><div class="loc-lbl" data-i18n="loc_lbl_manila">From Manila Airport</div><div class="loc-val" data-i18n="loc_val_manila">88.5 km · Approx. 2–3 hours by car via STAR Tollway → Batangas City → Mabini</div></div>
             </div>
 
             <div class="loc-item rv" style="--rv-delay:160ms">
@@ -2665,7 +2524,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <circle cx="7" cy="15" r="1" fill="var(--accent)" stroke="none"/><circle cx="17" cy="15" r="1" fill="var(--accent)" stroke="none"/>
                 </svg>
               </div>
-              <div><div class="loc-lbl">By Bus</div><div class="loc-val">JAM Liner or Ceres from Buendia → Batangas, then tricycle or jeepney to Anilao</div></div>
+              <div><div class="loc-lbl" data-i18n="loc_lbl_bus">By Bus</div><div class="loc-val" data-i18n="loc_val_bus">JAM Liner or Ceres from Buendia → Batangas, then tricycle or jeepney to Anilao</div></div>
             </div>
 
             <div class="loc-item rv" style="--rv-delay:240ms">
@@ -2675,7 +2534,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </svg>
               </div>
               <div>
-                <div class="loc-lbl">Contact &amp; Reservations</div>
+                <div class="loc-lbl" data-i18n="loc_lbl_contact">Contact &amp; Reservations</div>
                 <div class="loc-val">
                   <a href="mailto:casaescondidaanilao@gmail.com">casaescondidaanilao@gmail.com</a><br>
                   <a href="tel:+639778372272">+63 977 837 2272</a><br>
@@ -2695,25 +2554,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="booking-bg"></div>
     <div class="booking-overlay"></div>
     <div class="c booking-content">
-      <div class="eyebrow booking-eyebrow rv">Reservations</div>
-      <h2 class="sec-title booking-title rv">Ready to <em>Dive In?</em></h2>
-      <p class="sec-lead rv">Book your stay at Casa Escondida Anilao — ocean-front rooms, world-class diving, and warm Filipino hospitality. Enquire about dive &amp; stay packages.</p>
+      <div class="eyebrow booking-eyebrow rv" data-i18n="booking_eyebrow">Reservations</div>
+      <h2 class="sec-title booking-title rv" data-i18n="booking_title">Ready to <em>Dive In?</em></h2>
+      <p class="sec-lead rv" data-i18n="booking_sub">Book your stay at Casa Escondida Anilao — ocean-front rooms, world-class diving, and warm Filipino hospitality. Enquire about dive &amp; stay packages.</p>
       <div id="bookingError" class="b-error" role="alert" aria-live="assertive" hidden></div>
       <form class="booking-form rv" id="bookingForm" novalidate aria-label="Check availability form">
         <div class="b-field">
-          <label for="b-name" class="b-label">Your Name</label>
-          <input type="text" id="b-name" name="name" class="b-input" placeholder="Your Name" required aria-required="true" autocomplete="name" />
+          <label for="b-name" class="b-label" data-i18n="form_label_name">Your Name</label>
+          <input type="text" id="b-name" name="name" class="b-input" placeholder="Your Name" data-i18n-placeholder="form_placeholder_name" required aria-required="true" autocomplete="name" />
         </div>
         <div class="b-field">
-          <label for="b-email" class="b-label">Email Address</label>
-          <input type="email" id="b-email" name="email" class="b-input" placeholder="Email Address" required aria-required="true" autocomplete="email" />
+          <label for="b-email" class="b-label" data-i18n="form_label_email">Email Address</label>
+          <input type="email" id="b-email" name="email" class="b-input" placeholder="Email Address" data-i18n-placeholder="form_placeholder_email" required aria-required="true" autocomplete="email" />
         </div>
         <div class="b-field">
-          <label for="b-date" class="b-label">Check-in Date</label>
+          <label for="b-date" class="b-label" data-i18n="form_label_checkin">Check-in Date</label>
           <input type="date" id="b-date" name="checkin" class="b-input" required aria-required="true" />
         </div>
         <div class="b-field">
-          <label for="b-guests" class="b-label">Guests</label>
+          <label for="b-guests" class="b-label" data-i18n="form_label_guests">Guests</label>
           <select id="b-guests" name="guests" class="b-input" aria-label="Number of guests">
             <option value="1">1 Guest</option>
             <option value="2" selected>2 Guests</option>
@@ -2722,21 +2581,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <option value="5+">5+ Guests</option>
           </select>
         </div>
-        <button type="submit" class="btn-book">Check Availability</button>
+        <button type="submit" class="btn-book" data-i18n="form_submit_btn">Check Availability</button>
       </form>
       <div id="bookingSuccess" class="b-success" role="alert" aria-live="polite" hidden>
         <div class="b-check">
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>
         </div>
-        <div class="b-success-title">Reservation Received!</div>
-        <div class="b-success-sub">Thank you — we'll get back to you within 24 hours to confirm your stay.</div>
+        <div class="b-success-title" data-i18n="form_success_title">Reservation Received!</div>
+        <div class="b-success-sub" data-i18n="form_success_sub">Thank you — we'll get back to you within 24 hours to confirm your stay.</div>
         <div class="b-success-pulse">
           <div class="b-pulse-dot"></div>
           <div class="b-pulse-dot"></div>
           <div class="b-pulse-dot"></div>
         </div>
       </div>
-      <p class="b-note rv">Or reach us on <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer">Facebook</a> · <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer">Booking.com</a> · <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer">TripAdvisor</a></p>
+      <p class="b-note rv" data-i18n="booking_note">Or reach us on <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer">Facebook</a> · <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer">Booking.com</a> · <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer">TripAdvisor</a></p>
     </div>
   </section>
 
@@ -2748,71 +2607,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="foot-grid">
         <div>
           <a href="/" class="foot-logo">Casa <span>Escondida</span></a>
-          <p class="foot-desc">A hidden paradise in Anilao, Batangas — where world-class Philippine diving meets exceptional hospitality on the shores of Batangas Bay.</p>
+          <p class="foot-desc" data-i18n="foot_desc">A hidden paradise in Anilao, Batangas — where world-class Philippine diving meets exceptional hospitality on the shores of Batangas Bay.</p>
           <div class="foot-socials">
-            <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Facebook">
+            <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Facebook" data-i18n-aria-label="soc_aria_fb">
               <svg class="fill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
-            <a href="https://www.instagram.com/casaescondidaanilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Instagram">
+            <a href="https://www.instagram.com/casaescondidaanilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Instagram" data-i18n-aria-label="soc_aria_ig">
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
-            <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="TripAdvisor">
+            <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="TripAdvisor" data-i18n-aria-label="soc_aria_ta">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </a>
-            <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Booking.com">
+            <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Booking.com" data-i18n-aria-label="soc_aria_bdc">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
             </a>
           </div>
         </div>
         <div class="foot-col-links">
           <div>
-            <div class="foot-h">Explore</div>
+            <div class="foot-h" data-i18n="foot_h_1">Explore</div>
             <ul class="foot-links">
-              <li><a href="/#about">About the Resort</a></li>
-              <li><a href="dive.html">Dive Center</a></li>
-              <li><a href="rooms.html">Rooms &amp; Suites</a></li>
-              <li><a href="gallery.html">Photo Gallery</a></li>
-              <li><a href="/#dining">Restaurant &amp; Bar</a></li>
+              <li><a href="/#about" data-i18n="foot_link_1_1">About the Resort</a></li>
+              <li><a href="dive.html" data-i18n="foot_link_1_2">Dive Center</a></li>
+              <li><a href="rooms.html" data-i18n="foot_link_1_3">Rooms &amp; Suites</a></li>
+              <li><a href="gallery.html" data-i18n="foot_link_1_4">Photo Gallery</a></li>
+              <li><a href="/#dining" data-i18n="foot_link_1_5">Restaurant &amp; Bar</a></li>
             </ul>
           </div>
           <div>
-            <div class="foot-h">Dive Programs</div>
+            <div class="foot-h" data-i18n="foot_h_2">Dive Programs</div>
             <ul class="foot-links">
-              <li><a href="dive.html#courses">PADI Open Water</a></li>
-              <li><a href="dive.html#courses">Advanced OW Course</a></li>
-              <li><a href="dive.html#courses">Rescue Diver</a></li>
-              <li><a href="dive.html#packages">Guided Dive Trips</a></li>
-              <li><a href="dive.html#packages">Night Dives</a></li>
+              <li><a href="dive.html#courses" data-i18n="foot_link_2_1">PADI Open Water</a></li>
+              <li><a href="dive.html#courses" data-i18n="foot_link_2_2">Advanced OW Course</a></li>
+              <li><a href="dive.html#courses" data-i18n="foot_link_2_3">Rescue Diver</a></li>
+              <li><a href="dive.html#packages" data-i18n="foot_link_2_4">Guided Dive Trips</a></li>
+              <li><a href="dive.html#packages" data-i18n="foot_link_2_5">Night Dives</a></li>
             </ul>
           </div>
           <div>
-            <div class="foot-h">Latest Articles</div>
+            <div class="foot-h" data-i18n="foot_h_3">Latest Articles</div>
             <ul class="foot-links">
-              <li><a href="blog/best-dive-sites-anilao.html">Best Dive Sites in Anilao</a></li>
-              <li><a href="blog/nudibranchs-anilao.html">Nudibranchs of Anilao</a></li>
-              <li><a href="blog/manila-to-anilao-transfer-guide.html">Manila to Anilao Guide</a></li>
-              <li><a href="blog/pygmy-seahorses-anilao.html">Pygmy Seahorses Guide</a></li>
-              <li><a href="blog/kirbys-rock-anilao.html">Kirby's Rock Dive Site</a></li>
-              <li><a href="blog.html">All Articles &rarr;</a></li>
+              <li><a href="blog/best-dive-sites-anilao.html" data-i18n="foot_link_3_1">Best Dive Sites in Anilao</a></li>
+              <li><a href="blog/nudibranchs-anilao.html" data-i18n="foot_link_3_2">Nudibranchs of Anilao</a></li>
+              <li><a href="blog/manila-to-anilao-transfer-guide.html" data-i18n="foot_link_3_3">Manila to Anilao Guide</a></li>
+              <li><a href="blog/pygmy-seahorses-anilao.html" data-i18n="foot_link_3_4">Pygmy Seahorses Guide</a></li>
+              <li><a href="blog/kirbys-rock-anilao.html" data-i18n="foot_link_3_5">Kirby's Rock Dive Site</a></li>
+              <li><a href="blog.html" data-i18n="foot_link_3_6">All Articles &rarr;</a></li>
             </ul>
           </div>
           <div>
-            <div class="foot-h">Location</div>
+            <div class="foot-h" data-i18n="foot_h_4">Location</div>
             <ul class="foot-links">
-              <li><a href="location.html">Brgy. Ligaya, Mabini</a></li>
-              <li><a href="location.html">Batangas Province 4202</a></li>
-              <li><a href="location.html">Philippines</a></li>
-              <li><a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z/data=!4m9!3m8!1s0x33bda9eff584af69:0x81011df456c41163!5m2!4m1!1i2!8m2!3d13.7277078!4d120.884266!16s%2Fg%2F11cmh4mhpm?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Google Maps &rarr;</a></li>
-              <li><a href="/#booking">Book Now</a></li>
+              <li><a href="location.html" data-i18n="foot_link_4_1">Brgy. Ligaya, Mabini</a></li>
+              <li><a href="location.html" data-i18n="foot_link_4_2">Batangas Province 4202</a></li>
+              <li><a href="location.html" data-i18n="foot_link_4_3">Philippines</a></li>
+              <li><a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z/data=!4m9!3m8!1s0x33bda9eff584af69:0x81011df456c41163!5m2!4m1!1i2!8m2!3d13.7277078!4d120.884266!16s%2Fg%2F11cmh4mhpm?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" data-i18n="foot_link_4_4">Google Maps &rarr;</a></li>
+              <li><a href="/#booking" data-i18n="foot_link_4_5">Book Now</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="foot-bottom">
-        <div class="foot-copy">© 2026 Casa Escondida Anilao Resort &amp; Dive Center · Mabini, Batangas</div>
+        <div class="foot-copy" data-i18n="copyright">© 2026 Casa Escondida Anilao Resort &amp; Dive Center · Mabini, Batangas</div>
         <div class="foot-legal">
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-of-service.html">Terms of Service</a>
+          <a href="privacy-policy.html" data-i18n="foot_privacy">Privacy Policy</a>
+          <a href="terms-of-service.html" data-i18n="foot_terms">Terms of Service</a>
           <span style="color:var(--text-muted);opacity:.4">·</span>
           <a href="https://technext.asia" target="_blank" rel="noopener noreferrer" class="foot-powered-link">Powered by <span class="tn-brand">TechNext Asia</span></a>
         </div>
@@ -3061,7 +2920,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button id="lb-close" aria-label="Close">✕</button>
     <button id="lb-prev" aria-label="Previous">&#8249;</button>
     <button id="lb-next" aria-label="Next">&#8250;</button>
-    <div id="lb-wrap"><img decoding="async" loading="lazy" id="lb-img" src="" alt="" /></div>
+    <div id="lb-wrap"><img decoding="async" loading="eager" id="lb-img" src="" alt="" /></div>
     <div id="lb-counter"></div>
   </div>
 
@@ -3128,6 +2987,147 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 
   <script>
+  /* ── Services Carousel — Infinite Loop ── */
+  (function(){
+    var wrap     = document.querySelector('.svc-carousel-wrap');
+    var track    = document.getElementById('svcTrack');
+    var dotsWrap = document.getElementById('svcDots');
+    if(!track || !dotsWrap || !wrap) return;
+
+    var origSlides = Array.from(track.querySelectorAll('.svc-slide'));
+    var origTotal  = origSlides.length; // 6
+    var isMobile   = function(){ return window.innerWidth <= 768; };
+    var PER_VIEW   = 3;
+    var GAP        = 8;
+    var current    = 0; // index into origSlides
+    var timer;
+    var isTransitioning = false;
+
+    /* ── Calculate slide width from wrapper ── */
+    function slideWidth(){
+      var mob = isMobile();
+      var per = mob ? 1 : PER_VIEW;
+      var g   = mob ? 0 : GAP;
+      return (wrap.offsetWidth - g * (per - 1)) / per;
+    }
+
+    /* ── Set all slide widths explicitly (fixes % in flex bug) ── */
+    function setSlideSizes(){
+      var sw = slideWidth();
+      track.querySelectorAll('.svc-slide').forEach(function(s){
+        s.style.width    = sw + 'px';
+        s.style.minWidth = sw + 'px';
+      });
+    }
+
+    /* ── Clone first & last slides for seamless infinite loop ── */
+    (function buildClones(){
+      /* Prepend last PER_VIEW slides, append first PER_VIEW slides */
+      for(var i = origTotal - PER_VIEW; i < origTotal; i++){
+        var clone = origSlides[i].cloneNode(true);
+        clone.setAttribute('aria-hidden','true');
+        track.insertBefore(clone, track.firstChild);
+      }
+      for(var j = 0; j < PER_VIEW; j++){
+        var clone2 = origSlides[j].cloneNode(true);
+        clone2.setAttribute('aria-hidden','true');
+        track.appendChild(clone2);
+      }
+    })();
+
+    var allSlides = track.querySelectorAll('.svc-slide');
+    /* Real slides start at index PER_VIEW */
+    var realOffset = PER_VIEW;
+
+    /* ── Build dots (one per original slide) ── */
+    for(var i = 0; i < origTotal; i++){
+      var d = document.createElement('button');
+      d.className = 'svc-dot' + (i===0?' active':'');
+      d.setAttribute('aria-label','Go to slide '+(i+1));
+      (function(idx){ d.addEventListener('click', function(){ jumpTo(idx); resetTimer(); }); })(i);
+      dotsWrap.appendChild(d);
+    }
+
+    /* ── Position track at real slide idx (with animation) ── */
+    function goTo(idx, animate){
+      if(animate === false) track.style.transition = 'none';
+      else track.style.transition = 'transform .7s cubic-bezier(0.25,0.46,0.45,0.94)';
+
+      var sw = slideWidth() + GAP;
+      var absIdx = realOffset + idx;
+      track.style.transform = 'translateX(-' + (absIdx * sw) + 'px)';
+
+      /* Update dots */
+      var normalised = ((idx % origTotal) + origTotal) % origTotal;
+      dotsWrap.querySelectorAll('.svc-dot').forEach(function(dot, i){
+        dot.classList.toggle('active', i === normalised);
+      });
+    }
+
+    /* ── Jump to a dot click ── */
+    function jumpTo(idx){
+      current = idx;
+      goTo(current);
+    }
+
+    /* ── After transition ends, silently jump if on a clone ── */
+    track.addEventListener('transitionend', function(){
+      if(current < 0){
+        current = origTotal - 1;
+        goTo(current, false);
+        /* Force reflow to apply notransition instantly */
+        void track.offsetHeight;
+        track.style.transition = 'transform .7s cubic-bezier(0.25,0.46,0.45,0.94)';
+      } else if(current >= origTotal){
+        current = 0;
+        goTo(current, false);
+        void track.offsetHeight;
+        track.style.transition = 'transform .7s cubic-bezier(0.25,0.46,0.45,0.94)';
+      }
+    });
+
+    function prev(){ current--; goTo(current); }
+    function next(){ current++; goTo(current); }
+
+    function resetTimer(){
+      clearInterval(timer);
+      timer = setInterval(next, 3500);
+    }
+
+    document.getElementById('svcPrev').addEventListener('click', function(){ prev(); resetTimer(); });
+    document.getElementById('svcNext').addEventListener('click', function(){ next(); resetTimer(); });
+
+    /* Pause on hover */
+    wrap.addEventListener('mouseenter', function(){ clearInterval(timer); });
+    wrap.addEventListener('mouseleave', resetTimer);
+
+    /* Touch swipe */
+    var touchX = 0;
+    track.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; },{passive:true});
+    track.addEventListener('touchend', function(e){
+      var diff = touchX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 50){ diff > 0 ? next() : prev(); resetTimer(); }
+    },{passive:true});
+
+    /* Init */
+    function init(){
+      setSlideSizes();
+      goTo(current, false);
+      void track.offsetHeight;
+      track.style.transition = 'transform .7s cubic-bezier(0.25,0.46,0.45,0.94)';
+    }
+
+    window.addEventListener('resize', function(){ setSlideSizes(); goTo(current, false); },{passive:true});
+
+    /* Run after layout */
+    if(document.readyState === 'complete') init();
+    else window.addEventListener('load', init);
+
+    resetTimer();
+  })();
+  </script>
+
+  <script>
   /* ── Page navigation progress bar ── */
   (function(){
     var bar=document.getElementById('pg-bar');
@@ -3154,9 +3154,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </button>
 
     <div class="bk-modal-header" id="bkModalHeader">
-      <div class="bk-eyebrow">Reservations</div>
-      <h2 class="bk-title" id="bkModalTitle">Book Your <em>Stay</em></h2>
-      <p class="bk-sub">Fill in your details and we'll confirm your reservation within 24 hours.</p>
+      <div class="bk-eyebrow" data-i18n="modal_eyebrow">Reservations</div>
+      <h2 class="bk-title" id="bkModalTitle" data-i18n="modal_title">Book Your <em>Stay</em></h2>
+      <p class="bk-sub" data-i18n="modal_sub">Fill in your details and we'll confirm your reservation within 24 hours.</p>
     </div>
 
     <div class="bk-error" id="bkModalError"></div>
@@ -3164,25 +3164,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <form class="bk-form" id="bkModalForm" novalidate>
       <div class="bk-row">
         <div class="b-field">
-          <label for="bk-name" class="b-label">Full Name</label>
-          <input type="text" id="bk-name" name="name" class="b-input" placeholder="Your full name" required autocomplete="name" />
+          <label for="bk-name" class="b-label" data-i18n="modal_label_name">Full Name</label>
+          <input type="text" id="bk-name" name="name" class="b-input" placeholder="Your full name" data-i18n-placeholder="modal_placeholder_name" required autocomplete="name" />
         </div>
         <div class="b-field">
-          <label for="bk-phone" class="b-label">Contact Number</label>
-          <input type="tel" id="bk-phone" name="phone" class="b-input" placeholder="+63 9XX XXX XXXX" required autocomplete="tel" />
+          <label for="bk-phone" class="b-label" data-i18n="modal_label_phone">Contact Number</label>
+          <input type="tel" id="bk-phone" name="phone" class="b-input" placeholder="+63 9XX XXX XXXX" data-i18n-placeholder="modal_placeholder_phone" required autocomplete="tel" />
         </div>
       </div>
       <div class="b-field">
-        <label for="bk-email" class="b-label">Email Address</label>
-        <input type="email" id="bk-email" name="email" class="b-input" placeholder="your@email.com" required autocomplete="email" />
+        <label for="bk-email" class="b-label" data-i18n="modal_label_email">Email Address</label>
+        <input type="email" id="bk-email" name="email" class="b-input" placeholder="your@email.com" data-i18n-placeholder="modal_placeholder_email" required autocomplete="email" />
       </div>
       <div class="bk-row">
         <div class="b-field">
-          <label for="bk-checkin" class="b-label">Check-in Date</label>
+          <label for="bk-checkin" class="b-label" data-i18n="modal_label_checkin">Check-in Date</label>
           <input type="date" id="bk-checkin" name="checkin" class="b-input" required />
         </div>
         <div class="b-field">
-          <label for="bk-guests" class="b-label">Number of Guests</label>
+          <label for="bk-guests" class="b-label" data-i18n="modal_label_guests">Number of Guests</label>
           <select id="bk-guests" name="guests" class="b-input" aria-label="Number of guests">
             <option value="1">1 Guest</option>
             <option value="2" selected>2 Guests</option>
@@ -3192,39 +3192,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </select>
         </div>
       </div>
-      <button type="submit" class="bk-btn">Send Reservation Request</button>
-      <p class="bk-note">Or message us on <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer">Facebook</a> · <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer">Booking.com</a></p>
+      <button type="submit" class="bk-btn" data-i18n="modal_submit_btn">Send Reservation Request</button>
+      <p class="bk-note" data-i18n="modal_note">Or message us on <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer">Facebook</a> · <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer">Booking.com</a></p>
     </form>
 
     <div class="bk-success" id="bkModalSuccess">
       <div class="bk-check">
         <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>
       </div>
-      <div class="bk-success-title">Reservation Received!</div>
-      <p class="bk-success-sub">Thank you — we'll get back to you within 24 hours to confirm your stay at Casa Escondida.</p>
-      <button class="bk-close-btn" id="bkSuccessClose">Close</button>
+      <div class="bk-success-title" data-i18n="modal_success_title">Reservation Received!</div>
+      <p class="bk-success-sub" data-i18n="modal_success_sub">Thank you — we'll get back to you within 24 hours to confirm your stay at Casa Escondida.</p>
+      <button class="bk-close-btn" id="bkSuccessClose" data-i18n="modal_success_close">Close</button>
     </div>
-  </div>
-</div>
-
-<!-- ═══ EXIT INTENT POPUP ═══ -->
-<div class="exit-overlay" id="exitModal" role="dialog" aria-modal="true" aria-labelledby="exitModalTitle" aria-hidden="true">
-  <div class="exit-modal">
-    <div class="exit-icon" aria-hidden="true">
-      <!-- Sparkle / dive star icon -->
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 2 L13.5 9 L20 8 L14.5 13 L17 20 L12 16 L7 20 L9.5 13 L4 8 L10.5 9 Z"/>
-        <circle cx="19" cy="5" r="1.2" stroke="none" fill="currentColor" style="fill:var(--accent);opacity:0.6"/>
-        <circle cx="5"  cy="18" r="0.9" stroke="none" fill="currentColor" style="fill:var(--gold);opacity:0.5"/>
-      </svg>
-    </div>
-    <h3 class="exit-title" id="exitModalTitle">Wait — <em>are you sure?</em></h3>
-    <p class="exit-sub">You're one step away from your perfect dive getaway.<br><strong>Our team responds within 24 hours.</strong></p>
-    <button class="exit-cta" id="exitContinue">
-      Continue Booking
-      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </button>
-    <button class="exit-dismiss" id="exitDismiss">No thanks, go back to the site</button>
   </div>
 </div>
 
@@ -3276,22 +3255,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
-  /* ── Exit Intent ── */
-  var exitOverlay  = document.getElementById('exitModal');
-  var exitContinue = document.getElementById('exitContinue');
-  var exitDismiss  = document.getElementById('exitDismiss');
-  var exitSource   = null;   // 'modal' | 'page'
-  var exitShown    = false;  // page-level: only once per session
+  /* X button → close modal */
+  var closeBtn = document.getElementById('bookingModalClose');
+  if(closeBtn) closeBtn.addEventListener('click', function(){
+    closeModal();
+    setTimeout(resetBookingModal, 350);
+  });
 
-  function openExit(source){
-    exitSource = source;
-    exitOverlay.classList.add('open');
-    exitOverlay.setAttribute('aria-hidden','false');
-  }
-  function closeExit(){
-    exitOverlay.classList.remove('open');
-    exitOverlay.setAttribute('aria-hidden','true');
-  }
+  /* Backdrop click → close modal */
+  overlay.addEventListener('click', function(e){
+    if(e.target !== overlay) return;
+    closeModal();
+    setTimeout(resetBookingModal, 350);
+  });
+
+  /* Escape key → close modal */
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Escape') return;
+    if(overlay.classList.contains('open')){
+      closeModal(); setTimeout(resetBookingModal, 350);
+    }
+  });
+
+  /* Success Close button */
+  var sucClose = document.getElementById('bkSuccessClose');
+  if(sucClose) sucClose.addEventListener('click', function(){
+    closeModal();
+    setTimeout(resetBookingModal, 350);
+  });
+
   function resetBookingModal(){
     success.classList.remove('show');
     form.style.display = '';
@@ -3301,87 +3293,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var btn = form.querySelector('.bk-btn');
     if(btn){ btn.textContent = 'Send Reservation Request'; btn.disabled = false; }
   }
-
-  /* Continue → close exit popup; booking modal stays open (or reopens)
-     Reset exitShown so leaving again will retrigger the popup */
-  if(exitContinue) exitContinue.addEventListener('click', function(){
-    closeExit();
-    exitShown = false;
-    if(!overlay.classList.contains('open')) openModal();
-  });
-
-  /* Dismiss → close exit popup; if triggered from modal X, also close modal */
-  if(exitDismiss) exitDismiss.addEventListener('click', function(){
-    closeExit();
-    if(exitSource === 'modal') closeModal();
-  });
-
-  /* X button → show exit intent instead of closing directly */
-  var closeBtn = document.getElementById('bookingModalClose');
-  if(closeBtn) closeBtn.addEventListener('click', function(){
-    /* Only intercept if form is still visible (not on success screen) */
-    if(form.style.display !== 'none') {
-      openExit('modal');
-    } else {
-      closeModal();
-      setTimeout(resetBookingModal, 350);
-    }
-  });
-
-  /* Backdrop click → same intercept */
-  overlay.addEventListener('click', function(e){
-    if(e.target !== overlay) return;
-    if(form.style.display !== 'none') {
-      openExit('modal');
-    } else {
-      closeModal();
-      setTimeout(resetBookingModal, 350);
-    }
-  });
-
-  /* Success "Close" button → close everything cleanly */
-  var sucClose = document.getElementById('bkSuccessClose');
-  if(sucClose) sucClose.addEventListener('click', function(){
-    closeModal();
-    setTimeout(resetBookingModal, 350);
-  });
-
-  /* Escape key → show exit intent if booking modal open, else close exit popup */
-  document.addEventListener('keydown', function(e){
-    if(e.key !== 'Escape') return;
-    if(exitOverlay.classList.contains('open')){
-      closeExit();
-      if(exitSource === 'modal') closeModal();
-    } else if(overlay.classList.contains('open')){
-      if(form.style.display !== 'none') openExit('modal');
-      else { closeModal(); setTimeout(resetBookingModal, 350); }
-    }
-  });
-
-  /* Page-level exit intent ─────────────────────────────────────────
-     Listen on <html> (documentElement) — more reliable than document.
-     clientY <= 5 catches fast upward moves toward the browser chrome.
-     exitShown resets after "Continue" so repeat-leavers see it again. */
-  var pageReadyTime = Date.now();
-
-  document.documentElement.addEventListener('mouseleave', function(e){
-    if(exitOverlay.classList.contains('open')) return; // already open
-    if(overlay.classList.contains('open')) return;     // booking modal open
-    if(exitShown) return;                              // already shown, wait for reset
-    if(e.clientY > 5) return;                         // not heading to top bar
-    if(Date.now() - pageReadyTime < 1500) return;     // ignore first 1.5 s
-    exitShown = true;
-    openExit('page');
-  });
-
-  /* Also catch tab-switch / back-button intent on mobile via visibilitychange */
-  document.addEventListener('visibilitychange', function(){
-    if(document.visibilityState !== 'hidden') return;
-    if(exitShown) return;
-    if(overlay.classList.contains('open')) return;
-    exitShown = true;
-    openExit('page');
-  });
 
   /* Form submit */
   if(form){

@@ -37,8 +37,45 @@
     return;
   }
 
+  /* ── i18n strings for the cookie banner ── */
+  var COOKIE_I18N = {
+    en: {
+      strong:  'We use cookies.',
+      body:    'We store a small cookie (<code>ce_visitor</code>) to understand how guests use our site — pages visited, device type, referrer. No personal data is shared with third parties beyond Google Analytics.',
+      learn:   'Learn more',
+      decline: 'Decline',
+      accept:  'Accept'
+    },
+    zh: {
+      strong:  '我们使用Cookie。',
+      body:    '我们存储一个小型Cookie（<code>ce_visitor</code>）以了解宾客如何使用我们的网站——包括访问页面、设备类型和来源。除Google Analytics外，不与第三方共享任何个人数据。',
+      learn:   '了解更多',
+      decline: '拒绝',
+      accept:  '接受'
+    }
+  };
+
+  function getBannerLang() {
+    try { return localStorage.getItem('ce-lang') === 'zh' ? 'zh' : 'en'; } catch(_) { return 'en'; }
+  }
+
+  function updateBannerText(banner) {
+    var lang = getBannerLang();
+    var t = COOKIE_I18N[lang] || COOKIE_I18N.en;
+    var textEl = banner.querySelector('.ce-consent-text');
+    if (textEl) {
+      textEl.innerHTML = '<strong>' + t.strong + '</strong> ' + t.body + ' <a href="/privacy-policy.html">' + t.learn + '</a>';
+    }
+    var dec = banner.querySelector('.ce-consent-decline');
+    if (dec) dec.textContent = t.decline;
+    var acc = banner.querySelector('.ce-consent-accept');
+    if (acc) acc.textContent = t.accept;
+  }
+
   /* ── Build & inject the banner ── */
   function buildBanner() {
+    var lang = getBannerLang();
+    var t = COOKIE_I18N[lang] || COOKIE_I18N.en;
     var banner = document.createElement('div');
     banner.id = 'ce-consent-banner';
     banner.setAttribute('role', 'dialog');
@@ -47,17 +84,19 @@
     banner.innerHTML =
       '<div class="ce-consent-inner">' +
         '<div class="ce-consent-text">' +
-          '<strong>We use cookies.</strong> ' +
-          'We store a small cookie (<code>ce_visitor</code>) to understand how guests use our site — ' +
-          'pages visited, device type, referrer. No personal data is shared with third parties beyond Google Analytics. ' +
-          '<a href="/privacy-policy.html">Learn more</a>' +
+          '<strong>' + t.strong + '</strong> ' +
+          t.body + ' ' +
+          '<a href="/privacy-policy.html">' + t.learn + '</a>' +
         '</div>' +
         '<div class="ce-consent-actions">' +
-          '<button class="ce-consent-btn ce-consent-decline" type="button">Decline</button>' +
-          '<button class="ce-consent-btn ce-consent-accept" type="button">Accept</button>' +
+          '<button class="ce-consent-btn ce-consent-decline" type="button">' + t.decline + '</button>' +
+          '<button class="ce-consent-btn ce-consent-accept" type="button">' + t.accept + '</button>' +
         '</div>' +
       '</div>';
     document.body.appendChild(banner);
+
+    /* Update text when language changes */
+    document.addEventListener('ce:langchange', function() { updateBannerText(banner); });
 
     /* ── Styles (inline so no extra request) ── */
     var style = document.createElement('style');

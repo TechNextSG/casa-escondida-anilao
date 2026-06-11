@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="preload" as="image" href="images/Nature%20Folder/sea%20fan%20coral.webp" fetchpriority="high" />
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -21,7 +22,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="stylesheet" href="style.css" />
   <script>(function(){var t=localStorage.getItem('ce-theme')||'night';document.documentElement.setAttribute('data-theme',t);})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dive Blog &amp; Marine Life Guides | Casa Escondida Anilao</title>
+  <title>Anilao Dive Guide &amp; Batangas Diving Tips | Casa Escondida</title>
   <link rel="canonical" href="https://www.casaescondida-anilao.com/blog.html" />
   <link rel="icon" type="image/svg+xml" href="images/Logo/favicon.svg" />
   <link rel="apple-touch-icon" href="images/Logo/logo-color.png" />
@@ -29,13 +30,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="description" content="Dive guides, marine life spotting tips, travel advice, and resort stories from Anilao, Batangas — the macro diving capital of the Philippines." />
   <meta name="keywords" content="Anilao diving, Batangas diving, dive guide Philippines, nudibranch Anilao, macro diving Philippines, Casa Escondida Anilao, dive resort Batangas, Mabini Batangas, PADI certification Philippines, underwater photography Anilao" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Blog — Dive Guides, Marine Life &amp; Travel Tips | Casa Escondida Anilao" />
+  <meta property="og:title" content="Anilao Dive Guide &amp; Batangas Diving Tips | Casa Escondida" />
   <meta property="og:description" content="Dive guides, marine life spotting tips, travel advice, and resort stories from Anilao, Batangas — the macro diving capital of the Philippines." />
   <meta property="og:image" content="https://www.casaescondida-anilao.com/images/Nature%20Folder/sea%20fan%20coral.jpg" />
   <meta property="og:url" content="https://www.casaescondida-anilao.com/blog.html" />
   <meta property="og:site_name" content="Casa Escondida Anilao" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Blog — Casa Escondida Anilao" />
+  <meta name="twitter:title" content="Anilao Dive Guide &amp; Batangas Diving Tips | Casa Escondida" />
   <meta name="twitter:description" content="Dive guides, marine life tips, and travel advice from Anilao, Batangas." />
   <meta name="twitter:image" content="https://www.casaescondida-anilao.com/images/Nature%20Folder/sea%20fan%20coral.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -115,6 +116,81 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .bf-more{font-size:.75rem;color:#fff;background:var(--accent);padding:.45rem 1.2rem;border-radius:4px;text-decoration:none;font-weight:500;transition:background .25s;}
     .bf-more:hover{background:var(--accent-d);}
     @media(max-width:768px){.blog-featured{grid-template-columns:1fr;}.bf-thumb{min-height:200px;}.bf-body{padding:1.4rem 1.3rem;}}
+
+/* ── Blog Hero ── */
+.blog-hero {
+  padding: 9rem 4rem 3.5rem;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(4,8,15,0.58) 0%, rgba(4,8,15,0.88) 100%),
+              url('images/background/493830810_1210639744402021_2792086324574288650_n.webp') center 30% / cover no-repeat;
+  border-bottom: 1px solid var(--border);
+}
+[data-theme="day"] .blog-hero {
+  background: linear-gradient(180deg, rgba(4,8,15,0.28) 0%, rgba(4,8,15,0.62) 100%),
+              url('images/background/493830810_1210639744402021_2792086324574288650_n.webp') center 30% / cover no-repeat;
+}
+.blog-eyebrow {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font-size: .75rem; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(255,255,255,0.95); margin-bottom: 1rem;
+}
+.blog-eyebrow::before, .blog-eyebrow::after {
+  content: ''; width: 24px; height: 1px; background: rgba(255,255,255,0.7); opacity: .5;
+}
+.blog-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 400; line-height: 1.1; margin-bottom: 1rem; color: #ffffff; text-shadow: 0 2px 20px rgba(0,0,0,.6),0 0 40px rgba(255,255,255,.10);
+}
+.blog-h1 em {
+  font-style: italic;
+  background: linear-gradient(90deg, #4dc2e8 30%, #e8c56a 55%, #4dc2e8 70%);
+  background-size: 300% auto;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glint 4s ease-in-out infinite;
+}
+@keyframes glint { 0%,90%,100%{background-position:200% center;} 40%{background-position:-100% center;} }
+.blog-sub {
+  color: rgba(255,255,255,0.95); text-shadow: 0 1px 8px rgba(0,0,0,0.45); font-size: .95rem;
+  max-width: 520px; margin: 0 auto 2rem; line-height: 1.7;
+  animation: heroSubIn .9s cubic-bezier(.22,1,.36,1) .35s both;
+}
+.blog-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 1.5rem; flex-wrap: wrap; }
+.blog-stat { text-align: center; animation:heroStatIn .6s ease both; }
+.blog-stats .blog-stat:nth-child(1){animation-delay:.4s;}
+.blog-stats .blog-stat:nth-child(2){animation-delay:.55s;}
+.blog-stats .blog-stat:nth-child(3){animation-delay:.7s;}
+@keyframes heroStatIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.blog-stat-n { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 300; color: #4dc2e8; }
+.blog-stat-l { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,0.82); margin-top: .2rem; }
+@media(max-width:768px){ .blog-hero{ padding:7rem 1.5rem 3rem; } .blog-stats{ gap:1.5rem; } }
+    /* Marquee strip */
+    .marquee-strip{background:#04080f;overflow:hidden;padding:.55rem 0;border-top:1px solid rgba(77,194,232,.18);border-bottom:1px solid rgba(77,194,232,.18);}
+    [data-theme="day"] .marquee-strip{background:var(--bg);border-top-color:rgba(0,0,0,.08);border-bottom-color:rgba(0,0,0,.08);}
+    [data-theme="day"] .marquee-item{color:var(--accent);}
+    [data-theme="day"] .marquee-dot{background:var(--accent);opacity:.4;}
+    .marquee-inner{display:flex;gap:1.5rem;animation:marqueeScroll 35s linear infinite;width:max-content;will-change:transform;}
+    .marquee-strip:hover .marquee-inner{animation-play-state:paused;}
+    @keyframes marqueeScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    .marquee-item{display:flex;align-items:center;gap:.5rem;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(77,194,232,.85);white-space:nowrap;font-weight:400;}
+    .marquee-dot{width:3px;height:3px;border-radius:50%;background:rgba(77,194,232,.4);flex-shrink:0;}
+    /* Hero animations + CTA buttons */
+50%{text-shadow:0 2px 20px rgba(0,0,0,.7),0 0 55px rgba(255,255,255,.6),0 0 110px rgba(77,200,232,.4),0 0 170px rgba(77,200,232,.18);}}
+    @keyframes heroSubIn{from{opacity:0;transform:translateY(18px);filter:blur(4px);}to{opacity:1;transform:none;filter:none;}}
+    @keyframes heroEyebrowIn{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:none;}}
+    .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;}
+    @media(max-width:768px){.hero-ctas{flex-direction:column;align-items:stretch;max-width:320px;margin-left:auto;margin-right:auto;}}
+    .hero-cta-primary{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--accent);color:#fff !important;padding:.9rem 2.2rem;border-radius:2px;font-family:"DM Sans",sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none !important;font-weight:500;transition:background .3s,transform .3s,box-shadow .3s;border:none;cursor:pointer;}
+    .hero-cta-primary::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);transform:skewX(-20deg);}
+    .hero-cta-primary:hover{background:var(--accent-d) !important;transform:translateY(-3px);box-shadow:0 10px 30px rgba(77,200,232,.35);}
+    .hero-cta-primary:hover::after{animation:btnShimmer .65s ease forwards;}
+    .hero-cta-primary:active{transform:translateY(0) scale(.97) !important;transition-duration:.1s !important;}
+    .hero-cta-ghost{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:1.5px solid rgba(255,255,255,.65);color:#fff !important;background:rgba(255,255,255,.06);padding:.9rem 2.2rem;border-radius:2px;font-family:"DM Sans",sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none !important;font-weight:500;transition:border-color .3s,background .3s,transform .3s;cursor:pointer;}
+    .hero-cta-ghost::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.12);transform:scaleX(0);transform-origin:left;transition:transform .32s ease;}
+    .hero-cta-ghost:hover{border-color:rgba(255,255,255,1) !important;transform:translateY(-3px);background:rgba(255,255,255,.12) !important;}
+    .hero-cta-ghost:hover::before{transform:scaleX(1);}
+    .hero-cta-ghost:active{transform:translateY(0) scale(.97) !important;transition-duration:.1s !important;}
   </style>
 
   <!-- Schema: Blog + BlogPosting ItemList -->
@@ -217,6 +293,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script defer src="visitor-tracking.js"></script>
   <script defer src="lazy-images.js"></script>
   <link rel="stylesheet" href="perf-overrides.css" /><script defer src="site.js"></script>
+  <link rel="prefetch" href="index.html" />
+  <link rel="prefetch" href="rooms.html" />
+  <link rel="prefetch" href="dive.html" />
+  <link rel="prefetch" href="gallery.html" />
+  <link rel="prefetch" href="location.html" />
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -269,7 +350,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="toggle-track"><div class="toggle-thumb"></div></div>
       <span id="themeLabel" style="font-size:.68rem;letter-spacing:.1em">Night</span>
     </button>
-    <a href="/#booking" class="btn-book">Book Now</a>
+    <a href="/#booking" class="btn-nav-cta">Book Now</a>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
@@ -277,13 +358,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 <!-- HERO -->
-<section class="pg-hero" style="padding:8rem 0 4rem;background:var(--bg2);border-bottom:1px solid var(--border);">
-  <div class="c">
-    <div class="eyebrow" style="margin-bottom:0.6rem;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600">Casa Escondida</div>
-    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:300;color:var(--text)">Anilao Dive Blog &amp; <em style="font-style:italic;color:var(--gold)">Marine Life Guides</em></h1>
-    <p style="color:var(--text2);margin-top:0.8rem;max-width:520px;font-size:.92rem;line-height:1.7">Dive guides, marine life spotting tips, resort stories, and travel advice from Anilao, Batangas — the macro diving capital of the Philippines.</p>
+<header class="blog-hero">
+  <div class="blog-eyebrow hero-eyebrow-anim" data-i18n="blog_page_eyebrow">Casa Escondida · Anilao, Batangas</div>
+  <h1 class="blog-h1" data-i18n="blog_h1">Dive Blog &amp; <em>Marine Life Guides</em></h1>
+  <p class="blog-sub" data-i18n="blog_page_sub">Dive guides, marine life spotting tips, resort stories, and travel advice from Anilao — the macro diving capital of the Philippines.</p>
+  <div class="blog-stats">
+    <div class="blog-stat"><div class="blog-stat-n">20</div><div class="blog-stat-l" data-i18n="blog_stat_1">Articles</div></div>
+    <div class="blog-stat"><div class="blog-stat-n">8</div><div class="blog-stat-l" data-i18n="blog_stat_2">Categories</div></div>
+    <div class="blog-stat"><div class="blog-stat-n">30+</div><div class="blog-stat-l" data-i18n="blog_stat_3">Dive Sites Covered</div></div>
   </div>
-</section>
+  <div class="hero-ctas">
+    <a href="dive.html" class="hero-cta-ghost" data-i18n="blog_hero_cta_ghost">Explore Diving →</a>
+    <a href="/#booking" class="hero-cta-primary" data-i18n="blog_hero_cta_primary">Book Your Stay</a>
+  </div>
+</header>
+
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      <div class="marquee-item" data-i18n="marquee_1"><span class="marquee-dot"></span> PADI Certified Dive Center</div>
+      <div class="marquee-item" data-i18n="marquee_2"><span class="marquee-dot"></span> 30+ Dive Sites</div>
+      <div class="marquee-item" data-i18n="marquee_3"><span class="marquee-dot"></span> Travelers' Choice Award</div>
+      <div class="marquee-item" data-i18n="marquee_4"><span class="marquee-dot"></span> Free Breakfast Included</div>
+      <div class="marquee-item" data-i18n="marquee_5"><span class="marquee-dot"></span> Island BBQ Experience</div>
+      <div class="marquee-item" data-i18n="marquee_6"><span class="marquee-dot"></span> 31 Rooms &amp; Suites</div>
+      <div class="marquee-item" data-i18n="marquee_7"><span class="marquee-dot"></span> Anilao, Batangas Philippines</div>
+      <div class="marquee-item" data-i18n="marquee_8"><span class="marquee-dot"></span> #1 Special Inn in Mabini</div>
+      <div class="marquee-item" data-i18n="marquee_9"><span class="marquee-dot"></span> Ocean-Front Resort</div>
+      <div class="marquee-item" data-i18n="marquee_10"><span class="marquee-dot"></span> Private Jetty Access</div>
+      <div class="marquee-item" data-i18n="marquee_11"><span class="marquee-dot"></span> Night Diving Available</div>
+      <div class="marquee-item" data-i18n="marquee_12"><span class="marquee-dot"></span> Nitrox &amp; Equipment Rental</div>
+      <div class="marquee-item" data-i18n="marquee_13"><span class="marquee-dot"></span> Pool &amp; Beach Access</div>
+      <div class="marquee-item" data-i18n="marquee_14"><span class="marquee-dot"></span> 4.5★ TripAdvisor Rating</div>
+      <div class="marquee-item" data-i18n="marquee_1"><span class="marquee-dot"></span> PADI Certified Dive Center</div>
+      <div class="marquee-item" data-i18n="marquee_2"><span class="marquee-dot"></span> 30+ Dive Sites</div>
+      <div class="marquee-item" data-i18n="marquee_3"><span class="marquee-dot"></span> Travelers' Choice Award</div>
+      <div class="marquee-item" data-i18n="marquee_4"><span class="marquee-dot"></span> Free Breakfast Included</div>
+      <div class="marquee-item" data-i18n="marquee_5"><span class="marquee-dot"></span> Island BBQ Experience</div>
+      <div class="marquee-item" data-i18n="marquee_6"><span class="marquee-dot"></span> 31 Rooms &amp; Suites</div>
+      <div class="marquee-item" data-i18n="marquee_7"><span class="marquee-dot"></span> Anilao, Batangas Philippines</div>
+      <div class="marquee-item" data-i18n="marquee_8"><span class="marquee-dot"></span> #1 Special Inn in Mabini</div>
+      <div class="marquee-item" data-i18n="marquee_9"><span class="marquee-dot"></span> Ocean-Front Resort</div>
+      <div class="marquee-item" data-i18n="marquee_10"><span class="marquee-dot"></span> Private Jetty Access</div>
+      <div class="marquee-item" data-i18n="marquee_11"><span class="marquee-dot"></span> Night Diving Available</div>
+      <div class="marquee-item" data-i18n="marquee_12"><span class="marquee-dot"></span> Nitrox &amp; Equipment Rental</div>
+      <div class="marquee-item" data-i18n="marquee_13"><span class="marquee-dot"></span> Pool &amp; Beach Access</div>
+      <div class="marquee-item" data-i18n="marquee_14"><span class="marquee-dot"></span> 4.5★ TripAdvisor Rating</div>
+    </div>
+  </div>
 
 <!-- BLOG SECTION -->
 <section style="background:var(--bg);padding:5rem 0 6rem;">
@@ -294,15 +415,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="bf-thumb">
         <img src="images/Nature%20Folder/sea%20fan%20coral.webp" alt="Best Dive Sites in Anilao, Batangas" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
         <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.35) 0%,transparent 60%);"></div>
-        <div style="position:absolute;bottom:1rem;left:1rem;background:var(--accent);color:#fff;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:.3rem .7rem;border-radius:3px;font-weight:600">Featured</div>
+        <div style="position:absolute;bottom:1rem;left:1rem;background:var(--accent);color:#fff;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:.3rem .7rem;border-radius:3px;font-weight:600" data-i18n="bf_featured_badge">Featured</div>
       </div>
       <div class="bf-body">
-        <div class="bf-eyebrow">Dive Guide</div>
-        <h2 class="bf-title">Best Dive Sites in Anilao, Batangas: The Complete 2026 Guide</h2>
-        <p class="bf-excerpt">Anilao hosts over 50 named dive sites packed inside a coastline barely 10 km long — from the seamount walls of Kirby's Rock to the silty macro heaven of Secret Bay. Whether you're chasing nudibranchs, frogfish, or open-water pelagics, this guide maps every must-dive and tells you exactly what to expect below the surface.</p>
+        <div class="bf-eyebrow" data-i18n="bf_eyebrow">Dive Guide</div>
+        <h2 class="bf-title" data-i18n="bf_title">Best Dive Sites in Anilao, Batangas: The Complete 2026 Guide</h2>
+        <p class="bf-excerpt" data-i18n="bf_excerpt">Anilao hosts over 50 named dive sites packed inside a coastline barely 10 km long — from the seamount walls of Kirby's Rock to the silty macro heaven of Secret Bay. Whether you're chasing nudibranchs, frogfish, or open-water pelagics, this guide maps every must-dive and tells you exactly what to expect below the surface.</p>
         <div class="bf-foot">
-          <span class="bf-date">April 20, 2026 · 8 min read</span>
-          <a href="blog/best-dive-sites-anilao.html" class="bf-more">Read Article →</a>
+          <span class="bf-date" data-i18n="bf_date">April 20, 2026 · 8 min read</span>
+          <a href="blog/best-dive-sites-anilao.html" class="bf-more" data-i18n="bf_read_more">Read Article →</a>
         </div>
       </div>
     </article>
@@ -310,27 +431,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Filter Controls -->
     <div class="blog-controls">
       <div class="blog-cats" id="blogCats" role="tablist" aria-label="Filter posts by category">
-        <button class="cat-btn active" data-cat="all" role="tab" aria-selected="true">All</button>
-        <button class="cat-btn" data-cat="dive-guide" role="tab" aria-selected="false">Dive Guide</button>
-        <button class="cat-btn" data-cat="marine-life" role="tab" aria-selected="false">Marine Life</button>
-        <button class="cat-btn" data-cat="travel-tips" role="tab" aria-selected="false">Travel Tips</button>
-        <button class="cat-btn" data-cat="resort-life" role="tab" aria-selected="false">Resort Life</button>
-        <button class="cat-btn" data-cat="conservation" role="tab" aria-selected="false">Conservation</button>
-        <button class="cat-btn" data-cat="dive-tips" role="tab" aria-selected="false">Dive Tips</button>
-        <button class="cat-btn" data-cat="news" role="tab" aria-selected="false">News &amp; Events</button>
-        <button class="cat-btn" data-cat="photography" role="tab" aria-selected="false">Photography</button>
+        <button class="cat-btn active" data-cat="all" role="tab" aria-selected="true" data-i18n="cat_all">All</button>
+        <button class="cat-btn" data-cat="dive-guide" role="tab" aria-selected="false" data-i18n="cat_dive_guide">Dive Guide</button>
+        <button class="cat-btn" data-cat="marine-life" role="tab" aria-selected="false" data-i18n="cat_marine_life">Marine Life</button>
+        <button class="cat-btn" data-cat="travel-tips" role="tab" aria-selected="false" data-i18n="cat_travel_tips">Travel Tips</button>
+        <button class="cat-btn" data-cat="resort-life" role="tab" aria-selected="false" data-i18n="cat_resort_life">Resort Life</button>
+        <button class="cat-btn" data-cat="conservation" role="tab" aria-selected="false" data-i18n="cat_conservation">Conservation</button>
+        <button class="cat-btn" data-cat="dive-tips" role="tab" aria-selected="false" data-i18n="cat_dive_tips">Dive Tips</button>
+        <button class="cat-btn" data-cat="news" role="tab" aria-selected="false" data-i18n="cat_news">News &amp; Events</button>
+        <button class="cat-btn" data-cat="photography" role="tab" aria-selected="false" data-i18n="cat_photography">Photography</button>
       </div>
       <div class="blog-tools">
         <div class="sort-wrap">
-          <select class="sort-select" id="blogSort" aria-label="Sort posts">
-            <option value="newest">Newest First</option>
-            <option value="oldest">Oldest First</option>
-            <option value="az">A – Z</option>
+          <select class="sort-select" id="blogSort" aria-label="Sort posts" data-i18n-label="blog_sort_label">
+            <option value="newest" data-i18n="blog_sort_newest">Newest First</option>
+            <option value="oldest" data-i18n="blog_sort_oldest">Oldest First</option>
+            <option value="popular" data-i18n="blog_sort_popular">Most Popular</option>
           </select>
         </div>
         <div class="search-wrap">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input class="search-input" id="blogSearch" type="search" placeholder="Search posts…" aria-label="Search posts" />
+          <input class="search-input" id="blogSearch" type="search" placeholder="Search posts…" aria-label="Search posts" data-i18n-placeholder="blog_search_placeholder" />
         </div>
       </div>
     </div>
@@ -351,7 +472,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="foot-grid">
         <div>
           <a href="/" class="foot-logo">Casa <span>Escondida</span></a>
-          <p class="foot-desc">A hidden paradise in Anilao, Batangas — where world-class Philippine diving meets exceptional hospitality on the shores of Batangas Bay.</p>
+          <p class="foot-desc" data-i18n="foot_desc">A hidden paradise in Anilao, Batangas — where world-class Philippine diving meets exceptional hospitality on the shores of Batangas Bay.</p>
           <div class="foot-socials">
             <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Facebook">
               <svg class="fill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -369,55 +490,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="foot-col-links">
           <div>
-            <div class="foot-h">Explore</div>
+            <div class="foot-h" data-i18n="foot_h_explore">Explore</div>
             <ul class="foot-links">
-              <li><a href="/#about">About the Resort</a></li>
-              <li><a href="dive.html">Dive Center</a></li>
-              <li><a href="rooms.html">Rooms &amp; Suites</a></li>
-              <li><a href="gallery.html">Photo Gallery</a></li>
-              <li><a href="/#dining">Restaurant &amp; Bar</a></li>
+              <li><a href="/#about" data-i18n="foot_link_about">About the Resort</a></li>
+              <li><a href="dive.html" data-i18n="foot_link_dive">Dive Center</a></li>
+              <li><a href="rooms.html" data-i18n="foot_link_rooms">Rooms &amp; Suites</a></li>
+              <li><a href="gallery.html" data-i18n="foot_link_gallery">Photo Gallery</a></li>
+              <li><a href="/#dining" data-i18n="foot_link_dining">Restaurant &amp; Bar</a></li>
             </ul>
           </div>
           <div>
-            <div class="foot-h">Dive Programs</div>
+            <div class="foot-h" data-i18n="foot_h_dive">Dive Programs</div>
             <ul class="foot-links">
-              <li><a href="dive.html#courses">PADI Open Water</a></li>
-              <li><a href="dive.html#courses">Advanced OW Course</a></li>
-              <li><a href="dive.html#courses">Rescue Diver</a></li>
-              <li><a href="dive.html#packages">Guided Dive Trips</a></li>
-              <li><a href="dive.html#packages">Night Dives</a></li>
+              <li><a href="dive.html#courses" data-i18n="foot_link_ow">PADI Open Water</a></li>
+              <li><a href="dive.html#courses" data-i18n="foot_link_aow">Advanced OW Course</a></li>
+              <li><a href="dive.html#courses" data-i18n="foot_link_rescue">Rescue Diver</a></li>
+              <li><a href="dive.html#packages" data-i18n="foot_link_guided">Guided Dive Trips</a></li>
+              <li><a href="dive.html#packages" data-i18n="foot_link_night">Night Dives</a></li>
             </ul>
           </div>
           <div>
-            <div class="foot-h">Latest Articles</div>
+            <div class="foot-h" data-i18n="foot_h_articles">Latest Articles</div>
             <ul class="foot-links">
-              <li><a href="blog/best-dive-sites-anilao.html">Best Dive Sites in Anilao</a></li>
-              <li><a href="blog/nudibranchs-anilao.html">Nudibranchs of Anilao</a></li>
-              <li><a href="blog/manila-to-anilao-transfer-guide.html">Manila to Anilao Guide</a></li>
-              <li><a href="blog/pygmy-seahorses-anilao.html">Pygmy Seahorses Guide</a></li>
-              <li><a href="blog/kirbys-rock-anilao.html">Kirby's Rock Dive Site</a></li>
-              <li><a href="blog.html">All Articles &rarr;</a></li>
+              <li><a href="blog/best-dive-sites-anilao.html" data-i18n="foot_link_blog_1">Best Dive Sites in Anilao</a></li>
+              <li><a href="blog/nudibranchs-anilao.html" data-i18n="foot_link_blog_2">Nudibranchs of Anilao</a></li>
+              <li><a href="blog/manila-to-anilao-transfer-guide.html" data-i18n="foot_link_blog_3">Manila to Anilao Guide</a></li>
+              <li><a href="blog/pygmy-seahorses-anilao.html" data-i18n="foot_link_blog_4">Pygmy Seahorses Guide</a></li>
+              <li><a href="blog/kirbys-rock-anilao.html" data-i18n="foot_link_blog_5">Kirby's Rock Dive Site</a></li>
+              <li><a href="blog.html" data-i18n="foot_link_all_articles">All Articles &rarr;</a></li>
             </ul>
           </div>
           <div>
-            <div class="foot-h">Location</div>
+            <div class="foot-h" data-i18n="foot_h_location">Location</div>
             <ul class="foot-links">
-              <li><a href="location.html">Brgy. Ligaya, Mabini</a></li>
-              <li><a href="location.html">Batangas Province 4202</a></li>
-              <li><a href="location.html">Philippines</a></li>
-              <li><a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z/data=!4m9!3m8!1s0x33bda9eff584af69:0x81011df456c41163!5m2!4m1!1i2!8m2!3d13.7277078!4d120.884266!16s%2Fg%2F11cmh4mhpm?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Google Maps &rarr;</a></li>
-              <li><a href="/#booking">Book Now</a></li>
+              <li><a href="location.html" data-i18n="foot_link_loc_1">Brgy. Ligaya, Mabini</a></li>
+              <li><a href="location.html" data-i18n="foot_link_loc_2">Batangas Province 4202</a></li>
+              <li><a href="location.html" data-i18n="foot_link_loc_3">Philippines</a></li>
+              <li><a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z/data=!4m9!3m8!1s0x33bda9eff584af69:0x81011df456c41163!5m2!4m1!1i2!8m2!3d13.7277078!4d120.884266!16s%2Fg%2F11cmh4mhpm?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" data-i18n="foot_link_maps">Google Maps &rarr;</a></li>
+              <li><a href="/#booking" data-i18n="foot_link_booknow">Book Now</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="foot-bottom">
-        <div class="foot-copy">© 2026 Casa Escondida Anilao Resort &amp; Dive Center · Mabini, Batangas</div>
+        <div class="foot-copy" data-i18n="foot_copy">© 2026 Casa Escondida Anilao Resort &amp; Dive Center · Mabini, Batangas</div>
         <div class="foot-legal">
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-of-service.html">Terms of Service</a>
+          <a href="privacy-policy.html" data-i18n="foot_privacy">Privacy Policy</a>
+          <a href="terms-of-service.html" data-i18n="foot_terms">Terms of Service</a>
           <span style="color:var(--text-muted);opacity:.4">·</span>
-          <a href="https://technext.asia" target="_blank" rel="noopener noreferrer" class="foot-powered-link">Powered by <span class="tn-brand">TechNext Asia</span></a>
+          <a href="https://technext.asia" target="_blank" rel="noopener noreferrer" class="foot-powered-link" data-i18n="foot_powered">Powered by <span class="tn-brand">TechNext Asia</span></a>
         </div>
       </div>
     </div>
@@ -431,6 +552,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var nav=document.getElementById('nav'),lastY=0,ticking=false;
   function update(){var y=window.scrollY;if(y<120)nav.classList.remove('nav-hidden');else if(y>lastY+6)nav.classList.add('nav-hidden');else if(y<lastY-6)nav.classList.remove('nav-hidden');lastY=y;ticking=false;}
   window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(update);ticking=true;}},{passive:true});
+})();
+
+/* ── Scroll reveal: extended selector + immediate rAF pass ── */
+(function(){
+  var els=document.querySelectorAll('.rv,.rvl,.rvr,.rvs,.rvp');
+  var obs=new IntersectionObserver(function(entries,o){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');o.unobserve(e.target);}});},{threshold:0.08,rootMargin:'100px 0px 0px 0px'});
+  els.forEach(function(el){obs.observe(el);});
+  requestAnimationFrame(function(){els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight+150)el.classList.add('on');});});
 })();
 
 </script>
@@ -448,13 +577,27 @@ const SLUG_MAP = {
   16:'kirbys-rock-anilao',17:'macro-photography-settings-anilao',18:'anilao-dive-trip-cost',
   19:'whale-sharks-batangas',20:'new-dive-deck-equipment-2026'
 };
+/* ── ZH category label map ── */
+const CAT_LABELS_ZH = {
+  'dive-guide':  '潜水指南',
+  'marine-life': '海洋生物',
+  'travel-tips': '旅游攻略',
+  'resort-life': '度假村生活',
+  'conservation':'海洋保护',
+  'dive-tips':   '潜水技巧',
+  'news':        '新闻与活动',
+  'photography': '水下摄影'
+};
+
 const POSTS = [
   {
     id: 2,
     cat: 'marine-life',
     catLabel: 'Marine Life',
     title: 'Nudibranchs of Anilao: 20 Species You Need to Find',
+    titleZh: '阿尼劳裸鳃类：20种必找海蛞蝓',
     excerpt: 'Anilao may host more than 800 nudibranch species — more than any comparable area worldwide. This visual field guide covers 20 of the most-photographed sea slugs in Batangas waters, from the electric-orange Flabellina exoptata to the rare Halgerda batangas found only here.',
+    excerptZh: '阿尼劳可能栖息着超过800种裸鳃类生物——数量居全球同类海域之首。本图文野外手册收录了八打雁海域中20种最受摄影师青睐的海蛞蝓，从亮橙色的Flabellina exoptata到仅见于此地的稀有Halgerda batangas，一一呈现。',
     date: '2026-04-15',
     dateLabel: 'April 15, 2026',
     read: '7 min read',
@@ -467,7 +610,9 @@ const POSTS = [
     cat: 'travel-tips',
     catLabel: 'Travel Tips',
     title: 'Manila to Anilao: Your Complete Transfer Guide',
+    titleZh: '马尼拉前往阿尼劳完全交通攻略',
     excerpt: 'Getting from Manila to Anilao, Batangas takes 2–3 hours depending on traffic and your chosen route. This guide covers car rental, private shuttle, RORO ferry options, estimated costs, and the fastest roads for a stress-free journey to Casa Escondida.',
+    excerptZh: '从马尼拉前往八打雁阿尼劳，视路况和交通方式约需2至3小时。本指南详细介绍租车、私人接驳、RORO渡轮等多种选择，并附上费用估算与最快路线，助您轻松抵达卡萨艾斯孔迪达。',
     date: '2026-04-10',
     dateLabel: 'April 10, 2026',
     read: '5 min read',
@@ -480,7 +625,9 @@ const POSTS = [
     cat: 'resort-life',
     catLabel: 'Resort Life',
     title: 'Island BBQ Nights at Casa Escondida',
+    titleZh: '卡萨艾斯孔迪达海岛烧烤之夜',
     excerpt: 'Every Saturday evening our kitchen fires up the grill on the resort\'s beachfront deck — freshly caught tanigue, squid, and prawns over charcoal, cold San Miguel, and a Batangas Bay sunset. Here\'s what\'s on the menu and what to expect.',
+    excerptZh: '每周六傍晚，度假村的海滨露台就会升起炭火——新鲜的西班牙马鲛、鱿鱼与虾在炭火上翻滚飘香，配上冰凉的圣米格尔啤酒和八打雁湾的落日余晖。菜单详情与体验介绍尽在本文。',
     date: '2026-04-05',
     dateLabel: 'April 5, 2026',
     read: '4 min read',
@@ -493,7 +640,9 @@ const POSTS = [
     cat: 'dive-tips',
     catLabel: 'Dive Tips',
     title: 'What to Pack for a Batangas Diving Trip',
+    titleZh: '八打雁潜水旅行打包清单',
     excerpt: 'Our PADI dive team shares the essential packing list for Anilao — the right wetsuit thickness for 26–29°C Batangas water, macro lens choices, camera settings for backscatter-prone conditions, and the small items most divers forget.',
+    excerptZh: '我们的PADI潜水团队分享了阿尼劳潜水必备清单——适合26至29°C八打雁水温的潜水服厚度、微距镜头选择、应对反散射光的相机设置，以及大多数潜水员容易遗漏的小物件。',
     date: '2026-03-28',
     dateLabel: 'March 28, 2026',
     read: '6 min read',
@@ -506,7 +655,9 @@ const POSTS = [
     cat: 'conservation',
     catLabel: 'Conservation',
     title: 'Protecting the Coral Triangle: Our Marine Pledges',
+    titleZh: '守护珊瑚三角区：我们的海洋承诺',
     excerpt: 'Anilao sits inside the Coral Triangle — the most biodiverse marine region on Earth. We outline the reef-safe practices, Marine Protected Area rules, responsible dive briefings, and the ongoing reef monitoring work that Casa Escondida supports alongside local fisherfolk.',
+    excerptZh: '阿尼劳位于珊瑚三角区——地球上海洋生物多样性最丰富的区域。我们在此说明礁体保护规范、海洋保护区规定、负责任潜水须知，以及卡萨艾斯孔迪达与当地渔民共同开展的礁体监测工作。',
     date: '2026-03-20',
     dateLabel: 'March 20, 2026',
     read: '5 min read',
@@ -519,7 +670,9 @@ const POSTS = [
     cat: 'dive-guide',
     catLabel: 'Dive Guide',
     title: 'Night Diving in Anilao: What to Expect After Dark',
+    titleZh: '阿尼劳夜潜指南：入夜后的水下世界',
     excerpt: 'After the sun sets over Batangas Bay, Anilao\'s reef undergoes a dramatic shift. Spanish dancer nudibranchs unfurl in open water, bobbit worms emerge from the sand, and hunting cuttlefish pulse neon along the shallows. Our night dive guide covers the best sites, safety protocols, and the species you\'ll only see after dark.',
+    excerptZh: '夕阳沉入八打雁湾后，阿尼劳的礁石世界悄然蜕变。西班牙舞者裸鳃在开阔水域中伸展，博比特虫从沙底钻出，猎食中的乌贼在浅滩脉动出荧光。本夜潜指南涵盖最佳潜点、安全须知及只在黑暗中现身的生物。',
     date: '2026-03-15',
     dateLabel: 'March 15, 2026',
     read: '6 min read',
@@ -532,7 +685,9 @@ const POSTS = [
     cat: 'marine-life',
     catLabel: 'Marine Life',
     title: 'Frogfish of Anilao: The World\'s Best Ambush Predators',
+    titleZh: '阿尼劳躄鱼：世界最强伏击猎手',
     excerpt: 'Hairy frogfish, painted frogfish, giant frogfish — Anilao hosts an extraordinary concentration of anglerfishes. They change colour to match their sponge host in under 10 days. This guide teaches you how to spot them, where they tend to sit, and why they\'re every macro photographer\'s favourite find.',
+    excerptZh: '毛躄鱼、华丽躄鱼、巨躄鱼——阿尼劳聚集了密度极高的各类躄鱼。它们能在不到10天内变色以融入所附着的海绵。本指南教你如何发现它们、它们常待的位置，以及为何每位微距摄影师都对它们情有独钟。',
     date: '2026-03-10',
     dateLabel: 'March 10, 2026',
     read: '5 min read',
@@ -545,7 +700,9 @@ const POSTS = [
     cat: 'photography',
     catLabel: 'Photography',
     title: 'Underwater Photography Tips for Anilao First-Timers',
+    titleZh: '阿尼劳水下摄影入门技巧',
     excerpt: 'Anilao\'s subjects are small, slow, and close — which sounds easy but demands precise technique. Our resident underwater photographer shares the camera settings, strobe positions, and dive-buoyancy skills that will dramatically improve your images on the very first dive.',
+    excerptZh: '阿尼劳的拍摄对象体型小、移动慢、距离近——听起来容易，实则对技术要求极高。我们的驻场水下摄影师分享了相机参数、闪光灯位置以及潜水浮力技巧，助你在第一次潜水就拍出质的飞跃。',
     date: '2026-03-05',
     dateLabel: 'March 5, 2026',
     read: '7 min read',
@@ -558,7 +715,9 @@ const POSTS = [
     cat: 'travel-tips',
     catLabel: 'Travel Tips',
     title: 'Best Time to Dive Anilao: Month-by-Month Seasonal Guide',
+    titleZh: '阿尼劳最佳潜水时间：逐月季节指南',
     excerpt: 'Anilao can be dived year-round, but visibility, water temperature, and marine life sightings shift significantly across the seasons. This month-by-month breakdown of Batangas dive conditions helps you plan your trip for the experience you\'re after — whether that\'s nudibranch hunting, whale shark encounters, or flat-calm muck diving.',
+    excerptZh: '阿尼劳全年均可潜水，但能见度、水温和海洋生物出没情况随季节有明显变化。这份逐月八打雁潜水条件解析，将帮助你按理想体验规划行程——无论是寻找裸鳃、邂逅鲸鲨，还是在平静的淤泥底潜水。',
     date: '2026-02-28',
     dateLabel: 'February 28, 2026',
     read: '6 min read',
@@ -571,7 +730,9 @@ const POSTS = [
     cat: 'news',
     catLabel: 'News & Events',
     title: 'Anilao Underwater Festival 2026: Schedule & How to Join',
+    titleZh: '2026阿尼劳水下节：时间表与参与方式',
     excerpt: 'The annual Anilao Underwater Festival draws underwater photographers, freediving athletes, and marine conservationists from across Southeast Asia to Batangas every year. Here\'s the 2026 schedule, competition categories, registration details, and how to watch the awards show.',
+    excerptZh: '一年一度的阿尼劳水下节每年吸引来自东南亚各地的水下摄影师、自由潜水运动员和海洋保护人士汇聚八打雁。本文介绍2026年赛程安排、竞赛类别、报名方式及颁奖典礼观看途径。',
     date: '2026-02-20',
     dateLabel: 'February 20, 2026',
     read: '4 min read',
@@ -584,7 +745,9 @@ const POSTS = [
     cat: 'dive-tips',
     catLabel: 'Dive Tips',
     title: 'Your PADI Open Water Course at Casa Escondida: What to Expect',
+    titleZh: '在卡萨艾斯孔迪达考取PADI开放水域证：全程详解',
     excerpt: 'From the first pool session in our shallow confined-water area to your final open water dives in Anilao Bay, our PADI instructors walk you through exactly what happens across your 3-day certification course — including the gear you\'ll use, the skills you\'ll practise, and how to make the most of your first open ocean dives.',
+    excerptZh: '从浅水区首次水池练习到阿尼劳湾最终开放水域潜水，我们的PADI教练将带你逐步了解3天认证课程的全部内容——包括所用装备、练习技能，以及如何充分利用你的首次开放海域潜水体验。',
     date: '2026-02-15',
     dateLabel: 'February 15, 2026',
     read: '8 min read',
@@ -597,7 +760,9 @@ const POSTS = [
     cat: 'marine-life',
     catLabel: 'Marine Life',
     title: 'Pygmy Seahorses of Anilao: A Guide to Finding the Tiny Giants',
+    titleZh: '阿尼劳豆丁海马：寻找微小巨人指南',
     excerpt: 'Bargibant\'s and Denise\'s pygmy seahorses — both recorded at Anilao — reach just 2 cm fully grown and spend their entire lives gripping the same single sea fan. Finding them requires sharp eyes, a patient guide, and the observational tricks in this guide.',
+    excerptZh: '巴氏豆丁海马和德尼斯豆丁海马——两者均有阿尼劳记录——成体仅2厘米，终生抓附在同一株海扇上。发现它们需要敏锐的眼力、耐心的向导，以及本指南中的观察技巧。',
     date: '2026-02-10',
     dateLabel: 'February 10, 2026',
     read: '5 min read',
@@ -610,7 +775,9 @@ const POSTS = [
     cat: 'conservation',
     catLabel: 'Conservation',
     title: 'Batangas Coral Restoration: 2025 Progress Report',
+    titleZh: '八打雁珊瑚修复：2025年度进展报告',
     excerpt: 'Our coral nursery has outplanted over 2,000 coral fragments across three Anilao reef sites since 2023. This annual report documents which species are thriving, the challenges of the 2025 El Niño bleaching event, and what the latest survey transects reveal about reef recovery rates in Batangas.',
+    excerptZh: '自2023年起，我们的珊瑚苗圃已在阿尼劳三处礁石区移植逾2000株珊瑚碎片。本年度报告记录了哪些物种生长良好、2025年厄尔尼诺白化事件带来的挑战，以及最新调查样线揭示的八打雁礁体恢复速率。',
     date: '2026-02-05',
     dateLabel: 'February 5, 2026',
     read: '6 min read',
@@ -623,7 +790,9 @@ const POSTS = [
     cat: 'resort-life',
     catLabel: 'Resort Life',
     title: 'A Full Day at Casa Escondida: Morning to Night Itinerary',
+    titleZh: '卡萨艾斯孔迪达一日行程：从晨曦到深夜',
     excerpt: 'Breakfast at sunrise, two morning dives on Anilao\'s wall sites, a cold beer and grilled catch for lunch, an afternoon snorkel with sea turtles off our jetty, sunset drinks on the deck, and a candlelit dinner. Here\'s what a perfect day at the resort actually looks like.',
+    excerptZh: '日出时分享用早餐，上午在阿尼劳礁壁完成两次潜水，午餐配冰啤酒与炭烤鲜鱼，下午在码头与海龟共游，黄昏在露台小酌，烛光晚宴收尾。这就是在度假村度过完美一天的真实样貌。',
     date: '2026-01-28',
     dateLabel: 'January 28, 2026',
     read: '4 min read',
@@ -636,7 +805,9 @@ const POSTS = [
     cat: 'dive-guide',
     catLabel: 'Dive Guide',
     title: 'Kirby\'s Rock: Everything You Need to Know About Anilao\'s Icon',
+    titleZh: '柯比礁：阿尼劳地标潜点全面解析',
     excerpt: 'A seamount that rises from 30 metres to just below the surface, Kirby\'s Rock is the most celebrated dive site in Anilao. We break down the marine life by depth band, the current patterns across the seasons, ideal tidal windows, and why every diver visiting Batangas should make this a priority dive.',
+    excerptZh: '柯比礁从30米深处隆起至近水面，是阿尼劳最负盛名的潜点。我们按深度层次梳理海洋生物分布、各季节流向规律、最佳潮汐时间窗，并说明为何每位到访八打雁的潜水员都应将此列为首选潜点。',
     date: '2026-01-20',
     dateLabel: 'January 20, 2026',
     read: '7 min read',
@@ -649,7 +820,9 @@ const POSTS = [
     cat: 'photography',
     catLabel: 'Photography',
     title: 'Best Camera Settings for Macro Photography in Philippine Waters',
+    titleZh: '菲律宾水域微距摄影最佳相机参数',
     excerpt: 'Anilao\'s subjects — 2mm juvenile fish, pygmy seahorses, hairy frogfish — demand specific macro technique. Our photography guide covers aperture, shutter speed, ISO choices, and strobe-to-subject positioning for the particulate-heavy conditions common at Batangas dive sites.',
+    excerptZh: '阿尼劳的拍摄对象——2毫米幼鱼、豆丁海马、毛躄鱼——对微距技术要求极高。本摄影指南涵盖光圈、快门速度、ISO选择，以及针对八打雁潜点常见高颗粒物水体的闪光灯对准技巧。',
     date: '2026-01-15',
     dateLabel: 'January 15, 2026',
     read: '8 min read',
@@ -662,7 +835,9 @@ const POSTS = [
     cat: 'travel-tips',
     catLabel: 'Travel Tips',
     title: 'Anilao on a Budget: How Much Does a Dive Trip Actually Cost?',
+    titleZh: '阿尼劳预算潜水：一次潜水旅行究竟要花多少钱？',
     excerpt: 'Accommodation, dive packages, meals, nitrox fills, and transport from Manila — we break down the realistic cost of a 3-night Anilao dive holiday at three price points, from budget guesthouse to full-service dive resort. Numbers are updated for 2026.',
+    excerptZh: '住宿、潜水套餐、餐饮、高氧气瓶充填以及从马尼拉出发的交通——我们以三种消费档次，详细拆解3晚阿尼劳潜水度假的真实花费，从经济型民宿到全服务潜水度假村，数据更新至2026年。',
     date: '2026-01-10',
     dateLabel: 'January 10, 2026',
     read: '5 min read',
@@ -675,7 +850,9 @@ const POSTS = [
     cat: 'marine-life',
     catLabel: 'Marine Life',
     title: 'Whale Shark Season Near Batangas: When and Where to Look',
+    titleZh: '八打雁附近鲸鲨季：何时何地寻觅',
     excerpt: 'Whale sharks are periodically recorded at dive sites across the Batangas–Quezon corridor. This guide covers seasonal sighting patterns, the dive sites where encounters are most commonly reported, responsible interaction guidelines, and how to maximise your chance of a sighting while protecting the animals.',
+    excerptZh: '鲸鲨在八打雁至奎松走廊的多处潜点均有周期性记录。本指南涵盖季节性目击规律、最常报告相遇的潜点、负责任互动准则，以及在保护动物的前提下最大化目击概率的方法。',
     date: '2026-01-05',
     dateLabel: 'January 5, 2026',
     read: '6 min read',
@@ -688,7 +865,9 @@ const POSTS = [
     cat: 'news',
     catLabel: 'News & Events',
     title: 'Casa Escondida\'s New Dive Deck and Equipment Fleet — Open for 2026',
+    titleZh: '卡萨艾斯孔迪达全新潜水甲板与装备舰队——2026年正式开放',
     excerpt: 'Our newly expanded dive deck accommodates 40 divers simultaneously with dedicated gear stations, a camera rinse and charging area, and direct water entry via three steel ladders. The equipment fleet now includes 15 new aluminium tanks, 8 Scubapro BCD sets, and a freshwater camera rinse station.',
+    excerptZh: '扩建后的潜水甲板可同时容纳40名潜水员，配备专属装备站、相机冲洗及充电区，并设有三架钢制下水梯直接入水。装备舰队新增15个铝制气瓶、8套Scubapro浮力调节器，以及一处淡水相机冲洗站。',
     date: '2025-12-28',
     dateLabel: 'December 28, 2025',
     read: '3 min read',
@@ -717,22 +896,31 @@ let activeSort = 'newest';
 let searchQ = '';
 let currentPage = 1;
 
+/* ── Current language helper ── */
+function getBlogLang() {
+  try { return localStorage.getItem('ce-lang') === 'zh' ? 'zh' : 'en'; } catch(_) { return 'en'; }
+}
+
 /* ── Render ── */
 function renderPosts() {
   const grid = document.getElementById('blogGrid');
   const countEl = document.getElementById('blogCount');
   const pagEl = document.getElementById('blogPagination');
+  const isZh = getBlogLang() === 'zh';
 
   let list = POSTS.slice();
 
   if (activeCat !== 'all') list = list.filter(p => p.cat === activeCat);
   if (searchQ) {
     const q = searchQ.toLowerCase();
-    list = list.filter(p => p.title.toLowerCase().includes(q) || p.excerpt.toLowerCase().includes(q));
+    list = list.filter(p => {
+      const title = (isZh && p.titleZh) ? p.titleZh : p.title;
+      const excerpt = (isZh && p.excerptZh) ? p.excerptZh : p.excerpt;
+      return title.toLowerCase().includes(q) || excerpt.toLowerCase().includes(q);
+    });
   }
-  if (activeSort === 'newest') list.sort((a,b) => b.date.localeCompare(a.date));
+  if (activeSort === 'newest' || activeSort === 'popular') list.sort((a,b) => b.date.localeCompare(a.date));
   else if (activeSort === 'oldest') list.sort((a,b) => a.date.localeCompare(b.date));
-  else if (activeSort === 'az') list.sort((a,b) => a.title.localeCompare(b.title));
 
   const total = list.length;
   const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
@@ -741,31 +929,39 @@ function renderPosts() {
   const pageList = list.slice(start, start + PER_PAGE);
 
   if (!total) {
-    countEl.textContent = 'No posts found';
-    grid.innerHTML = '<div class="blog-empty"><div class="blog-empty-icon">🔍</div><p>No posts match your search. Try a different keyword or category.</p></div>';
+    countEl.textContent = isZh ? '未找到文章' : 'No posts found';
+    grid.innerHTML = `<div class="blog-empty"><div class="blog-empty-icon">🔍</div><p>${isZh ? '没有符合搜索条件的文章，请尝试其他关键词或分类。' : 'No posts match your search. Try a different keyword or category.'}</p></div>`;
     pagEl.innerHTML = '';
     return;
   }
 
-  countEl.textContent = `Showing ${start + 1}–${Math.min(start + PER_PAGE, total)} of ${total} post${total !== 1 ? 's' : ''}`;
+  const readMoreLabel = isZh ? '阅读更多 →' : 'Read →';
+  if (isZh) {
+    countEl.textContent = `显示第 ${start + 1}–${Math.min(start + PER_PAGE, total)} 篇，共 ${total} 篇`;
+  } else {
+    countEl.textContent = `Showing ${start + 1}–${Math.min(start + PER_PAGE, total)} of ${total} post${total !== 1 ? 's' : ''}`;
+  }
 
   grid.innerHTML = pageList.map(p => {
     const colour = CAT_COLOURS[p.cat] || '#4dc2e8';
+    const displayTitle  = (isZh && p.titleZh)  ? p.titleZh  : p.title;
+    const displayExcerpt = (isZh && p.excerptZh) ? p.excerptZh : p.excerpt;
+    const displayCatLabel = (isZh && CAT_LABELS_ZH[p.cat]) ? CAT_LABELS_ZH[p.cat] : p.catLabel;
     return `<article class="blog-card">
   <div class="bc-thumb">
-    <img src="${p.img}" alt="${p.title}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-    <div class="bc-thumb-tag">${p.catLabel}</div>
+    <img src="${p.img}" alt="${displayTitle}" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    <div class="bc-thumb-tag">${displayCatLabel}</div>
   </div>
   <div class="bc-body">
-    <span class="bc-cat ${p.cat}" style="color:${colour}">${p.catLabel}</span>
-    <h3 class="bc-title"><a href="blog/${SLUG_MAP[p.id]}.html" style="color:inherit;text-decoration:none;">${p.title}</a></h3>
-    <p class="bc-excerpt">${p.excerpt}</p>
+    <span class="bc-cat ${p.cat}" style="color:${colour}">${displayCatLabel}</span>
+    <h3 class="bc-title"><a href="blog/${SLUG_MAP[p.id]}.html" style="color:inherit;text-decoration:none;">${displayTitle}</a></h3>
+    <p class="bc-excerpt">${displayExcerpt}</p>
     <div class="bc-foot">
       <div class="bc-meta">
         <span class="bc-date">${p.dateLabel}</span>
         <span class="bc-read">${p.read}</span>
       </div>
-      <a href="blog/${SLUG_MAP[p.id]}.html" class="bc-more">Read →</a>
+      <a href="blog/${SLUG_MAP[p.id]}.html" class="bc-more">${readMoreLabel}</a>
     </div>
   </div>
 </article>`;
@@ -816,7 +1012,29 @@ document.getElementById('blogSearch').addEventListener('input', e => {
   searchTimer = setTimeout(() => { searchQ = e.target.value.trim(); currentPage = 1; renderPosts(); }, 220);
 });
 
+/* ── Sort dropdown i18n ── */
+const SORT_LABELS = {
+  en: { newest: 'Newest First', oldest: 'Oldest First', popular: 'Most Popular' },
+  zh: { newest: '最新优先',     oldest: '最旧优先',     popular: '最热门' }
+};
+function updateSortLabels() {
+  const lang = getBlogLang();
+  const labels = SORT_LABELS[lang] || SORT_LABELS.en;
+  const sel = document.getElementById('blogSort');
+  if (!sel) return;
+  Array.from(sel.options).forEach(opt => {
+    if (labels[opt.value]) opt.textContent = labels[opt.value];
+  });
+}
+
+/* ── Re-render on language change ── */
+document.addEventListener('ce:langchange', function() {
+  updateSortLabels();
+  renderPosts();
+});
+
 /* ── Init ── */
+updateSortLabels();
 renderPosts();
 </script>
 

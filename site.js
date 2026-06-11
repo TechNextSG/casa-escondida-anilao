@@ -69,6 +69,18 @@
     });
   })();
 
+  /* ── NAV SCROLLED STATE (transparent → solid) ────────── */
+  (function () {
+    var nav = document.getElementById('nav');
+    if (!nav) return;
+    function updateScrolled() {
+      if (window.scrollY > 60) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }
+    updateScrolled();
+    window.addEventListener('scroll', updateScrolled, { passive: true });
+  })();
+
   /* ── NAV HIDE-ON-SCROLL-DOWN ──────────────────────────── */
   (function () {
     var nav = document.getElementById('nav');
@@ -127,4 +139,48 @@
     });
   })();
 
+  // Dynamically load translation and chatbot scripts
+  // Resolve paths relative to site.js itself (handles root and blog/* subdirectory pages)
+  (function(){
+    var base = (function(){
+      var scripts = document.querySelectorAll('script[src]');
+      for (var i = 0; i < scripts.length; i++) {
+        var src = scripts[i].getAttribute('src') || '';
+        if (src.indexOf('site.js') !== -1) {
+          return src.replace(/site\.js([?#].*)?$/, '');
+        }
+      }
+      return '';
+    })();
+    var files = ['translate.js', 'chatbot.js'];
+    files.forEach(function(src){
+      var s = document.createElement('script');
+      s.src = base + src;
+      s.defer = true;
+      document.head.appendChild(s);
+    });
+  })();
+
 })();
+
+/* ── SERVICE WORKER ── */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').then(function (reg) {
+      /* When a new SW is waiting, activate it immediately */
+      reg.addEventListener('updatefound', function () {
+        var newWorker = reg.installing;
+        if (!newWorker) return;
+        newWorker.addEventListener('statechange', function () {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            /* New SW ready — reload page to get fresh content */
+            navigator.serviceWorker.addEventListener('controllerchange', function () {
+              window.location.reload();
+            });
+            newWorker.postMessage({ type: 'SKIP_WAITING' });
+          }
+        });
+      });
+    }).catch(function () {});
+  });
+}
