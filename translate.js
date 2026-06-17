@@ -535,7 +535,7 @@
       rooms_stat_3_number:'100%',
       rooms_stat_3_label: 'Breakfast Included',
       rooms_stat_4_number:'8',
-      rooms_stat_4_label: 'Sea View Rooms',
+      rooms_stat_4_label: 'Ocean View Rooms',
       rooms_hero_cta_ghost:   'Explore Rooms →',
       rooms_hero_cta_primary: 'Book Your Room',
       inc_breakfast_title:'Breakfast Included',
