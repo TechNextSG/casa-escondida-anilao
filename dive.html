@@ -263,7 +263,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .instr-card:hover{border-color:var(--accent);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.3);}
     .instr-card-top{position:relative;background:linear-gradient(160deg,#04080f 0%,#081630 100%);padding:2.5rem 2rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;border-bottom:1px solid var(--border);}
     .instr-card-top::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77,194,232,.08) 0%,transparent 70%);pointer-events:none;}
-    .instr-avatar{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,rgba(77,194,232,.25) 0%,rgba(77,194,232,.06) 100%);border:2px solid rgba(77,194,232,.35);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:600;color:var(--accent);letter-spacing:.04em;margin-bottom:1.1rem;font-family:'DM Sans',sans-serif;}
+    .instr-avatar{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,rgba(77,194,232,.25) 0%,rgba(77,194,232,.06) 100%);border:3px solid rgba(77,194,232,.45);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:600;color:var(--accent);letter-spacing:.04em;margin-bottom:1.1rem;font-family:'DM Sans',sans-serif;overflow:hidden;flex-shrink:0;}
+    .instr-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;border-radius:50%;}
     .instr-padi-badge{display:inline-flex;align-items:center;gap:.45rem;background:rgba(200,168,84,.1);border:1px solid rgba(200,168,84,.3);border-radius:2px;padding:.28rem .7rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#c8a854;margin-bottom:.85rem;}
     .instr-padi-badge svg{width:11px;height:11px;fill:#c8a854;flex-shrink:0;}
     .instr-name{font-family:'Playfair Display',serif;font-size:1.22rem;font-weight:400;color:var(--text);margin-bottom:.25rem;line-height:1.3;}
@@ -884,7 +885,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Instructor 1: Armando -->
       <div class="instr-card rvl rvl-d1">
         <div class="instr-card-top">
-          <div class="instr-avatar">AG</div>
+          <div class="instr-avatar">
+            <img src="images/instructors/armando-vergara.webp" alt="Armando G. Vergara — PADI Master Instructor" loading="lazy" decoding="async" width="400" height="400" />
+          </div>
           <div class="instr-padi-badge">
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <span data-i18n="instr_1_cert">PADI Master Instructor</span>
