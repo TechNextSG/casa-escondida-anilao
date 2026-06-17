@@ -246,8 +246,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .equip-section{background:var(--bg);}
     .equip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
     @media(max-width:768px){.equip-grid{grid-template-columns:repeat(2,1fr);}}
-    .equip-item{text-align:center;padding:1.8rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:3px;transition:border-color .3s;}
+    .equip-item{position:relative;text-align:center;padding:1.8rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:3px;transition:border-color .3s;}
     .equip-item:hover{border-color:var(--accent);}
+    .equip-item.rental{border-color:rgba(77,194,232,0.25);}
+    .equip-item.rental::after{content:'FOR RENT';position:absolute;top:.45rem;right:.5rem;font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(77,194,232,0.3);padding:.12rem .38rem;border-radius:2px;background:rgba(77,194,232,0.08);}
     .equip-icon{width:40px;height:40px;margin:0 auto .85rem;opacity:.7;}
     .equip-icon svg{width:100%;height:100%;stroke:var(--accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
     .equip-name{font-size:.82rem;font-weight:500;margin-bottom:.3rem;}
@@ -856,17 +858,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="sec-sub" data-i18n="dive_equip_sub">Travelling light? Our full-service dive center has everything covered.</p>
     </div>
     <div class="equip-grid">
-      <div class="equip-item rvl rvl-d1">
+      <div class="equip-item rental rvl rvl-d1">
         <div class="equip-icon"><svg viewBox="0 0 24 24"><path d="M12 22c-4.97 0-9-4.03-9-9V7l9-4 9 4v6c0 4.97-4.03 9-9 9z"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip1_name">BCD & Regulator</div>
         <div class="equip-note" data-i18n="dive_equip1_note">All sizes available for daily rental</div>
       </div>
-      <div class="equip-item rvl rvl-d2">
+      <div class="equip-item rental rvl rvl-d2">
         <div class="equip-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip2_name">Wetsuits</div>
         <div class="equip-note" data-i18n="dive_equip2_note">3mm & 5mm suits, full range of sizes</div>
       </div>
-      <div class="equip-item rvl rvl-d3">
+      <div class="equip-item rental rvl rvl-d3">
         <div class="equip-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip3_name">Dive Computers</div>
         <div class="equip-note" data-i18n="dive_equip3_note">Available for rent per dive</div>
@@ -881,12 +883,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="equip-name" data-i18n="dive_equip5_name">Camera Rinse Station</div>
         <div class="equip-note" data-i18n="dive_equip5_note">Dedicated fresh-water rinse tanks</div>
       </div>
-      <div class="equip-item rvl rvl-d2">
+      <div class="equip-item rental rvl rvl-d2">
         <div class="equip-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c-1 4.5-4.5 8-9 8s-8-3.5-9-8 4.5-8 9-8 8 3.5 9 8z"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip6_name">Mask, Fins & Snorkel</div>
         <div class="equip-note" data-i18n="dive_equip6_note">Complete snorkel sets for rental</div>
       </div>
-      <div class="equip-item rvl rvl-d3">
+      <div class="equip-item rental rvl rvl-d3">
         <div class="equip-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip7_name">Dive Torches</div>
         <div class="equip-note" data-i18n="dive_equip7_note">Primary & backup torches for night dives</div>
@@ -896,17 +898,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="equip-name" data-i18n="dive_equip8_name">Marine Conservation</div>
         <div class="equip-note" data-i18n="dive_equip8_note">Active reef monitoring & protection</div>
       </div>
-      <div class="equip-item rvl rvl-d1">
+      <div class="equip-item rental rvl rvl-d1">
         <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip9_name">Booties</div>
         <div class="equip-note" data-i18n="dive_equip9_note">Available for daily rental</div>
       </div>
-      <div class="equip-item rvl rvl-d2">
+      <div class="equip-item rental rvl rvl-d2">
         <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip10_name">Tank – Air 12L / 15L</div>
         <div class="equip-note" data-i18n="dive_equip10_note">Air tanks, two sizes available</div>
       </div>
-      <div class="equip-item rvl rvl-d3">
+      <div class="equip-item rental rvl rvl-d3">
         <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="12" y1="9" x2="12" y2="15"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip11_name">Tank – Nitrox 12L / 15L</div>
         <div class="equip-note" data-i18n="dive_equip11_note">Enriched air tanks, two sizes</div>
@@ -916,37 +918,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="equip-name" data-i18n="dive_equip12_name">Extra Dive Master</div>
         <div class="equip-note" data-i18n="dive_equip12_note">Available for day & night dives</div>
       </div>
-      <div class="equip-item rvl rvl-d1">
+      <div class="equip-item rental rvl rvl-d1">
         <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip13_name">Full Gear Set</div>
         <div class="equip-note" data-i18n="dive_equip13_note">Complete rental package, all sizes</div>
       </div>
-      <div class="equip-item rvl rvl-d2">
+      <div class="equip-item rental rvl rvl-d2">
         <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip14_name">Camera (GoPro)</div>
         <div class="equip-note" data-i18n="dive_equip14_note">Available for daily rental</div>
       </div>
-      <div class="equip-item rvl rvl-d3">
+      <div class="equip-item rental rvl rvl-d3">
         <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip15_name">DSMB</div>
         <div class="equip-note" data-i18n="dive_equip15_note">Surface marker buoy for safety</div>
       </div>
-      <div class="equip-item rvl rvl-d4">
+      <div class="equip-item rental rvl rvl-d4">
         <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l4-8 4 4 4-6 4 10"/><path d="M3 20h18"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip16_name">Kayak</div>
         <div class="equip-note" data-i18n="dive_equip16_note">Available for 4-hour rental</div>
       </div>
-      <div class="equip-item rvl rvl-d1">
+      <div class="equip-item rental rvl rvl-d1">
         <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v6m0 0l3-3m-3 3L9 5"/><path d="M5 12H2m20 0h-3M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M5.64 18.36l2.12-2.12M16.24 7.76l2.12-2.12"/><circle cx="12" cy="12" r="4"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip17_name">Black Water Torch Set</div>
         <div class="equip-note" data-i18n="dive_equip17_note">1 set, 3 pcs — for black water dives</div>
       </div>
-      <div class="equip-item rvl rvl-d2">
+      <div class="equip-item rental rvl rvl-d2">
         <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="11" rx="2"/><path d="M22 11h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-1"/><line x1="6" y1="11" x2="10" y2="11"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip18_name">Weights &amp; Weight Belt</div>
         <div class="equip-note" data-i18n="dive_equip18_note">Free with any CE Dive Package</div>
       </div>
-      <div class="equip-item rvl rvl-d3">
+      <div class="equip-item rental rvl rvl-d3">
         <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2" width="10" height="6" rx="1"/><rect x="2" y="8" width="20" height="14" rx="2"/><line x1="6" y1="12" x2="6" y2="18"/><line x1="10" y1="12" x2="10" y2="18"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip19_name">Battery (Camera)</div>
         <div class="equip-note" data-i18n="dive_equip19_note">Camera battery rental available</div>
