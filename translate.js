@@ -536,7 +536,7 @@
       rooms_stat_3_label: 'Breakfast Included',
       rooms_stat_4_number:'8',
       rooms_stat_4_label: 'Sea View Rooms',
-      rooms_hero_cta_ghost:   'See Policies',
+      rooms_hero_cta_ghost:   'Explore Rooms →',
       rooms_hero_cta_primary: 'Book Your Room',
       inc_breakfast_title:'Breakfast Included',
       inc_breakfast_desc: 'A full Filipino breakfast is included for all guests.',
@@ -639,8 +639,8 @@
       rooms_cta_btn_outline: 'Message on Facebook',
 
       /* ── DIVE PAGE ── */
-      dive_hero_cta_ghost:   'View Courses',
-      dive_hero_cta_primary: 'Book Your Dive Stay',
+      dive_hero_cta_ghost:   'View Dive Packages →',
+      dive_hero_cta_primary: 'Explore Courses',
       dive_overview_eyebrow: 'Our Dive Center',
       dive_overview_h2:      'Where Every <em>Dive Begins</em>',
       dive_overview_p1:      "Casa Escondida's PADI-certified dive center sits steps from your room. Our experienced divemasters and instructors know every reef, crevice, and critter in Anilao — so whether you're logging your first dive or your thousandth, you're in expert hands.",
@@ -785,11 +785,11 @@
       dive_cta_btn_ghost:    'How to Get Here →',
 
       /* ── LOCATION PAGE ── */
-      location_stat_1:    '130 km from Manila',
-      location_stat_2:    '2.5 hrs by car',
-      location_stat_3:    '30+ dive sites',
-      location_hero_cta_ghost:   'See How to Get Here',
-      location_hero_cta_primary: 'Book Your Stay',
+      location_stat_1:    'From Manila',
+      location_stat_2:    'By Car',
+      location_stat_3:    'Dive Sites',
+      location_hero_cta_ghost:   'Contact Us',
+      location_hero_cta_primary: 'Get Directions →',
       location_qc_address_lbl: 'Address',
       location_qc_address_val: 'Brgy. Ligaya, Mabini\nBatangas 4202, Philippines',
       location_qc_phone_lbl:   'Phone',
@@ -902,6 +902,8 @@
       cf_placeholder_phone:   '+63 ...',
       cf_placeholder_message: 'Dates, number of guests, experience level, dive preferences...',
       cf_submit:              'Send Message',
+      cf_success_msg:         'Thank you! Your message has been sent. We\'ll be in touch soon.',
+      cf_error_msg:           'Something went wrong. Please try again or email us directly.',
       location_faq_eyebrow:   'Travel FAQs',
       location_faq_h2:        'Before You <em>Set Off</em>',
       location_faq_sub:       'Questions we hear often from guests planning their trip to Anilao.',
@@ -1036,7 +1038,7 @@
       terms:              '服务条款',
 
       /* Booking modal */
-      booking_title:      '预订您的住宿',
+      booking_title:      '准备好潜入大海了吗？',
       booking_sub:        '请填写您的信息，我们将在24小时内与您联系。',
       check_availability: '查询空房',
 
@@ -1453,7 +1455,7 @@
       rooms_stat_3_label: '含早餐',
       rooms_stat_4_number:'8',
       rooms_stat_4_label: '海景客房',
-      rooms_hero_cta_ghost:   '查看须知',
+      rooms_hero_cta_ghost:   '浏览客房 →',
       rooms_hero_cta_primary: '预订客房',
       inc_breakfast_title:'含早餐',
       inc_breakfast_desc: '所有住客均享有丰盛的菲律宾式早餐。',
@@ -1556,8 +1558,8 @@
       rooms_cta_btn_outline: '在Facebook上留言',
 
       /* ── DIVE PAGE ── */
-      dive_hero_cta_ghost:   '查看课程',
-      dive_hero_cta_primary: '预订潜水住宿',
+      dive_hero_cta_ghost:   '查看潜水套餐 →',
+      dive_hero_cta_primary: '探索潜水课程',
       dive_overview_eyebrow: '我们的潜水中心',
       dive_overview_h2:      '每次潜水的起点',
       dive_overview_p1:      '卡萨埃斯孔迪达的PADI认证潜水中心就在客房几步之遥。我们经验丰富的潜导和教练熟知阿尼劳每一处礁盘、缝隙与小生物——无论您是第一次潜水还是第一千次，都将得到专业指引。',
@@ -1702,11 +1704,11 @@
       dive_cta_btn_ghost:    '如何抵达 →',
 
       /* ── LOCATION PAGE ── */
-      location_stat_1:    '距马尼拉约130公里',
-      location_stat_2:    '驾车约2.5小时',
-      location_stat_3:    '30+个潜点',
-      location_hero_cta_ghost:   '查看交通方式',
-      location_hero_cta_primary: '预订住宿',
+      location_stat_1:    '距马尼拉',
+      location_stat_2:    '驾车时间',
+      location_stat_3:    '个潜水点',
+      location_hero_cta_ghost:   '联系我们',
+      location_hero_cta_primary: '前往导航 →',
       location_qc_address_lbl: '地址',
       location_qc_address_val: 'Brgy. Ligaya, 马比尼\n八打雁 4202, 菲律宾',
       location_qc_phone_lbl:   '电话',
@@ -1819,6 +1821,8 @@
       cf_placeholder_phone:   '+63 ...',
       cf_placeholder_message: '日期、入住人数、潜水经验、潜水偏好……',
       cf_submit:              '发送留言',
+      cf_success_msg:         '感谢您的留言！我们将尽快与您联系。',
+      cf_error_msg:           '发送失败，请重试或直接发送邮件联系我们。',
       location_faq_eyebrow:   '出行常见问题',
       location_faq_h2:        '出发前须知',
       location_faq_sub:       '这些是宾客在规划阿尼劳之旅时最常问到的问题。',

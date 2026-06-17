@@ -376,7 +376,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .marquee-item{display:flex;align-items:center;gap:.5rem;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(77,194,232,.85);white-space:nowrap;font-weight:400;}
     .marquee-dot{width:3px;height:3px;border-radius:50%;background:rgba(77,194,232,.4);flex-shrink:0;}
     /* Hero animations + CTA buttons */
-50%{text-shadow:0 2px 20px rgba(0,0,0,.7),0 0 55px rgba(255,255,255,.6),0 0 110px rgba(77,200,232,.4),0 0 170px rgba(77,200,232,.18);}}
+
     @keyframes heroSubIn{from{opacity:0;transform:translateY(18px);filter:blur(4px);}to{opacity:1;transform:none;filter:none;}}
     @keyframes heroEyebrowIn{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:none;}}
     .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;}
@@ -568,9 +568,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h1 class="loc-h1" data-i18n="location_h1">How to Get to <em>Anilao, Batangas</em></h1>
       <p class="loc-sub" data-i18n="location_page_sub">Tucked between jungle-clad hills and coral-rich waters in Brgy. Ligaya, Mabini — just two hours south of Manila.</p>
       <div class="loc-stats">
-        <div class="loc-stat"><div class="loc-stat-n">140km</div><div class="loc-stat-l" data-i18n="location_stat_1">From Manila</div></div>
-        <div class="loc-stat"><div class="loc-stat-n">2–3h</div><div class="loc-stat-l" data-i18n="location_stat_2">Drive Time</div></div>
-        <div class="loc-stat"><div class="loc-stat-n">Mabini</div><div class="loc-stat-l" data-i18n="location_stat_3">Batangas</div></div>
+        <div class="loc-stat"><div class="loc-stat-n">~130km</div><div class="loc-stat-l" data-i18n="location_stat_1">From Manila</div></div>
+        <div class="loc-stat"><div class="loc-stat-n">2–3h</div><div class="loc-stat-l" data-i18n="location_stat_2">By Car</div></div>
+        <div class="loc-stat"><div class="loc-stat-n">30+</div><div class="loc-stat-l" data-i18n="location_stat_3">Dive Sites</div></div>
       </div>
       <div class="loc-hero-actions hero-ctas">
         <a href="#contact" class="loc-btn-ghost hero-cta-ghost" data-i18n="location_hero_cta_ghost">Contact Us</a>
@@ -586,7 +586,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="marquee-item" data-i18n="marquee_3"><span class="marquee-dot"></span> Travelers' Choice Award</div>
       <div class="marquee-item" data-i18n="marquee_4"><span class="marquee-dot"></span> Free Breakfast Included</div>
       <div class="marquee-item" data-i18n="marquee_5"><span class="marquee-dot"></span> Island BBQ Experience</div>
-      <div class="marquee-item" data-i18n="marquee_6"><span class="marquee-dot"></span> 31 Rooms &amp; Suites</div>
+      <div class="marquee-item" data-i18n="marquee_6"><span class="marquee-dot"></span> 24 Rooms &amp; Suites</div>
       <div class="marquee-item" data-i18n="marquee_7"><span class="marquee-dot"></span> Anilao, Batangas Philippines</div>
       <div class="marquee-item" data-i18n="marquee_8"><span class="marquee-dot"></span> #1 Special Inn in Mabini</div>
       <div class="marquee-item" data-i18n="marquee_9"><span class="marquee-dot"></span> Ocean-Front Resort</div>
@@ -600,7 +600,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="marquee-item" data-i18n="marquee_3"><span class="marquee-dot"></span> Travelers' Choice Award</div>
       <div class="marquee-item" data-i18n="marquee_4"><span class="marquee-dot"></span> Free Breakfast Included</div>
       <div class="marquee-item" data-i18n="marquee_5"><span class="marquee-dot"></span> Island BBQ Experience</div>
-      <div class="marquee-item" data-i18n="marquee_6"><span class="marquee-dot"></span> 31 Rooms &amp; Suites</div>
+      <div class="marquee-item" data-i18n="marquee_6"><span class="marquee-dot"></span> 24 Rooms &amp; Suites</div>
       <div class="marquee-item" data-i18n="marquee_7"><span class="marquee-dot"></span> Anilao, Batangas Philippines</div>
       <div class="marquee-item" data-i18n="marquee_8"><span class="marquee-dot"></span> #1 Special Inn in Mabini</div>
       <div class="marquee-item" data-i18n="marquee_9"><span class="marquee-dot"></span> Ocean-Front Resort</div>
@@ -1063,11 +1063,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <textarea class="cf-textarea" id="cf-message" name="message" required placeholder="Dates, number of guests, experience level, dive preferences..." data-i18n-placeholder="cf_placeholder_message"></textarea>
           </div>
           <button type="submit" class="cf-submit" data-i18n="cf_submit">Send Message</button>
-          <div class="cf-success" id="cfSuccess" hidden>
-            Thanks — we received your message and will reply shortly. For urgent bookings, message us on Facebook.
+          <div class="cf-success" id="cfSuccess" data-i18n="cf_success_msg" hidden>
+            Thank you! Your message has been sent. We'll be in touch soon.
           </div>
-          <div class="cf-error" id="cfError" hidden>
-            Please fill in the highlighted fields.
+          <div class="cf-error" id="cfError" data-i18n="cf_error_msg" hidden>
+            Something went wrong. Please try again or email us directly.
           </div>
         </form>
       </div>
@@ -1156,7 +1156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li><a href="dive.html" data-i18n="foot_link_dive">Dive Center</a></li>
               <li><a href="rooms.html" data-i18n="foot_link_rooms">Rooms &amp; Suites</a></li>
               <li><a href="gallery.html" data-i18n="foot_link_gallery">Photo Gallery</a></li>
-              <li><a href="/#dining" data-i18n="foot_link_dining">Restaurant &amp; Bar</a></li>
+              <li><a href="/#about" data-i18n="foot_link_dining">Restaurant &amp; Bar</a></li>
             </ul>
           </div>
           <div>
