@@ -253,6 +253,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .equip-name{font-size:.82rem;font-weight:500;margin-bottom:.3rem;}
     .equip-note{font-size:.72rem;color:var(--text3);}
 
+    /* ── CONDITIONS ── */
+    .cond-section{background:var(--bg2);border-top:1px solid var(--border);}
+    .cond-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+    @media(max-width:768px){.cond-grid{grid-template-columns:1fr;}}
+    .cond-card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.6rem 1.8rem;}
+    .cond-title{display:flex;align-items:center;gap:.65rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:1rem;}
+    .cond-title svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+    .cond-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+    .cond-list li{display:flex;align-items:flex-start;gap:.5rem;font-size:.82rem;color:var(--text2);line-height:1.5;}
+    .cond-list li::before{content:'·';color:var(--accent);font-size:1.1rem;flex-shrink:0;margin-top:-.05rem;}
+
     /* ── CTA BAND ── */
     .dive-cta{position:relative;overflow:hidden;padding:6rem 2rem;text-align:center;}
     .dive-cta-bg{position:absolute;inset:0;}
@@ -551,7 +562,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="marquee-item" data-i18n="marquee_3"><span class="marquee-dot"></span> Travelers' Choice Award</div>
       <div class="marquee-item" data-i18n="marquee_4"><span class="marquee-dot"></span> Free Breakfast Included</div>
       <div class="marquee-item" data-i18n="marquee_5"><span class="marquee-dot"></span> Island BBQ Experience</div>
-      <div class="marquee-item" data-i18n="marquee_6"><span class="marquee-dot"></span> 31 Rooms &amp; Suites</div>
+      <div class="marquee-item" data-i18n="marquee_6"><span class="marquee-dot"></span> 23 Rooms &amp; Suites</div>
       <div class="marquee-item" data-i18n="marquee_7"><span class="marquee-dot"></span> Anilao, Batangas Philippines</div>
       <div class="marquee-item" data-i18n="marquee_8"><span class="marquee-dot"></span> #1 Special Inn in Mabini</div>
       <div class="marquee-item" data-i18n="marquee_9"><span class="marquee-dot"></span> Ocean-Front Resort</div>
@@ -565,7 +576,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="marquee-item" data-i18n="marquee_3"><span class="marquee-dot"></span> Travelers' Choice Award</div>
       <div class="marquee-item" data-i18n="marquee_4"><span class="marquee-dot"></span> Free Breakfast Included</div>
       <div class="marquee-item" data-i18n="marquee_5"><span class="marquee-dot"></span> Island BBQ Experience</div>
-      <div class="marquee-item" data-i18n="marquee_6"><span class="marquee-dot"></span> 31 Rooms &amp; Suites</div>
+      <div class="marquee-item" data-i18n="marquee_6"><span class="marquee-dot"></span> 23 Rooms &amp; Suites</div>
       <div class="marquee-item" data-i18n="marquee_7"><span class="marquee-dot"></span> Anilao, Batangas Philippines</div>
       <div class="marquee-item" data-i18n="marquee_8"><span class="marquee-dot"></span> #1 Special Inn in Mabini</div>
       <div class="marquee-item" data-i18n="marquee_9"><span class="marquee-dot"></span> Ocean-Front Resort</div>
@@ -614,7 +625,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="course-level" data-i18n="dive_course1_level">Beginner</div>
         <div class="course-name" data-i18n="dive_course1_name">Discover Scuba Diving</div>
-        <div class="course-desc" data-i18n="dive_course1_desc">No certification needed. Try scuba in a controlled pool session followed by a shallow open-water dive under direct instructor supervision.</div>
+        <div class="course-desc" data-i18n="dive_course1_desc">No certification needed. Experience scuba with a pool session followed by a shore dive — gear and Divemaster service included.</div>
         <div class="course-details">
           <div class="course-detail"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span data-i18n="dive_course1_detail1">No experience required</span></div>
           <div class="course-detail"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span data-i18n="dive_course1_detail2">Half-day experience</span></div>
@@ -692,6 +703,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
+      <!-- PADI REFRESHER COURSE -->
+      <div class="course-card rvl rvl-d1">
+        <div class="course-icon">
+          <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></svg>
+        </div>
+        <div class="course-level" data-i18n="dive_course7_level">Refresher</div>
+        <div class="course-name" data-i18n="dive_course7_name">PADI Refresher Course</div>
+        <div class="course-desc" data-i18n="dive_course7_desc">Returning to diving after a break? Rebuild your confidence with a theory review and guided pool practice before heading back into open water.</div>
+        <div class="course-details">
+          <div class="course-detail"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span data-i18n="dive_course7_detail1">Open Water cert. required</span></div>
+          <div class="course-detail"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span data-i18n="dive_course7_detail2">Half-day</span></div>
+          <div class="course-detail"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="dive_course7_detail3">Pool + guided dive</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -765,16 +791,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="pkg-card rvl rvl-d1">
         <div class="pkg-head">
-          <div class="pkg-name" data-i18n="dive_pkg1_name">Day Diver</div>
-          <div class="pkg-tagline" data-i18n="dive_pkg1_tagline">Perfect for certified guests & day visitors</div>
+          <div class="pkg-name" data-i18n="dive_pkg1_name">2 Dives Out Package</div>
+          <div class="pkg-tagline" data-i18n="dive_pkg1_tagline">2 daytime boat dives for certified divers</div>
         </div>
         <div class="pkg-body">
           <ul class="pkg-includes">
-            <li data-i18n="dive_pkg1_feat1">2 guided boat dives</li>
-            <li data-i18n="dive_pkg1_feat2">Tank, weights & weight belt</li>
-            <li data-i18n="dive_pkg1_feat3">Divemaster guide</li>
+            <li data-i18n="dive_pkg1_feat1">Boat fee included</li>
+            <li data-i18n="dive_pkg1_feat2">Service of 1 Divemaster</li>
+            <li data-i18n="dive_pkg1_feat3">Tank & dive permit per dive</li>
             <li data-i18n="dive_pkg1_feat4">Dive briefing & logbook signing</li>
-            <li data-i18n="dive_pkg1_feat5">Hot shower post-dive</li>
+            <li data-i18n="dive_pkg1_feat5">Gear rental not included (available separately)</li>
           </ul>
           <a href="/#booking" class="pkg-cta" data-i18n="dive_pkg_cta_inquire">Inquire Now</a>
         </div>
@@ -789,11 +815,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="pkg-body">
           <ul class="pkg-includes">
             <li data-i18n="dive_pkg2_feat1">3 nights accommodation (breakfast incl.)</li>
-            <li data-i18n="dive_pkg2_feat2">3 dives per day (9 total)</li>
-            <li data-i18n="dive_pkg2_feat3">Full equipment rental available</li>
-            <li data-i18n="dive_pkg2_feat4">Nitrox fills available</li>
-            <li data-i18n="dive_pkg2_feat5">Dedicated divemaster</li>
-            <li data-i18n="dive_pkg2_feat6">Night dive on house reef</li>
+            <li data-i18n="dive_pkg2_feat2">Up to 3 dives per day</li>
+            <li data-i18n="dive_pkg2_feat3">Dedicated Divemaster</li>
+            <li data-i18n="dive_pkg2_feat4">Night dive on house reef</li>
+            <li data-i18n="dive_pkg2_feat5">Nitrox fills available</li>
+            <li data-i18n="dive_pkg2_feat6">Optional gear rental available</li>
           </ul>
           <a href="/#booking" class="pkg-cta" data-i18n="dive_pkg_cta_book">Book This Package</a>
         </div>
@@ -801,23 +827,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="pkg-card rvl rvl-d3">
         <div class="pkg-head">
-          <div class="pkg-name" data-i18n="dive_pkg3_name">Night Diver Special</div>
-          <div class="pkg-tagline" data-i18n="dive_pkg3_tagline">Witness Anilao transform after dark</div>
+          <div class="pkg-name" data-i18n="dive_pkg3_name">Single / Night Dive Package</div>
+          <div class="pkg-tagline" data-i18n="dive_pkg3_tagline">One dive, anytime — day or after dark</div>
         </div>
         <div class="pkg-body">
           <ul class="pkg-includes">
-            <li data-i18n="dive_pkg3_feat1">1 guided night dive (house reef)</li>
-            <li data-i18n="dive_pkg3_feat2">Dive torch & safety equipment</li>
-            <li data-i18n="dive_pkg3_feat3">Experienced night divemaster</li>
-            <li data-i18n="dive_pkg3_feat4">Post-dive dinner at CE restaurant</li>
-            <li data-i18n="dive_pkg3_feat5">Logbook signing & briefing</li>
+            <li data-i18n="dive_pkg3_feat1">Boat fee included</li>
+            <li data-i18n="dive_pkg3_feat2">Service of 1 Divemaster</li>
+            <li data-i18n="dive_pkg3_feat3">Tank & dive permit</li>
+            <li data-i18n="dive_pkg3_feat4">Dive briefing & logbook signing</li>
+            <li data-i18n="dive_pkg3_feat5">Gear rental not included (available separately)</li>
           </ul>
           <a href="/#booking" class="pkg-cta" data-i18n="dive_pkg_cta_inquire">Inquire Now</a>
         </div>
       </div>
 
     </div>
-    <p style="text-align:center;margin-top:2rem;font-size:.78rem;color:var(--text3);">All packages include use of rinse tanks, camera rinse station, and dive center facilities. Equipment rental available at additional cost.</p>
+    <p style="text-align:center;margin-top:2rem;font-size:.78rem;color:var(--text3);" data-i18n="dive_pkgs_note">Add-on available: Additional 3rd dive within the same day. All packages include use of rinse tanks and camera rinse station.</p>
   </div>
 </section>
 
@@ -869,6 +895,80 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="equip-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
         <div class="equip-name" data-i18n="dive_equip8_name">Marine Conservation</div>
         <div class="equip-note" data-i18n="dive_equip8_note">Active reef monitoring & protection</div>
+      </div>
+      <div class="equip-item rvl rvl-d1">
+        <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <div class="equip-name" data-i18n="dive_equip9_name">Booties</div>
+        <div class="equip-note" data-i18n="dive_equip9_note">Available for daily rental</div>
+      </div>
+      <div class="equip-item rvl rvl-d2">
+        <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg></div>
+        <div class="equip-name" data-i18n="dive_equip10_name">Tank – Air 12L / 15L</div>
+        <div class="equip-note" data-i18n="dive_equip10_note">Air tanks, two sizes available</div>
+      </div>
+      <div class="equip-item rvl rvl-d3">
+        <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="12" y1="9" x2="12" y2="15"/></svg></div>
+        <div class="equip-name" data-i18n="dive_equip11_name">Tank – Nitrox 12L / 15L</div>
+        <div class="equip-note" data-i18n="dive_equip11_note">Enriched air tanks, two sizes</div>
+      </div>
+      <div class="equip-item rvl rvl-d4">
+        <div class="equip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><line x1="12" y1="14" x2="12" y2="20"/><line x1="9" y1="17" x2="15" y2="17"/></svg></div>
+        <div class="equip-name" data-i18n="dive_equip12_name">Extra Dive Master</div>
+        <div class="equip-note" data-i18n="dive_equip12_note">Available for day & night dives</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIVE CONDITIONS ═══ -->
+<section class="cond-section">
+  <div class="sec-wrap">
+    <div class="sec-header rvl">
+      <div class="sec-eyebrow" data-i18n="dive_cond_eyebrow">Before You Dive</div>
+      <h2 class="sec-h2" data-i18n="dive_cond_h2">Dive Package <em>Conditions</em></h2>
+    </div>
+    <div class="cond-grid">
+      <div class="cond-card rvl rvl-d1">
+        <div class="cond-title">
+          <svg viewBox="0 0 24 24"><path d="M12 22c-4.97 0-9-4.03-9-9V7l9-4 9 4v6c0 4.97-4.03 9-9 9z"/></svg>
+          <span data-i18n="dive_cond1_title">Package Inclusions</span>
+        </div>
+        <ul class="cond-list">
+          <li data-i18n="dive_cond1_1">Dive package rates include boat fee, service of 1 Divemaster, and tank for each dive.</li>
+          <li data-i18n="dive_cond1_2">Gear is not included — rental available separately at the dive center.</li>
+          <li data-i18n="dive_cond1_3">Requests for an additional Dive Master will be charged extra to the requesting guest or group.</li>
+        </ul>
+      </div>
+      <div class="cond-card rvl rvl-d2">
+        <div class="cond-title">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span data-i18n="dive_cond2_title">Dive Times</span>
+        </div>
+        <ul class="cond-list">
+          <li data-i18n="dive_cond2_1">Average dive time is 45 minutes per dive.</li>
+          <li data-i18n="dive_cond2_2">Maximum dive time is 60 minutes.</li>
+          <li data-i18n="dive_cond2_3">The 2 Dives Out Package is limited to 2 boat dives per trip.</li>
+        </ul>
+      </div>
+      <div class="cond-card rvl rvl-d3">
+        <div class="cond-title">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span data-i18n="dive_cond3_title">Cancellations & Missed Dives</span>
+        </div>
+        <ul class="cond-list">
+          <li data-i18n="dive_cond3_1">Missed and cancelled dives are non-transferrable and non-refundable.</li>
+          <li data-i18n="dive_cond3_2">Boat and Divemaster cancellations will be charged 50% of the corresponding fee.</li>
+        </ul>
+      </div>
+      <div class="cond-card rvl rvl-d4">
+        <div class="cond-title">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span data-i18n="dive_cond4_title">Gear & Equipment</span>
+        </div>
+        <ul class="cond-list">
+          <li data-i18n="dive_cond4_1">All rented gear must be returned in proper working condition.</li>
+          <li data-i18n="dive_cond4_2">Any damage caused by the guest will be charged accordingly.</li>
+        </ul>
       </div>
     </div>
   </div>
