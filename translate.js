@@ -784,6 +784,22 @@
       dive_cta_btn_primary:  'Book Your Dive Stay',
       dive_cta_btn_ghost:    'How to Get Here →',
 
+      /* ── INSTRUCTORS ── */
+      instr_eyebrow:      'Meet Our Instructors',
+      instr_h2:           'Dive with the <em>Masters</em>',
+      instr_sub:          'Our PADI-certified instructors have guided hundreds of divers through Anilao\'s legendary underwater world — from first breaths to advanced certifications.',
+      instr_1_cert:       'PADI Master Instructor',
+      instr_1_name:       'Armando G. Vergara',
+      instr_1_cert_sub:   'Master Instructor',
+      instr_1_bio:        'A PADI Master Instructor with years of experience exploring Anilao\'s diverse reefs. Armando brings calm authority and a genuine passion for the ocean to every course and guided dive.',
+      instr_2_cert:       'Master Scuba Diver Trainer',
+      instr_2_name:       'Guan Loo Oh',
+      instr_2_cert_sub:   'MSDT',
+      instr_2_bio:        'Holding the prestigious Master Scuba Diver Trainer designation, Guan Loo combines precision technique with patient teaching — the ideal guide for divers serious about mastering their craft.',
+      instr_label_padi:   'PADI No.',
+      instr_label_since:  'Certified Since',
+      instr_cta:          'Book a Session →',
+
       /* ── LOCATION PAGE ── */
       location_stat_1:    'From Manila',
       location_stat_2:    'By Car',
@@ -1702,6 +1718,22 @@
       dive_cta_p:            '无论您是初次体验还是资深潜水员，阿尼劳的礁盘正在等待。立即预订住宿与潜水套餐。',
       dive_cta_btn_primary:  '预订潜水住宿',
       dive_cta_btn_ghost:    '如何抵达 →',
+
+      /* ── INSTRUCTORS ── */
+      instr_eyebrow:      '认识我们的教练',
+      instr_h2:           '与<em>大师</em>共潜',
+      instr_sub:          '我们的PADI认证教练带领数百名潜水员探索阿尼劳的传奇海底世界——从初次呼吸到高级认证，全程陪伴。',
+      instr_1_cert:       'PADI 首席潜水教练',
+      instr_1_name:       'Armando G. Vergara',
+      instr_1_cert_sub:   '首席潜水教练',
+      instr_1_bio:        '拥有多年探索阿尼劳多元珊瑚礁的PADI首席教练。Armando以沉稳专业的姿态和对大海的真挚热情，全程陪伴每一堂课程与导潜。',
+      instr_2_cert:       '硕士水肺潜水训练员',
+      instr_2_name:       'Guan Loo Oh',
+      instr_2_cert_sub:   'MSDT',
+      instr_2_bio:        '荣获硕士水肺潜水训练员资格，Guan Loo将精准的技术与耐心的教学融为一体——是每一位认真进阶的潜水员的理想导师。',
+      instr_label_padi:   'PADI 编号',
+      instr_label_since:  '认证时间',
+      instr_cta:          '预约课程 →',
 
       /* ── LOCATION PAGE ── */
       location_stat_1:    '距马尼拉',
