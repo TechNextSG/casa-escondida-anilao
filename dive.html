@@ -257,25 +257,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* ── INSTRUCTORS ── */
     .instr-section{background:var(--bg2);border-top:1px solid var(--border);}
-    .instr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem;}
-    @media(max-width:700px){.instr-grid{grid-template-columns:1fr;}}
-    .instr-card{background:var(--card);border:1px solid var(--border);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .3s,transform .3s,box-shadow .3s;}
-    .instr-card:hover{border-color:var(--accent);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.3);}
-    .instr-card-top{position:relative;background:linear-gradient(160deg,#04080f 0%,#081630 100%);padding:2.5rem 2rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;border-bottom:1px solid var(--border);}
-    .instr-card-top::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77,194,232,.08) 0%,transparent 70%);pointer-events:none;}
-    .instr-avatar{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,rgba(77,194,232,.25) 0%,rgba(77,194,232,.06) 100%);border:3px solid rgba(77,194,232,.45);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:600;color:var(--accent);letter-spacing:.04em;margin-bottom:1.1rem;font-family:'DM Sans',sans-serif;overflow:hidden;flex-shrink:0;}
-    .instr-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;border-radius:50%;}
-    .instr-padi-badge{display:inline-flex;align-items:center;gap:.45rem;background:rgba(200,168,84,.1);border:1px solid rgba(200,168,84,.3);border-radius:2px;padding:.28rem .7rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#c8a854;margin-bottom:.85rem;}
-    .instr-padi-badge svg{width:11px;height:11px;fill:#c8a854;flex-shrink:0;}
-    .instr-name{font-family:'Playfair Display',serif;font-size:1.22rem;font-weight:400;color:var(--text);margin-bottom:.25rem;line-height:1.3;}
-    .instr-cert-sub{font-size:.68rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;}
-    .instr-card-body{padding:1.5rem 2rem 2rem;display:flex;flex-direction:column;flex:1;}
-    .instr-meta{display:flex;gap:2rem;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border);}
-    .instr-meta-item{display:flex;flex-direction:column;gap:.25rem;}
-    .instr-meta-label{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);}
-    .instr-meta-value{font-size:.88rem;font-weight:500;color:var(--accent);}
-    .instr-bio{font-size:.84rem;color:var(--text2);line-height:1.7;flex:1;margin-bottom:1.5rem;}
-    .instr-cta-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;background:var(--accent);color:#fff !important;padding:.78rem 1.6rem;border-radius:2px;font-family:'DM Sans',sans-serif;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;text-decoration:none !important;font-weight:500;transition:background .3s,transform .2s,box-shadow .3s;width:100%;}
+    .instr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem;}
+    @media(max-width:900px){.instr-grid{grid-template-columns:1fr;}}
+    .instr-card{background:var(--card);border:1px solid var(--border);border-radius:6px;overflow:hidden;display:flex;flex-direction:row;transition:border-color .3s,transform .3s,box-shadow .3s;min-height:340px;}
+    .instr-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.3);}
+    @media(max-width:600px){.instr-card{flex-direction:column;min-height:auto;}}
+    /* Photo column */
+    .instr-visual{width:42%;flex-shrink:0;position:relative;overflow:hidden;}
+    @media(max-width:600px){.instr-visual{width:100%;height:240px;}}
+    .instr-visual img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+    .instr-visual-init{width:100%;height:100%;min-height:340px;background:linear-gradient(160deg,#04080f 0%,#0b1e3d 100%);display:flex;align-items:center;justify-content:center;font-size:3.2rem;font-weight:600;color:rgba(77,194,232,.5);font-family:'DM Sans',sans-serif;letter-spacing:.06em;}
+    .instr-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 50%,var(--card) 100%);pointer-events:none;}
+    @media(max-width:600px){.instr-visual::after{background:linear-gradient(to bottom,transparent 60%,var(--card) 100%);}}
+    /* Body column */
+    .instr-body{flex:1;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;gap:1rem;}
+    .instr-padi-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(200,168,84,.1);border:1px solid rgba(200,168,84,.28);border-radius:2px;padding:.28rem .65rem;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#c8a854;width:fit-content;}
+    .instr-padi-badge svg{width:10px;height:10px;fill:#c8a854;flex-shrink:0;}
+    .instr-name{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:400;color:var(--text);line-height:1.25;margin:0;}
+    .instr-cert-sub{font-size:.65rem;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin-top:.15rem;}
+    .instr-meta{display:flex;gap:1.5rem;padding-top:.8rem;border-top:1px solid var(--border);}
+    .instr-meta-item{display:flex;flex-direction:column;gap:.2rem;}
+    .instr-meta-label{font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);}
+    .instr-meta-value{font-size:.85rem;font-weight:500;color:var(--accent);}
+    .instr-bio{font-size:.82rem;color:var(--text2);line-height:1.68;margin:0;}
+    .instr-cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;background:var(--accent);color:#fff !important;padding:.72rem 1.4rem;border-radius:2px;font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;text-decoration:none !important;font-weight:500;transition:background .3s,transform .2s,box-shadow .3s;align-self:flex-start;margin-top:.3rem;}
     .instr-cta-btn:hover{background:var(--accent-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(77,200,232,.3);}
 
     /* ── CONDITIONS ── */
@@ -884,25 +889,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- Instructor 1: Armando -->
       <div class="instr-card rvl rvl-d1">
-        <div class="instr-card-top">
-          <div class="instr-avatar">
-            <img src="images/instructors/armando-vergara.webp" alt="Armando G. Vergara — PADI Master Instructor" loading="lazy" decoding="async" width="400" height="400" />
-          </div>
-          <div class="instr-padi-badge">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <span data-i18n="instr_1_cert">PADI Master Instructor</span>
-          </div>
-          <h3 class="instr-name" data-i18n="instr_1_name">Armando G. Vergara</h3>
-          <div class="instr-cert-sub" data-i18n="instr_1_cert_sub">Master Instructor</div>
+        <div class="instr-visual">
+          <img src="images/instructors/armando-vergara.webp" alt="Armando G. Vergara — PADI Master Instructor" loading="lazy" decoding="async" width="400" height="400" />
         </div>
-        <div class="instr-card-body">
+        <div class="instr-body">
+          <div>
+            <div class="instr-padi-badge">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span data-i18n="instr_1_cert">PADI Master Instructor</span>
+            </div>
+            <h3 class="instr-name" data-i18n="instr_1_name">Armando G. Vergara</h3>
+            <div class="instr-cert-sub" data-i18n="instr_1_cert_sub">Master Instructor</div>
+          </div>
           <div class="instr-meta">
             <div class="instr-meta-item">
               <span class="instr-meta-label" data-i18n="instr_label_padi">PADI No.</span>
               <span class="instr-meta-value">473902</span>
             </div>
             <div class="instr-meta-item">
-              <span class="instr-meta-label" data-i18n="instr_label_since">Certified Since</span>
+              <span class="instr-meta-label" data-i18n="instr_label_since">Since</span>
               <span class="instr-meta-value">Feb 2019</span>
             </div>
           </div>
@@ -913,23 +918,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- Instructor 2: Guan Loo -->
       <div class="instr-card rvl rvl-d2">
-        <div class="instr-card-top">
-          <div class="instr-avatar">GL</div>
-          <div class="instr-padi-badge">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <span data-i18n="instr_2_cert">Master Scuba Diver Trainer</span>
-          </div>
-          <h3 class="instr-name" data-i18n="instr_2_name">Guan Loo Oh</h3>
-          <div class="instr-cert-sub" data-i18n="instr_2_cert_sub">MSDT</div>
+        <div class="instr-visual">
+          <div class="instr-visual-init">GL</div>
         </div>
-        <div class="instr-card-body">
+        <div class="instr-body">
+          <div>
+            <div class="instr-padi-badge">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span data-i18n="instr_2_cert">Master Scuba Diver Trainer</span>
+            </div>
+            <h3 class="instr-name" data-i18n="instr_2_name">Guan Loo Oh</h3>
+            <div class="instr-cert-sub" data-i18n="instr_2_cert_sub">MSDT</div>
+          </div>
           <div class="instr-meta">
             <div class="instr-meta-item">
               <span class="instr-meta-label" data-i18n="instr_label_padi">PADI No.</span>
               <span class="instr-meta-value">375990</span>
             </div>
             <div class="instr-meta-item">
-              <span class="instr-meta-label" data-i18n="instr_label_since">Certified Since</span>
+              <span class="instr-meta-label" data-i18n="instr_label_since">Since</span>
               <span class="instr-meta-value">Jul 2019</span>
             </div>
           </div>
