@@ -567,8 +567,8 @@
     },
     {
       keywords: ['rate', 'rates', 'price', 'pricing', 'cost', 'fee', 'how much', 'budget'],
-      answer: 'Room rates vary by type and season — all include breakfast for two. We also have dive+stay packages. Contact us for the latest rates:\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao',
-      answerZh: '房价因房型和季节而异，所有房型均含双人早餐。我们还提供潜水套餐。\n📞 +63 977 837 2272',
+      answer: 'Room rates vary by type and season. Breakfast is available as an optional add-on. We also have dive+stay packages. Contact us for the latest rates:\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao',
+      answerZh: '房价因房型和季节而异，早餐为可选附加项目。我们还提供潜水套餐。\n📞 +63 977 837 2272',
       cta: [
         { label: 'See Room Options', labelZh: '查看房间选项', url: 'rooms.html', icon: '🛏️', primary: true },
         { label: 'Book & Check Rates', labelZh: '预订并查询价格', url: '/#booking', icon: '📅' }
@@ -576,8 +576,8 @@
     },
     {
       keywords: ['room', 'rooms', 'accommodation', 'suite', 'deluxe', 'standard', 'type', 'types', 'sea view', 'seaview'],
-      answer: 'We offer sea-view rooms and suites with views of Balayan Bay:\n\n🛏️ Standard Double/Twin\n🌊 Deluxe Sea View\n✨ Suite with Sea View\n🍳 Breakfast for two included\n❄️ A/C, hot shower, free WiFi',
-      answerZh: '我们提供可欣赏巴拉扬湾美景的海景客房和套房：\n\n🛏️ 标准双人间/双床间\n🌊 豪华海景客房\n✨ 海景套房\n🍳 含双人早餐\n❄️ 空调、热水淋浴、免费WiFi',
+      answer: 'We offer sea-view rooms and suites with views of Balayan Bay:\n\n🛏️ Standard Double/Twin\n🌊 Deluxe Sea View\n✨ Suite with Sea View\n🍳 Breakfast available (optional add-on)\n❄️ A/C, hot shower, free WiFi\n🚭 All rooms non-smoking',
+      answerZh: '我们提供可欣赏巴拉扬湾美景的海景客房和套房：\n\n🛏️ 标准双人间/双床间\n🌊 豪华海景客房\n✨ 海景套房\n🍳 早餐（可选附加）\n❄️ 空调、热水淋浴、免费WiFi\n🚭 全部客房禁烟',
       cta: [
         { label: 'Explore All Rooms', labelZh: '浏览所有客房', url: 'rooms.html', icon: '🛏️', primary: true },
         { label: 'Book Now', labelZh: '立即预订', url: '/#booking', icon: '📅' }
@@ -585,8 +585,8 @@
     },
     {
       keywords: ['breakfast', 'meal', 'food', 'include', 'included', 'dining', 'eat'],
-      answer: 'Yes! Breakfast for two guests is included in all room rates at Casa Escondida Anilao. 🍽️\n\nOur restaurant also serves lunch and dinner featuring Filipino and international cuisine. Don\'t miss our famous island BBQ experience where we grill fresh seafood on a nearby island!',
-      answerZh: '是的！卡萨埃斯孔迪达阿尼劳所有房型均含双人早餐。🍽️\n\n我们的餐厅全天供应菲律宾及国际美食的午餐和晚餐。别忘了体验我们著名的岛屿烧烤——在附近小岛上享用新鲜烤海鲜！'
+      answer: 'Breakfast is available as an optional add-on at Casa Escondida Anilao — it is not included in the base room rate. 🍽️\n\nOur restaurant also serves lunch and dinner featuring Filipino and international cuisine. Don\'t miss our famous island BBQ experience where we grill fresh seafood on a nearby island!',
+      answerZh: '卡萨埃斯孔迪达阿尼劳提供早餐，但早餐为可选附加项目，不含在基本房价内。🍽️\n\n我们的餐厅全天供应菲律宾及国际美食的午餐和晚餐。别忘了体验我们著名的岛屿烧烤——在附近小岛上享用新鲜烤海鲜！'
     },
     {
       keywords: ['padi', 'dive', 'diving', 'course', 'courses', 'certification', 'certify', 'learn', 'divemaster', 'open water', 'advanced', 'rescue', 'scuba'],
@@ -658,8 +658,8 @@
     },
     {
       keywords: ['restaurant', 'bar', 'drinks', 'snack', 'coffee', 'beverage'],
-      answer: 'Our on-site restaurant serves delicious Filipino and international dishes throughout the day. 🍽️\n\n☕ Breakfast (included in room rate)\n🍜 Lunch & dinner available\n🍹 Refreshments and beverages\n🏝️ Island BBQ — a signature Casa Escondida experience with fresh grilled seafood!\n\nAsk us about the island BBQ when you book your stay!',
-      answerZh: '我们的餐厅全天供应美味菲律宾和国际美食。🍽️\n\n☕ 早餐（含在房价内）\n🍜 午餐与晚餐\n🍹 饮料与小食\n🏝️ 岛屿烧烤——卡萨埃斯孔迪达的招牌体验，提供新鲜烤海鲜！\n\n预订时可咨询岛屿烧烤详情。'
+      answer: 'Our on-site restaurant serves delicious Filipino and international dishes throughout the day. 🍽️\n\n☕ Breakfast (optional add-on)\n🍜 Lunch & dinner available\n🍹 Refreshments and beverages\n🏝️ Island BBQ — a signature Casa Escondida experience with fresh grilled seafood!\n\nAsk us about the island BBQ when you book your stay!',
+      answerZh: '我们的餐厅全天供应美味菲律宾和国际美食。🍽️\n\n☕ 早餐（可选附加）\n🍜 午餐与晚餐\n🍹 饮料与小食\n🏝️ 岛屿烧烤——卡萨埃斯孔迪达的招牌体验，提供新鲜烤海鲜！\n\n预订时可咨询岛屿烧烤详情。'
     },
     {
       keywords: ['bbq', 'barbecue', 'island bbq', 'island', 'picnic'],

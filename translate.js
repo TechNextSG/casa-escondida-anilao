@@ -70,7 +70,7 @@
       suite_desc:         'Our most premium room — wide ocean views, enhanced amenities, and extra space to unwind.',
       book_room:          'Book Room',
       view_room:          'View Room',
-      incl_breakfast:     'Includes Breakfast',
+      incl_breakfast:     'Breakfast Available',
 
       /* Dive */
       dive_title:         'World-Class Diving',
@@ -305,10 +305,6 @@
       platform_score_fb:    '5.0 / 5',
       platform_label_fb:    'Facebook\nRecommended',
       platform_count_fb:    'See all reviews',
-      platform_stars_bdc:   '★★★★★',
-      platform_score_bdc:   '8.6 / 10',
-      platform_label_bdc:   'Booking.com\nFabulous',
-      platform_count_bdc:   'See all reviews',
 
       /* ── ABOUT extra ── */
       about_p_short:      'Casa Escondida — "The Hidden House" — is an intimate resort & PADI dive center in Anilao, Batangas. World-class macro diving meets genuine Filipino warmth.',
@@ -474,7 +470,6 @@
       soc_aria_fb:        'Facebook',
       soc_aria_ig:        'Instagram',
       soc_aria_ta:        'TripAdvisor',
-      soc_aria_bdc:       'Booking.com',
 
       /* ── ROOMS.HTML footer variant keys ── */
       foot_h_explore:     'Explore',
@@ -1009,7 +1004,7 @@
       suite_desc:         '我们最尊贵的房型——宽阔无垠的海景、高端配置，以及充裕的休闲空间。',
       book_room:          '预订客房',
       view_room:          '查看客房',
-      incl_breakfast:     '含早餐',
+      incl_breakfast:     '早餐（可选）',
 
       /* Dive */
       dive_title:         '世界级潜水胜地',
@@ -1244,10 +1239,6 @@
       platform_score_fb:    '5.0 / 5',
       platform_label_fb:    'Facebook\n推荐',
       platform_count_fb:    '查看全部评价',
-      platform_stars_bdc:   '★★★★★',
-      platform_score_bdc:   '8.6 / 10',
-      platform_label_bdc:   'Booking.com\n极好',
-      platform_count_bdc:   '查看全部评价',
 
       /* ── ABOUT extra ── */
       about_p_short:      '卡萨埃斯孔迪达——"隐秘之家"——是位于菲律宾八打雁省阿尼劳的精品度假村兼PADI潜水中心，世界级微距潜水与真挚的菲律宾热情在此交汇。',
@@ -1413,7 +1404,6 @@
       soc_aria_fb:        'Facebook',
       soc_aria_ig:        'Instagram',
       soc_aria_ta:        'TripAdvisor',
-      soc_aria_bdc:       'Booking.com',
 
       /* ── ROOMS.HTML footer variant keys ── */
       foot_h_explore:     '探索',
