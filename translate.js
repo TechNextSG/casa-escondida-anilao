@@ -138,7 +138,7 @@
       hero_sub_new:       'Where the Ocean Becomes Home',
       our_story:          'Our Story',
       about_title:        'A Hidden <em>Paradise</em><br>in Batangas',
-      about_p1:           'We are a boutique PADI 5-Star Dive Center and ocean-front resort nestled in the heart of Anilao — the birthplace of Philippine diving and one of the world\'s top macro-diving destinations.',
+      about_p1:           'We are a boutique PADI 5 Star IDC Resort nestled in the heart of Anilao — the birthplace of Philippine diving and one of the world\'s top macro-diving destinations.',
       about_p2:           'Whether you\'re here to earn your Open Water certification, chase nudibranch on a night dive, or simply unwind by the sea, Casa Escondida is your perfect base.',
       services_eyebrow:   'Amenities & Services',
       everything_you_need: 'Everything You <em>Need</em>',
@@ -185,7 +185,7 @@
       rm_card_desc_3:     'Directly overlooking the pool and ocean beyond, each private suite comes with 2 queen-size beds OR 1 king-size and 1 queen-size bed, double sink vanities, and a jacuzzi in the private bath.',
 
       /* ── NEW DIVE PAGE KEYS ── */
-      dive_page_eyebrow:  'PADI 5-Star Dive Center',
+      dive_page_eyebrow:  'PADI 5 Star IDC Resort',
       dive_h1:            'Scuba Diving <em>Anilao, Batangas</em>',
       dive_page_sub:      'One of the world\'s top macro-diving destinations — fun dives, PADI courses, and night dives right from our private jetty.',
       dive_stat_1:        'Dive Sites',
@@ -277,7 +277,7 @@
       bf_read_more:       'Read Article →',
 
       /* ── MARQUEE ── */
-      marquee_1:          'PADI Certified Dive Center',
+      marquee_1:          'PADI 5 Star IDC Resort',
       marquee_2:          '30+ Dive Sites',
       marquee_3:          "Travelers' Choice Award",
       marquee_4:          'Breakfast Available',
@@ -356,7 +356,7 @@
       rm_feat_3_4:        '2 Queens or 1 King',
       rm_view_btn:        'View Room',
       rm_book_btn:        'Book Now',
-      rooms_note:         'Breakfast available · Non-smoking rooms available · Contact us for dive & stay packages →',
+      rooms_note:         'Breakfast available · 100% Non-smoking · Contact us for dive & stay packages →',
 
       /* ── GALLERY (homepage) ── */
       gallery_lead:       'Every corner of Casa Escondida tells a story — from the brilliant corals beneath the surface to the warm glow of a beach BBQ at sunset. This is Anilao at its finest.',
@@ -777,8 +777,8 @@
       dive_cond4_title:      'Gear & Equipment',
       dive_cond4_1:          'All rented gear must be returned in proper working condition.',
       dive_cond4_2:          'Any damage caused by the guest will be charged accordingly.',
-      dive_course7_level:    'Refresher',
-      dive_course7_name:     'PADI Refresher Course',
+      dive_course7_level:    'ReActivate',
+      dive_course7_name:     'PADI ReActivate',
       dive_course7_desc:     'Returning to diving after a break? Rebuild your confidence with a theory review and guided pool practice before heading back into open water.',
       dive_course7_detail1:  'Open Water cert. required',
       dive_course7_detail2:  'Half-day',
@@ -1077,7 +1077,7 @@
       hero_sub_new:       '海洋即是家园',
       our_story:          '我们的故事',
       about_title:        '八打雁省的隐秘天堂',
-      about_p1:           '我们是一家精品PADI五星潜水中心兼海滨度假村，坐落于阿尼劳的心脏地带——菲律宾潜水的发源地，也是全球顶级微距潜水目的地之一。',
+      about_p1:           '我们是一家精品PADI五星IDC度假村，坐落于阿尼劳的心脏地带——菲律宾潜水的发源地，也是全球顶级微距潜水目的地之一。',
       about_p2:           '无论您是来取得开放水域潜水认证、在夜潜中追寻裸鳃类生物，还是只想在海边静静放松，卡萨埃斯孔迪达都是您的完美大本营。',
       services_eyebrow:   '设施与服务',
       everything_you_need: '一应俱全',
@@ -1124,7 +1124,7 @@
       rm_card_desc_3:     '套房直接俯瞰泳池与海洋，配备2张大床或1张特大床加1张大床，双台盆及私人浴缸（按摩浴缸）。',
 
       /* ── NEW DIVE PAGE KEYS ── */
-      dive_page_eyebrow:  'PADI五星潜水中心',
+      dive_page_eyebrow:  'PADI五星IDC度假村',
       dive_h1:            '水肌潜水 <em>阿尼劳，八打雁省</em>',
       dive_page_sub:      '世界顶级微距潜水胜地之一——趣味潜水、PADI课程，以及从我们私人码头出发的夜间潜水。',
       dive_stat_1:        '潜点数量',
@@ -1216,7 +1216,7 @@
       bf_read_more:       '阅读文章 →',
 
       /* ── MARQUEE ── */
-      marquee_1:          '认证PADI潜水中心',
+      marquee_1:          'PADI五星IDC度假村',
       marquee_2:          '30+潜点',
       marquee_3:          '旅行者之选奖',
       marquee_4:          '可选早餐服务',
@@ -1295,7 +1295,7 @@
       rm_feat_3_4:        '2张大床或1张特大床',
       rm_view_btn:        '查看客房',
       rm_book_btn:        '立即预订',
-      rooms_note:         '可选早餐 · 提供禁烟客房 · 联系我们了解潜水住宿套餐 →',
+      rooms_note:         '可选早餐 · 全部客房禁烟 · 联系我们了解潜水住宿套餐 →',
 
       /* ── GALLERY (homepage) ── */
       gallery_lead:       '卡萨埃斯孔迪达的每个角落都诉说着故事——从水下绚烂的珊瑚，到夕阳下海滩烧烤的温暖光芒。这就是阿尼劳最美好的样子。',
@@ -1716,8 +1716,8 @@
       dive_cond4_title:      '设备及装备',
       dive_cond4_1:          '所有租借设备须以正常工作状态归还。',
       dive_cond4_2:          '因宾客造成的任何损坏将按情况收费。',
-      dive_course7_level:    '回顾课程',
-      dive_course7_name:     'PADI复习课程',
+      dive_course7_level:    'ReActivate',
+      dive_course7_name:     'PADI ReActivate',
       dive_course7_desc:     '暂别潜水一段时间后重返水下？通过理论复习和引导式泳池练习重建信心，再次出发探索开放水域。',
       dive_course7_detail1:  '需持有开放水域认证',
       dive_course7_detail2:  '半天',
@@ -2006,7 +2006,7 @@
       '.r-sub':             { en:'24 rooms — 8 with direct ocean views — designed for the diving traveler. Fall asleep to the sound of waves, wake up ready to dive.',
                               zh:'共24间客房，其中8间可直接欣赏海景，专为潜水旅行者设计——伴着海浪声入眠，醒来即可投身大海。' },
       /* Dive hero */
-      '.dv-eyebrow':        { en:'PADI 5-Star Dive Center · Anilao, Batangas', zh:'PADI五星潜水中心 · 阿尼劳，八打雁' },
+      '.dv-eyebrow':        { en:'PADI 5 Star IDC Resort · Anilao, Batangas', zh:'PADI五星IDC度假村 · 阿尼劳，八打雁' },
       '.dv-sub':            { en:'One of the world\'s top macro-diving destinations — fun dives, PADI courses, and night dives right from our private jetty.',
                               zh:'世界顶级微距潜水胜地之一——趣味潜水、PADI课程，以及从我们私人码头出发的夜间潜水。' },
       /* Gallery hero */
