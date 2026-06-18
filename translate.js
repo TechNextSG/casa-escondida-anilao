@@ -157,7 +157,7 @@
       svc_desc_6:         'Tailored packages for dive groups, corporate retreats, and private celebrations.',
       rooms_eyebrow:      'Accommodation',
       rooms_heading:      'Rest &amp; <em>Recharge</em>',
-      rooms_lead:         'Choose from 24 ocean-side rooms designed for the diving traveler — fall asleep to the sound of waves, wake up ready to dive.',
+      rooms_lead:         'Choose from 24 rooms — 8 with direct ocean views — designed for the diving traveler. Fall asleep to the sound of waves, wake up ready to dive.',
       rm_name_1:          'Standard <em>Room</em>',
       rm_name_2:          'Deluxe <em>Double or Twin</em> Room',
       rm_name_3:          'Suite <em>with Sea View</em>',
@@ -1095,7 +1095,7 @@
       svc_desc_6:         '专为潜水团队、企业度假及私人庆典量身定制的专属套餐。',
       rooms_eyebrow:      '住宿',
       rooms_heading:      '休息与充电',
-      rooms_lead:         '从24间海景客房中选择您的专属空间，专为潜水旅行者设计——伴着海浪声入眠，醒来即可投身大海。',
+      rooms_lead:         '从24间客房中选择，其中8间可直接欣赏海景，专为潜水旅行者设计——伴着海浪声入眠，醒来即可投身大海。',
       rm_name_1:          '标准客房',
       rm_name_2:          '豪华双人间或双床间',
       rm_name_3:          '海景套房',
@@ -2001,8 +2001,8 @@
                             { en:'Explore Diving', zh:'探索潜水' },
       /* Rooms hero */
       '.r-eyebrow':         { en:'Accommodation', zh:'住宿' },
-      '.r-sub':             { en:'24 ocean-side rooms designed for the diving traveler — fall asleep to the sound of waves, wake up ready to dive.',
-                              zh:'24间海景客房专为潜水旅行者设计——伴着海浪声入眠，醒来即可投身大海。' },
+      '.r-sub':             { en:'24 rooms — 8 with direct ocean views — designed for the diving traveler. Fall asleep to the sound of waves, wake up ready to dive.',
+                              zh:'共24间客房，其中8间可直接欣赏海景，专为潜水旅行者设计——伴着海浪声入眠，醒来即可投身大海。' },
       /* Dive hero */
       '.dv-eyebrow':        { en:'PADI 5-Star Dive Center · Anilao, Batangas', zh:'PADI五星潜水中心 · 阿尼劳，八打雁' },
       '.dv-sub':            { en:'One of the world\'s top macro-diving destinations — fun dives, PADI courses, and night dives right from our private jetty.',
