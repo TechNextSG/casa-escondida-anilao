@@ -3,7 +3,7 @@
 
   /* ============================================================
      CASA ESCONDIDA ANILAO - Resort Chatbot
-     PADI 5-Star Dive Resort | Mabini, Batangas, Philippines
+     PADI 5 Star IDC Resort | Mabini, Batangas, Philippines
   ============================================================ */
 
   // ── Styles ──────────────────────────────────────────────────
@@ -590,7 +590,7 @@
     },
     {
       keywords: ['padi', 'dive', 'diving', 'course', 'courses', 'certification', 'certify', 'learn', 'divemaster', 'open water', 'advanced', 'rescue', 'scuba'],
-      answer: 'As a PADI 5-Star Dive Center, we offer:\n\n🎓 Open Water Diver · Advanced OW\n🎓 Rescue Diver · Divemaster\n🎓 Specialty courses\n🤿 Fun dives for certified divers\n\nAnilao is the birthplace of Philippine scuba diving!',
+      answer: 'As a PADI 5 Star IDC Resort, we offer:\n\n🎓 Open Water Diver · Advanced OW\n🎓 Rescue Diver · Divemaster\n🎓 Specialty courses\n🤿 Fun dives for certified divers\n\nAnilao is the birthplace of Philippine scuba diving!',
       answerZh: '作为PADI五星潜水中心，我们提供：\n\n🎓 开放水域潜水员（初级）\n🎓 进阶开放水域潜水员\n🎓 救援潜水员 · 潜水长\n🎓 各类专长课程\n🤿 持证潜水员休闲潜水\n\n阿尼劳是菲律宾水肺潜水的发源地！',
       cta: [
         { label: 'Explore Dive Center', labelZh: '探索潜水中心', url: 'dive.html', icon: '🤿', primary: true },
