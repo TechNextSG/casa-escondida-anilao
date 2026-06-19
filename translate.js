@@ -190,7 +190,7 @@
       dive_page_sub:      'One of the world\'s top macro-diving destinations — fun dives, PADI courses, and night dives right from our private jetty.',
       dive_stat_1:        'Dive Sites',
       dive_stat_2:        'Depth Range',
-      dive_stat_3:        'Certified',
+      dive_stat_3:        'Certifications',
       dive_stat_4:        'Star Rating',
 
       /* ── NEW GALLERY PAGE KEYS ── */
@@ -284,7 +284,7 @@
       marquee_5:          'Island BBQ Experience',
       marquee_6:          '24 Rooms & Suites',
       marquee_7:          'Anilao, Batangas Philippines',
-      marquee_8:          '#1 Special Inn in Mabini',
+      marquee_8:          'TripAdvisor Recommended',
       marquee_9:          'Ocean-Front Resort',
       marquee_10:         'Private Jetty Access',
       marquee_11:         'Night Diving Available',
@@ -1123,7 +1123,7 @@
       dive_page_sub:      '世界顶级微距潜水胜地之一——趣味潜水、PADI课程，以及从我们私人码头出发的夜间潜水。',
       dive_stat_1:        '潜点数量',
       dive_stat_2:        '从业年限',
-      dive_stat_3:        '满意宾客',
+      dive_stat_3:        'PADI认证',
       dive_stat_4:        '星级评分',
 
       /* ── NEW GALLERY PAGE KEYS ── */
@@ -1217,7 +1217,7 @@
       marquee_5:          '岛屿烧烤体验',
       marquee_6:          '24间客房及套房',
       marquee_7:          '菲律宾八打雁省阿尼劳',
-      marquee_8:          '马比尼排名第一精品民宿',
+      marquee_8:          'TripAdvisor推荐',
       marquee_9:          '海滨度假村',
       marquee_10:         '私人码头通道',
       marquee_11:         '夜潜服务',
