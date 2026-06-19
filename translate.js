@@ -180,9 +180,9 @@
       rm_card_name_1:     'Standard <em>Room</em>',
       rm_card_name_2:     'Deluxe <em>Room</em>',
       rm_card_name_3:     'Suite <em>Room</em>',
-      rm_card_desc_1:     'A stone\'s throw away from our dining area; each standard room comes with your choice of 1 king-size bed OR 2 single beds.',
+      rm_card_desc_1:     'A stone\'s throw away from our dining area; each standard room comes with your choice of 1 king-size bed or 2 single beds.',
       rm_card_desc_2:     'Our deluxe rooms offer true comfort and an ocean view from the balcony, 2 queen-size beds and a generous shower area.',
-      rm_card_desc_3:     'Directly overlooking the pool and ocean beyond, each private suite comes with 2 queen-size beds OR 1 king-size and 1 queen-size bed, double sink vanities, and a jacuzzi in the private bath.',
+      rm_card_desc_3:     'Directly overlooking the pool and ocean beyond, each private suite comes with 2 queen beds or 1 king bed, double sink vanities, and a jacuzzi in the private bath.',
 
       /* ── NEW DIVE PAGE KEYS ── */
       dive_page_eyebrow:  'PADI 5 Star IDC Resort',
@@ -557,7 +557,7 @@
       rm_meta_beds_2double:'2 Double Beds',
       rm_meta_beds_standard:'King or 2 Singles',
       rm_meta_beds_deluxe:'2 Queen-size Beds',
-      rm_meta_beds_suite:  '2 Queens or King + Queen',
+      rm_meta_beds_suite:  '2 Queens or 1 King',
       rm_feats_label:     'Room Features',
       rm_feat_aircon:     'Air Conditioning',
       rm_feat_bathroom:   'Private Bathroom',
@@ -1115,7 +1115,7 @@
       rm_card_name_3:     '<em>套房</em>',
       rm_card_desc_1:     '餐厅近在咫尺，每间标准客房提供1张大床或2张单人床，由您自由选择。',
       rm_card_desc_2:     '豪华客房设有私人阳台，可俯瞰海景，配备2张大床及宽敞的淋浴区。',
-      rm_card_desc_3:     '套房直接俯瞰泳池与海洋，配备2张大床或1张特大床加1张大床，双台盆及私人浴缸（按摩浴缸）。',
+      rm_card_desc_3:     '套房直接俯瞰泳池与海洋，配备2张大床或1张特大床，双台盆及私人浴缸（按摩浴缸）。',
 
       /* ── NEW DIVE PAGE KEYS ── */
       dive_page_eyebrow:  'PADI五星IDC度假村',
@@ -1490,7 +1490,7 @@
       rm_meta_beds_2double:'2张大床',
       rm_meta_beds_standard:'大床或2张单人床',
       rm_meta_beds_deluxe:'2张大床',
-      rm_meta_beds_suite:  '2张大床或大床+大床',
+      rm_meta_beds_suite:  '2张大床或1张特大床',
       rm_feats_label:     '客房设施',
       rm_feat_aircon:     '空调',
       rm_feat_bathroom:   '独立卫浴',
