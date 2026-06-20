@@ -7,7 +7,7 @@
    - Videos      → Bypass (too large, browser handles streaming)
    ============================================================ */
 
-const CACHE_VERSION = 'ce-v22';
+const CACHE_VERSION = 'ce-v23';
 
 /* Assets to cache on install (images / logos only) */
 const PRECACHE_IMAGES = [
