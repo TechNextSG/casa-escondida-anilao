@@ -1740,28 +1740,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* ── MOBILE: hide orb-layer (matches all other pages) ── */
     .orb-layer { display: none !important; }
 
-    /* ── MOBILE: hero rays & bubbles — enabled with enhanced movement ── */
-    .hero-bubbles { display: block !important; }
-    .hb           { display: block !important; }
-    .h-ray        { display: block !important; }
-
-    /* Bubbles — zigzag rise with higher opacity */
-    @keyframes hbRiseMobile {
-      0%   { transform: translateY(110vh) translateX(0px);    opacity: 0; }
-      8%   { opacity: 0.95; }
-      25%  { transform: translateY(80vh)  translateX(28px); }
-      50%  { transform: translateY(50vh)  translateX(-22px); }
-      75%  { transform: translateY(22vh)  translateX(20px); }
-      92%  { opacity: 0.6; }
-      100% { transform: translateY(-10vh) translateX(-10px);  opacity: 0; }
-    }
-    .hb {
-      animation-name: hbRiseMobile !important;
-      animation-duration: 6s !important;
-      opacity: 0.9 !important;
-    }
-
-    .h-ray { animation: none !important; }
+    /* ── MOBILE PERF: hero bubbles & light rays stay DISABLED on mobile.
+       Animating 15 bubbles + 6 blurred light rays on top of the autoplay
+       video forces continuous GPU re-compositing and causes hero lag on
+       phones. This matches the site-wide mobile-perf rule in style.css.
+       Do NOT re-enable them here. ── */
 
     /* ── MOBILE PERF: nav backdrop-filter is the most expensive GPU effect ── */
     #nav.scrolled {
@@ -2718,7 +2701,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   /* ── Bubbles ── */
   const bc = document.getElementById('heroBubbles');
   const isMobile = window.innerWidth <= 768;
-  const bubbleCount = isMobile ? 15 : 30;
+  /* Mobile: 0 (bubbles hidden by CSS for perf). Desktop: lighter count. */
+  const bubbleCount = isMobile ? 0 : 16;
   for(let i=0;i<bubbleCount;i++){
     const b=document.createElement('div'); b.className='hb';
     const s=Math.random()*18+3;
