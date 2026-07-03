@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <title>Scuba Diving Anilao Batangas | PADI Dive Center Batangas</title>
   <link rel="canonical" href="https://www.casaescondida-anilao.com/dive.html" />
   <link rel="icon" type="image/svg+xml" href="images/Logo/favicon.svg" />
-  <link rel="apple-touch-icon" href="images/Logo/logo-color.png" />
+  <link rel="apple-touch-icon" href="images/Logo/logo-color.webp" />
   <link rel="manifest" href="manifest.json" />
   <meta name="description" content="Scuba diving in Anilao, Batangas at a PADI 5 Star IDC Resort. Fun dives, PADI courses, night dives, nitrox & gear rental. Book your Anilao dive package." />
   <meta name="keywords" content="PADI dive center Anilao, scuba diving courses Batangas, dive certification Philippines, guided dives Anilao, night diving Batangas, Open Water course Philippines, macro diving Anilao, PADI Rescue Diver Philippines" />
@@ -785,7 +785,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="eco-modal-inner">
     <div class="eco-modal-photo">
       <button class="eco-modal-close" id="ecoModalClose" aria-label="Close detail">&times;</button>
-      <img decoding="async" loading="eager" id="ecoModalImg" src="" alt="" />
+      <img decoding="async" loading="lazy" id="ecoModalImg" src="" alt="" />
     </div>
     <div class="eco-modal-body">
       <div class="eco-modal-cat" id="ecoModalCat"></div>
@@ -1102,7 +1102,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ═══ CTA BAND ═══ -->
 <section class="dive-cta">
   <div class="dive-cta-bg">
-    <img src="images/Nature Folder/sea fan coral.webp" alt="Anilao sea fan coral reef" loading="eager" decoding="async" width="800" height="533" />
+    <img src="images/Nature Folder/sea fan coral.webp" alt="Anilao sea fan coral reef" loading="lazy" decoding="async" width="800" height="533" />
   </div>
   <div class="dive-cta-overlay"></div>
   <div class="dive-cta-content rvl">
@@ -1236,7 +1236,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         name:'Halgerda Batangas',
         sci:'Halgerda batangas',
         cat:'nudibranch', catLabel:'Nudibranch',
-        img:'images/Nature Folder/Halgerda batangas.jpg',
+        img:'images/Nature Folder/Halgerda batangas.webp',
         rarity:'Signature Species', rarityClass:'rare',
         size:'3 – 5 cm',
         depth:'10 – 30 m',
@@ -1249,7 +1249,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         name:'Peacock Mantis Shrimp',
         sci:'Odontodactylus scyllarus',
         cat:'macro', catLabel:'Macro Critter',
-        img:'images/Nature Folder/Peacock Mantis Shrimp.jpg',
+        img:'images/Nature Folder/Peacock Mantis Shrimp.webp',
         rarity:'Common', rarityClass:'common',
         size:'10 – 18 cm',
         depth:'5 – 40 m',
@@ -1387,7 +1387,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if(!list.length){ grid.innerHTML = '<div class="eco-empty">No species in this category yet.</div>'; return; }
       grid.innerHTML = list.map(s => `
         <button type="button" class="eco-card" data-id="${s.id}" aria-label="View details for ${s.name}">
-          <img decoding="async" src="${s.img}" alt="${s.name} — ${s.sci}" loading="eager" />
+          <img decoding="async" src="${s.img}" alt="${s.name} — ${s.sci}" loading="lazy" />
           <div class="eco-card-cat">${s.catLabel}</div>
           <div class="eco-card-rarity ${s.rarityClass}">${s.rarity}</div>
           <div class="eco-card-label">

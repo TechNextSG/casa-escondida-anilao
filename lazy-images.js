@@ -5,6 +5,26 @@
 (function () {
   'use strict';
 
+  /* ── Safety net: if a .webp fails to load, fall back to the original raster
+     (.jpg / .jpeg / .png). All originals are retained on the server, so a
+     broken image can never appear even if a .webp is missing. Capture phase
+     because the img "error" event does not bubble. ─────────────────────────── */
+  document.addEventListener('error', function (e) {
+    var img = e.target;
+    if (!img || img.tagName !== 'IMG') return;
+    var src = img.getAttribute('src') || '';
+    if (!/\.webp(\?|#|$)/i.test(src)) return;
+    var tried = img.getAttribute('data-ce-fallback') || '';
+    var exts = ['.jpg', '.jpeg', '.png'];
+    for (var i = 0; i < exts.length; i++) {
+      if (tried.indexOf(exts[i]) === -1) {
+        img.setAttribute('data-ce-fallback', tried + exts[i]);
+        img.src = src.replace(/\.webp(\?|#|$)/i, exts[i] + '$1');
+        return;
+      }
+    }
+  }, true);
+
   /* Helper: mark an image as visible */
   function reveal(img) {
     if (img.dataset.ceLazyDone === '1') return;
