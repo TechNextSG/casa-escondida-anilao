@@ -278,6 +278,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .instr-bio{font-size:.82rem;color:var(--text2);line-height:1.68;margin:0;}
     .instr-cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;background:var(--accent);color:#fff !important;padding:.72rem 1.4rem;border-radius:2px;font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;text-decoration:none !important;font-weight:500;transition:background .3s,transform .2s,box-shadow .3s;align-self:flex-start;margin-top:.3rem;}
     .instr-cta-btn:hover{background:var(--accent-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(77,200,232,.3);}
+    /* ── INSTRUCTOR CARDS v2 (4-up, clickable → modal) ── */
+    .instr-grid{grid-template-columns:repeat(4,1fr);gap:1.25rem;}
+    @media(max-width:1080px){.instr-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.instr-grid{grid-template-columns:1fr;}}
+    .instr-card{cursor:pointer;border-radius:10px;}
+    .instr-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+    .instr-visual{height:auto;aspect-ratio:4/5;}
+    .instr-visual-init{font-size:2.4rem;}
+    .instr-expand{position:absolute;top:.7rem;right:.7rem;width:30px;height:30px;border-radius:50%;background:rgba(4,8,15,.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.15rem;line-height:1;opacity:0;transform:scale(.8);transition:opacity .25s,transform .25s;z-index:2;pointer-events:none;}
+    .instr-card:hover .instr-expand,.instr-card:focus-visible .instr-expand{opacity:1;transform:scale(1);}
+    .instr-body{padding:1.25rem 1.3rem 1.4rem;gap:.55rem;}
+    .instr-name{font-size:1.12rem;}
+    .instr-card .instr-bio{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+    .instr-view{margin-top:auto;padding-top:.4rem;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:600;display:inline-flex;align-items:center;gap:.4rem;}
+    .instr-card:hover .instr-view{gap:.6rem;}
+
+    /* ── INSTRUCTOR MODAL ── */
+    .im-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:5vw;background:rgba(2,6,14,.8);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;}
+    .im-overlay.open{opacity:1;visibility:visible;}
+    .im-card{position:relative;width:min(900px,96vw);background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transform:translateY(18px) scale(.97);transition:transform .35s cubic-bezier(.2,.8,.25,1);box-shadow:0 40px 90px rgba(0,0,0,.55);}
+    .im-overlay.open .im-card{transform:none;}
+    .im-body{display:grid;grid-template-columns:310px 1fr;max-height:88vh;overflow:auto;}
+    @media(max-width:700px){.im-body{grid-template-columns:1fr;}}
+    .im-media{position:relative;min-height:360px;background:linear-gradient(160deg,#04080f 0%,#0b1e3d 100%);}
+    @media(max-width:700px){.im-media{min-height:260px;}}
+    .im-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+    .im-media .instr-visual-init{font-size:4rem;}
+    .im-info{padding:2rem 2rem 2.2rem;}
+    .im-close{position:absolute;top:1rem;right:1rem;width:38px;height:38px;border-radius:50%;border:none;background:rgba(4,8,15,.55);backdrop-filter:blur(4px);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;}
+    .im-close:hover{background:rgba(4,8,15,.85);transform:scale(1.08);}
+    .im-name{font-family:'Playfair Display',serif;font-weight:400;font-size:1.6rem;color:var(--text);margin:.7rem 0 .15rem;line-height:1.2;}
+    .im-role{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:1.1rem;}
+    .im-facts{display:grid;grid-template-columns:1fr 1fr;gap:.95rem 1.4rem;padding:1.05rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:1.2rem;}
+    .im-facts>div{display:flex;flex-direction:column;gap:.22rem;}
+    .im-fact-label{font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);}
+    .im-fact-value{font-size:.86rem;color:var(--accent);font-weight:500;}
+    .im-bio p{font-size:.85rem;color:var(--text2);line-height:1.72;margin:0 0 .8rem;}
+    .im-gal-label{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin:1.1rem 0 .65rem;}
+    .im-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;}
+    @media(max-width:420px){.im-gallery{grid-template-columns:repeat(3,1fr);}}
+    .im-gal-item{aspect-ratio:1;border:none;border-radius:6px;overflow:hidden;cursor:pointer;background:var(--bg2);padding:0;position:relative;transition:transform .2s,box-shadow .2s;}
+    .im-gal-item:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.3);}
+    .im-gal-item img{width:100%;height:100%;object-fit:cover;display:block;}
+    .im-gal-ph{display:flex;align-items:center;justify-content:center;font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);border:1px dashed var(--border);cursor:default;}
+    .im-gal-ph:hover{transform:none;box-shadow:none;}
+    .im-book{margin-top:1.4rem;align-self:flex-start;}
+
+    /* ── LIGHTBOX ── */
+    .im-lb{position:fixed;inset:0;z-index:1100;display:flex;align-items:center;justify-content:center;padding:5vw;background:rgba(0,0,0,.92);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;}
+    .im-lb.open{opacity:1;visibility:visible;}
+    .im-lb img{max-width:92vw;max-height:88vh;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6);}
+    .im-lb-close{position:absolute;top:1.4rem;right:1.6rem;width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.14);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+    .im-lb-close:hover{background:rgba(255,255,255,.28);}
 
     /* ── CONDITIONS ── */
     .cond-section{background:var(--bg2);border-top:1px solid var(--border);}
@@ -888,17 +941,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="instr-grid">
 
       <!-- Instructor 1: Armando / Dong -->
-      <div class="instr-card rvl rvl-d1">
-        <div class="instr-visual"><img src="images/instructors/armando-vergara.webp" alt="Armando G. Vergara" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;" /></div>
+      <div class="instr-card rvl rvl-d1" role="button" tabindex="0" aria-label="View Armando G. Vergara's profile">
+        <div class="instr-visual">
+          <img src="images/instructors/armando-vergara.webp" alt="Armando G. Vergara" loading="lazy" decoding="async" style="object-position:center 20%;" />
+          <span class="instr-expand" aria-hidden="true">+</span>
+        </div>
         <div class="instr-body">
-          <div>
-            <div class="instr-padi-badge">
-              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <span data-i18n="instr_1_cert">PADI Master Instructor</span>
-            </div>
-            <h3 class="instr-name" data-i18n="instr_1_name">Armando G. Vergara</h3>
-            <div class="instr-cert-sub" data-i18n="instr_1_cert_sub">Master Instructor</div>
+          <div class="instr-padi-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span data-i18n="instr_1_cert">PADI Master Instructor</span>
           </div>
+          <h3 class="instr-name" data-i18n="instr_1_name">Armando G. Vergara</h3>
+          <div class="instr-cert-sub" data-i18n="instr_1_cert_sub">Master Instructor</div>
           <div class="instr-meta">
             <div class="instr-meta-item">
               <span class="instr-meta-label" data-i18n="instr_label_since">Instructor Since</span>
@@ -906,22 +960,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
           <p class="instr-bio" data-i18n="instr_1_bio">A PADI Master Instructor with years of experience exploring Anilao's diverse reefs. Dong brings calm authority and a genuine passion for the ocean to every course and guided dive.</p>
-          <a href="location.html#contact" class="instr-cta-btn" data-i18n="instr_cta">Book a Session →</a>
+          <span class="instr-view">View profile <span aria-hidden="true">→</span></span>
         </div>
+        <template class="instr-detail">
+          <div class="im-facts">
+            <div><span class="im-fact-label">Instructor Since</span><span class="im-fact-value">2003</span></div>
+            <div><span class="im-fact-label">Certification</span><span class="im-fact-value">PADI Master Instructor</span></div>
+            <div><span class="im-fact-label">Based At</span><span class="im-fact-value">Casa Escondida, Anilao</span></div>
+            <div><span class="im-fact-label">Guides</span><span class="im-fact-value">Courses &amp; fun dives</span></div>
+          </div>
+          <div class="im-bio">
+            <p>A PADI Master Instructor with years of experience exploring Anilao's diverse reefs, Dong brings calm authority and a genuine passion for the ocean to every course and guided dive.</p>
+          </div>
+          <div class="im-gal-label">Gallery</div>
+          <div class="im-gallery">
+            <button class="im-gal-item" type="button"><img src="images/instructors/armando-vergara.webp" alt="Armando G. Vergara" loading="lazy"></button>
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+          </div>
+        </template>
       </div>
 
       <!-- Instructor 2: Andrew -->
-      <div class="instr-card rvl rvl-d2">
-        <div class="instr-visual"><div class="instr-visual-init">AO</div></div>
+      <div class="instr-card rvl rvl-d2" role="button" tabindex="0" aria-label="View Andrew Oh's profile">
+        <div class="instr-visual">
+          <div class="instr-visual-init">AO</div>
+          <span class="instr-expand" aria-hidden="true">+</span>
+        </div>
         <div class="instr-body">
-          <div>
-            <div class="instr-padi-badge">
-              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <span data-i18n="instr_2_cert">Master Scuba Diver Trainer</span>
-            </div>
-            <h3 class="instr-name" data-i18n="instr_2_name">Andrew Oh</h3>
-            <div class="instr-cert-sub" data-i18n="instr_2_cert_sub">MSDT</div>
+          <div class="instr-padi-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span data-i18n="instr_2_cert">Master Scuba Diver Trainer</span>
           </div>
+          <h3 class="instr-name" data-i18n="instr_2_name">Andrew Oh</h3>
+          <div class="instr-cert-sub" data-i18n="instr_2_cert_sub">MSDT</div>
           <div class="instr-meta">
             <div class="instr-meta-item">
               <span class="instr-meta-label" data-i18n="instr_label_since">Instructor Since</span>
@@ -929,11 +1002,129 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
           <p class="instr-bio" data-i18n="instr_2_bio">Holding the prestigious Master Scuba Diver Trainer designation, Andrew combines precision technique with patient teaching — the ideal guide for divers serious about mastering their craft.</p>
-          <a href="location.html#contact" class="instr-cta-btn" data-i18n="instr_cta">Book a Session →</a>
+          <span class="instr-view">View profile <span aria-hidden="true">→</span></span>
         </div>
+        <template class="instr-detail">
+          <div class="im-facts">
+            <div><span class="im-fact-label">Instructor Since</span><span class="im-fact-value">Jul 2019</span></div>
+            <div><span class="im-fact-label">Certification</span><span class="im-fact-value">Master Scuba Diver Trainer</span></div>
+            <div><span class="im-fact-label">Based At</span><span class="im-fact-value">Casa Escondida, Anilao</span></div>
+            <div><span class="im-fact-label">Guides</span><span class="im-fact-value">Courses &amp; fun dives</span></div>
+          </div>
+          <div class="im-bio">
+            <p>Holding the prestigious Master Scuba Diver Trainer designation, Andrew combines precision technique with patient teaching — the ideal guide for divers serious about mastering their craft.</p>
+          </div>
+          <div class="im-gal-label">Gallery</div>
+          <div class="im-gallery">
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+          </div>
+        </template>
+      </div>
+
+      <!-- Instructor 3: PLACEHOLDER — replace name, role, photo, bio & gallery with a real instructor -->
+      <div class="instr-card rvl rvl-d3" role="button" tabindex="0" aria-label="View instructor profile">
+        <div class="instr-visual">
+          <div class="instr-visual-init">CE</div>
+          <span class="instr-expand" aria-hidden="true">+</span>
+        </div>
+        <div class="instr-body">
+          <div class="instr-padi-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>PADI Instructor</span>
+          </div>
+          <h3 class="instr-name">Instructor Name</h3>
+          <div class="instr-cert-sub">Open Water Scuba Instructor</div>
+          <div class="instr-meta">
+            <div class="instr-meta-item">
+              <span class="instr-meta-label">Instructor Since</span>
+              <span class="instr-meta-value">—</span>
+            </div>
+          </div>
+          <p class="instr-bio">Add this instructor's short introduction here — their teaching style, favourite Anilao dive sites, and what divers can expect.</p>
+          <span class="instr-view">View profile <span aria-hidden="true">→</span></span>
+        </div>
+        <template class="instr-detail">
+          <div class="im-facts">
+            <div><span class="im-fact-label">Instructor Since</span><span class="im-fact-value">—</span></div>
+            <div><span class="im-fact-label">Certification</span><span class="im-fact-value">PADI Instructor</span></div>
+            <div><span class="im-fact-label">Based At</span><span class="im-fact-value">Casa Escondida, Anilao</span></div>
+            <div><span class="im-fact-label">Guides</span><span class="im-fact-value">Courses &amp; fun dives</span></div>
+          </div>
+          <div class="im-bio">
+            <p>Add this instructor's full bio here.</p>
+          </div>
+          <div class="im-gal-label">Gallery</div>
+          <div class="im-gallery">
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+          </div>
+        </template>
+      </div>
+
+      <!-- Instructor 4: PLACEHOLDER — replace name, role, photo, bio & gallery with a real instructor -->
+      <div class="instr-card rvl rvl-d4" role="button" tabindex="0" aria-label="View instructor profile">
+        <div class="instr-visual">
+          <div class="instr-visual-init">CE</div>
+          <span class="instr-expand" aria-hidden="true">+</span>
+        </div>
+        <div class="instr-body">
+          <div class="instr-padi-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>PADI Divemaster</span>
+          </div>
+          <h3 class="instr-name">Instructor Name</h3>
+          <div class="instr-cert-sub">Divemaster</div>
+          <div class="instr-meta">
+            <div class="instr-meta-item">
+              <span class="instr-meta-label">Instructor Since</span>
+              <span class="instr-meta-value">—</span>
+            </div>
+          </div>
+          <p class="instr-bio">Add this guide's short introduction here — their experience, specialties, and the dives they love to lead in Anilao.</p>
+          <span class="instr-view">View profile <span aria-hidden="true">→</span></span>
+        </div>
+        <template class="instr-detail">
+          <div class="im-facts">
+            <div><span class="im-fact-label">Diving Since</span><span class="im-fact-value">—</span></div>
+            <div><span class="im-fact-label">Certification</span><span class="im-fact-value">PADI Divemaster</span></div>
+            <div><span class="im-fact-label">Based At</span><span class="im-fact-value">Casa Escondida, Anilao</span></div>
+            <div><span class="im-fact-label">Guides</span><span class="im-fact-value">Fun dives &amp; snorkelling</span></div>
+          </div>
+          <div class="im-bio">
+            <p>Add this guide's full bio here.</p>
+          </div>
+          <div class="im-gal-label">Gallery</div>
+          <div class="im-gallery">
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+            <button class="im-gal-item im-gal-ph" type="button" disabled>Photo</button>
+          </div>
+        </template>
       </div>
 
     </div>
+  </div>
+
+  <!-- Instructor profile modal -->
+  <div class="im-overlay" id="imOverlay" aria-hidden="true">
+    <div class="im-card" role="dialog" aria-modal="true" aria-label="Instructor profile">
+      <button class="im-close" id="imClose" aria-label="Close profile">&times;</button>
+      <div class="im-body" id="imBody"></div>
+    </div>
+  </div>
+  <!-- Gallery lightbox -->
+  <div class="im-lb" id="imLightbox" aria-hidden="true">
+    <button class="im-lb-close" id="imLbClose" aria-label="Close image">&times;</button>
+    <img id="imLbImg" alt="" />
+  </div>
+
+  <div style="display:none">
   </div>
 </section>
 
@@ -1457,6 +1648,68 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   });
   window.addEventListener('pageshow',function(){bar.classList.add('done');});
+})();
+</script>
+
+<script>
+/* ── Instructor profile modal + gallery lightbox ── */
+(function(){
+  const overlay = document.getElementById('imOverlay');
+  const body    = document.getElementById('imBody');
+  const closeBtn= document.getElementById('imClose');
+  const lb      = document.getElementById('imLightbox');
+  const lbImg   = document.getElementById('imLbImg');
+  const lbClose = document.getElementById('imLbClose');
+  if(!overlay || !body) return;
+
+  function openLb(src, alt){ lbImg.src = src; lbImg.alt = alt || ''; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); }
+  function closeLb(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.removeAttribute('src'); }
+
+  function openModal(card){
+    const visual  = card.querySelector('.instr-visual');
+    const media   = visual ? visual.cloneNode(true) : null;
+    if(media){ const ex = media.querySelector('.instr-expand'); if(ex) ex.remove(); }
+    const name    = (card.querySelector('.instr-name')||{}).textContent || '';
+    const badge   = (card.querySelector('.instr-padi-badge')||{}).outerHTML || '';
+    const role    = (card.querySelector('.instr-cert-sub')||{}).textContent || '';
+    const tpl     = card.querySelector('.instr-detail');
+    const detail  = tpl ? tpl.innerHTML : '';
+
+    body.innerHTML =
+      '<div class="im-media">' + (media ? media.innerHTML : '') + '</div>' +
+      '<div class="im-info">' + badge +
+        '<h3 class="im-name">' + name + '</h3>' +
+        '<div class="im-role">' + role + '</div>' +
+        detail +
+        '<a href="location.html#contact" class="instr-cta-btn im-book">Book a Session &rarr;</a>' +
+      '</div>';
+
+    body.querySelectorAll('.im-gal-item').forEach(function(btn){
+      const img = btn.querySelector('img');
+      if(img){ btn.disabled = false; btn.addEventListener('click', function(){ openLb(img.src, img.alt); }); }
+    });
+
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function closeModal(){ overlay.classList.remove('open'); overlay.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; }
+
+  document.querySelectorAll('.instr-card').forEach(function(card){
+    card.addEventListener('click', function(e){ if(e.target.closest('a')) return; openModal(card); });
+    card.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openModal(card); } });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', function(e){ if(e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Escape') return;
+    if(lb.classList.contains('open')) closeLb();
+    else if(overlay.classList.contains('open')) closeModal();
+  });
 })();
 </script>
 
