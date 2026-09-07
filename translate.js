@@ -795,6 +795,14 @@
       instr_label_padi:   'PADI No.',
       instr_label_since:  'Certified Since',
       instr_cta:          'Book a Session →',
+      team_eyebrow:       'The Dive Shop',
+      team_title:         'Meet the Dive Team',
+      team_sub:           'The crew behind every safe, unforgettable dive at Casa Escondida — from our dive centre manager to our divemasters and support team.',
+      team_role_manager:  'Dive Center Manager',
+      team_role_supervisor:'Supervisor / Divemaster',
+      team_role_dm:       'Divemaster',
+      team_role_rescue:   'Rescue Diver',
+      team_role_maint:    'Maintenance / Divemaster',
 
       /* ── LOCATION PAGE ── */
       location_stat_1:    'From Manila',
@@ -1726,6 +1734,14 @@
       instr_label_padi:   'PADI 编号',
       instr_label_since:  '认证时间',
       instr_cta:          '预约课程 →',
+      team_eyebrow:       '潜水中心团队',
+      team_title:         '认识我们的潜水团队',
+      team_sub:           'Casa Escondida 每一次安全、难忘潜水的幕后团队——从潜水中心经理到潜导及后勤人员。',
+      team_role_manager:  '潜水中心经理',
+      team_role_supervisor:'主管 / 潜导',
+      team_role_dm:       '潜导',
+      team_role_rescue:   '救援潜水员',
+      team_role_maint:    '维护 / 潜导',
 
       /* ── LOCATION PAGE ── */
       location_stat_1:    '距马尼拉',
