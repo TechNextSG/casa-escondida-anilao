@@ -278,9 +278,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .instr-bio{font-size:.82rem;color:var(--text2);line-height:1.68;margin:0;}
     .instr-cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;background:var(--accent);color:#fff !important;padding:.72rem 1.4rem;border-radius:2px;font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;text-decoration:none !important;font-weight:500;transition:background .3s,transform .2s,box-shadow .3s;align-self:flex-start;margin-top:.3rem;}
     .instr-cta-btn:hover{background:var(--accent-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(77,200,232,.3);}
-    /* ── INSTRUCTOR CARDS v2 (2-up masters, clickable → modal) ── */
-    .instr-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:720px;margin-left:auto;margin-right:auto;}
-    @media(max-width:560px){.instr-grid{grid-template-columns:1fr;max-width:400px;}}
+    /* ── INSTRUCTOR CARDS v2 (4-up combined team, clickable → modal) ── */
+    .instr-grid{grid-template-columns:repeat(4,1fr);gap:1.25rem;}
+    @media(max-width:1080px){.instr-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.instr-grid{grid-template-columns:1fr;}}
     .instr-card{cursor:pointer;border-radius:10px;}
     .instr-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
     .instr-visual{height:auto;aspect-ratio:4/5;}
@@ -292,16 +293,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .instr-card .instr-bio{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
     .instr-view{margin-top:auto;padding-top:.4rem;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:600;display:inline-flex;align-items:center;gap:.4rem;}
     .instr-card:hover .instr-view{gap:.6rem;}
-
-    /* ── DIVE TEAM (org-chart roster: 3-up × 2 rows) ── */
-    .team-block{margin-top:4rem;}
-    .team-block-head{text-align:center;margin-bottom:2rem;}
-    .team-block-eyebrow{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;}
-    .team-block-title{font-family:'Playfair Display',serif;font-weight:400;color:var(--text);font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.2;margin:.5rem 0 0;}
-    .team-block-sub{font-size:.85rem;color:var(--text2);line-height:1.6;max-width:560px;margin:.7rem auto 0;}
-    .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
-    @media(max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:560px){.team-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto;}}
 
     /* ── INSTRUCTOR MODAL ── */
     .im-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:5vw;background:rgba(2,6,14,.8);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;}
@@ -1032,17 +1023,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </template>
       </div>
 
-    </div>
 
-    <div class="team-block rvl">
-      <div class="team-block-head">
-        <div class="team-block-eyebrow" data-i18n="team_eyebrow">The Dive Shop</div>
-        <h3 class="team-block-title" data-i18n="team_title">Meet the Dive Team</h3>
-        <p class="team-block-sub" data-i18n="team_sub">The crew behind every safe, unforgettable dive at Casa Escondida — from our dive centre manager to our divemasters and support team.</p>
-      </div>
-      <div class="team-grid">
-
-        <!-- Jayson B. Isla -->
+      <!-- Jayson B. Isla -->
         <div class="instr-card rvl" role="button" tabindex="0" aria-label="View Jayson B. Isla's profile">
           <div class="instr-visual">
             <div class="instr-visual-init">JI</div>
@@ -1276,7 +1258,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </template>
         </div>
 
-      </div>
     </div>
   </div>
 
