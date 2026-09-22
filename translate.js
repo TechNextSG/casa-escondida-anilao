@@ -801,7 +801,7 @@
       team_role_manager:  'Dive Center Manager',
       team_role_supervisor:'Dive Center Supervisor',
       team_role_dm:       'Divemaster',
-      team_role_rescue:   'Rescue Diver',
+      team_role_rescue:   'Divemaster Trainee',
       team_role_maint:    'Maintenance / Divemaster',
 
       /* ── LOCATION PAGE ── */
@@ -1740,7 +1740,7 @@
       team_role_manager:  '潜水中心经理',
       team_role_supervisor:'潜水中心主管',
       team_role_dm:       '潜导',
-      team_role_rescue:   '救援潜水员',
+      team_role_rescue:   '潜导实习生',
       team_role_maint:    '维护 / 潜导',
 
       /* ── LOCATION PAGE ── */
