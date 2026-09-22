@@ -107,7 +107,7 @@ html:hover::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.12);}
     [data-theme="day"] #nav.scrolled .nav-logo-day{display:block;}
     [data-theme="day"] #nav.scrolled .nav-logo-night{display:none;}
     [data-theme="night"] .nav-logo-day{display:none;}
-    .nav-links{display:flex;gap:2.2rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%);}
+    .nav-links{display:flex;gap:1.9rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%);}
     /* White links over dark hero; theme colour when scrolled */
     .nav-links a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:400;transition:color .35s;position:relative;padding-bottom:2px;}
     #nav.scrolled .nav-links a{color:var(--text);}
