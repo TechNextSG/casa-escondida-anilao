@@ -377,16 +377,34 @@ html:hover::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.12);}
     }
     @media(max-width:768px){ .nav-hamburger { display: flex !important; } }
 
+    /* Collapse the desktop nav to the hamburger BEFORE the centered links
+       overlap the right-side controls (they collide roughly below ~1225px). */
+    @media(max-width:1240px){
+      .nav-links{ display:none !important; }
+      .nav-right .btn-book, .nav-right .btn-nav-cta{ display:none !important; }
+      .nav-hamburger{ display:flex !important; }
+    }
+
     /* ── Tap target helpers ── */
     @media(max-width:768px) {
       /* Safe-area padding for notch phones */
       #nav {
-        padding-left: max(1.5rem, env(safe-area-inset-left));
-        padding-right: max(1.5rem, env(safe-area-inset-right));
+        padding-left: max(1.1rem, env(safe-area-inset-left));
+        padding-right: max(1.1rem, env(safe-area-inset-right));
       }
+      .nav-right{ gap:.5rem; }
       body {
         padding-bottom: env(safe-area-inset-bottom);
       }
+    }
+
+    /* Compact header controls on small phones so the logo, language,
+       theme toggle and hamburger never crowd or overflow. */
+    @media(max-width:430px){
+      #themeLabel{ display:none; }
+      .theme-toggle{ padding:.3rem .5rem; gap:0; }
+      .lang-btn{ padding:.3rem .6rem; }
+      .nav-right{ gap:.4rem; }
     }
 
     /* ── 320px safety net ── */
