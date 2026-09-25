@@ -631,6 +631,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       .cf-step-tab{flex-direction:row;justify-content:center;}
     }
   </style>
+  <style>
+    /* ══════ BOOK NOW — MOBILE (after the form styles so it wins the cascade) ══════ */
+    @media(max-width:768px){
+      .bn-steps{padding:2.5rem 0 .5rem;}                       /* cards align with the form/side cards */
+      .cf-input,.cf-select,.cf-textarea{font-size:16px;}         /* iOS Safari won't zoom on focus */
+      .cf-lbl,.cf-room-lbl{font-size:.72rem;}
+      .cf-hint,.cf-note,.cf-section-sub{font-size:.76rem;}
+      .cf-step-tab{font-size:.64rem;min-height:3.5rem;}          /* equal tab heights even when a label wraps */
+      .cf-pill{padding:.8rem .9rem;}                             /* ≥44px tap target */
+      .loc-stat-l{font-size:.68rem;}
+    }
+    @media(max-width:480px){
+      .contact-form{padding:1.6rem 1.1rem;}                      /* more room for inputs */
+      [data-casa-inquiry-topic] .cf-pill{flex:1 1 100%;}         /* stack the 3 role pills evenly */
+      .cf-room-row{grid-template-columns:1fr;gap:.6rem;}         /* room type / pax stack, no truncation */
+      .cf-room-remove{justify-self:end;}
+    }
+  </style>
 
   <!-- BOOKING REQUEST -->
   <section class="contact" id="inquiry">
