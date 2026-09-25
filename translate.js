@@ -36,6 +36,13 @@
       nav_dive:     'Dive',     nav_gallery:  'Gallery',
       nav_location: 'Location', nav_blog:     'Blog',
       nav_book:     'Book Now',
+      /* Booking CTAs (EN) */
+      bk_cta_btn: 'Book Now — Get a Quotation →',
+      bk_cta_hint: 'Rooms, meals, transfers and diving — one quick form.',
+      bk_cta_eyebrow: 'Reservations & Quotations',
+      bk_cta_title: 'Ready to <em>book?</em>',
+      bk_cta_sub: 'Our booking page collects everything we need — dates, rooms, meals, transfers and diving — and we reply by email with a quotation.',
+      bk_cta_agents: 'Travel agents and dive instructors welcome — upload your credentials on the same page.',
       /* Book Now page (EN) */
       bn_eyebrow: 'Reservations',
       bn_h1: 'Book <em>Now</em>',
@@ -1074,6 +1081,13 @@
       nav_dive:     '潜水',     nav_gallery:  '图库',
       nav_location: '位置',     nav_blog:     '博客',
       nav_book:     '立即预订',
+      /* Booking CTAs (ZH) */
+      bk_cta_btn: '立即预订——获取报价 →',
+      bk_cta_hint: '客房、餐饮、接送与潜水——一张表单搞定。',
+      bk_cta_eyebrow: '预订与报价',
+      bk_cta_title: '准备<em>预订？</em>',
+      bk_cta_sub: '预订页面会收集我们所需的全部信息——日期、客房、餐饮、接送与潜水——我们将通过电子邮件回复报价。',
+      bk_cta_agents: '欢迎旅行社与潜水教练——可在同一页面上传资质文件。',
       /* Book Now page (ZH) */
       bn_eyebrow: '预订',
       bn_h1: '立即<em>预订</em>',

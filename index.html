@@ -1150,6 +1150,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition:background 0.3s, transform 0.2s;
     }
     .btn-book:hover { background:#f0d17a; transform:translateY(-2px); }
+    a.btn-book { display:inline-block; text-decoration:none; text-align:center; }
+    .booking-cta { display:flex; flex-direction:column; align-items:center; gap:.9rem; margin-top:1.6rem; }
+    .b-cta-hint { font-size:.8rem; color:rgba(255,255,255,0.72); margin:0; }
     .b-note { margin-top:1.5rem; font-size:0.75rem; color:rgba(255,255,255,0.62); }
     .b-note a { color:var(--accent); text-decoration:none; }
     /* Labelled form fields */
@@ -2027,7 +2030,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span id="themeLabel" style="font-size:0.68rem;letter-spacing:0.1em">Night</span>
       </button>
 
-      <a href="#booking" class="btn-nav-cta" id="navBookNow" data-i18n="nav_book">Book Now</a>
+      <a href="/book-now.html" class="btn-nav-cta" id="navBookNow" data-i18n="nav_book">Book Now</a>
       <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
@@ -2047,7 +2050,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="location.html" class="mob-link" data-i18n="nav_location">Location</a>
     <div class="mobile-nav-divider"></div>
     <a href="blog.html" class="mob-link" data-i18n="nav_blog">Blog</a>
-    <a href="#booking" class="mob-link mobile-nav-cta" id="mobBookNow" data-i18n="nav_book">Book Now</a>
+    <a href="/book-now.html" class="mob-link mobile-nav-cta" id="mobBookNow" data-i18n="nav_book">Book Now</a>
   </nav>
 
   <!-- ═══ HERO ═══ -->
@@ -2076,7 +2079,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </h1>
       <p class="hero-sub" data-i18n="hero_sub">Where the Ocean Becomes Home</p>
       <div class="hero-btns">
-        <a href="#booking" class="btn-hero-primary" id="openBookingModal" data-i18n="hero_cta_primary">Reserve Your Stay</a>
+        <a href="/book-now.html" class="btn-hero-primary" id="openBookingModal" data-i18n="hero_cta_primary">Reserve Your Stay</a>
         <a href="#dive" class="btn-hero-ghost" data-i18n="hero_cta_secondary">Explore Diving</a>
       </div>
     </div>
@@ -2210,7 +2213,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="stars-label" data-i18n="about_stars_label">4.5 · 81 TripAdvisor Reviews</span>
           </div>
           <div style="margin-top:2rem">
-            <button class="btn-book-sm open-booking-modal" data-i18n="about_cta">Book Your Stay</button>
+            <a href="/book-now.html" class="btn-book-sm" data-i18n="about_cta">Book Your Stay</a>
           </div>
         </div>
       </div>
@@ -2268,7 +2271,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="rm-btns">
               <a href="rooms.html" class="rm-btn" data-i18n="rm_view_btn">View Room</a>
-              <button class="btn-book-sm open-booking-modal" data-i18n="rm_book_btn">Book Now</button>
+              <a href="/book-now.html" class="btn-book-sm" data-i18n="rm_book_btn">Book Now</a>
             </div>
           </div>
         </div>
@@ -2288,7 +2291,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="rm-btns">
               <a href="rooms.html" class="rm-btn" data-i18n="rm_view_btn">View Room</a>
-              <button class="btn-book-sm open-booking-modal" data-i18n="rm_book_btn">Book Now</button>
+              <a href="/book-now.html" class="btn-book-sm" data-i18n="rm_book_btn">Book Now</a>
             </div>
           </div>
         </div>
@@ -2309,13 +2312,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="rm-btns">
               <a href="rooms.html" class="rm-btn" style="background:var(--gold);color:#1a1204;border-color:var(--gold)" data-i18n="rm_view_btn">View Room</a>
-              <button class="btn-book-sm gold-cta open-booking-modal" data-i18n="rm_book_btn">Book Now</button>
+              <a href="/book-now.html" class="btn-book-sm gold-cta" data-i18n="rm_book_btn">Book Now</a>
             </div>
           </div>
         </div>
       </div>
 
-      <p class="rv" style="text-align:center;margin-top:2rem;font-size:0.78rem;color:var(--text-muted)" data-i18n="rooms_note">Breakfast available · All rooms non-smoking · <a href="#booking" style="color:var(--accent);text-decoration:none">Contact us for dive &amp; stay packages →</a></p>
+      <p class="rv" style="text-align:center;margin-top:2rem;font-size:0.78rem;color:var(--text-muted)" data-i18n="rooms_note">Breakfast available · All rooms non-smoking · <a href="/book-now.html" style="color:var(--accent);text-decoration:none">Contact us for dive &amp; stay packages →</a></p>
     </div>
   </section>
 
@@ -2390,7 +2393,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Gallery CTAs — below images -->
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem;">
         <a href="https://www.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer" class="btn-hero-ghost btn-outline-sm" data-i18n="gallery_fb_btn">More on Facebook →</a>
-        <button class="btn-book-sm open-booking-modal" data-i18n="gallery_cta">Book Your Stay</button>
+        <a href="/book-now.html" class="btn-book-sm" data-i18n="gallery_cta">Book Your Stay</a>
       </div>
     </div>
   </section>
@@ -2450,7 +2453,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="text-align:center;margin-top:2.5rem" class="rv">
         <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="btn-hero-ghost btn-outline-sm" data-i18n="reviews_read_all">Read All 81 Reviews on TripAdvisor →</a>
         <div style="margin-top:1.2rem">
-          <button class="btn-book-sm open-booking-modal" data-i18n="reviews_cta">Join Our Guests — Book Now</button>
+          <a href="/book-now.html" class="btn-book-sm" data-i18n="reviews_cta">Join Our Guests — Book Now</a>
         </div>
       </div>
     </div>
@@ -2542,43 +2545,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="eyebrow booking-eyebrow rv" data-i18n="booking_eyebrow">Reservations</div>
       <h2 class="sec-title booking-title rv" data-i18n="booking_title">Ready to <em>Dive In?</em></h2>
       <p class="sec-lead rv" data-i18n="booking_sub">Book your stay at Casa Escondida Anilao — ocean-front rooms, world-class diving, and warm Filipino hospitality. Enquire about dive &amp; stay packages.</p>
-      <div id="bookingError" class="b-error" role="alert" aria-live="assertive" hidden></div>
-      <form class="booking-form rv" id="bookingForm" novalidate aria-label="Check availability form">
-        <div class="b-field">
-          <label for="b-name" class="b-label" data-i18n="form_label_name">Your Name</label>
-          <input type="text" id="b-name" name="name" class="b-input" placeholder="Your Name" data-i18n-placeholder="form_placeholder_name" required aria-required="true" autocomplete="name" />
-        </div>
-        <div class="b-field">
-          <label for="b-email" class="b-label" data-i18n="form_label_email">Email Address</label>
-          <input type="email" id="b-email" name="email" class="b-input" placeholder="Email Address" data-i18n-placeholder="form_placeholder_email" required aria-required="true" autocomplete="email" />
-        </div>
-        <div class="b-field">
-          <label for="b-date" class="b-label" data-i18n="form_label_checkin">Check-in Date</label>
-          <input type="date" id="b-date" name="checkin" class="b-input" required aria-required="true" />
-        </div>
-        <div class="b-field">
-          <label for="b-guests" class="b-label" data-i18n="form_label_guests">Guests</label>
-          <select id="b-guests" name="guests" class="b-input" aria-label="Number of guests">
-            <option value="1">1 Guest</option>
-            <option value="2" selected>2 Guests</option>
-            <option value="3">3 Guests</option>
-            <option value="4">4 Guests</option>
-            <option value="5+">5+ Guests</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-book" data-i18n="form_submit_btn">Check Availability</button>
-      </form>
-      <div id="bookingSuccess" class="b-success" role="alert" aria-live="polite" hidden>
-        <div class="b-check">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>
-        </div>
-        <div class="b-success-title" data-i18n="form_success_title">Reservation Received!</div>
-        <div class="b-success-sub" data-i18n="form_success_sub">Thank you — we'll get back to you within 24 hours to confirm your stay.</div>
-        <div class="b-success-pulse">
-          <div class="b-pulse-dot"></div>
-          <div class="b-pulse-dot"></div>
-          <div class="b-pulse-dot"></div>
-        </div>
+      <div class="booking-cta rv">
+        <a href="/book-now.html" class="btn-book" data-i18n="bk_cta_btn">Book Now — Get a Quotation →</a>
+        <p class="b-cta-hint" data-i18n="bk_cta_hint">Rooms, meals, transfers and diving — one quick form.</p>
       </div>
       <p class="b-note rv" data-i18n="booking_note">Or reach us on <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer">Facebook</a> · <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer">TripAdvisor</a></p>
     </div>
@@ -2644,7 +2613,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li><a href="location.html" data-i18n="foot_link_4_2">Batangas Province 4202</a></li>
               <li><a href="location.html" data-i18n="foot_link_4_3">Philippines</a></li>
               <li><a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z/data=!4m9!3m8!1s0x33bda9eff584af69:0x81011df456c41163!5m2!4m1!1i2!8m2!3d13.7277078!4d120.884266!16s%2Fg%2F11cmh4mhpm?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" data-i18n="foot_link_4_4">Google Maps &rarr;</a></li>
-              <li><a href="/#booking" data-i18n="foot_link_4_5">Book Now</a></li>
+              <li><a href="/book-now.html" data-i18n="foot_link_4_5">Book Now</a></li>
             </ul>
           </div>
         </div>
@@ -2825,64 +2794,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }
 
-  /* ── Booking form — date min + submit handler ── */
-  const bookingForm    = document.getElementById('bookingForm');
-  const bookingSuccess = document.getElementById('bookingSuccess');
-  const bookingError   = document.getElementById('bookingError');
-  const dateInput      = document.getElementById('b-date');
-  if(dateInput){
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.setAttribute('min', today);
-    /* Auto-open the native calendar picker on click */
-    dateInput.addEventListener('click', function(){
-      try { this.showPicker(); } catch(e) {}
-    });
-  }
-  if(bookingForm){
-    bookingForm.addEventListener('submit', e=>{
-      e.preventDefault();
-      /* Clear previous invalid states */
-      bookingForm.querySelectorAll('.b-input').forEach(i=>i.classList.remove('invalid'));
-      if(bookingError) bookingError.hidden = true;
-
-      /* Validate each field */
-      const invalids = [...bookingForm.querySelectorAll('[required]')].filter(i=>!i.validity.valid);
-      if(invalids.length){
-        invalids.forEach(i=>i.classList.add('invalid'));
-        if(bookingError){
-          bookingError.textContent = invalids.length === 1
-            ? 'Please fill in the highlighted field.'
-            : `Please fill in all ${invalids.length} required fields.`;
-          bookingError.hidden = false;
-          bookingError.style.animation = 'none';
-          bookingError.offsetHeight;
-          bookingError.style.animation = '';
-        }
-        invalids[0].focus();
-        return;
-      }
-
-      bookingForm.style.opacity='0.4';
-      bookingForm.style.pointerEvents='none';
-      setTimeout(()=>{
-        bookingForm.hidden=true;
-        /* Reset animation so it replays every time */
-        bookingSuccess.hidden=false;
-        bookingSuccess.style.animation='none';
-        bookingSuccess.offsetHeight;
-        bookingSuccess.style.animation='';
-        bookingSuccess.scrollIntoView({behavior:'smooth',block:'nearest'});
-        /* Auto-hide after 10 seconds and restore form */
-        setTimeout(()=>{
-          bookingSuccess.hidden=true;
-          bookingForm.reset();
-          bookingForm.style.opacity='';
-          bookingForm.style.pointerEvents='';
-          bookingForm.hidden=false;
-        }, 10000);
-      }, 600);
-    });
-  }
 
 
   /* ── Smooth scroll ── */
@@ -3127,215 +3038,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-<!-- ═══ BOOKING POPUP MODAL ═══ -->
-<div class="bk-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bkModalTitle" aria-hidden="true">
-  <div class="bk-modal">
-    <button class="bk-close" id="bookingModalClose" aria-label="Close booking form">
-      <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round">
-        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
-    </button>
-
-    <div class="bk-modal-header" id="bkModalHeader">
-      <div class="bk-eyebrow" data-i18n="modal_eyebrow">Reservations</div>
-      <h2 class="bk-title" id="bkModalTitle" data-i18n="modal_title">Book Your <em>Stay</em></h2>
-      <p class="bk-sub" data-i18n="modal_sub">Fill in your details and we'll confirm your reservation within 24 hours.</p>
-    </div>
-
-    <div class="bk-error" id="bkModalError"></div>
-
-    <form class="bk-form" id="bkModalForm" novalidate>
-      <div class="bk-row">
-        <div class="b-field">
-          <label for="bk-name" class="b-label" data-i18n="modal_label_name">Full Name</label>
-          <input type="text" id="bk-name" name="name" class="b-input" placeholder="Your full name" data-i18n-placeholder="modal_placeholder_name" required autocomplete="name" />
-        </div>
-        <div class="b-field">
-          <label for="bk-phone" class="b-label" data-i18n="modal_label_phone">Contact Number</label>
-          <input type="tel" id="bk-phone" name="phone" class="b-input" placeholder="+63 9XX XXX XXXX" data-i18n-placeholder="modal_placeholder_phone" required autocomplete="tel" />
-        </div>
-      </div>
-      <div class="b-field">
-        <label for="bk-email" class="b-label" data-i18n="modal_label_email">Email Address</label>
-        <input type="email" id="bk-email" name="email" class="b-input" placeholder="your@email.com" data-i18n-placeholder="modal_placeholder_email" required autocomplete="email" />
-      </div>
-      <div class="bk-row">
-        <div class="b-field">
-          <label for="bk-checkin" class="b-label" data-i18n="modal_label_checkin">Check-in Date</label>
-          <input type="date" id="bk-checkin" name="checkin" class="b-input" required />
-        </div>
-        <div class="b-field">
-          <label for="bk-guests" class="b-label" data-i18n="modal_label_guests">Number of Guests</label>
-          <select id="bk-guests" name="guests" class="b-input" aria-label="Number of guests">
-            <option value="1">1 Guest</option>
-            <option value="2" selected>2 Guests</option>
-            <option value="3">3 Guests</option>
-            <option value="4">4 Guests</option>
-            <option value="5+">5+ Guests</option>
-          </select>
-        </div>
-      </div>
-      <button type="submit" class="bk-btn" data-i18n="modal_submit_btn">Send Reservation Request</button>
-      <p class="bk-note" data-i18n="modal_note">Or message us on <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer">Facebook</a> · <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer">TripAdvisor</a></p>
-    </form>
-
-    <div class="bk-success" id="bkModalSuccess">
-      <div class="bk-check">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="4 12 9 17 20 6"/></svg>
-      </div>
-      <div class="bk-success-title" data-i18n="modal_success_title">Reservation Received!</div>
-      <p class="bk-success-sub" data-i18n="modal_success_sub">Thank you — we'll get back to you within 24 hours to confirm your stay at Casa Escondida.</p>
-      <button class="bk-close-btn" id="bkSuccessClose" data-i18n="modal_success_close">Close</button>
-    </div>
-  </div>
-</div>
-
-<script>
-/* ── Booking Popup Modal ── */
-(function(){
-  var overlay  = document.getElementById('bookingModal');
-  var form     = document.getElementById('bkModalForm');
-  var success  = document.getElementById('bkModalSuccess');
-  var errBox   = document.getElementById('bkModalError');
-  var header   = document.getElementById('bkModalHeader');
-  var dateInp  = document.getElementById('bk-checkin');
-
-  /* Set minimum check-in date to today */
-  if(dateInp){
-    dateInp.setAttribute('min', new Date().toISOString().split('T')[0]);
-    /* Auto-open the native calendar picker on click */
-    dateInp.addEventListener('click', function(){
-      try { this.showPicker(); } catch(e) {}
-    });
-  }
-
-  function openModal(){
-    overlay.classList.add('open');
-    overlay.setAttribute('aria-hidden','false');
-    document.body.style.overflow = 'hidden';
-    /* Focus first input after animation */
-    setTimeout(function(){ var f=form.querySelector('input'); if(f) f.focus(); }, 380);
-  }
-  function closeModal(){
-    overlay.classList.remove('open');
-    overlay.setAttribute('aria-hidden','true');
-    document.body.style.overflow = '';
-  }
-
-  /* Triggers: hero CTA, nav Book Now, mobile Book Now + all .open-booking-modal */
-  ['openBookingModal','navBookNow','mobBookNow'].forEach(function(id){
-    var el = document.getElementById(id);
-    if(!el) return;
-    el.addEventListener('click', function(e){
-      e.preventDefault();
-      openModal();
-    });
-  });
-  document.querySelectorAll('.open-booking-modal').forEach(function(el){
-    el.addEventListener('click', function(e){
-      e.preventDefault();
-      openModal();
-    });
-  });
-
-  /* X button → close modal */
-  var closeBtn = document.getElementById('bookingModalClose');
-  if(closeBtn) closeBtn.addEventListener('click', function(){
-    closeModal();
-    setTimeout(resetBookingModal, 350);
-  });
-
-  /* Backdrop click → close modal */
-  overlay.addEventListener('click', function(e){
-    if(e.target !== overlay) return;
-    closeModal();
-    setTimeout(resetBookingModal, 350);
-  });
-
-  /* Escape key → close modal */
-  document.addEventListener('keydown', function(e){
-    if(e.key !== 'Escape') return;
-    if(overlay.classList.contains('open')){
-      closeModal(); setTimeout(resetBookingModal, 350);
-    }
-  });
-
-  /* Success Close button */
-  var sucClose = document.getElementById('bkSuccessClose');
-  if(sucClose) sucClose.addEventListener('click', function(){
-    closeModal();
-    setTimeout(resetBookingModal, 350);
-  });
-
-  function resetBookingModal(){
-    success.classList.remove('show');
-    form.style.display = '';
-    form.reset();
-    if(header) header.style.display = '';
-    if(errBox) errBox.classList.remove('show');
-    var btn = form.querySelector('.bk-btn');
-    if(btn){ btn.textContent = 'Send Reservation Request'; btn.disabled = false; }
-  }
-
-  /* Form submit */
-  if(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-
-      /* Clear errors */
-      form.querySelectorAll('.b-input').forEach(function(i){ i.classList.remove('invalid'); });
-      if(errBox) errBox.classList.remove('show');
-
-      /* Validate required fields */
-      var invalids = [].slice.call(form.querySelectorAll('[required]')).filter(function(i){ return !i.validity.valid; });
-      if(invalids.length){
-        invalids.forEach(function(i){ i.classList.add('invalid'); });
-        if(errBox){
-          errBox.textContent = invalids.length === 1
-            ? 'Please fill in the highlighted field.'
-            : 'Please fill in all ' + invalids.length + ' required fields.';
-          errBox.classList.add('show');
-        }
-        invalids[0].focus();
-        return;
-      }
-
-      /* Collect values */
-      var guestName = document.getElementById('bk-name').value.trim();
-      var phone     = document.getElementById('bk-phone').value.trim();
-      var email     = document.getElementById('bk-email').value.trim();
-      var checkin   = document.getElementById('bk-checkin').value;
-      var guests    = document.getElementById('bk-guests').value;
-
-      /* Disable button while sending */
-      var btn = form.querySelector('.bk-btn');
-      if(btn){ btn.textContent = 'Sending…'; btn.disabled = true; }
-
-      /* ── Send email notification via Vercel proxy → Brevo ── */
-      fetch('https://tech-next-landing-page.vercel.app/api/casa-booking', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name:    guestName,
-          phone:   phone,
-          email:   email,
-          checkin: checkin,
-          guests:  guests
-        })
-      })
-      .catch(function(err){
-        console.warn('[Booking] Notification error:', err);
-      })
-      .finally(function(){
-        if(header) header.style.display = 'none';
-        form.style.display = 'none';
-        success.classList.add('show');
-        if(errBox) errBox.classList.remove('show');
-      });
-    });
-  }
-})();
-</script>
 
 </body>
 </html>
