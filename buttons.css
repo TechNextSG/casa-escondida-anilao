@@ -132,6 +132,8 @@ a.btn-nav-cta:active,nav a.btn-book:active,#nav a.btn-book:active{transform:tran
 .hero-ctas,.hero-btns,.cta-btns,.dive-cta-btns,.rm-btns,.booking-cta{align-items:center;}
 /* never let a flex row stretch a button to a taller sibling's margin box */
 a.btn-book-sm,a.btn-outline-sm,a.btn-hero-ghost.btn-outline-sm{align-self:center;}
+/* the homepage outline buttons carried their own margin-top, which sat them 12px lower than the filled sibling */
+a.btn-hero-ghost.btn-outline-sm{margin:0;}
 a.rm-btn-primary,a.rm-btn-ghost,a.rm-btn{flex:1 1 0;}
 button.cf-submit{width:100%;margin-top:1.4rem;}
 
