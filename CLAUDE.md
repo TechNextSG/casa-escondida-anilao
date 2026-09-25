@@ -43,7 +43,7 @@ Always use the tokens, never hard-coded colours, so both themes stay correct.
 
 ## Architecture
 
-**Pages (root):** `index.html`, `rooms.html`, `dive.html`, `gallery.html`, `location.html`, `blog.html`, plus `terms-of-service.html`, `privacy-policy.html`, `my-data.html`, `404.html` (intentional noindex redirect to `/`), `blog-post.html` (dormant template, noindex). Blog articles live in **`blog/`** (each a full standalone HTML page).
+**Pages (root):** `index.html`, `rooms.html`, `dive.html`, `gallery.html`, `location.html`, `book-now.html` (the site's single booking / quotation page — every "Book Now" link, the homepage CTA and the Location CTA point here; it holds the only inquiry form, wired to the Odoo estimate-api), `blog.html`, plus `terms-of-service.html`, `privacy-policy.html`, `my-data.html`, `404.html` (intentional noindex redirect to `/`), `blog-post.html` (dormant template, noindex). Blog articles live in **`blog/`** (each a full standalone HTML page).
 
 **Shared CSS:** `style.css` (main), `perf-overrides.css`, `footer-v3.css`, `article.css` (blog posts). Page-specific styles are inline `<style>` in each page's `<head>`.
 
