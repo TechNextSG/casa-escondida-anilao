@@ -1485,9 +1485,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      Honeypot = company_website (silent ok, lead_id null).
 
      TO GO LIVE (one external gate, then a one-line swap):
-       1. The Odoo dev must add our production origins to the CORS allow-list —
-            https://www.casaescondida-anilao.com  and  https://casaescondida-anilao.com
-          (verified 2026-09-25: preflight from the prod origin is still 400).
+       1. DONE 2026-09-25 — the dev added our production origins to the CORS
+          allow-list. Verified: preflight from https://www.casaescondida-anilao.com
+          and from the apex both return 200 with the matching allow-origin (and
+          api-key in allow-headers); a real POST with the prod Origin created a lead.
        2. Set API_BASE to the PRODUCTION host. The staging host's build id
           (…-37790335.dev.odoo.com) CHANGES on every Odoo.sh rebuild — never ship
           a *.dev.odoo.com URL to production. Then move this form into
