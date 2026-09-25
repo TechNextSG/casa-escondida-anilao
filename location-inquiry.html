@@ -319,7 +319,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;
       cursor:pointer;transition:background .3s,transform .2s;margin-top:.5rem;
     }
-    .cf-submit:hover{background:var(--accent-d);transform:translateY(-1px);}
+    .cf-submit:hover:not(:disabled){background:var(--accent-d);transform:translateY(-1px);}
+    .cf-submit:disabled{opacity:.7;cursor:progress;transform:none;}
     .cf-success,.cf-error{padding:.85rem 1.1rem;border-radius:3px;font-size:.82rem;margin-top:1rem;text-align:center;}
     .cf-success{background:rgba(77,194,232,.1);border:1px solid rgba(77,194,232,.35);color:var(--accent);}
     .cf-error{background:rgba(220,60,60,.1);border:1px solid rgba(220,60,60,.4);color:#e07070;}
@@ -1674,8 +1675,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
       submitting = true;
       if(errorBox) errorBox.hidden = true;
+      /* doc §7: the staging container sleeps when idle — the first request can
+         take 10–30s. Show progress so nobody double-submits or gives up. */
+      const submitBtn = form.querySelector(".cf-submit");
+      const submitLabel = submitBtn ? submitBtn.textContent : "";
+      if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = "Sending\u2026"; }
+      const slowTimer = setTimeout(() => {
+        if(submitBtn && submitBtn.disabled) submitBtn.textContent = "Still sending\u2026 the first message can take up to 30 seconds";
+      }, 8000);
       try {
         payload.attachments = await collectAttachments();
+        /* doc §3: optional fields are "leave it out (or empty)" — omit blanks
+           rather than sending null. (Server tolerates null too — verified.) */
+        Object.keys(payload).forEach(k => { if(payload[k] === null || payload[k] === undefined) delete payload[k]; });
         /* doc §3d: JSON body + api-key header, exactly as the handoff example.
            The key is optional on this public route (doc §2); it is sent for one
            consistent client at the client's request. The server's CORS
@@ -1700,6 +1712,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         } else if(res.ok){
           const result = await res.json();
           if(result && result.ok){
+            /* doc §3: lead_id is null only on the honeypot path — a real guest
+               should never see it; log so it is diagnosable if it ever happens. */
+            if(result.lead_id === null) console.warn("Inquiry accepted but no lead was created (silent honeypot path). Check that company_website is empty.");
             form.hidden = true;
             if(successBox){ successBox.hidden = false; successBox.scrollIntoView({behavior:"smooth",block:"nearest"}); }
           } else {
@@ -1712,6 +1727,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         showError("We couldn't send your message. Please check your connection and try again.");
       } finally {
         submitting = false;
+        clearTimeout(slowTimer);
+        if(submitBtn){ submitBtn.disabled = false; submitBtn.textContent = submitLabel; }
       }
     });
 
