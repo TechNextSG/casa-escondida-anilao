@@ -558,174 +558,174 @@
   const KB = [
     {
       keywords: ['book', 'booking', 'reservation', 'reserve', 'availability', 'available', 'stay', 'visit'],
-      answer: 'To book a room at Casa Escondida Anilao:\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao\n\nWe recommend booking in advance (peak: Dec–May). We\'ll confirm your reservation right away!',
-      answerZh: '预订卡萨埃斯孔迪达阿尼劳客房：\n📞 致电 +63 977 837 2272\n💬 Facebook私信：CasaEscondidaAnilao\n\n建议提前预订，旺季（12月至5月）尤为重要。',
+      answer: 'To book a room at Casa Escondida Anilao:\n+63 977 837 2272\nFacebook: CasaEscondidaAnilao\n\nWe recommend booking in advance (peak: Dec–May). We\'ll confirm your reservation right away!',
+      answerZh: '预订卡萨埃斯孔迪达阿尼劳客房：\n致电 +63 977 837 2272\nFacebook私信：CasaEscondidaAnilao\n\n建议提前预订，旺季（12月至5月）尤为重要。',
       cta: [
-        { label: 'Book Your Stay', labelZh: '预订住宿', url: '/#booking', icon: '📅', primary: true },
-        { label: 'View Room Types', labelZh: '查看房型', url: 'rooms.html', icon: '🛏️' }
+        { label: 'Book Your Stay', labelZh: '预订住宿', url: '/book-now.html', primary: true },
+        { label: 'View Room Types', labelZh: '查看房型', url: 'rooms.html' }
       ]
     },
     {
       keywords: ['rate', 'rates', 'price', 'pricing', 'cost', 'fee', 'how much', 'budget'],
-      answer: 'Room rates vary by type and season. Breakfast is available as an optional add-on. We also have dive+stay packages. Contact us for the latest rates:\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao',
-      answerZh: '房价因房型和季节而异，早餐为可选附加项目。我们还提供潜水套餐。\n📞 +63 977 837 2272',
+      answer: 'Room rates vary by type and season. Breakfast is available as an optional add-on. We also have dive+stay packages. Contact us for the latest rates:\n+63 977 837 2272\nFacebook: CasaEscondidaAnilao',
+      answerZh: '房价因房型和季节而异，早餐为可选附加项目。我们还提供潜水套餐。\n+63 977 837 2272',
       cta: [
-        { label: 'See Room Options', labelZh: '查看房间选项', url: 'rooms.html', icon: '🛏️', primary: true },
-        { label: 'Book & Check Rates', labelZh: '预订并查询价格', url: '/#booking', icon: '📅' }
+        { label: 'See Room Options', labelZh: '查看房间选项', url: 'rooms.html', primary: true },
+        { label: 'Book & Check Rates', labelZh: '预订并查询价格', url: '/book-now.html' }
       ]
     },
     {
       keywords: ['room', 'rooms', 'accommodation', 'suite', 'deluxe', 'standard', 'type', 'types', 'sea view', 'seaview'],
-      answer: 'We offer sea-view rooms and suites with views of Balayan Bay:\n\n🛏️ Standard Double/Twin\n🌊 Deluxe Sea View\n✨ Suite with Sea View\n🍳 Breakfast available (optional add-on)\n❄️ A/C, hot shower, free WiFi\n🚭 All rooms non-smoking',
-      answerZh: '我们提供可欣赏巴拉扬湾美景的海景客房和套房：\n\n🛏️ 标准双人间/双床间\n🌊 豪华海景客房\n✨ 海景套房\n🍳 早餐（可选附加）\n❄️ 空调、热水淋浴、免费WiFi\n🚭 全部客房禁烟',
+      answer: 'We offer sea-view rooms and suites with views of Balayan Bay:\n\nStandard Double/Twin\nDeluxe Sea View\nSuite with Sea View\nBreakfast available (optional add-on)\nA/C, hot shower, free WiFi\nAll rooms non-smoking',
+      answerZh: '我们提供可欣赏巴拉扬湾美景的海景客房和套房：\n\n标准双人间/双床间\n豪华海景客房\n海景套房\n早餐（可选附加）\n空调、热水淋浴、免费WiFi\n全部客房禁烟',
       cta: [
-        { label: 'Explore All Rooms', labelZh: '浏览所有客房', url: 'rooms.html', icon: '🛏️', primary: true },
-        { label: 'Book Now', labelZh: '立即预订', url: '/#booking', icon: '📅' }
+        { label: 'Explore All Rooms', labelZh: '浏览所有客房', url: 'rooms.html', primary: true },
+        { label: 'Book Now', labelZh: '立即预订', url: '/book-now.html' }
       ]
     },
     {
       keywords: ['breakfast', 'meal', 'food', 'include', 'included', 'dining', 'eat'],
-      answer: 'Breakfast is available as an optional add-on at Casa Escondida Anilao — it is not included in the base room rate. 🍽️\n\nOur restaurant also serves lunch and dinner featuring Filipino and international cuisine. Don\'t miss our famous island BBQ experience where we grill fresh seafood on a nearby island!',
-      answerZh: '卡萨埃斯孔迪达阿尼劳提供早餐，但早餐为可选附加项目，不含在基本房价内。🍽️\n\n我们的餐厅全天供应菲律宾及国际美食的午餐和晚餐。别忘了体验我们著名的岛屿烧烤——在附近小岛上享用新鲜烤海鲜！'
+      answer: 'Breakfast is available as an optional add-on at Casa Escondida Anilao — it is not included in the base room rate. \n\nOur restaurant also serves lunch and dinner featuring Filipino and international cuisine. Don\'t miss our famous island BBQ experience where we grill fresh seafood on a nearby island!',
+      answerZh: '卡萨埃斯孔迪达阿尼劳提供早餐，但早餐为可选附加项目，不含在基本房价内。\n\n我们的餐厅全天供应菲律宾及国际美食的午餐和晚餐。别忘了体验我们著名的岛屿烧烤——在附近小岛上享用新鲜烤海鲜！'
     },
     {
       keywords: ['padi', 'dive', 'diving', 'course', 'courses', 'certification', 'certify', 'learn', 'divemaster', 'open water', 'advanced', 'rescue', 'scuba'],
-      answer: 'As a PADI 5 Star IDC Resort, we offer:\n\n🎓 Open Water Diver · Advanced OW\n🎓 Rescue Diver · Divemaster\n🎓 Specialty courses\n🤿 Fun dives for certified divers\n\nAnilao is the birthplace of Philippine scuba diving!',
-      answerZh: '作为PADI五星潜水中心，我们提供：\n\n🎓 开放水域潜水员（初级）\n🎓 进阶开放水域潜水员\n🎓 救援潜水员 · 潜水长\n🎓 各类专长课程\n🤿 持证潜水员休闲潜水\n\n阿尼劳是菲律宾水肺潜水的发源地！',
+      answer: 'As a PADI 5 Star IDC Resort, we offer:\n\nOpen Water Diver · Advanced OW\nRescue Diver · Divemaster\nSpecialty courses\nFun dives for certified divers\n\nAnilao is the birthplace of Philippine scuba diving!',
+      answerZh: '作为PADI五星潜水中心，我们提供：\n\n开放水域潜水员（初级）\n进阶开放水域潜水员\n救援潜水员 · 潜水长\n各类专长课程\n持证潜水员休闲潜水\n\n阿尼劳是菲律宾水肺潜水的发源地！',
       cta: [
-        { label: 'Explore Dive Center', labelZh: '探索潜水中心', url: 'dive.html', icon: '🤿', primary: true },
-        { label: 'Book a Dive Package', labelZh: '预订潜水套餐', url: '/#booking', icon: '📅' }
+        { label: 'Explore Dive Center', labelZh: '探索潜水中心', url: 'dive.html', primary: true },
+        { label: 'Book a Dive Package', labelZh: '预订潜水套餐', url: '/book-now.html' }
       ]
     },
     {
       keywords: ['dive site', 'dive sites', 'sites', 'spot', 'spots', 'where dive', 'anilao dive'],
-      answer: 'Anilao has 30+ world-class dive sites! 🐠\n\n• Beatrice Rock – nudibranchs\n• Kirby\'s Rock – coral formations\n• Cathedral Rock – swim-throughs\n• Twin Rocks – macro photography\n• Arthur\'s Rock, Sepoc & more!\n\nRenowned globally for macro photography.',
-      answerZh: '阿尼劳拥有30多个世界级潜水点！🐠\n\n• 碧翠斯礁 – 裸鳃动物天堂\n• 科比礁 – 珊瑚奇观\n• 教堂礁 – 穿越岩洞\n• 双礁 – 微距摄影圣地\n• 亚瑟礁、塞波克等更多！',
+      answer: 'Anilao has 30+ world-class dive sites! \n\n• Beatrice Rock – nudibranchs\n• Kirby\'s Rock – coral formations\n• Cathedral Rock – swim-throughs\n• Twin Rocks – macro photography\n• Arthur\'s Rock, Sepoc & more!\n\nRenowned globally for macro photography.',
+      answerZh: '阿尼劳拥有30多个世界级潜水点！\n\n• 碧翠斯礁 – 裸鳃动物天堂\n• 科比礁 – 珊瑚奇观\n• 教堂礁 – 穿越岩洞\n• 双礁 – 微距摄影圣地\n• 亚瑟礁、塞波克等更多！',
       cta: [
-        { label: 'See All Dive Sites', labelZh: '查看所有潜点', url: 'dive.html#sites', icon: '🗺️', primary: true },
-        { label: 'Book Dive Package', labelZh: '预订潜水套餐', url: '/#booking', icon: '📅' }
+        { label: 'See All Dive Sites', labelZh: '查看所有潜点', url: 'dive.html#sites', primary: true },
+        { label: 'Book Dive Package', labelZh: '预订潜水套餐', url: '/book-now.html' }
       ]
     },
     {
       keywords: ['equipment', 'gear', 'rent', 'rental', 'bcd', 'regulator', 'wetsuit', 'fins', 'mask'],
-      answer: 'Yes! Full dive gear rental available:\n\n🤿 BCD, regulator, wetsuit, fins, mask\n📷 Underwater camera rentals\n\nAll equipment is well-maintained. You can also bring your own gear.',
-      answerZh: '是的！我们提供完整潜水装备租借：\n\n🤿 浮力调节装置、调节器、潜水衣、脚蹼、面镜\n📷 水下相机租借\n\n所有设备均定期维护保养。',
+      answer: 'Yes! Full dive gear rental available:\n\nBCD, regulator, wetsuit, fins, mask\nUnderwater camera rentals\n\nAll equipment is well-maintained. You can also bring your own gear.',
+      answerZh: '是的！我们提供完整潜水装备租借：\n\n浮力调节装置、调节器、潜水衣、脚蹼、面镜\n水下相机租借\n\n所有设备均定期维护保养。',
       cta: [
-        { label: 'View Dive Packages', labelZh: '查看潜水套餐', url: 'dive.html#packages', icon: '🤿', primary: true }
+        { label: 'View Dive Packages', labelZh: '查看潜水套餐', url: 'dive.html#packages', primary: true }
       ]
     },
     {
       keywords: ['night dive', 'night diving', 'night'],
-      answer: 'Yes, we organize night dives at Casa Escondida Anilao! 🌙\n\nNight diving in Anilao is spectacular — you\'ll encounter mandarin fish, crabs, octopus, and other nocturnal marine life. Night dives are available for certified divers and are usually conducted at nearby sites. Ask us about scheduling when you book!',
-      answerZh: '是的，我们提供夜间潜水！🌙\n\n阿尼劳夜潜令人叹为观止——您将遇到花斑连鳍鱼、螃蟹、章鱼等夜行海洋生物。夜潜适合持证潜水员，请预订时询问具体排期！'
+      answer: 'Yes, we organize night dives at Casa Escondida Anilao! \n\nNight diving in Anilao is spectacular — you\'ll encounter mandarin fish, crabs, octopus, and other nocturnal marine life. Night dives are available for certified divers and are usually conducted at nearby sites. Ask us about scheduling when you book!',
+      answerZh: '是的，我们提供夜间潜水！\n\n阿尼劳夜潜令人叹为观止——您将遇到花斑连鳍鱼、螃蟹、章鱼等夜行海洋生物。夜潜适合持证潜水员，请预订时询问具体排期！'
     },
     {
       keywords: ['nitrox', 'enriched air', 'eanx'],
-      answer: 'Yes! Nitrox (Enriched Air) is available at Casa Escondida Anilao. 🧪\n\nNitrox allows longer bottom times and shorter surface intervals — perfect for multiple-dive days. You\'ll need a valid PADI Enriched Air Diver certification (or we can certify you here!). Contact us for nitrox fill pricing.',
-      answerZh: '是的！我们提供氮氧混合气（富氧空气）。🧪\n\n氮氧混合气可延长底部时间、缩短水面休息间隔，非常适合多次潜水日。需持有效PADI富氧空气潜水员认证（也可在此参加培训）。联系我们了解充气费用。'
+      answer: 'Yes! Nitrox (Enriched Air) is available at Casa Escondida Anilao. \n\nNitrox allows longer bottom times and shorter surface intervals — perfect for multiple-dive days. You\'ll need a valid PADI Enriched Air Diver certification (or we can certify you here!). Contact us for nitrox fill pricing.',
+      answerZh: '是的！我们提供氮氧混合气（富氧空气）。\n\n氮氧混合气可延长底部时间、缩短水面休息间隔，非常适合多次潜水日。需持有效PADI富氧空气潜水员认证（也可在此参加培训）。联系我们了解充气费用。'
     },
     {
       keywords: ['location', 'where', 'address', 'mabini', 'batangas', 'anilao', 'place', 'find'],
-      answer: 'Casa Escondida is in Mabini, Batangas — the heart of Anilao, birthplace of Philippine diving! 📍\n\nBrgy. Ligaya, Mabini, Batangas 4202, Philippines',
-      answerZh: '卡萨埃斯孔迪达位于菲律宾八打雁省马比尼市——阿尼劳心脏地带，菲律宾潜水的发源地！📍\n\n八打雁省利加亚村，马比尼4202，菲律宾',
+      answer: 'Casa Escondida is in Mabini, Batangas — the heart of Anilao, birthplace of Philippine diving! \n\nBrgy. Ligaya, Mabini, Batangas 4202, Philippines',
+      answerZh: '卡萨埃斯孔迪达位于菲律宾八打雁省马比尼市——阿尼劳心脏地带，菲律宾潜水的发源地！\n\n八打雁省利加亚村，马比尼4202，菲律宾',
       cta: [
-        { label: 'View Map & Directions', labelZh: '查看地图和路线', url: 'location.html', icon: '📍', primary: true },
-        { label: 'Get Directions', labelZh: '获取路线', url: 'https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao', icon: '🗺️' }
+        { label: 'View Map & Directions', labelZh: '查看地图和路线', url: 'location.html', primary: true },
+        { label: 'Get Directions', labelZh: '获取路线', url: 'https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao' }
       ]
     },
     {
       keywords: ['manila', 'far', 'distance', 'km', 'kilometers', 'hour', 'hours', 'drive', 'how long', 'travel time'],
-      answer: '~140 km south of Manila 🚗\n\n⏱️ 2–3 hours by car\n🛣️ SLEX → Star Tollway → Batangas → Mabini\n\nLeave early to beat Metro traffic!',
-      answerZh: '距马尼拉以南约140公里 🚗\n\n⏱️ 自驾约2至3小时\n🛣️ 路线：南吕宋高速公路→星型收费公路→八打雁→马比尼',
+      answer: '~140 km south of Manila \n\n2–3 hours by car\nSLEX → Star Tollway → Batangas → Mabini\n\nLeave early to beat Metro traffic!',
+      answerZh: '距马尼拉以南约140公里 \n\n自驾约2至3小时\n路线：南吕宋高速公路→星型收费公路→八打雁→马比尼',
       cta: [
-        { label: 'Full Directions Guide', labelZh: '完整路线指南', url: 'location.html', icon: '🗺️', primary: true },
-        { label: 'Open Google Maps', labelZh: '打开谷歌地图', url: 'https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao', icon: '📍' }
+        { label: 'Full Directions Guide', labelZh: '完整路线指南', url: 'location.html', primary: true },
+        { label: 'Open Google Maps', labelZh: '打开谷歌地图', url: 'https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao' }
       ]
     },
     {
       keywords: ['transport', 'transportation', 'van', 'bus', 'tricycle', 'jeepney', 'get there', 'how to get', 'directions', 'shuttle'],
-      answer: 'How to get here:\n\n🚐 Private van (recommended) — we can arrange from Manila\n🚌 Bus + Tricycle:\n1. JAM/DLTB bus → Batangas City\n2. Bus/van → Mabini (Anilao)\n3. Tricycle to the resort',
-      answerZh: '前往方式：\n\n🚐 私人面包车（推荐）——我们可从马尼拉安排接送\n🚌 巴士+三轮车：\n1. 乘坐JAM/DLTB巴士→八打雁城\n2. 转乘→马比尼（阿尼劳）\n3. 乘三轮车前往度假村',
+      answer: 'How to get here:\n\nPrivate van (recommended) — we can arrange from Manila\nBus + Tricycle:\n1. JAM/DLTB bus → Batangas City\n2. Bus/van → Mabini (Anilao)\n3. Tricycle to the resort',
+      answerZh: '前往方式：\n\n私人面包车（推荐）——我们可从马尼拉安排接送\n巴士+三轮车：\n1. 乘坐JAM/DLTB巴士→八打雁城\n2. 转乘→马比尼（阿尼劳）\n3. 乘三轮车前往度假村',
       cta: [
-        { label: 'Full Transport Guide', labelZh: '完整路线指南', url: 'location.html', icon: '🚐', primary: true },
-        { label: 'Contact for Transfer', labelZh: '联系安排接送', url: 'location.html#contact', icon: '📞' }
+        { label: 'Full Transport Guide', labelZh: '完整路线指南', url: 'location.html', primary: true },
+        { label: 'Contact for Transfer', labelZh: '联系安排接送', url: 'location.html#contact' }
       ]
     },
     {
       keywords: ['pool', 'swimming pool', 'swim'],
-      answer: 'Yes! Casa Escondida Anilao has a swimming pool for guests to enjoy. 🏊\n\nRelax by the pool with views of Balayan Bay between dives. Perfect for a refreshing dip when you\'re not exploring the underwater world!',
-      answerZh: '有的！卡萨埃斯孔迪达阿尼劳设有供宾客享用的游泳池。🏊\n\n在潜水间隙，可在泳池边欣赏巴拉扬湾美景，放松身心。不探索水下世界时，清爽畅游正是最佳选择！'
+      answer: 'Yes! Casa Escondida Anilao has a swimming pool for guests to enjoy. \n\nRelax by the pool with views of Balayan Bay between dives. Perfect for a refreshing dip when you\'re not exploring the underwater world!',
+      answerZh: '有的！卡萨埃斯孔迪达阿尼劳设有供宾客享用的游泳池。\n\n在潜水间隙，可在泳池边欣赏巴拉扬湾美景，放松身心。不探索水下世界时，清爽畅游正是最佳选择！'
     },
     {
       keywords: ['restaurant', 'bar', 'drinks', 'snack', 'coffee', 'beverage'],
-      answer: 'Our on-site restaurant serves delicious Filipino and international dishes throughout the day. 🍽️\n\n☕ Breakfast (optional add-on)\n🍜 Lunch & dinner available\n🍹 Refreshments and beverages\n🏝️ Island BBQ — a signature Casa Escondida experience with fresh grilled seafood!\n\nAsk us about the island BBQ when you book your stay!',
-      answerZh: '我们的餐厅全天供应美味菲律宾和国际美食。🍽️\n\n☕ 早餐（可选附加）\n🍜 午餐与晚餐\n🍹 饮料与小食\n🏝️ 岛屿烧烤——卡萨埃斯孔迪达的招牌体验，提供新鲜烤海鲜！\n\n预订时可咨询岛屿烧烤详情。'
+      answer: 'Our on-site restaurant serves delicious Filipino and international dishes throughout the day. \n\nBreakfast (optional add-on)\nLunch & dinner available\nRefreshments and beverages\nIsland BBQ — a signature Casa Escondida experience with fresh grilled seafood!\n\nAsk us about the island BBQ when you book your stay!',
+      answerZh: '我们的餐厅全天供应美味菲律宾和国际美食。\n\n早餐（可选附加）\n午餐与晚餐\n饮料与小食\n岛屿烧烤——卡萨埃斯孔迪达的招牌体验，提供新鲜烤海鲜！\n\n预订时可咨询岛屿烧烤详情。'
     },
     {
       keywords: ['bbq', 'barbecue', 'island bbq', 'island', 'picnic'],
-      answer: 'Our Island BBQ is one of the most loved experiences at Casa Escondida Anilao! 🏝️🔥\n\nWe take guests to a nearby island for a fresh seafood BBQ experience — grilled fish, squid, and more while surrounded by beautiful scenery. Ask us about availability and inclusions when you book!',
-      answerZh: '岛屿烧烤是卡萨埃斯孔迪达最受欢迎的体验之一！🏝️🔥\n\n我们带宾客乘船前往附近小岛，享用新鲜海鲜烧烤——烤鱼、烤鱿鱼等，在绝美海景中尽享美食。预订时可咨询档期与套餐内容！'
+      answer: 'Our Island BBQ is one of the most loved experiences at Casa Escondida Anilao! \n\nWe take guests to a nearby island for a fresh seafood BBQ experience — grilled fish, squid, and more while surrounded by beautiful scenery. Ask us about availability and inclusions when you book!',
+      answerZh: '岛屿烧烤是卡萨埃斯孔迪达最受欢迎的体验之一！\n\n我们带宾客乘船前往附近小岛，享用新鲜海鲜烧烤——烤鱼、烤鱿鱼等，在绝美海景中尽享美食。预订时可咨询档期与套餐内容！'
     },
     {
       keywords: ['beach', 'beachfront', 'shoreline', 'sand', 'coast', 'waterfront'],
-      answer: 'Casa Escondida Anilao enjoys beautiful waterfront access along Balayan Bay. 🌊\n\nWhile Anilao is better known for its incredible diving than sandy beaches, guests enjoy stunning coastal scenery, boat access to dive sites, and relaxing sea views from the resort. The real magic is below the surface!',
-      answerZh: '卡萨埃斯孔迪达阿尼劳坐拥巴拉扬湾的美丽海滨。🌊\n\n阿尼劳以绝佳潜水而非沙滩著称，宾客可尽享壮丽海岸风光、乘船直达潜点，以及度假村的迷人海景。真正的魔法在水面之下！'
+      answer: 'Casa Escondida Anilao enjoys beautiful waterfront access along Balayan Bay. \n\nWhile Anilao is better known for its incredible diving than sandy beaches, guests enjoy stunning coastal scenery, boat access to dive sites, and relaxing sea views from the resort. The real magic is below the surface!',
+      answerZh: '卡萨埃斯孔迪达阿尼劳坐拥巴拉扬湾的美丽海滨。\n\n阿尼劳以绝佳潜水而非沙滩著称，宾客可尽享壮丽海岸风光、乘船直达潜点，以及度假村的迷人海景。真正的魔法在水面之下！'
     },
     {
       keywords: ['wifi', 'wi-fi', 'internet', 'connection', 'signal'],
-      answer: 'Yes! Free WiFi is available for all guests at Casa Escondida Anilao. 📶\n\nStay connected to share your amazing underwater photos with the world! Signal strength may vary in some areas of the resort.',
-      answerZh: '有的！卡萨埃斯孔迪达阿尼劳为全体宾客提供免费WiFi。📶\n\n保持网络连接，随时分享精彩水下照片！部分区域信号强度可能有所不同。'
+      answer: 'Yes! Free WiFi is available for all guests at Casa Escondida Anilao. \n\nStay connected to share your amazing underwater photos with the world! Signal strength may vary in some areas of the resort.',
+      answerZh: '有的！卡萨埃斯孔迪达阿尼劳为全体宾客提供免费WiFi。\n\n保持网络连接，随时分享精彩水下照片！部分区域信号强度可能有所不同。'
     },
     {
       keywords: ['check in', 'check-in', 'checkin', 'check out', 'check-out', 'checkout', 'arrival', 'departure', 'time', 'early', 'late'],
-      answer: 'Casa Escondida Anilao check-in/out times:\n\n🕑 Check-in: 2:00 PM\n🕛 Check-out: 12:00 PM (noon)\n\nEarly check-in and late check-out may be available depending on room availability — please request in advance when booking. We\'ll do our best to accommodate you!',
-      answerZh: '入住/退房时间：\n\n🕑 入住：下午2:00\n🕛 退房：中午12:00\n\n提前入住和延迟退房可根据房间情况安排，请预订时提前告知，我们将尽力配合！'
+      answer: 'Casa Escondida Anilao check-in/out times:\n\nCheck-in: 2:00 PM\nCheck-out: 12:00 PM (noon)\n\nEarly check-in and late check-out may be available depending on room availability — please request in advance when booking. We\'ll do our best to accommodate you!',
+      answerZh: '入住/退房时间：\n\n入住：下午2:00\n退房：中午12:00\n\n提前入住和延迟退房可根据房间情况安排，请预订时提前告知，我们将尽力配合！'
     },
     {
       keywords: ['policy', 'policies', 'cancellation', 'refund', 'children', 'kids', 'pet', 'pets', 'smoking'],
-      answer: 'For our current policies on cancellations, children, pets, and other house rules, please contact us directly:\n\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao\n🌐 casaescondida-anilao.com\n\nOur team will provide full details and ensure your stay meets all your needs!',
-      answerZh: '如需了解取消政策、携童、宠物及其他规定，请直接联系我们：\n\n📞 +63 977 837 2272\n💬 Facebook：CasaEscondidaAnilao\n🌐 casaescondida-anilao.com\n\n我们的团队将提供详细说明，确保您的入住体验完美顺畅！'
+      answer: 'For our current policies on cancellations, children, pets, and other house rules, please contact us directly:\n\n+63 977 837 2272\nFacebook: CasaEscondidaAnilao\ncasaescondida-anilao.com\n\nOur team will provide full details and ensure your stay meets all your needs!',
+      answerZh: '如需了解取消政策、携童、宠物及其他规定，请直接联系我们：\n\n+63 977 837 2272\nFacebook：CasaEscondidaAnilao\ncasaescondida-anilao.com\n\n我们的团队将提供详细说明，确保您的入住体验完美顺畅！'
     },
     {
       keywords: ['review', 'reviews', 'rating', 'tripadvisor', 'google', 'feedback', 'testimonial', 'star', 'stars'],
-      answer: 'Highly rated by guests! ⭐\n\n⭐ TripAdvisor: 4.5 / 5 (81 reviews)\n⭐ Google: 4.7 / 5 (230+ reviews)\n\nGuests love our diving, staff, food, and stunning location!',
-      answerZh: '深受宾客好评！⭐\n\n⭐ TripAdvisor：4.5/5（81条点评）\n⭐ 谷歌：4.7/5（230+条点评）\n\n宾客对潜水服务、员工、餐饮和美景赞不绝口！',
+      answer: 'Highly rated by guests! \n\nTripAdvisor: 4.5 / 5 (81 reviews)\nGoogle: 4.7 / 5 (230+ reviews)\n\nGuests love our diving, staff, food, and stunning location!',
+      answerZh: '深受宾客好评！\n\nTripAdvisor：4.5/5（81条点评）\n谷歌：4.7/5（230+条点评）\n\n宾客对潜水服务、员工、餐饮和美景赞不绝口！',
       cta: [
-        { label: 'Read TripAdvisor Reviews', labelZh: '阅读TripAdvisor点评', url: 'https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753', icon: '⭐', primary: true },
-        { label: 'Google Reviews', labelZh: '谷歌评价', url: 'https://www.google.com/maps/place/Casa+Escondida+Anilao', icon: '🌟' }
+        { label: 'Read TripAdvisor Reviews', labelZh: '阅读TripAdvisor点评', url: 'https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753', primary: true },
+        { label: 'Google Reviews', labelZh: '谷歌评价', url: 'https://www.google.com/maps/place/Casa+Escondida+Anilao' }
       ]
     },
     {
       keywords: ['package', 'packages', 'deal', 'deals', 'all inclusive', 'promo', 'special', 'bundle'],
-      answer: 'We offer various packages:\n\n🤿 Dive + Stay (unlimited boat dives)\n🎓 PADI Course + Accommodation\n🏝️ Island BBQ packages\n💑 Couple & group rates\n\nPackages change seasonally — contact us for current deals!',
-      answerZh: '我们提供多种套餐：\n\n🤿 潜水住宿套餐（含无限次船潜）\n🎓 PADI课程+住宿套餐\n🏝️ 岛屿烧烤套餐\n💑 情侣及团体优惠',
+      answer: 'We offer various packages:\n\nDive + Stay (unlimited boat dives)\nPADI Course + Accommodation\nIsland BBQ packages\nCouple & group rates\n\nPackages change seasonally — contact us for current deals!',
+      answerZh: '我们提供多种套餐：\n\n潜水住宿套餐（含无限次船潜）\nPADI课程+住宿套餐\n岛屿烧烤套餐\n情侣及团体优惠',
       cta: [
-        { label: 'View Dive Packages', url: 'dive.html#packages', icon: '🤿', primary: true },
-        { label: 'Book a Package', labelZh: '预订套餐', url: '/#booking', icon: '📅' }
+        { label: 'View Dive Packages', url: 'dive.html#packages', primary: true },
+        { label: 'Book a Package', labelZh: '预订套餐', url: '/book-now.html' }
       ]
     },
     {
       keywords: ['contact', 'call', 'phone', 'number', 'facebook', 'email', 'message', 'reach', 'inquire', 'inquiry'],
-      answer: 'Get in touch:\n\n📞 +63 977 837 2272\n💬 fb.com/CasaEscondidaAnilao\n🌐 casaescondida-anilao.com\n\nWe reply within a few hours. Facebook Messenger is fastest!',
-      answerZh: '联系方式：\n\n📞 +63 977 837 2272\n💬 fb.com/CasaEscondidaAnilao\n🌐 casaescondida-anilao.com\n\nFacebook Messenger回复最快！',
+      answer: 'Get in touch:\n\n+63 977 837 2272\nfb.com/CasaEscondidaAnilao\ncasaescondida-anilao.com\n\nWe reply within a few hours. Facebook Messenger is fastest!',
+      answerZh: '联系方式：\n\n+63 977 837 2272\nfb.com/CasaEscondidaAnilao\ncasaescondida-anilao.com\n\nFacebook Messenger回复最快！',
       cta: [
-        { label: 'Contact Page', labelZh: '联系页面', url: 'location.html#contact', icon: '✉️', primary: true },
-        { label: 'Message on Facebook', labelZh: 'Facebook发信息', url: 'https://www.facebook.com/CasaEscondidaAnilao', icon: '💬' }
+        { label: 'Contact Page', labelZh: '联系页面', url: 'location.html#contact', primary: true },
+        { label: 'Message on Facebook', labelZh: 'Facebook发信息', url: 'https://www.facebook.com/CasaEscondidaAnilao' }
       ]
     },
     {
       keywords: ['group', 'groups', 'corporate', 'team building', 'event', 'party', 'birthday', 'anniversary'],
-      answer: 'Casa Escondida Anilao is a great destination for group getaways, team-building, and special occasions! 🥳\n\nWe can accommodate dive groups, non-diving guests, corporate events, and celebrations. Ask us about group rates and exclusive use arrangements:\n📞 +63 977 837 2272\n💬 CasaEscondidaAnilao on Facebook'
+      answer: 'Casa Escondida Anilao is a great destination for group getaways, team-building, and special occasions! \n\nWe can accommodate dive groups, non-diving guests, corporate events, and celebrations. Ask us about group rates and exclusive use arrangements:\n+63 977 837 2272\nCasaEscondidaAnilao on Facebook'
     },
     {
       keywords: ['weather', 'season', 'best time', 'when visit', 'monsoon', 'typhoon', 'summer'],
-      answer: 'Best time to visit Casa Escondida Anilao:\n\n☀️ Peak season: December to May (dry season, calm seas, excellent visibility)\n🌧️ Wet season: June to November (some typhoon risk, but diving still possible most days)\n\n✨ Pro tip: Visibility is often best from November to May, with water temperatures around 27–30°C year-round. Anilao is a year-round destination!',
-      answerZh: '卡萨埃斯孔迪达阿尼劳最佳造访时间：\n\n☀️ 旺季：12月至5月（旱季，海况平稳，能见度极佳）\n🌧️ 雨季：6月至11月（偶有台风，但大多数日子仍可潜水）\n\n✨ 专业建议：11月至5月能见度最佳，全年水温约27–30°C。阿尼劳是全年可游的潜水胜地！'
+      answer: 'Best time to visit Casa Escondida Anilao:\n\nPeak season: December to May (dry season, calm seas, excellent visibility)\nWet season: June to November (some typhoon risk, but diving still possible most days)\n\nPro tip: Visibility is often best from November to May, with water temperatures around 27–30°C year-round. Anilao is a year-round destination!',
+      answerZh: '卡萨埃斯孔迪达阿尼劳最佳造访时间：\n\n旺季：12月至5月（旱季，海况平稳，能见度极佳）\n雨季：6月至11月（偶有台风，但大多数日子仍可潜水）\n\n专业建议：11月至5月能见度最佳，全年水温约27–30°C。阿尼劳是全年可游的潜水胜地！'
     },
     {
       keywords: ['certification', 'certified', 'non diver', 'beginner', 'first time', 'try', 'discover', 'dsd'],
-      answer: 'Never dived before? No problem! 🤿\n\nAt Casa Escondida Anilao you can:\n\n🌊 Try a Discover Scuba Diving (DSD) experience — no prior experience needed!\n🎓 Enroll in the PADI Open Water Diver course — get fully certified in 3–4 days\n\nOur experienced PADI instructors will guide you every step of the way. Anilao\'s calm, clear waters are perfect for beginners!',
-      answerZh: '从未潜过水？没问题！🤿\n\n在卡萨埃斯孔迪达阿尼劳，您可以：\n\n🌊 体验探索水肺潜水（DSD）——无需任何经验！\n🎓 参加PADI开放水域潜水员课程——3至4天即可完成认证\n\n我们经验丰富的PADI教练将全程陪伴引导。阿尼劳清澈平静的海水是初学者的理想之地！'
+      answer: 'Never dived before? No problem! \n\nAt Casa Escondida Anilao you can:\n\nTry a Discover Scuba Diving (DSD) experience — no prior experience needed!\nEnroll in the PADI Open Water Diver course — get fully certified in 3–4 days\n\nOur experienced PADI instructors will guide you every step of the way. Anilao\'s calm, clear waters are perfect for beginners!',
+      answerZh: '从未潜过水？没问题！\n\n在卡萨埃斯孔迪达阿尼劳，您可以：\n\n体验探索水肺潜水（DSD）——无需任何经验！\n参加PADI开放水域潜水员课程——3至4天即可完成认证\n\n我们经验丰富的PADI教练将全程陪伴引导。阿尼劳清澈平静的海水是初学者的理想之地！'
     }
   ];
 
@@ -743,8 +743,8 @@
       headerSub:   'Resort Assistant · Usually replies instantly',
       placeholder: 'Ask about diving, rooms, or how to get here…',
       footer:      'Powered by <a href="https://casaescondida-anilao.com" target="_blank">casaescondida-anilao.com</a>',
-      greeting:    "Hi! 👋 Welcome to Casa Escondida Anilao. I'm your resort assistant — ask me anything about diving, rooms, or how to get here!",
-      fallback:    "I'd be happy to help! For this question, please contact us directly:\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao\n🌐 casaescondida-anilao.com",
+      greeting:    "Hi! Welcome to Casa Escondida Anilao. I'm your resort assistant — ask me anything about diving, rooms, or how to get here!",
+      fallback:    "I'd be happy to help! For this question, please contact us directly:\n+63 977 837 2272\nFacebook: CasaEscondidaAnilao\ncasaescondida-anilao.com",
       suggestions: [
         'How to book a room?',
         'PADI courses available?',
@@ -764,8 +764,8 @@
       headerSub:   '度假村助手 · 通常即时回复',
       placeholder: '询问潜水、客房或如何到达...',
       footer:      '由 <a href="https://casaescondida-anilao.com" target="_blank">casaescondida-anilao.com</a> 提供技术支持',
-      greeting:    '您好！👋 欢迎来到 Casa Escondida Anilao。我是您的度假村助手——欢迎询问潜水、客房或如何到达的任何问题！',
-      fallback:    '很乐意为您提供帮助！对于这个问题，请直接联系我们：\n📞 +63 977 837 2272\n💬 Facebook: CasaEscondidaAnilao\n🌐 casaescondida-anilao.com',
+      greeting:    '您好！欢迎来到 Casa Escondida Anilao。我是您的度假村助手——欢迎询问潜水、客房或如何到达的任何问题！',
+      fallback:    '很乐意为您提供帮助！对于这个问题，请直接联系我们：\n+63 977 837 2272\nFacebook: CasaEscondidaAnilao\ncasaescondida-anilao.com',
       suggestions: [
         '如何预订房间？',
         '有哪些PADI课程？',
@@ -861,13 +861,13 @@
 
       <div id="ce-chat-window" class="ce-hidden" role="dialog" aria-label="Casa Escondida Resort Chat">
         <div id="ce-chat-header">
-          <div class="ce-header-avatar">🤿</div>
+          <div class="ce-header-avatar"></div>
           <div class="ce-header-text">
             <div class="ce-header-title">Casa Escondida Anilao</div>
             <div class="ce-header-sub" id="ce-header-sub"></div>
           </div>
           <div class="ce-online-dot" title="Online"></div>
-          <button id="ce-close-btn" aria-label="Close chat">&#x2715;</button>
+          <button id="ce-close-btn" aria-label="Close chat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
         </div>
 
         <div id="ce-messages" role="log" aria-live="polite"></div>
@@ -977,7 +977,7 @@
       if (role === 'ce-bot') {
         var av = document.createElement('div');
         av.className = 'ce-msg-avatar';
-        av.textContent = '🤿';
+        av.textContent = '';
         msg.appendChild(av);
       }
 
@@ -997,7 +997,7 @@
 
       var av = document.createElement('div');
       av.className = 'ce-msg-avatar';
-      av.textContent = '🤿';
+      av.textContent = '';
       t.appendChild(av);
 
       var bubble = document.createElement('div');
@@ -1028,9 +1028,8 @@
         a.target = c.url.startsWith('http') ? '_blank' : '_self';
         a.rel = 'noopener noreferrer';
         a.innerHTML =
-          '<span class="ce-cta-icon">' + (c.icon || '→') + '</span>'
-          + '<span>' + ((lang === 'zh' && c.labelZh) ? c.labelZh : c.label) + '</span>'
-          + '<span class="ce-cta-arrow">→</span>';
+          '<span>' + ((lang === 'zh' && c.labelZh) ? c.labelZh : c.label) + '</span>'
+          + '<span class="ce-cta-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>';
         row.appendChild(a);
       });
       messages.appendChild(row);

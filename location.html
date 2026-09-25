@@ -399,6 +399,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .contact-cta p{font-size:.9rem;line-height:1.7;color:var(--text2);margin:0 0 1.5rem;}
     .cc-btn{width:100%;}
     .cc-note{font-size:.76rem;color:var(--text3);margin:1rem 0 0;}
+    /* contrast: contact labels clear 4.5:1 in both themes */
+    .cm-lbl,.qc-lbl{color:var(--text2);}
+    /* icon feedback (contact + quick-contact) */
+    .cc-btn{gap:.55rem;} .bn-ico{width:1em;height:1em;flex:0 0 auto;transition:transform .18s cubic-bezier(.16,1,.3,1);} .cc-btn:hover .bn-ico{transform:translateX(3px);}
+    .cm-item .cm-ic,.qc-ic{transition:background .2s,border-color .2s,transform .2s cubic-bezier(.16,1,.3,1);}
+    .cm-ic svg,.qc-ic svg{transition:transform .2s cubic-bezier(.16,1,.3,1),stroke .2s;}
+    .cm-item:hover .cm-ic,.qc-item:hover .qc-ic{background:var(--accent);border-color:var(--accent);transform:translateY(-2px);}
+    .cm-item:hover .cm-ic svg,.qc-item:hover .qc-ic svg{stroke:#fff;transform:rotate(-8deg) scale(1.08);}
+    @media(prefers-reduced-motion:reduce){.cm-item:hover .cm-ic,.qc-item:hover .qc-ic,.cm-item:hover .cm-ic svg,.qc-item:hover .qc-ic svg,.cc-btn:hover .bn-ico{transform:none;}}
 </style>
 
   <!-- Schema: LocalBusiness + ContactPage -->
@@ -1039,7 +1048,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="cc-eyebrow" data-i18n="bk_cta_eyebrow">Reservations &amp; Quotations</div>
           <h3 data-i18n="bk_cta_title">Ready to <em>book?</em></h3>
           <p data-i18n="bk_cta_sub">Our booking page collects everything we need — dates, rooms, meals, transfers and diving — and we reply by email with a quotation.</p>
-          <a href="/book-now.html" class="loc-btn-primary cc-btn" data-i18n="bk_cta_btn">Book Now — Get a Quotation →</a>
+          <a href="/book-now.html" class="loc-btn-primary cc-btn"><span data-i18n="bk_cta_btn">Book Now — Get a Quotation</span><svg class="bn-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           <p class="cc-note" data-i18n="bk_cta_agents">Travel agents and dive instructors welcome — upload your credentials on the same page.</p>
         </div>
       </div>

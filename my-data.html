@@ -49,7 +49,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .md-btn-ghost { background: transparent; color: var(--text, #0d1e2e); border-color: var(--border, rgba(0,0,0,.2)); }
     .md-btn-ghost:hover { border-color: var(--accent, #1a6b98); color: var(--accent, #1a6b98); }
     .md-empty { padding: 2.5rem; text-align: center; color: var(--text3, #888); }
-    .md-empty .md-empty-icon { font-size: 2rem; margin-bottom: .5rem; }
+    .md-empty .md-empty-icon { margin-bottom: .5rem; color: var(--accent); opacity: .8; }
     .md-back { display: inline-block; margin-bottom: 2rem; font-size: .78rem; color: var(--accent, #1a6b98); text-decoration: none; }
     .md-back:hover { text-decoration: underline; }
     pre.md-json { background: rgba(0,0,0,.04); padding: 1rem; border-radius: 4px; overflow-x: auto; font-size: .72rem; line-height: 1.5; max-height: 380px; }
@@ -115,13 +115,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       html += '<div class="md-card">';
       html += '<h2>Consent status</h2>';
       html += '<div class="md-row"><div class="md-label">Cookie consent</div><div class="md-val">' +
-        (consent === 'accepted' ? '✓ Accepted — tracking is active' :
-         consent === 'declined' ? '✗ Declined — no data is being collected' :
-         '⏳ Not yet decided') + '</div></div>';
+        (consent === 'accepted' ? 'Accepted — tracking is active' :
+         consent === 'declined' ? 'Declined — no data is being collected' :
+         'Not yet decided') + '</div></div>';
       html += '</div>';
 
       if (!data) {
-        html += '<div class="md-card"><div class="md-empty"><div class="md-empty-icon">📭</div><div>No visitor data stored.</div>' +
+        html += '<div class="md-card"><div class="md-empty"><div class="md-empty-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.9A2 2 0 0 0 16.8 4H7.2a2 2 0 0 0-1.7 1.1Z"/></svg></div><div>No visitor data stored.</div>' +
           '<div style="margin-top:.5rem;font-size:.78rem;">Either you declined cookies, deleted them already, or this is your first visit.</div></div></div>';
         document.getElementById('md-content').innerHTML = html;
         return;

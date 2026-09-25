@@ -85,7 +85,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .blog-meta-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;}
     .blog-count{font-size:.72rem;color:var(--text3);}
     .blog-empty{grid-column:1/-1;text-align:center;padding:5rem 2rem;color:var(--text3);}
-    .blog-empty-icon{font-size:2.8rem;margin-bottom:.8rem;}
+    .blog-empty-icon{margin-bottom:.8rem;color:var(--accent);opacity:.8;}
     .blog-empty p{font-size:.88rem;}
     .blog-pagination{display:flex;align-items:center;justify-content:center;gap:.35rem;margin:2.5rem 0 5rem;flex-wrap:wrap;}
     .blog-pagination button{min-width:2.2rem;height:2.2rem;border:1px solid var(--border);background:var(--card);color:var(--text2);border-radius:6px;font-size:.8rem;cursor:pointer;transition:border-color .18s,color .18s,background .18s;padding:0 .55rem;font-family:inherit;}
@@ -597,7 +597,7 @@ const POSTS = [
     dateLabel: 'April 15, 2026',
     read: '7 min read',
     bg: 'linear-gradient(135deg,#062918 0%,#0e5a2e 60%,#1a8040 100%)',
-    icon: '🐚',
+    icon: '',
     img: 'images/Nature%20Folder/Pikachu%20nudibranch.webp'
   },
   {
@@ -612,7 +612,7 @@ const POSTS = [
     dateLabel: 'April 10, 2026',
     read: '5 min read',
     bg: 'linear-gradient(135deg,#1a0835 0%,#3a1870 60%,#5a2a9a 100%)',
-    icon: '🗺️',
+    icon: '',
     img: 'images/Nature%20Folder/Hawksbill%20sea%20turtle.jpg'
   },
   {
@@ -627,7 +627,7 @@ const POSTS = [
     dateLabel: 'April 5, 2026',
     read: '4 min read',
     bg: 'linear-gradient(135deg,#2a1405 0%,#6a3410 60%,#9a5020 100%)',
-    icon: '🔥',
+    icon: '',
     img: 'images/Nature%20Folder/Pink%20Anemonefish%20Amphiprion.jpg'
   },
   {
@@ -642,7 +642,7 @@ const POSTS = [
     dateLabel: 'March 28, 2026',
     read: '6 min read',
     bg: 'linear-gradient(135deg,#0a1a30 0%,#1c3e68 60%,#2a5a8a 100%)',
-    icon: '🎒',
+    icon: '',
     img: 'images/Nature%20Folder/Peacock%20mantis%20shrimp%20(Odontodactylus%20scyllarus).jpg'
   },
   {
@@ -657,7 +657,7 @@ const POSTS = [
     dateLabel: 'March 20, 2026',
     read: '5 min read',
     bg: 'linear-gradient(135deg,#052828 0%,#0e5a5a 60%,#1a7878 100%)',
-    icon: '🌊',
+    icon: '',
     img: 'images/Nature%20Folder/Mushroom%20coral.webp'
   },
   {
@@ -672,7 +672,7 @@ const POSTS = [
     dateLabel: 'March 15, 2026',
     read: '6 min read',
     bg: 'linear-gradient(135deg,#04080f 0%,#0a1e3a 60%,#102848 100%)',
-    icon: '🌙',
+    icon: '',
     img: 'images/Nature%20Folder/Blue%20Ribbon%20Eel%20(Rhinomuraena%20quaesita).jpg'
   },
   {
@@ -687,7 +687,7 @@ const POSTS = [
     dateLabel: 'March 10, 2026',
     read: '5 min read',
     bg: 'linear-gradient(135deg,#062918 0%,#0e4a28 60%,#1a6030 100%)',
-    icon: '🐡',
+    icon: '',
     img: 'images/Nature%20Folder/Scorpionfish%20(Taenianotus%20triacanthus).jpg'
   },
   {
@@ -702,7 +702,7 @@ const POSTS = [
     dateLabel: 'March 5, 2026',
     read: '7 min read',
     bg: 'linear-gradient(135deg,#080820 0%,#1c1c4a 60%,#2a2a64 100%)',
-    icon: '📸',
+    icon: '',
     img: 'images/Nature%20Folder/Ornate%20Ghost%20Pipefish%20(Solenostomus%20paradoxus).jpg'
   },
   {
@@ -717,7 +717,7 @@ const POSTS = [
     dateLabel: 'February 28, 2026',
     read: '6 min read',
     bg: 'linear-gradient(135deg,#1a0835 0%,#2e1458 60%,#44207a 100%)',
-    icon: '📅',
+    icon: '',
     img: 'images/Nature%20Folder/sea%20turtle.jpg'
   },
   {
@@ -732,7 +732,7 @@ const POSTS = [
     dateLabel: 'February 20, 2026',
     read: '4 min read',
     bg: 'linear-gradient(135deg,#280a0a 0%,#5a1c1c 60%,#7a2a2a 100%)',
-    icon: '🏆',
+    icon: '',
     img: 'images/Nature%20Folder/Flamboyant%20Cuttlefish%20(Metasepia%20pfefferi).jpg'
   },
   {
@@ -747,7 +747,7 @@ const POSTS = [
     dateLabel: 'February 15, 2026',
     read: '8 min read',
     bg: 'linear-gradient(135deg,#0a1a30 0%,#1a3858 60%,#285278 100%)',
-    icon: '🎓',
+    icon: '',
     img: 'images/Nature%20Folder/Sea%20Anemone%20Coral%20Reef.jpg'
   },
   {
@@ -762,7 +762,7 @@ const POSTS = [
     dateLabel: 'February 10, 2026',
     read: '5 min read',
     bg: 'linear-gradient(135deg,#062918 0%,#0e6040 60%,#1a7a50 100%)',
-    icon: '🐴',
+    icon: '',
     img: "images/Nature%20Folder/Bargibant's%20pygmy%20seahorse%20(Hippocampus%20bargibanti).jpg"
   },
   {
@@ -777,7 +777,7 @@ const POSTS = [
     dateLabel: 'January 28, 2026',
     read: '4 min read',
     bg: 'linear-gradient(135deg,#2a1405 0%,#5a2e10 60%,#824020 100%)',
-    icon: '🌅',
+    icon: '',
     img: 'images/Nature%20Folder/Sarasvati%20anemone%20shrimp%20(Ancylomenes%20sarasvati).jpg'
   },
   {
@@ -792,7 +792,7 @@ const POSTS = [
     dateLabel: 'January 20, 2026',
     read: '7 min read',
     bg: 'linear-gradient(135deg,#061a2e 0%,#0c3660 60%,#165090 100%)',
-    icon: '⚓',
+    icon: '',
     img: 'images/Nature%20Folder/bigeye%20trevally%20(Caranx%20sexfasciatus).jpg'
   },
   {
@@ -807,7 +807,7 @@ const POSTS = [
     dateLabel: 'January 15, 2026',
     read: '8 min read',
     bg: 'linear-gradient(135deg,#080820 0%,#181848 60%,#262660 100%)',
-    icon: '🔭',
+    icon: '',
     img: 'images/Nature%20Folder/Mimic%20octopus%20(Thaumoctopus%20mimicus).jpg'
   },
   {
@@ -822,7 +822,7 @@ const POSTS = [
     dateLabel: 'January 10, 2026',
     read: '5 min read',
     bg: 'linear-gradient(135deg,#1a0835 0%,#322060 60%,#4a2e80 100%)',
-    icon: '💰',
+    icon: '',
     img: 'images/Nature%20Folder/Harlequin%20shrimp%20(Hymenocera%20picta).jpg'
   },
   {
@@ -837,7 +837,7 @@ const POSTS = [
     dateLabel: 'January 5, 2026',
     read: '6 min read',
     bg: 'linear-gradient(135deg,#062918 0%,#0c4a38 60%,#186050 100%)',
-    icon: '🦈',
+    icon: '',
     img: 'images/Nature%20Folder/sea%20turtle%20(2).jpg'
   },
   {
@@ -852,7 +852,7 @@ const POSTS = [
     dateLabel: 'June 19, 2026',
     read: '7 min read',
     bg: 'linear-gradient(135deg,#041828 0%,#083050 60%,#0c4868 100%)',
-    icon: '🐙',
+    icon: '',
     img: 'images/Nature%20Folder/Flamboyant%20Cuttlefish%20(Metasepia%20pfefferi).jpg'
   }
 ];
@@ -910,7 +910,7 @@ function renderPosts() {
 
   if (!total) {
     countEl.textContent = isZh ? '未找到文章' : 'No posts found';
-    grid.innerHTML = `<div class="blog-empty"><div class="blog-empty-icon">🔍</div><p>${isZh ? '没有符合搜索条件的文章，请尝试其他关键词或分类。' : 'No posts match your search. Try a different keyword or category.'}</p></div>`;
+    grid.innerHTML = `<div class="blog-empty"><div class="blog-empty-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div><p>${isZh ? '没有符合搜索条件的文章，请尝试其他关键词或分类。' : 'No posts match your search. Try a different keyword or category.'}</p></div>`;
     pagEl.innerHTML = '';
     return;
   }

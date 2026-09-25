@@ -516,13 +516,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="loc-eyebrow hero-eyebrow-anim" data-i18n="bn_eyebrow">Reservations</div>
       <h1 class="loc-h1" data-i18n="bn_h1">Book <em>Now</em></h1>
       <p class="loc-sub" data-i18n="bn_sub">Tell us about your trip and we'll send you a personalised quotation — rooms, meals, transfers and diving in one request.</p>
-      <div class="loc-stats">
-        <div class="loc-stat"><div class="loc-stat-n">30+</div><div class="loc-stat-l" data-i18n="bn_stat_1">Dive Sites</div></div>
-        <div class="loc-stat"><div class="loc-stat-n">3</div><div class="loc-stat-l" data-i18n="bn_stat_2">Room Types</div></div>
-        <div class="loc-stat"><div class="loc-stat-n">2–3h</div><div class="loc-stat-l" data-i18n="bn_stat_3">From Manila</div></div>
-      </div>
       <div class="loc-hero-actions hero-ctas">
-        <a href="#inquiry" class="loc-btn-primary hero-cta-primary" data-i18n="bn_hero_cta">Start your request ↓</a>
+        <a href="#inquiry" class="loc-btn-primary hero-cta-primary bn-cta"><span data-i18n="bn_hero_cta">Start your request</span><svg class="bn-ico bn-ico-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
         <a href="#talk" class="loc-btn-ghost hero-cta-ghost" data-i18n="bn_hero_cta_ghost">Talk to us</a>
       </div>
     </div>
@@ -566,11 +561,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="sec-eyebrow" data-i18n="bn_steps_eyebrow">How it works</div>
         <h2 class="sec-h2" data-i18n="bn_steps_h2">Three simple <em>steps</em></h2>
       </div>
-      <div class="bn-steps-grid">
-        <div class="bn-step rv"><div class="bn-step-n">1</div><div class="bn-step-t" data-i18n="bn_step1_t">Tell us about your trip</div><div class="bn-step-d" data-i18n="bn_step1_d">Dates, group size, rooms, meals, transfers and diving — all in one form.</div></div>
-        <div class="bn-step rv rv-d1"><div class="bn-step-n">2</div><div class="bn-step-t" data-i18n="bn_step2_t">We check availability</div><div class="bn-step-d" data-i18n="bn_step2_d">Our team reviews your request and replies by email with a quotation.</div></div>
-        <div class="bn-step rv rv-d2"><div class="bn-step-n">3</div><div class="bn-step-t" data-i18n="bn_step3_t">Confirm your booking</div><div class="bn-step-d" data-i18n="bn_step3_d">Happy with the quote? Confirm with us and start packing.</div></div>
-      </div>
+      <ol class="bn-steps-list">
+        <li class="bn-step rv"><span class="bn-step-n" aria-hidden="true">1</span><h3 class="bn-step-t" data-i18n="bn_step1_t">Tell us about your trip</h3><p class="bn-step-d" data-i18n="bn_step1_d">Dates, group size, rooms, meals, transfers and diving — all in one form.</p></li>
+        <li class="bn-step rv rv-d1"><span class="bn-step-n" aria-hidden="true">2</span><h3 class="bn-step-t" data-i18n="bn_step2_t">We check availability</h3><p class="bn-step-d" data-i18n="bn_step2_d">Our team reviews your request and replies by email with a quotation.</p></li>
+        <li class="bn-step rv rv-d2"><span class="bn-step-n" aria-hidden="true">3</span><h3 class="bn-step-t" data-i18n="bn_step3_t">Confirm your booking</h3><p class="bn-step-d" data-i18n="bn_step3_d">Happy with the quote? Confirm with us and start packing.</p></li>
+      </ol>
     </div>
   </section>
 
@@ -602,7 +597,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     .cf-step-tab:hover{border-color:var(--accent);color:var(--text);}
     .cf-step-tab:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(77,194,232,.35);}
     .cf-step-tab.on{background:rgba(77,194,232,.1);border-color:var(--accent);color:var(--text);}
-    .cf-step-tab.done::after{content:"\2713";position:absolute;top:-7px;right:-7px;display:flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:#3fa96c;color:#fff;font-size:.55rem;line-height:1;}
+    .cf-step-tab.done::after{content:"";position:absolute;top:-7px;right:-7px;display:flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:#3fa96c url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%223%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M20 6 9 17l-5-5%22/%3E%3C/svg%3E") center / 9px 9px no-repeat;color:#fff;font-size:.55rem;line-height:1;}
     .cf-step-in{animation:cfStepIn .35s ease both;}
     .cf-step-in-back{animation:cfStepInBack .35s ease both;}
     @keyframes cfStepIn{from{opacity:0;transform:translateX(24px);}to{opacity:1;transform:none;}}
@@ -652,12 +647,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
     @media(max-width:560px){
       .cf-wizard{grid-template-columns:minmax(0,1fr);}         /* stacked wizard: shrinkable column */
+      .cf-room-row{grid-template-columns:1fr;gap:.6rem;}         /* room type / pax stack, no truncation */
+      .cf-room-remove{justify-self:end;}
     }
     @media(max-width:480px){
       .contact-form{padding:1.6rem 1.1rem;}                      /* more room for inputs */
       [data-casa-inquiry-topic] .cf-pill{flex:1 1 100%;}         /* stack the 3 role pills evenly */
-      .cf-room-row{grid-template-columns:1fr;gap:.6rem;}         /* room type / pax stack, no truncation */
-      .cf-room-remove{justify-self:end;}
+    }
+  </style>
+
+  <style>
+    /* ══════ BOOK NOW — POLISH & MOTION ══════ */
+    /* browser surfaces carry the design too */
+    ::selection{background:rgba(77,194,232,.32);color:inherit;}
+    [data-theme="day"] ::selection{background:rgba(26,107,152,.22);}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px;}
+    input,textarea,select{caret-color:var(--accent);}
+    /* measure */
+    .bn-hero .loc-sub{max-width:38rem;margin-left:auto;margin-right:auto;}
+    #inquiry .sec-sub{max-width:40rem;}
+    /* contrast: secondary text must clear 4.5:1 in both themes — use the text2 token, never the faint one */
+    .cf-lbl,.cf-room-lbl,.cf-sub,.cf-hint,.cf-note,.cf-section-sub,.cm-lbl,.bn-step-d{color:var(--text2);}
+    /* steps: an open numbered sequence instead of three identical boxes */
+    .bn-steps-list{list-style:none;margin:.6rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0 2.6rem;}
+    .bn-step{position:relative;padding:1.5rem 0 .4rem;background:none;border:0;border-top:1px solid var(--border);border-radius:0;}
+    .bn-step-n{display:block;width:auto;height:auto;border:0;background:none;border-radius:0;margin:0 0 .7rem;font-family:'Playfair Display',Georgia,serif;font-size:1.9rem;line-height:1;color:var(--accent);}
+    .bn-step-t{margin:0 0 .4rem;font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:400;color:var(--text);}
+    .bn-step-d{margin:0;max-width:30ch;}
+    .bn-h3-2{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--border);}
+    /* icon family: one stroke weight, sized by context */
+    .cf-step-ic{display:inline-flex;width:1.3rem;height:1.3rem;color:currentColor;}
+    .cf-step-ic svg{width:100%;height:100%;}
+    .cf-step-tab.on .cf-step-ic{color:var(--accent);}
+    .bn-ico{width:1em;height:1em;flex:0 0 auto;}
+    .bn-cta,.cc-btn{gap:.55rem;}
+    .cf-room-add{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;}
+    .cf-room-remove{display:inline-flex;align-items:center;justify-content:center;}
+    /* MOTION — focal moment: a step's icon draws itself in when the step becomes active */
+    .cf-step-ic svg path,.cf-step-ic svg circle,.cf-step-ic svg rect{stroke-dasharray:72;stroke-dashoffset:0;}
+    .cf-step-tab.on .cf-step-ic svg path,.cf-step-tab.on .cf-step-ic svg circle,.cf-step-tab.on .cf-step-ic svg rect{animation:bnDraw .6s cubic-bezier(.16,1,.3,1) both;}
+    @keyframes bnDraw{from{stroke-dashoffset:72;}to{stroke-dashoffset:0;}}
+    .cf-step-tab .cf-step-ic{transition:transform .18s cubic-bezier(.16,1,.3,1),color .18s;}
+    .cf-step-tab:hover .cf-step-ic{transform:translateY(-1px) scale(1.06);}
+    .cf-step-tab.done::after{animation:bnPop .32s cubic-bezier(.16,1,.3,1) both;}
+    @keyframes bnPop{from{transform:scale(.4);opacity:0;}to{transform:scale(1);opacity:1;}}
+    /* supporting feedback */
+    .cm-item .cm-ic{transition:background .2s,border-color .2s,transform .2s cubic-bezier(.16,1,.3,1);}
+    .cm-ic svg{transition:transform .2s cubic-bezier(.16,1,.3,1),stroke .2s;}
+    .cm-item:hover .cm-ic{background:var(--accent);border-color:var(--accent);transform:translateY(-2px);}
+    .cm-item:hover .cm-ic svg{stroke:#fff;transform:rotate(-8deg) scale(1.08);}
+    .bn-ico-down,.cc-btn .bn-ico,.bn-cta .bn-ico{transition:transform .18s cubic-bezier(.16,1,.3,1);}
+    .bn-cta:hover .bn-ico-down{transform:translateY(2px);}
+    .cc-btn:hover .bn-ico{transform:translateX(3px);}
+    .cf-room-add svg,.cf-room-remove svg{transition:transform .2s cubic-bezier(.16,1,.3,1);}
+    .cf-room-add:hover:enabled svg{transform:rotate(90deg);}
+    .cf-room-remove:hover svg{transform:rotate(90deg);}
+    .loc-btn-primary:active,.loc-btn-ghost:active,.cf-submit:active{transform:scale(.97);transition-duration:.1s;}
+    @media(max-width:768px){.bn-steps-list{grid-template-columns:1fr;gap:0;} .bn-step{padding:1.2rem 0 1rem;} .bn-step-d{max-width:none;}}
+    @media(prefers-reduced-motion:reduce){
+      .cf-step-tab.on .cf-step-ic svg path,.cf-step-tab.on .cf-step-ic svg circle,.cf-step-tab.on .cf-step-ic svg rect{animation:none;}
+      .cf-step-tab.done::after{animation:none;}
+      .cf-step-tab:hover .cf-step-ic,.cm-item:hover .cm-ic,.cm-item:hover .cm-ic svg,.bn-cta:hover .bn-ico-down,.cc-btn:hover .bn-ico,.cf-room-add:hover:enabled svg,.cf-room-remove:hover svg{transform:none;}
     }
   </style>
 
@@ -714,10 +764,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="cf-guest" data-casa-guest-block>
             <div class="cf-wizard">
               <div class="cf-step-tabs" aria-label="Inquiry sections">
-                <button type="button" class="cf-step-tab on" aria-current="step" data-casa-step-go="trip"><span class="cf-step-ic" aria-hidden="true">&#129331;</span><span class="cf-step-tab-lbl" data-i18n="cf_tab_trip">Your Trip</span></button>
-                <button type="button" class="cf-step-tab" data-casa-step-go="meal"><span class="cf-step-ic" aria-hidden="true">&#127860;</span><span class="cf-step-tab-lbl" data-i18n="cf_tab_meal">Meal Plan</span></button>
-                <button type="button" class="cf-step-tab" data-casa-step-go="transfer"><span class="cf-step-ic" aria-hidden="true">&#9992;&#65039;</span><span class="cf-step-tab-lbl" data-i18n="cf_tab_transfer">Airport Transfer</span></button>
-                <button type="button" class="cf-step-tab" data-casa-step-go="diving"><span class="cf-step-ic" aria-hidden="true">&#9875;</span><span class="cf-step-tab-lbl" data-i18n="cf_tab_diving">Diving</span></button>
+                <button type="button" class="cf-step-tab on" aria-current="step" data-casa-step-go="trip"><span class="cf-step-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></span><span class="cf-step-tab-lbl" data-i18n="cf_tab_trip">Your Trip</span></button>
+                <button type="button" class="cf-step-tab" data-casa-step-go="meal"><span class="cf-step-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span><span class="cf-step-tab-lbl" data-i18n="cf_tab_meal">Meal Plan</span></button>
+                <button type="button" class="cf-step-tab" data-casa-step-go="transfer"><span class="cf-step-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></span><span class="cf-step-tab-lbl" data-i18n="cf_tab_transfer">Airport Transfer</span></button>
+                <button type="button" class="cf-step-tab" data-casa-step-go="diving"><span class="cf-step-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="5" r="3"/><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg></span><span class="cf-step-tab-lbl" data-i18n="cf_tab_diving">Diving</span></button>
               </div>
 
               <div class="cf-step-panes">
@@ -774,10 +824,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option>
                           </select>
                         </div>
-                        <button type="button" class="cf-room-remove" data-casa-room-remove aria-label="Remove this room">&#215;</button>
+                        <button type="button" class="cf-room-remove" data-casa-room-remove aria-label="Remove this room"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
                       </div>
                     </div>
-                    <button type="button" class="cf-room-add" data-casa-room-add data-i18n="cf_room_add">+ Add another room</button>
+                    <button type="button" class="cf-room-add" data-casa-room-add><svg class="bn-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14"/><path d="M5 12h14"/></svg><span data-i18n="cf_room_add">Add another room</span></button>
                   </div>
                 </div>
 
@@ -921,9 +971,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li data-i18n="bn_incl_3">Airport van transfer</li>
               <li data-i18n="bn_incl_4">Diving, courses &amp; certifications</li>
             </ul>
-          </div>
-          <div class="bn-card rv rv-d2">
-            <h3 data-i18n="bn_know_h">Good to <em>know</em></h3>
+            <h3 class="bn-h3-2" data-i18n="bn_know_h">Good to <em>know</em></h3>
             <ul class="bn-list">
               <li data-i18n="bn_know_1">Exact dates aren't needed yet — a tentative month is enough.</li>
               <li data-i18n="bn_know_2">Check-in from 2:00 PM · front desk open until 9 PM.</li>
