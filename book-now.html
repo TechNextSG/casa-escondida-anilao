@@ -648,6 +648,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       .bn-grid{grid-template-columns:minmax(0,1fr);}
       .bn-grid > div,.contact-form,.cf-wizard,.cf-step-panes,.cf-step,.cf-field,.cf-row,.cf-rooms,.cf-room-row,.cf-room-cell{min-width:0;}
       .cf-input,.cf-select,.cf-textarea{min-width:0;max-width:100%;width:100%;}
+      /* contact list: the e-mail address is one unbreakable word — let it wrap on ≤320px phones */
+      .cm-item,.cm-item > div{min-width:0;}
+      .cm-val{overflow-wrap:anywhere;word-break:break-word;}
     }
     @media(max-width:560px){
       .cf-wizard{grid-template-columns:minmax(0,1fr);}         /* stacked wizard: shrinkable column */
