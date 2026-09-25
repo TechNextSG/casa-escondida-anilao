@@ -1498,6 +1498,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const API_BASE = "https://casa-escondida-03-staging-web-37790335.dev.odoo.com/estimate-api";
     const API_KEY  = "5f66536f6110484273087d88008e5683000cb0d8"; // low-privilege read/query key (handoff §2), expires 2026-12-24
     const ENDPOINT = API_BASE + "/v1/inquiry/submit";
+    /* TEMPORARY (2026-09-25): email a copy of every enquiry to this address while
+       API_BASE still points at STAGING (staging swallows the front-desk email).
+       Delivery via FormSubmit; the recipient must click FormSubmit's one-time
+       "Activate" email on first use. Set to "" to disable. */
+    const TEMP_COPY_EMAIL = "phillip@technext.asia";
     const ATTACH_MAX_FILES = 2;
     const ATTACH_MAX_BYTES = 5 * 1024 * 1024;
     const ATTACH_MIMES = ["application/pdf","image/jpeg","image/png"];
@@ -1604,6 +1609,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const showError = msg => { if(errorBox){ errorBox.textContent = msg; errorBox.hidden = false; } };
     const text = v => (String(v||"").trim() || null);
     const intOrNull = v => { const n = parseInt(v,10); return Number.isFinite(n) ? n : null; };
+    /* TEMPORARY: fire-and-forget copy of the enquiry to TEMP_COPY_EMAIL. Never
+       blocks or changes what the guest sees; skipped on the honeypot path. */
+    function sendTestCopy(p, note){
+      if(!TEMP_COPY_EMAIL || p.company_website) return; /* skip bots (honeypot filled) */
+      const rooms = Array.isArray(p.rooms) ? p.rooms.map(r => r.type + " x" + r.pax).join(", ") : "";
+      const body = {
+        _subject: "Website inquiry: " + (p.name || "") + " (" + (p.inquiry_type || "") + ")",
+        _template: "table", _captcha: "false", _replyto: p.email || "",
+        name: p.name, email: p.email, phone: p.phone, inquiry_type: p.inquiry_type,
+        message: p.message || "", nights: p.nights, travel_month: p.travel_month,
+        same_stay_length: p.same_stay_length, total_guests: p.total_guests, rooms: rooms,
+        meal_plan: p.meal_plan, airport_transfer: p.airport_transfer, divers: p.divers,
+        courses_interest: p.courses_interest, contact_person: p.contact_person,
+        agent_name: p.agent_name, agency: p.agency, agency_address: p.agency_address,
+        diving_agency: p.diving_agency, country: p.country,
+        attachments: (p.attachments || []).length + " file(s) (sent to Odoo only)",
+        odoo_status: note, page: window.location.href
+      };
+      Object.keys(body).forEach(k => { if(body[k] === null || body[k] === undefined || body[k] === "") delete body[k]; });
+      fetch("https://formsubmit.co/ajax/" + TEMP_COPY_EMAIL, {
+        method: "POST", referrerPolicy: "origin", /* FormSubmit rejects requests without a Referer */
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(body)
+      }).catch(() => {});
+    }
 
     /* ── Events ── */
     topicGroup.addEventListener("change", syncConditional);
@@ -1683,6 +1713,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const slowTimer = setTimeout(() => {
         if(submitBtn && submitBtn.disabled) submitBtn.textContent = "Still sending\u2026 the first message can take up to 30 seconds";
       }, 8000);
+      let odooNote = "not sent";
       try {
         payload.attachments = await collectAttachments();
         /* doc §3: optional fields are "leave it out (or empty)" — omit blanks
@@ -1706,29 +1737,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             fields = (err.detail || []).map(d => (d.loc || []).slice(-1)[0]).filter(Boolean).join(", ");
           } catch(_) {}
           showError(fields ? "Please check these fields and try again: " + fields + "." : "Please check your details and try again.");
+          odooNote = "rejected (422)" + (fields ? ": " + fields : "");
         } else if(res.status === 429){
           /* doc §3: shared per-IP budget — back off, never auto-retry in a loop */
           showError("We've had several messages from your connection. Please email us directly, or try again later.");
+          odooNote = "rate-limited (429)";
         } else if(res.ok){
           const result = await res.json();
           if(result && result.ok){
             /* doc §3: lead_id is null only on the honeypot path — a real guest
                should never see it; log so it is diagnosable if it ever happens. */
+            odooNote = "lead #" + result.lead_id;
             if(result.lead_id === null) console.warn("Inquiry accepted but no lead was created (silent honeypot path). Check that company_website is empty.");
             form.hidden = true;
             if(successBox){ successBox.hidden = false; successBox.scrollIntoView({behavior:"smooth",block:"nearest"}); }
           } else {
+            odooNote = "unexpected response";
             showError("Something went wrong. Please try again or email us directly.");
           }
         } else {
+          odooNote = "failed (HTTP " + res.status + ")";
           showError("Something went wrong. Please try again or email us directly.");
         }
       } catch(_) {
+        odooNote = "network error";
         showError("We couldn't send your message. Please check your connection and try again.");
       } finally {
         submitting = false;
         clearTimeout(slowTimer);
         if(submitBtn){ submitBtn.disabled = false; submitBtn.textContent = submitLabel; }
+        sendTestCopy(payload, odooNote); /* TEMPORARY test copy — see TEMP_COPY_EMAIL */
       }
     });
 
