@@ -317,7 +317,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;
       cursor:pointer;transition:background .3s,transform .2s;margin-top:.5rem;
     }
-    .cf-submit:hover{background:var(--accent-d);transform:translateY(-1px);}
+    .cf-submit:hover:not(:disabled){background:var(--accent-d);transform:translateY(-1px);}
+    .cf-submit:disabled{opacity:.7;cursor:progress;transform:none;}
     .cf-success,.cf-error{padding:.85rem 1.1rem;border-radius:3px;font-size:.82rem;margin-top:1rem;text-align:center;}
     .cf-success{background:rgba(77,194,232,.1);border:1px solid rgba(77,194,232,.35);color:var(--accent);}
     .cf-error{background:rgba(220,60,60,.1);border:1px solid rgba(220,60,60,.4);color:#e07070;}
@@ -981,6 +982,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- CONTACT -->
+  <style>
+    /* ===== New inquiry form (pills + wizard + rooms + uploads) ===== */
+    .cf-hidden{display:none !important;}
+    /* Honeypot: present for bots, invisible + out of flow for people */
+    .casa-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+    /* Pills */
+    .cf-pill-radio{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);border:0;}
+    .cf-pills{display:flex;gap:.6rem;flex-wrap:wrap;}
+    .cf-pills-col{flex-direction:column;}
+    .cf-pill{flex:1;min-width:88px;padding:.65rem .9rem;background:var(--bg2);border:1px solid var(--border);border-radius:999px;color:var(--text2);font-size:.78rem;font-weight:500;text-align:center;cursor:pointer;user-select:none;transition:background .25s,border-color .25s,color .25s;}
+    .cf-pill:hover{border-color:var(--accent);color:var(--text);}
+    .cf-pill-radio:checked + .cf-pill{background:var(--accent);border-color:var(--accent);color:#fff;}
+    .cf-pill-radio:focus-visible + .cf-pill{outline:none;box-shadow:0 0 0 3px rgba(77,194,232,.35);}
+    /* Guest block + section text */
+    .cf-guest{margin:.4rem 0 .8rem;padding-top:1rem;border-top:1px solid var(--border);}
+    .cf-section-title{margin-bottom:.2rem;font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;color:var(--text);}
+    .cf-section-sub{margin-bottom:1rem;font-size:.78rem;color:var(--text2);}
+    .cf-note{margin:-.2rem 0 .8rem;font-size:.68rem;color:var(--text3);}
+    .cf-hint{display:block;margin-top:.15rem;font-size:.68rem;color:var(--text3);line-height:1.5;}
+    .cf-extra-intro{margin:.4rem 0 .8rem;font-size:.8rem;color:var(--text2);}
+    /* Wizard */
+    .cf-wizard{display:grid;grid-template-columns:140px minmax(0,1fr);gap:1rem;align-items:start;margin-bottom:.4rem;}
+    .cf-step-tabs{display:flex;flex-direction:column;gap:.5rem;}
+    .cf-step-tab{position:relative;display:flex;flex-direction:column;align-items:center;gap:.4rem;width:100%;padding:.85rem .5rem;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text3);font-family:inherit;font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-align:center;cursor:pointer;transition:background .25s,border-color .25s,color .25s;}
+    .cf-step-ic{font-size:1.15rem;line-height:1;}
+    .cf-step-tab:hover{border-color:var(--accent);color:var(--text);}
+    .cf-step-tab:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(77,194,232,.35);}
+    .cf-step-tab.on{background:rgba(77,194,232,.1);border-color:var(--accent);color:var(--text);}
+    .cf-step-tab.done::after{content:"\2713";position:absolute;top:-7px;right:-7px;display:flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:#3fa96c;color:#fff;font-size:.55rem;line-height:1;}
+    .cf-step-in{animation:cfStepIn .35s ease both;}
+    .cf-step-in-back{animation:cfStepInBack .35s ease both;}
+    @keyframes cfStepIn{from{opacity:0;transform:translateX(24px);}to{opacity:1;transform:none;}}
+    @keyframes cfStepInBack{from{opacity:0;transform:translateX(-24px);}to{opacity:1;transform:none;}}
+    /* Rooms repeater */
+    .cf-rooms{display:flex;flex-direction:column;gap:.6rem;}
+    .cf-room-row{display:grid;grid-template-columns:1fr 1fr auto;gap:.8rem;align-items:end;padding:.8rem;background:var(--bg2);border:1px solid var(--border);border-radius:4px;}
+    .cf-room-cell{display:flex;flex-direction:column;gap:.3rem;min-width:0;}
+    .cf-room-lbl{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);}
+    .cf-room-remove{align-self:end;width:2.2rem;height:2.2rem;padding:0;background:transparent;border:1px solid var(--border);border-radius:50%;color:var(--text3);font-size:1rem;line-height:1;cursor:pointer;transition:border-color .25s,color .25s;}
+    .cf-room-remove:hover{border-color:rgba(220,60,60,.6);color:#e07070;}
+    .cf-room-row:only-child .cf-room-remove{display:none;}
+    .cf-room-add{margin-top:.6rem;padding:.7rem 1rem;width:100%;background:rgba(77,194,232,.06);border:1px dashed var(--border);border-radius:999px;color:var(--accent);font-family:inherit;font-size:.78rem;font-weight:500;cursor:pointer;transition:border-color .25s,background .25s;}
+    .cf-room-add:hover:enabled{border-color:var(--accent);background:rgba(77,194,232,.12);}
+    .cf-room-add:disabled{opacity:.5;cursor:default;}
+    /* Invalid state (JS-marked) */
+    .cf-input.invalid,.cf-textarea.invalid{border-color:rgba(220,60,60,.6) !important;}
+    /* File inputs match the site's input look */
+    .cf-input[type=file]{padding:.55rem .6rem;font-size:.78rem;color:var(--text2);}
+    /* Wizard stacks on small screens: cards become a 2x2 grid on top */
+    @media(max-width:560px){
+      .cf-wizard{grid-template-columns:1fr;}
+      .cf-step-tabs{display:grid;grid-template-columns:1fr 1fr;}
+      .cf-step-tab{flex-direction:row;justify-content:center;}
+    }
+  </style>
+
   <section class="contact" id="contact">
     <div class="sec-wrap">
       <div class="sec-header rv">
@@ -1025,46 +1082,219 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
 
-        <form class="contact-form rv rv-d1" id="contactForm" novalidate>
+        <form class="contact-form rv rv-d1" id="inquiryForm" data-casa-contact-form novalidate aria-label="Send an inquiry">
           <div class="cf-head">Send an <em style="color:var(--accent);font-style:italic">Inquiry</em></div>
           <div class="cf-sub">We typically reply within a few hours. Our front desk is open until 9 PM.</div>
-          <div class="cf-row">
-            <div class="cf-field">
-              <label class="cf-lbl" for="cf-name" data-i18n="cf_lbl_name">Name</label>
-              <input class="cf-input" type="text" id="cf-name" name="name" required placeholder="Your full name" data-i18n-placeholder="cf_placeholder_name">
-            </div>
-            <div class="cf-field">
-              <label class="cf-lbl" for="cf-email" data-i18n="cf_lbl_email">Email</label>
-              <input class="cf-input" type="email" id="cf-email" name="email" required placeholder="you@example.com" data-i18n-placeholder="cf_placeholder_email">
-            </div>
+
+          <!-- Honeypot: hidden from people, bots fill it -> silent success -->
+          <div class="casa-hp" aria-hidden="true">
+            <label for="cf-company-website">Company website</label>
+            <input type="text" id="cf-company-website" name="company_website" tabindex="-1" autocomplete="off">
           </div>
-          <div class="cf-row">
-            <div class="cf-field">
-              <label class="cf-lbl" for="cf-phone" data-i18n="cf_lbl_phone">Phone (optional)</label>
-              <input class="cf-input" type="tel" id="cf-phone" name="phone" placeholder="+63 ..." data-i18n-placeholder="cf_placeholder_phone">
-            </div>
-            <div class="cf-field">
-              <label class="cf-lbl" for="cf-topic" data-i18n="cf_lbl_topic">Inquiry Type</label>
-              <select class="cf-select" id="cf-topic" name="topic">
-                <option>Room Booking</option>
-                <option>Dive Packages</option>
-                <option>Van Transfer</option>
-                <option>Group Booking</option>
-                <option>General Question</option>
-              </select>
-            </div>
-          </div>
+
+          <!-- Who's asking -->
           <div class="cf-field">
-            <label class="cf-lbl" for="cf-message" data-i18n="cf_lbl_message">Message</label>
-            <textarea class="cf-textarea" id="cf-message" name="message" required placeholder="Dates, number of guests, experience level, dive preferences..." data-i18n-placeholder="cf_placeholder_message"></textarea>
+            <span class="cf-lbl">Who's asking?</span>
+            <div class="cf-pills" data-casa-inquiry-topic role="radiogroup" aria-label="Submitter type">
+              <input type="radio" class="cf-pill-radio" id="cf-topic-guest" name="topic" value="see_rates" checked>
+              <label class="cf-pill" for="cf-topic-guest">Guest</label>
+              <input type="radio" class="cf-pill-radio" id="cf-topic-agent" name="topic" value="agent">
+              <label class="cf-pill" for="cf-topic-agent">Travel Agent</label>
+              <input type="radio" class="cf-pill-radio" id="cf-topic-instructor" name="topic" value="instructor">
+              <label class="cf-pill" for="cf-topic-instructor">Dive Instructor</label>
+            </div>
           </div>
-          <button type="submit" class="cf-submit" data-i18n="cf_submit">Send Message</button>
-          <div class="cf-success" id="cfSuccess" data-i18n="cf_success_msg" hidden>
-            Thank you! Your message has been sent. We'll be in touch soon.
+
+          <div class="cf-field">
+            <label class="cf-lbl" for="cf-name">Full name</label>
+            <input class="cf-input" type="text" id="cf-name" name="name" required autocomplete="name" placeholder="Your full name">
           </div>
-          <div class="cf-error" id="cfError" data-i18n="cf_error_msg" hidden>
-            Something went wrong. Please try again or email us directly.
+
+          <div class="cf-row">
+            <div class="cf-field">
+              <label class="cf-lbl" for="cf-email">Email</label>
+              <input class="cf-input" type="email" id="cf-email" name="email" required autocomplete="email" placeholder="you@example.com">
+            </div>
+            <div class="cf-field">
+              <label class="cf-lbl" for="cf-phone">Phone</label>
+              <input class="cf-input" type="tel" id="cf-phone" name="phone" required autocomplete="tel" placeholder="+63 9xx xxx xxxx">
+            </div>
           </div>
+
+          <!-- ===== Guest trip block: a 4-slide wizard ===== -->
+          <div class="cf-guest" data-casa-guest-block>
+            <div class="cf-wizard">
+              <div class="cf-step-tabs" aria-label="Inquiry sections">
+                <button type="button" class="cf-step-tab on" aria-current="step" data-casa-step-go="trip"><span class="cf-step-ic" aria-hidden="true">&#129331;</span><span class="cf-step-tab-lbl">Your Trip</span></button>
+                <button type="button" class="cf-step-tab" data-casa-step-go="meal"><span class="cf-step-ic" aria-hidden="true">&#127860;</span><span class="cf-step-tab-lbl">Meal Plan</span></button>
+                <button type="button" class="cf-step-tab" data-casa-step-go="transfer"><span class="cf-step-ic" aria-hidden="true">&#9992;&#65039;</span><span class="cf-step-tab-lbl">Airport Transfer</span></button>
+                <button type="button" class="cf-step-tab" data-casa-step-go="diving"><span class="cf-step-ic" aria-hidden="true">&#9875;</span><span class="cf-step-tab-lbl">Diving</span></button>
+              </div>
+
+              <div class="cf-step-panes">
+                <!-- Slide 1: Your trip -->
+                <div class="cf-step" data-casa-step="trip">
+                  <div class="cf-section-title">Your trip</div>
+                  <div class="cf-section-sub">The basics &mdash; when you're coming, how many of you, and what rooms you'll need.</div>
+                  <div class="cf-row">
+                    <div class="cf-field">
+                      <label class="cf-lbl" for="cf-nights">Nights staying</label>
+                      <input class="cf-input" type="number" id="cf-nights" name="nights" min="1" max="365" inputmode="numeric" placeholder="e.g. 4">
+                    </div>
+                    <div class="cf-field">
+                      <label class="cf-lbl" for="cf-travel-month">Tentative month of travel</label>
+                      <input class="cf-input" type="month" id="cf-travel-month" name="travel_month">
+                    </div>
+                  </div>
+                  <div class="cf-note">Exact dates aren't needed yet &mdash; we'll confirm them when finalizing your booking.</div>
+                  <div class="cf-field">
+                    <span class="cf-lbl">Will everyone in your group have the same length of stay?</span>
+                    <div class="cf-pills" role="radiogroup" aria-label="Same length of stay for everyone">
+                      <input type="radio" class="cf-pill-radio" id="cf-same-yes" name="same_stay_length" value="yes">
+                      <label class="cf-pill" for="cf-same-yes">Yes</label>
+                      <input type="radio" class="cf-pill-radio" id="cf-same-no" name="same_stay_length" value="no">
+                      <label class="cf-pill" for="cf-same-no">No</label>
+                    </div>
+                  </div>
+                  <div class="cf-field">
+                    <label class="cf-lbl" for="cf-total-guests">Total number of guests in your group</label>
+                    <input class="cf-input" type="number" id="cf-total-guests" name="total_guests" min="1" max="200" inputmode="numeric" placeholder="e.g. 6">
+                  </div>
+                  <div class="cf-field">
+                    <span class="cf-lbl">Rooms</span>
+                    <div class="cf-rooms" data-casa-rooms>
+                      <div class="cf-room-row" data-casa-room-row>
+                        <div class="cf-room-cell">
+                          <span class="cf-room-lbl">Room type</span>
+                          <select class="cf-select" data-casa-room-type aria-label="Room type">
+                            <option value="">Select room type</option>
+                            <option value="standard">Standard Room</option>
+                            <option value="deluxe">Deluxe Room</option>
+                            <option value="suite">Suite</option>
+                          </select>
+                        </div>
+                        <div class="cf-room-cell">
+                          <span class="cf-room-lbl">Pax in this room</span>
+                          <select class="cf-select" data-casa-room-pax aria-label="Guests in this room">
+                            <option value="">Guests</option>
+                            <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+                            <option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option>
+                          </select>
+                        </div>
+                        <button type="button" class="cf-room-remove" data-casa-room-remove aria-label="Remove this room">&#215;</button>
+                      </div>
+                    </div>
+                    <button type="button" class="cf-room-add" data-casa-room-add>+ Add another room</button>
+                  </div>
+                </div>
+
+                <!-- Slide 2: Meal plan -->
+                <div class="cf-step cf-hidden" data-casa-step="meal">
+                  <div class="cf-field">
+                    <span class="cf-lbl">Meal plan</span>
+                    <div class="cf-pills cf-pills-col" role="radiogroup" aria-label="Meal plan">
+                      <input type="radio" class="cf-pill-radio" id="cf-meal-full" name="meal_plan" value="full_board">
+                      <label class="cf-pill" for="cf-meal-full">Room + Full Board</label>
+                      <input type="radio" class="cf-pill-radio" id="cf-meal-room" name="meal_plan" value="room_only">
+                      <label class="cf-pill" for="cf-meal-room">Room Only</label>
+                    </div>
+                    <span class="cf-hint">Full board adds PHP 1,500 per person, per night, and isn't included in the base room rate &mdash; switch to Room Only if you'd prefer to dine elsewhere.</span>
+                  </div>
+                </div>
+
+                <!-- Slide 3: Airport transfer -->
+                <div class="cf-step cf-hidden" data-casa-step="transfer">
+                  <div class="cf-field">
+                    <span class="cf-lbl">Would you like us to arrange airport van transfer?</span>
+                    <span class="cf-hint">PHP 14,000 per van, round trip &#183; max 7 pax with light luggage</span>
+                    <div class="cf-pills" role="radiogroup" aria-label="Airport van transfer">
+                      <input type="radio" class="cf-pill-radio" id="cf-transfer-yes" name="airport_transfer" value="yes">
+                      <label class="cf-pill" for="cf-transfer-yes">Yes</label>
+                      <input type="radio" class="cf-pill-radio" id="cf-transfer-no" name="airport_transfer" value="no">
+                      <label class="cf-pill" for="cf-transfer-no">No</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 4: Diving -->
+                <div class="cf-step cf-hidden" data-casa-step="diving">
+                  <div class="cf-field">
+                    <label class="cf-lbl" for="cf-divers">How many of your guests will be diving?</label>
+                    <input class="cf-input" type="number" id="cf-divers" name="divers" min="0" max="200" inputmode="numeric" placeholder="0 if nobody is diving">
+                  </div>
+                  <div class="cf-field">
+                    <span class="cf-lbl">Would any of your guests like to take a course or certification during their stay?</span>
+                    <div class="cf-pills" role="radiogroup" aria-label="Course or certification interest">
+                      <input type="radio" class="cf-pill-radio" id="cf-courses-yes" name="courses_interest" value="yes">
+                      <label class="cf-pill" for="cf-courses-yes">Yes</label>
+                      <input type="radio" class="cf-pill-radio" id="cf-courses-no" name="courses_interest" value="no">
+                      <label class="cf-pill" for="cf-courses-no">No</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== Instructor / Agent extra fields ===== -->
+          <div class="cf-extra cf-hidden" data-casa-inquiry-extra>
+            <div class="cf-extra-intro">For instructor/agent, kindly upload the following:</div>
+            <div class="cf-row">
+              <div class="cf-field">
+                <label class="cf-lbl" for="cf-credentials">Credentials</label>
+                <input class="cf-input" type="file" id="cf-credentials" name="credentials" disabled accept="application/pdf,image/*">
+                <span class="cf-hint" data-casa-hint="instructor">e.g. your PADI/SSI instructor eCard</span>
+                <span class="cf-hint cf-hidden" data-casa-hint="agent">e.g. company / business registration</span>
+              </div>
+              <div class="cf-field">
+                <label class="cf-lbl" for="cf-permit">Business Permit</label>
+                <input class="cf-input" type="file" id="cf-permit" name="business_permit" disabled accept="application/pdf,image/*">
+              </div>
+            </div>
+            <!-- Instructor-only -->
+            <div class="cf-row" data-casa-topic="instructor">
+              <div class="cf-field">
+                <label class="cf-lbl" for="cf-diving-agency">Diving Agency</label>
+                <input class="cf-input" type="text" id="cf-diving-agency" name="diving_agency" disabled placeholder="PADI, SSI, SDI ...">
+              </div>
+              <div class="cf-field">
+                <label class="cf-lbl" for="cf-country">Country</label>
+                <input class="cf-input" type="text" id="cf-country" name="country" disabled placeholder="Country of residence">
+              </div>
+            </div>
+            <!-- Agent-only -->
+            <div class="cf-extra-agent cf-hidden" data-casa-topic="agent">
+              <div class="cf-row">
+                <div class="cf-field">
+                  <label class="cf-lbl" for="cf-contact-person">Contact Person</label>
+                  <input class="cf-input" type="text" id="cf-contact-person" name="contact_person" disabled placeholder="Who we should ask for">
+                </div>
+                <div class="cf-field">
+                  <label class="cf-lbl" for="cf-agent-name">Agent's Name</label>
+                  <input class="cf-input" type="text" id="cf-agent-name" name="agent_name" disabled placeholder="Booking agent's name">
+                </div>
+              </div>
+              <div class="cf-row">
+                <div class="cf-field">
+                  <label class="cf-lbl" for="cf-agency">Agency</label>
+                  <input class="cf-input" type="text" id="cf-agency" name="agency" disabled placeholder="Agency / company name">
+                </div>
+                <div class="cf-field">
+                  <label class="cf-lbl" for="cf-agency-address">Diving Agency Address</label>
+                  <input class="cf-input" type="text" id="cf-agency-address" name="agency_address" disabled placeholder="Agency address">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cf-field">
+            <label class="cf-lbl" for="cf-message">Special requests</label>
+            <textarea class="cf-textarea" id="cf-message" name="message" placeholder="Dietary needs, celebrations, accessibility, flight times, or anything else we should know."></textarea>
+          </div>
+
+          <button type="submit" class="cf-submit">Send Message</button>
+          <div class="cf-error" id="cfError" role="alert" hidden>Something went wrong. Please try again or email us directly.</div>
+          <div class="cf-success" id="cfSuccess" role="status" aria-live="polite" hidden>Thank you! Your message has been sent. We'll be in touch soon.</div>
         </form>
       </div>
     </div>
@@ -1241,28 +1471,269 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 ;
 
-  /* ── Contact form ── */
-  const cForm = document.getElementById('contactForm');
-  const cSuccess = document.getElementById('cfSuccess');
-  const cError = document.getElementById('cfError');
-  cForm.addEventListener('submit', e => {
-    e.preventDefault();
-    cForm.querySelectorAll('.cf-input,.cf-textarea').forEach(i=>i.style.borderColor='');
-    cError.hidden = true;
-    const invalids = [...cForm.querySelectorAll('[required]')].filter(i=>!i.validity.valid);
-    if(invalids.length){
-      invalids.forEach(i=>i.style.borderColor='rgba(220,60,60,.6)');
-      cError.hidden = false;
-      invalids[0].focus();
-      return;
+  /* ── Inquiry form (pills + 4-slide wizard + rooms + uploads → POST JSON) ──
+     Implements the Odoo dev handoff (estimate-api-inquiry-examples.txt, 2026-09-25):
+     config-variable base URL (§1), JSON contract for all three inquirer types (§3),
+     422 detail parsing + 429 back-off (§3), api-key header per §2/§3d (client's
+     decision 2026-09-25: the handoff designates this low-privilege read/query key
+     for frontend use; it expires 2026-12-24 — rotate via the dev if ever needed),
+     no credentials mode (§5). Verified
+     2026-09-25 against staging: guest / agent / instructor each created a real
+     lead, and a browser submit from a CORS-whitelisted origin returned 200.
+     Honeypot = company_website (silent ok, lead_id null).
+
+     TO GO LIVE (one external gate, then a one-line swap):
+       1. DONE 2026-09-25 — the dev added our production origins to the CORS
+          allow-list. Verified: preflight from https://www.casaescondida-anilao.com
+          and from the apex both return 200 with the matching allow-origin (and
+          api-key in allow-headers); a real POST with the prod Origin created a lead.
+       2. Set API_BASE to the PRODUCTION host. The staging host's build id
+          (…-37790335.dev.odoo.com) CHANGES on every Odoo.sh rebuild — never ship
+          a *.dev.odoo.com URL to production. Then move this form into
+          location.html and drop the noindex. */
+  (function(){
+    /* API config (handoff doc §1–2). Keep the base in ONE variable: swapping
+       API_BASE to the production host is the only change needed to go live. */
+    const API_BASE = "https://casa-escondida-03-staging-web-37790335.dev.odoo.com/estimate-api";
+    const API_KEY  = "5f66536f6110484273087d88008e5683000cb0d8"; // low-privilege read/query key (handoff §2), expires 2026-12-24
+    const ENDPOINT = API_BASE + "/v1/inquiry/submit";
+    const ATTACH_MAX_FILES = 2;
+    const ATTACH_MAX_BYTES = 5 * 1024 * 1024;
+    const ATTACH_MIMES = ["application/pdf","image/jpeg","image/png"];
+    const MAX_ROOMS = 12;
+
+    const form = document.getElementById("inquiryForm");
+    if(!form) return;
+    const errorBox = document.getElementById("cfError");
+    const successBox = document.getElementById("cfSuccess");
+    const topicGroup = form.querySelector("[data-casa-inquiry-topic]");
+    const guestBlock = form.querySelector("[data-casa-guest-block]");
+    const extraBlock = form.querySelector("[data-casa-inquiry-extra]");
+    const roomsBox = form.querySelector("[data-casa-rooms]");
+    const roomAddBtn = form.querySelector("[data-casa-room-add]");
+    const steps = guestBlock ? [...guestBlock.querySelectorAll("[data-casa-step]")] : [];
+    const stepTabs = [...form.querySelectorAll("[data-casa-step-go]")];
+    const roomTemplate = roomsBox ? roomsBox.querySelector("[data-casa-room-row]").cloneNode(true) : null;
+    let stepIndex = 0, advanceTimer = null, submitting = false;
+
+    const topic = () => (topicGroup.querySelector("input:checked") || {value:"see_rates"}).value;
+    const setEnabled = (block, on) => { if(block) block.querySelectorAll("input,select,textarea,button").forEach(c => c.disabled = !on); };
+
+    function syncConditional(){
+      const t = topic(), isGuest = t === "see_rates", showExtra = t === "agent" || t === "instructor";
+      guestBlock.classList.toggle("cf-hidden", !isGuest);
+      setEnabled(guestBlock, isGuest);
+      if(isGuest && roomAddBtn) roomAddBtn.disabled = roomCount() >= MAX_ROOMS;
+      extraBlock.classList.toggle("cf-hidden", !showExtra);
+      extraBlock.querySelectorAll("input[type=file]").forEach(i => i.disabled = !showExtra);
+      extraBlock.querySelectorAll("[data-casa-topic]").forEach(g => {
+        const match = showExtra && g.dataset.casaTopic === t;
+        g.classList.toggle("cf-hidden", !match);
+        g.querySelectorAll("input,select,textarea").forEach(i => i.disabled = !match);
+      });
+      extraBlock.querySelectorAll("[data-casa-hint]").forEach(h => h.classList.toggle("cf-hidden", h.dataset.casaHint !== t));
     }
-    cForm.style.opacity='0.5';
-    cForm.style.pointerEvents='none';
-    setTimeout(()=>{
-      cSuccess.hidden = false;
-      cSuccess.scrollIntoView({behavior:'smooth',block:'nearest'});
-    },500);
-  });
+
+    /* ── Wizard ── */
+    function showStep(i, back){
+      if(!steps.length) return;
+      stepIndex = Math.max(0, Math.min(i, steps.length - 1));
+      steps.forEach((s, n) => {
+        const active = n === stepIndex;
+        s.classList.toggle("cf-hidden", !active);
+        s.classList.remove("cf-step-in","cf-step-in-back");
+        if(active){ void s.offsetWidth; s.classList.add(back ? "cf-step-in-back" : "cf-step-in"); }
+      });
+      paintTabs();
+    }
+    function paintTabs(){
+      stepTabs.forEach(tab => {
+        const s = steps.find(x => x.dataset.casaStep === tab.dataset.casaStepGo);
+        const on = !!s && steps.indexOf(s) === stepIndex;
+        tab.classList.toggle("on", on);
+        tab.classList.toggle("done", !!s && stepComplete(s));
+        if(on) tab.setAttribute("aria-current","step"); else tab.removeAttribute("aria-current");
+      });
+    }
+    function stepComplete(step){
+      for(const inp of step.querySelectorAll("input.cf-input")) if(!inp.value.trim()) return false;
+      const names = new Set([...step.querySelectorAll("input[type=radio]")].map(r => r.name));
+      for(const n of names) if(!step.querySelector('input[type=radio][name="'+n+'"]:checked')) return false;
+      for(const row of step.querySelectorAll("[data-casa-room-row]"))
+        if(!row.querySelector("[data-casa-room-type]").value || !row.querySelector("[data-casa-room-pax]").value) return false;
+      return true;
+    }
+    function maybeAdvance(){ if(stepIndex < steps.length - 1 && stepComplete(steps[stepIndex])) showStep(stepIndex + 1); }
+
+    /* ── Rooms ── */
+    function roomCount(){ return roomsBox ? roomsBox.querySelectorAll("[data-casa-room-row]").length : 0; }
+    function collectRooms(){
+      const out = [];
+      if(!roomsBox) return out;
+      for(const row of roomsBox.querySelectorAll("[data-casa-room-row]")){
+        const type = row.querySelector("[data-casa-room-type]").value;
+        const pax = parseInt(row.querySelector("[data-casa-room-pax]").value, 10);
+        if(type && Number.isFinite(pax)) out.push({ type, pax });
+      }
+      return out.slice(0, MAX_ROOMS);
+    }
+
+    /* ── Attachments ── */
+    const readB64 = file => new Promise(res => {
+      const r = new FileReader();
+      r.onload = () => { const s = String(r.result||""); const c = s.indexOf(","); res(c >= 0 ? s.slice(c+1) : null); };
+      r.onerror = () => res(null);
+      r.readAsDataURL(file);
+    });
+    async function collectAttachments(){
+      const out = [];
+      if(!extraBlock || extraBlock.classList.contains("cf-hidden")) return out;
+      for(const input of extraBlock.querySelectorAll("input[type=file]")){
+        if(input.disabled) continue;
+        for(const file of (input.files||[])){
+          if(out.length >= ATTACH_MAX_FILES) break;
+          if(file.size > ATTACH_MAX_BYTES || !ATTACH_MIMES.includes(file.type)) continue;
+          const data_b64 = await readB64(file);
+          if(data_b64) out.push({ name: file.name, mimetype: file.type, data_b64 });
+        }
+      }
+      return out;
+    }
+
+    const showError = msg => { if(errorBox){ errorBox.textContent = msg; errorBox.hidden = false; } };
+    const text = v => (String(v||"").trim() || null);
+    const intOrNull = v => { const n = parseInt(v,10); return Number.isFinite(n) ? n : null; };
+
+    /* ── Events ── */
+    topicGroup.addEventListener("change", syncConditional);
+    if(roomAddBtn) roomAddBtn.addEventListener("click", () => {
+      if(!roomsBox || !roomTemplate || roomCount() >= MAX_ROOMS) return;
+      roomsBox.appendChild(roomTemplate.cloneNode(true));
+      roomAddBtn.disabled = roomCount() >= MAX_ROOMS;
+      paintTabs();
+    });
+    if(roomsBox) roomsBox.addEventListener("click", e => {
+      const btn = e.target.closest("[data-casa-room-remove]");
+      if(!btn) return;
+      const row = btn.closest("[data-casa-room-row]");
+      if(row && roomCount() > 1){ row.remove(); if(roomAddBtn) roomAddBtn.disabled = roomCount() >= MAX_ROOMS; paintTabs(); }
+    });
+    stepTabs.forEach(tab => tab.addEventListener("click", () => {
+      const idx = steps.findIndex(s => s.dataset.casaStep === tab.dataset.casaStepGo);
+      if(idx < 0 || idx === stepIndex) return;
+      clearTimeout(advanceTimer);
+      showStep(idx, idx < stepIndex);
+    }));
+    if(guestBlock){
+      guestBlock.addEventListener("change", () => { clearTimeout(advanceTimer); maybeAdvance(); paintTabs(); });
+      guestBlock.addEventListener("input", () => { clearTimeout(advanceTimer); advanceTimer = setTimeout(() => { maybeAdvance(); paintTabs(); }, 800); });
+    }
+
+    form.addEventListener("submit", async e => {
+      e.preventDefault();
+      if(submitting) return;
+      const data = Object.fromEntries(new FormData(form).entries());
+      const t = topic();
+      const required = ["name","email","phone"];
+      if(t === "see_rates") required.push("nights","travel_month","total_guests");
+      let firstInvalid = null;
+      form.querySelectorAll(".cf-input,.cf-textarea").forEach(i => i.classList.remove("invalid"));
+      for(const f of required){
+        const input = form.querySelector('[name="'+f+'"]');
+        if(!input) continue;
+        const empty = !String(data[f]||"").trim();
+        input.classList.toggle("invalid", empty);
+        if(empty && !firstInvalid) firstInvalid = input;
+      }
+      if(firstInvalid){
+        const step = firstInvalid.closest("[data-casa-step]");
+        const idx = step ? steps.indexOf(step) : -1;
+        if(idx >= 0 && idx !== stepIndex) showStep(idx, idx < stepIndex);
+        showError("Please fill in all required fields.");
+        firstInvalid.focus();
+        return;
+      }
+      const payload = {
+        name: data.name, email: data.email, phone: data.phone,
+        inquiry_type: t, message: text(data.message), company_website: text(data.company_website),
+      };
+      if(t === "see_rates"){
+        Object.assign(payload, {
+          nights: intOrNull(data.nights), travel_month: text(data.travel_month),
+          same_stay_length: text(data.same_stay_length), total_guests: intOrNull(data.total_guests),
+          rooms: collectRooms(), meal_plan: text(data.meal_plan),
+          airport_transfer: text(data.airport_transfer), divers: intOrNull(data.divers),
+          courses_interest: text(data.courses_interest),
+        });
+      } else {
+        Object.assign(payload, {
+          diving_agency: text(data.diving_agency), country: text(data.country),
+          contact_person: text(data.contact_person), agent_name: text(data.agent_name),
+          agency: text(data.agency), agency_address: text(data.agency_address),
+        });
+      }
+      submitting = true;
+      if(errorBox) errorBox.hidden = true;
+      /* doc §7: the staging container sleeps when idle — the first request can
+         take 10–30s. Show progress so nobody double-submits or gives up. */
+      const submitBtn = form.querySelector(".cf-submit");
+      const submitLabel = submitBtn ? submitBtn.textContent : "";
+      if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = "Sending\u2026"; }
+      const slowTimer = setTimeout(() => {
+        if(submitBtn && submitBtn.disabled) submitBtn.textContent = "Still sending\u2026 the first message can take up to 30 seconds";
+      }, 8000);
+      try {
+        payload.attachments = await collectAttachments();
+        /* doc §3: optional fields are "leave it out (or empty)" — omit blanks
+           rather than sending null. (Server tolerates null too — verified.) */
+        Object.keys(payload).forEach(k => { if(payload[k] === null || payload[k] === undefined) delete payload[k]; });
+        /* doc §3d: JSON body + api-key header, exactly as the handoff example.
+           The key is optional on this public route (doc §2); it is sent for one
+           consistent client at the client's request. The server's CORS
+           allow-headers permits it. doc §5: no credentials:"include". */
+        const res = await fetch(ENDPOINT, {
+          method:"POST",
+          headers:{ "Content-Type":"application/json", "api-key": API_KEY },
+          body: JSON.stringify(payload)
+        });
+        if(res.status === 422){
+          /* doc §3: standard FastAPI shape — detail = [{loc, msg, type}, ...] */
+          let fields = "";
+          try {
+            const err = await res.json();
+            console.warn("Inquiry 422:", err.detail);
+            fields = (err.detail || []).map(d => (d.loc || []).slice(-1)[0]).filter(Boolean).join(", ");
+          } catch(_) {}
+          showError(fields ? "Please check these fields and try again: " + fields + "." : "Please check your details and try again.");
+        } else if(res.status === 429){
+          /* doc §3: shared per-IP budget — back off, never auto-retry in a loop */
+          showError("We've had several messages from your connection. Please email us directly, or try again later.");
+        } else if(res.ok){
+          const result = await res.json();
+          if(result && result.ok){
+            /* doc §3: lead_id is null only on the honeypot path — a real guest
+               should never see it; log so it is diagnosable if it ever happens. */
+            if(result.lead_id === null) console.warn("Inquiry accepted but no lead was created (silent honeypot path). Check that company_website is empty.");
+            form.hidden = true;
+            if(successBox){ successBox.hidden = false; successBox.scrollIntoView({behavior:"smooth",block:"nearest"}); }
+          } else {
+            showError("Something went wrong. Please try again or email us directly.");
+          }
+        } else {
+          showError("Something went wrong. Please try again or email us directly.");
+        }
+      } catch(_) {
+        showError("We couldn't send your message. Please check your connection and try again.");
+      } finally {
+        submitting = false;
+        clearTimeout(slowTimer);
+        if(submitBtn){ submitBtn.disabled = false; submitBtn.textContent = submitLabel; }
+      }
+    });
+
+    syncConditional();
+    paintTabs();
+  })();
   </script>
 
   
