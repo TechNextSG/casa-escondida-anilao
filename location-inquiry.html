@@ -1475,10 +1475,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   /* ── Inquiry form (pills + 4-slide wizard + rooms + uploads → POST JSON) ──
      Implements the Odoo dev handoff (estimate-api-inquiry-examples.txt, 2026-09-25):
      config-variable base URL (§1), JSON contract for all three inquirer types (§3),
-     422 detail parsing + 429 back-off (§3), no credentials mode (§5). The api-key
-     is deliberately NOT embedded: it is optional and ignored on this public route
-     (§2), this page is public static HTML, and the handoff says to keep the key
-     private — it also unlocks the protected estimate/booking routes. Verified
+     422 detail parsing + 429 back-off (§3), api-key header per §2/§3d (client's
+     decision 2026-09-25: the handoff designates this low-privilege read/query key
+     for frontend use; it expires 2026-12-24 — rotate via the dev if ever needed),
+     no credentials mode (§5). Verified
      2026-09-25 against staging: guest / agent / instructor each created a real
      lead, and a browser submit from a CORS-whitelisted origin returned 200.
      Honeypot = company_website (silent ok, lead_id null).
@@ -1495,6 +1495,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     /* API config (handoff doc §1–2). Keep the base in ONE variable: swapping
        API_BASE to the production host is the only change needed to go live. */
     const API_BASE = "https://casa-escondida-03-staging-web-37790335.dev.odoo.com/estimate-api";
+    const API_KEY  = "5f66536f6110484273087d88008e5683000cb0d8"; // low-privilege read/query key (handoff §2), expires 2026-12-24
     const ENDPOINT = API_BASE + "/v1/inquiry/submit";
     const ATTACH_MAX_FILES = 2;
     const ATTACH_MAX_BYTES = 5 * 1024 * 1024;
@@ -1675,14 +1676,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if(errorBox) errorBox.hidden = true;
       try {
         payload.attachments = await collectAttachments();
-        /* doc §3d: JSON body. The api-key header is deliberately OMITTED: this
-           route is public and ignores it (doc §2), and this page is public static
-           HTML — embedding the key would publish it (doc: "keep private") and
-           expose the protected estimate/booking routes. doc §5: no
-           credentials:"include". */
+        /* doc §3d: JSON body + api-key header, exactly as the handoff example.
+           The key is optional on this public route (doc §2); it is sent for one
+           consistent client at the client's request. The server's CORS
+           allow-headers permits it. doc §5: no credentials:"include". */
         const res = await fetch(ENDPOINT, {
           method:"POST",
-          headers:{ "Content-Type":"application/json" },
+          headers:{ "Content-Type":"application/json", "api-key": API_KEY },
           body: JSON.stringify(payload)
         });
         if(res.status === 422){
