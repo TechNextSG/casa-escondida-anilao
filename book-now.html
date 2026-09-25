@@ -642,6 +642,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       .cf-pill{padding:.8rem .9rem;}                             /* ≥44px tap target */
       .loc-stat-l{font-size:.68rem;}
     }
+    @media(max-width:900px){
+      /* 1fr = minmax(auto,1fr): the column can't shrink below the form's intrinsic
+         width, so on narrow phones (≤366px) the card pushed past the viewport. */
+      .bn-grid{grid-template-columns:minmax(0,1fr);}
+      .bn-grid > div,.contact-form,.cf-wizard,.cf-step-panes,.cf-step,.cf-field,.cf-row,.cf-rooms,.cf-room-row,.cf-room-cell{min-width:0;}
+      .cf-input,.cf-select,.cf-textarea{min-width:0;max-width:100%;width:100%;}
+    }
+    @media(max-width:560px){
+      .cf-wizard{grid-template-columns:minmax(0,1fr);}         /* stacked wizard: shrinkable column */
+    }
     @media(max-width:480px){
       .contact-form{padding:1.6rem 1.1rem;}                      /* more room for inputs */
       [data-casa-inquiry-topic] .cf-pill{flex:1 1 100%;}         /* stack the 3 role pills evenly */
