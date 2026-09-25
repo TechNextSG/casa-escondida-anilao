@@ -16,6 +16,7 @@ Marketing website for **Casa Escondida Anilao** — a PADI dive resort in Mabini
 2. **Apply changes everywhere.** A wording/policy change usually appears in the HTML **and** in `translate.js` (EN **and** ZH), and sometimes in JSON-LD schema, `og:`/`twitter:` meta, and `sitemap.xml`. Grep the whole site and prove zero old values remain before calling it done.
 3. **Verify live.** After pushing, confirm the change is actually live at the URL (GitHub Pages + CDN lag ~1 min). A page isn't done until it's live.
 4. **Optimize images to `.webp`** (see Images below), keep `alt` text on every `<img>`.
+5. **Clean URLs — never link to `.html`.** Files keep their `.html` names, but every link, canonical, `og:url`, JSON-LD URL, sitemap entry and script-built URL uses the extensionless form (`/rooms`, `/blog/<slug>`, `/book-now`, `/` for the homepage). GitHub Pages resolves `/x` to `x.html` natively; Vercel does it via `vercel.json` (`cleanUrls: true`, which also 308-redirects `/x.html` → `/x`). `site.js` tidies the address bar (`history.replaceState`) when someone lands on an old `.html` link. `translate.js` nav selectors match both `rooms.html` and `/rooms` hrefs — keep both if you add nav items. Local preview: a plain `python -m http.server` won't resolve clean URLs; use a handler that maps `/x` → `x.html`.
 
 ## Design system
 

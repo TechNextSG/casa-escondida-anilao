@@ -64,7 +64,7 @@
     var t = COOKIE_I18N[lang] || COOKIE_I18N.en;
     var textEl = banner.querySelector('.ce-consent-text');
     if (textEl) {
-      textEl.innerHTML = '<strong>' + t.strong + '</strong> ' + t.body + ' <a href="/privacy-policy.html">' + t.learn + '</a>';
+      textEl.innerHTML = '<strong>' + t.strong + '</strong> ' + t.body + ' <a href="/privacy-policy">' + t.learn + '</a>';
     }
     var dec = banner.querySelector('.ce-consent-decline');
     if (dec) dec.textContent = t.decline;
@@ -86,7 +86,7 @@
         '<div class="ce-consent-text">' +
           '<strong>' + t.strong + '</strong> ' +
           t.body + ' ' +
-          '<a href="/privacy-policy.html">' + t.learn + '</a>' +
+          '<a href="/privacy-policy">' + t.learn + '</a>' +
         '</div>' +
         '<div class="ce-consent-actions">' +
           '<button class="ce-consent-btn ce-consent-decline" type="button">' + t.decline + '</button>' +

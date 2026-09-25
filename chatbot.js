@@ -561,8 +561,8 @@
       answer: 'To book a room at Casa Escondida Anilao:\n+63 977 837 2272\nFacebook: CasaEscondidaAnilao\n\nWe recommend booking in advance (peak: Dec–May). We\'ll confirm your reservation right away!',
       answerZh: '预订卡萨埃斯孔迪达阿尼劳客房：\n致电 +63 977 837 2272\nFacebook私信：CasaEscondidaAnilao\n\n建议提前预订，旺季（12月至5月）尤为重要。',
       cta: [
-        { label: 'Book Your Stay', labelZh: '预订住宿', url: '/book-now.html', primary: true },
-        { label: 'View Room Types', labelZh: '查看房型', url: 'rooms.html' }
+        { label: 'Book Your Stay', labelZh: '预订住宿', url: '/book-now', primary: true },
+        { label: 'View Room Types', labelZh: '查看房型', url: '/rooms' }
       ]
     },
     {
@@ -570,8 +570,8 @@
       answer: 'Room rates vary by type and season. Breakfast is available as an optional add-on. We also have dive+stay packages. Contact us for the latest rates:\n+63 977 837 2272\nFacebook: CasaEscondidaAnilao',
       answerZh: '房价因房型和季节而异，早餐为可选附加项目。我们还提供潜水套餐。\n+63 977 837 2272',
       cta: [
-        { label: 'See Room Options', labelZh: '查看房间选项', url: 'rooms.html', primary: true },
-        { label: 'Book & Check Rates', labelZh: '预订并查询价格', url: '/book-now.html' }
+        { label: 'See Room Options', labelZh: '查看房间选项', url: '/rooms', primary: true },
+        { label: 'Book & Check Rates', labelZh: '预订并查询价格', url: '/book-now' }
       ]
     },
     {
@@ -579,8 +579,8 @@
       answer: 'We offer sea-view rooms and suites with views of Balayan Bay:\n\nStandard Double/Twin\nDeluxe Sea View\nSuite with Sea View\nBreakfast available (optional add-on)\nA/C, hot shower, free WiFi\nAll rooms non-smoking',
       answerZh: '我们提供可欣赏巴拉扬湾美景的海景客房和套房：\n\n标准双人间/双床间\n豪华海景客房\n海景套房\n早餐（可选附加）\n空调、热水淋浴、免费WiFi\n全部客房禁烟',
       cta: [
-        { label: 'Explore All Rooms', labelZh: '浏览所有客房', url: 'rooms.html', primary: true },
-        { label: 'Book Now', labelZh: '立即预订', url: '/book-now.html' }
+        { label: 'Explore All Rooms', labelZh: '浏览所有客房', url: '/rooms', primary: true },
+        { label: 'Book Now', labelZh: '立即预订', url: '/book-now' }
       ]
     },
     {
@@ -593,8 +593,8 @@
       answer: 'As a PADI 5 Star IDC Resort, we offer:\n\nOpen Water Diver · Advanced OW\nRescue Diver · Divemaster\nSpecialty courses\nFun dives for certified divers\n\nAnilao is the birthplace of Philippine scuba diving!',
       answerZh: '作为PADI五星潜水中心，我们提供：\n\n开放水域潜水员（初级）\n进阶开放水域潜水员\n救援潜水员 · 潜水长\n各类专长课程\n持证潜水员休闲潜水\n\n阿尼劳是菲律宾水肺潜水的发源地！',
       cta: [
-        { label: 'Explore Dive Center', labelZh: '探索潜水中心', url: 'dive.html', primary: true },
-        { label: 'Book a Dive Package', labelZh: '预订潜水套餐', url: '/book-now.html' }
+        { label: 'Explore Dive Center', labelZh: '探索潜水中心', url: '/dive', primary: true },
+        { label: 'Book a Dive Package', labelZh: '预订潜水套餐', url: '/book-now' }
       ]
     },
     {
@@ -603,7 +603,7 @@
       answerZh: '阿尼劳拥有30多个世界级潜水点！\n\n• 碧翠斯礁 – 裸鳃动物天堂\n• 科比礁 – 珊瑚奇观\n• 教堂礁 – 穿越岩洞\n• 双礁 – 微距摄影圣地\n• 亚瑟礁、塞波克等更多！',
       cta: [
         { label: 'See All Dive Sites', labelZh: '查看所有潜点', url: 'dive.html#sites', primary: true },
-        { label: 'Book Dive Package', labelZh: '预订潜水套餐', url: '/book-now.html' }
+        { label: 'Book Dive Package', labelZh: '预订潜水套餐', url: '/book-now' }
       ]
     },
     {
@@ -629,7 +629,7 @@
       answer: 'Casa Escondida is in Mabini, Batangas — the heart of Anilao, birthplace of Philippine diving! \n\nBrgy. Ligaya, Mabini, Batangas 4202, Philippines',
       answerZh: '卡萨埃斯孔迪达位于菲律宾八打雁省马比尼市——阿尼劳心脏地带，菲律宾潜水的发源地！\n\n八打雁省利加亚村，马比尼4202，菲律宾',
       cta: [
-        { label: 'View Map & Directions', labelZh: '查看地图和路线', url: 'location.html', primary: true },
+        { label: 'View Map & Directions', labelZh: '查看地图和路线', url: '/location', primary: true },
         { label: 'Get Directions', labelZh: '获取路线', url: 'https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao' }
       ]
     },
@@ -638,7 +638,7 @@
       answer: '~140 km south of Manila \n\n2–3 hours by car\nSLEX → Star Tollway → Batangas → Mabini\n\nLeave early to beat Metro traffic!',
       answerZh: '距马尼拉以南约140公里 \n\n自驾约2至3小时\n路线：南吕宋高速公路→星型收费公路→八打雁→马比尼',
       cta: [
-        { label: 'Full Directions Guide', labelZh: '完整路线指南', url: 'location.html', primary: true },
+        { label: 'Full Directions Guide', labelZh: '完整路线指南', url: '/location', primary: true },
         { label: 'Open Google Maps', labelZh: '打开谷歌地图', url: 'https://www.google.com/maps/dir/?api=1&destination=Casa+Escondida+Anilao' }
       ]
     },
@@ -647,7 +647,7 @@
       answer: 'How to get here:\n\nPrivate van (recommended) — we can arrange from Manila\nBus + Tricycle:\n1. JAM/DLTB bus → Batangas City\n2. Bus/van → Mabini (Anilao)\n3. Tricycle to the resort',
       answerZh: '前往方式：\n\n私人面包车（推荐）——我们可从马尼拉安排接送\n巴士+三轮车：\n1. 乘坐JAM/DLTB巴士→八打雁城\n2. 转乘→马比尼（阿尼劳）\n3. 乘三轮车前往度假村',
       cta: [
-        { label: 'Full Transport Guide', labelZh: '完整路线指南', url: 'location.html', primary: true },
+        { label: 'Full Transport Guide', labelZh: '完整路线指南', url: '/location', primary: true },
         { label: 'Contact for Transfer', labelZh: '联系安排接送', url: 'location.html#contact' }
       ]
     },
@@ -701,7 +701,7 @@
       answerZh: '我们提供多种套餐：\n\n潜水住宿套餐（含无限次船潜）\nPADI课程+住宿套餐\n岛屿烧烤套餐\n情侣及团体优惠',
       cta: [
         { label: 'View Dive Packages', url: 'dive.html#packages', primary: true },
-        { label: 'Book a Package', labelZh: '预订套餐', url: '/book-now.html' }
+        { label: 'Book a Package', labelZh: '预订套餐', url: '/book-now' }
       ]
     },
     {

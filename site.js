@@ -184,3 +184,15 @@ if ('serviceWorker' in navigator) {
     }).catch(function () {});
   });
 }
+
+/* ── Clean URLs: the site is served without .html (GitHub Pages resolves /x to x.html; Vercel
+   uses cleanUrls). If a visitor arrives on an old .html link, tidy the address bar in place. ── */
+(function(){
+  try {
+    var p = location.pathname;
+    if (/\.html$/.test(p)) {
+      var c = p.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+      history.replaceState(history.state, '', c + location.search + location.hash);
+    }
+  } catch (e) {}
+})();
