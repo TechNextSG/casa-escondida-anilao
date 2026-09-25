@@ -1482,15 +1482,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      lead, and a browser submit from a CORS-whitelisted origin returned 200.
      Honeypot = company_website (silent ok, lead_id null).
 
-     TO GO LIVE (one external gate, then a one-line swap):
-       1. DONE 2026-09-25 — the dev added our production origins to the CORS
-          allow-list. Verified: preflight from https://www.casaescondida-anilao.com
-          and from the apex both return 200 with the matching allow-origin (and
-          api-key in allow-headers); a real POST with the prod Origin created a lead.
-       2. Set API_BASE to the PRODUCTION host. The staging host's build id
-          (…-37790335.dev.odoo.com) CHANGES on every Odoo.sh rebuild — never ship
-          a *.dev.odoo.com URL to production. Then move this form into
-          location.html and drop the noindex. */
+     STATUS: LIVE on location.html since 2026-09-25 (replaced the previous
+     placebo handler that showed "success" without sending anything).
+       - CORS for the production origins: DONE by the dev 2026-09-25 (verified:
+         preflight from www + apex → 200 with matching allow-origin and api-key
+         in allow-headers; a real POST from the prod Origin created a lead).
+       - STILL PENDING: API_BASE points at the STAGING host until the dev sends
+         the production /estimate-api URL. Until then leads land in the STAGING
+         CRM and staging's mailcatcher swallows the front-desk email — the team
+         must watch the staging CRM. The staging build id (…-37790335…) CHANGES
+         on every Odoo.sh rebuild; if submissions start failing, get the new host. */
   (function(){
     /* API config (handoff doc §1–2). Keep the base in ONE variable: swapping
        API_BASE to the production host is the only change needed to go live. */
