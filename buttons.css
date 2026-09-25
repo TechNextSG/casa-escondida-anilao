@@ -1,0 +1,161 @@
+/* ============================================================
+   buttons.css — ONE button system for every page.
+   Loaded after style.css / the page's inline <style>. Uses
+   element+class selectors (a.x / button.x) so it outranks the
+   older per-page single-class rules without !important.
+
+   Sizes   : lg = hero & section CTAs (52px, 48px on phones)
+             md = card / inline actions (44px, 48px on phones)
+   Variants: filled (accent) · ghost (outline) · gold (featured)
+   Motion  : hover lifts 2px (+ shadow on filled), arrow icon
+             nudges 3px, press scales .97, focus ring, all off
+             under prefers-reduced-motion. No shimmer/overlays.
+   ============================================================ */
+:root{
+  --btn-h-lg:52px; --btn-h-md:44px;
+  --btn-px-lg:1.9rem; --btn-px-md:1.3rem;
+  --btn-fs-lg:.78rem; --btn-fs-md:.72rem;
+  --btn-radius:2px;
+  --btn-ease:cubic-bezier(.16,1,.3,1);
+  --btn-shadow:0 8px 22px rgba(77,194,232,.28);
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
+a.hero-cta-primary,a.hero-cta-ghost,a.btn-hero-primary,a.btn-hero-ghost,
+a.cta-btn-main,a.cta-btn-outline,a.loc-btn-primary,a.loc-btn-ghost,
+.booking-cta a.btn-book,button.cf-submit,
+a.btn-book-sm,a.btn-outline-sm,a.rm-btn,a.rm-btn-primary,a.rm-btn-ghost,
+a.loc-map-btn,a.tr-cta,a.pkg-cta,a.cta-soc,a.ig-cta-btn,a.instr-cta-btn{
+  position:relative;
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  box-sizing:border-box;
+  min-height:var(--btn-h-lg);padding:0 var(--btn-px-lg);
+  border:1px solid transparent;border-radius:var(--btn-radius);
+  font-family:'DM Sans',system-ui,sans-serif;font-size:var(--btn-fs-lg);font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;line-height:1.2;
+  text-decoration:none;text-align:center;white-space:nowrap;
+  cursor:pointer;overflow:visible;
+  transition:transform .2s var(--btn-ease),background-color .2s,border-color .2s,color .2s,box-shadow .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+/* the old per-page shimmer / wipe overlays are retired */
+a.hero-cta-primary::after,a.hero-cta-ghost::before,a.btn-hero-primary::after,a.btn-hero-ghost::before,
+a.cta-btn-main::after,a.cta-btn-outline::before,a.loc-btn-primary::after,a.loc-btn-ghost::before,
+a.rm-btn-primary::after,a.rm-btn-ghost::before,a.ig-cta-btn::before,a.btn-book-sm::after{content:none;}
+
+/* ── Medium size ──────────────────────────────────────────── */
+a.btn-book-sm,a.btn-outline-sm,a.rm-btn,a.rm-btn-primary,a.rm-btn-ghost,
+a.loc-map-btn,a.tr-cta,a.pkg-cta,a.cta-soc,a.ig-cta-btn,a.instr-cta-btn{
+  min-height:var(--btn-h-md);padding:0 var(--btn-px-md);font-size:var(--btn-fs-md);
+}
+
+/* ── Filled (accent) ──────────────────────────────────────── */
+a.hero-cta-primary,a.btn-hero-primary,a.cta-btn-main,a.loc-btn-primary,button.cf-submit,
+a.btn-book-sm,a.rm-btn-primary,a.pkg-cta,a.instr-cta-btn{
+  background:var(--accent);border-color:var(--accent);color:#fff;
+}
+a.hero-cta-primary:hover,a.btn-hero-primary:hover,a.cta-btn-main:hover,a.loc-btn-primary:hover,button.cf-submit:hover:not(:disabled),
+a.btn-book-sm:hover,a.rm-btn-primary:hover,a.pkg-cta:hover,a.instr-cta-btn:hover{
+  background:var(--accent-d) !important;border-color:var(--accent-d);color:#fff;
+  transform:translateY(-2px);box-shadow:var(--btn-shadow);
+}
+
+/* ── Ghost (outline) ──────────────────────────────────────── */
+a.cta-btn-outline,a.rm-btn,a.rm-btn-ghost,a.loc-map-btn,a.tr-cta,a.cta-soc,a.ig-cta-btn,a.btn-outline-sm{
+  background:transparent;border-color:var(--border2,rgba(255,255,255,.22));color:var(--text);
+}
+a.cta-btn-outline:hover,a.rm-btn:hover,a.rm-btn-ghost:hover,a.loc-map-btn:hover,a.tr-cta:hover,a.cta-soc:hover,a.ig-cta-btn:hover,a.btn-outline-sm:hover{
+  border-color:var(--accent) !important;color:var(--accent) !important;background:rgba(77,194,232,.08) !important;
+  transform:translateY(-2px);box-shadow:none;
+}
+/* ghost on photography (hero / dark CTA bands): white outline */
+a.hero-cta-ghost,a.btn-hero-ghost,a.loc-btn-ghost{
+  background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.55);color:#fff;
+}
+a.hero-cta-ghost:hover,a.btn-hero-ghost:hover,a.loc-btn-ghost:hover{
+  background:rgba(255,255,255,.14) !important;border-color:#fff !important;color:#fff !important;
+  transform:translateY(-2px);box-shadow:none;
+}
+/* index gallery/reviews outline buttons sit on the page background, not a photo */
+a.btn-hero-ghost.btn-outline-sm{background:transparent;border-color:var(--border2,rgba(255,255,255,.22));color:var(--text);}
+a.btn-hero-ghost.btn-outline-sm:hover{border-color:var(--accent) !important;color:var(--accent) !important;background:rgba(77,194,232,.08) !important;}
+
+/* ── Gold (featured) ──────────────────────────────────────── */
+.booking-cta a.btn-book,a.btn-book-sm.gold-cta,.room-card.featured a.rm-btn-primary{
+  background:var(--gold);border-color:var(--gold);color:#0d1e2e;
+}
+.booking-cta a.btn-book:hover,a.btn-book-sm.gold-cta:hover,.room-card.featured a.rm-btn-primary:hover{
+  background:#f0d17a !important;border-color:#f0d17a;color:#0d1e2e;
+  transform:translateY(-2px);box-shadow:0 8px 22px rgba(232,197,106,.28);
+}
+
+/* ── Press / focus / disabled ─────────────────────────────── */
+a.hero-cta-primary:active,a.hero-cta-ghost:active,a.btn-hero-primary:active,a.btn-hero-ghost:active,
+a.cta-btn-main:active,a.cta-btn-outline:active,a.loc-btn-primary:active,a.loc-btn-ghost:active,
+.booking-cta a.btn-book:active,button.cf-submit:active:not(:disabled),
+a.btn-book-sm:active,a.btn-outline-sm:active,a.rm-btn:active,a.rm-btn-primary:active,a.rm-btn-ghost:active,
+a.loc-map-btn:active,a.tr-cta:active,a.pkg-cta:active,a.cta-soc:active,a.ig-cta-btn:active,a.instr-cta-btn:active{
+  transform:translateY(0) scale(.97) !important;box-shadow:none !important;transition-duration:.08s !important;
+}
+a.hero-cta-primary:focus-visible,a.hero-cta-ghost:focus-visible,a.btn-hero-primary:focus-visible,a.btn-hero-ghost:focus-visible,
+a.cta-btn-main:focus-visible,a.cta-btn-outline:focus-visible,a.loc-btn-primary:focus-visible,a.loc-btn-ghost:focus-visible,
+.booking-cta a.btn-book:focus-visible,button.cf-submit:focus-visible,
+a.btn-book-sm:focus-visible,a.btn-outline-sm:focus-visible,a.rm-btn:focus-visible,a.rm-btn-primary:focus-visible,a.rm-btn-ghost:focus-visible,
+a.loc-map-btn:focus-visible,a.tr-cta:focus-visible,a.pkg-cta:focus-visible,a.cta-soc:focus-visible,a.ig-cta-btn:focus-visible,a.instr-cta-btn:focus-visible,
+a.btn-nav-cta:focus-visible,nav a.btn-book:focus-visible,#nav a.btn-book:focus-visible{
+  outline:2px solid var(--accent);outline-offset:3px;
+}
+button.cf-submit:disabled{opacity:.65;cursor:progress;transform:none !important;box-shadow:none !important;}
+
+/* ── Icons inside buttons ─────────────────────────────────── */
+.bn-ico{width:1em;height:1em;flex:0 0 auto;transition:transform .2s var(--btn-ease);}
+a:hover>.bn-ico,button:hover>.bn-ico{transform:translateX(3px);}
+a:hover>.bn-ico-ext{transform:translate(2px,-2px);}
+a:hover>.bn-ico-down{transform:translateY(2px);}
+a.cta-soc svg:not(.bn-ico){width:16px;height:16px;flex:0 0 auto;}
+
+/* text-link arrows that live in their own span (e.g. dive-team "View profile →") */
+.instr-view>span{display:inline-block;transition:transform .2s var(--btn-ease);}
+.instr-card:hover .instr-view>span{transform:translateX(3px);}
+
+/* ── Nav pill (header "Book Now") ─────────────────────────── */
+a.btn-nav-cta,nav a.btn-book,#nav a.btn-book{
+  display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;
+  min-height:34px;padding:0 1.25rem;border-radius:30px;
+  font-size:.72rem;font-weight:600;letter-spacing:.1em;line-height:1;
+  transition:transform .2s var(--btn-ease),background-color .2s,box-shadow .2s;
+}
+a.btn-nav-cta:hover,nav a.btn-book:hover,#nav a.btn-book:hover{transform:translateY(-1px);}
+a.btn-nav-cta:active,nav a.btn-book:active,#nav a.btn-book:active{transform:translateY(0) scale(.97);}
+
+/* ── Layout helpers the pages already use ─────────────────── */
+.hero-ctas,.hero-btns,.cta-btns,.dive-cta-btns,.rm-btns,.booking-cta{align-items:center;}
+/* never let a flex row stretch a button to a taller sibling's margin box */
+a.btn-book-sm,a.btn-outline-sm,a.btn-hero-ghost.btn-outline-sm{align-self:center;}
+a.rm-btn-primary,a.rm-btn-ghost,a.rm-btn{flex:1 1 0;}
+button.cf-submit{width:100%;margin-top:1.4rem;}
+
+/* ── Phones ───────────────────────────────────────────────── */
+@media (max-width:768px){
+  :root{--btn-h-lg:48px;--btn-h-md:48px;--btn-px-lg:1.5rem;--btn-px-md:1.15rem;}
+  a.hero-cta-primary,a.hero-cta-ghost,a.btn-hero-primary,a.btn-hero-ghost,
+  a.cta-btn-main,a.cta-btn-outline,a.loc-btn-primary,a.loc-btn-ghost,.booking-cta a.btn-book,
+  a.btn-book-sm,a.btn-outline-sm,a.rm-btn,a.rm-btn-primary,a.rm-btn-ghost,a.loc-map-btn,a.tr-cta,a.pkg-cta,a.cta-soc,a.ig-cta-btn,a.instr-cta-btn{
+    padding-top:0 !important;padding-bottom:0 !important;white-space:normal;
+  }
+  /* stack full-width (never flex-basis: in a column container that becomes the HEIGHT) */
+  .hero-ctas>a,.hero-btns>a,.cta-btns>a,.dive-cta-btns>a{flex:0 0 auto;width:100%;max-width:420px;min-width:0;}
+}
+
+/* ── Reduced motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion:reduce){
+  a.hero-cta-primary,a.hero-cta-ghost,a.btn-hero-primary,a.btn-hero-ghost,a.cta-btn-main,a.cta-btn-outline,
+  a.loc-btn-primary,a.loc-btn-ghost,.booking-cta a.btn-book,button.cf-submit,a.btn-book-sm,a.btn-outline-sm,a.rm-btn,
+  a.rm-btn-primary,a.rm-btn-ghost,a.loc-map-btn,a.tr-cta,a.pkg-cta,a.cta-soc,a.ig-cta-btn,a.instr-cta-btn,a.btn-nav-cta,
+  nav a.btn-book,#nav a.btn-book,.bn-ico{transition:none !important;}
+  a:hover>.bn-ico,a:hover>.bn-ico-ext,a:hover>.bn-ico-down,
+  a.hero-cta-primary:hover,a.hero-cta-ghost:hover,a.btn-hero-primary:hover,a.btn-hero-ghost:hover,a.cta-btn-main:hover,a.cta-btn-outline:hover,
+  a.loc-btn-primary:hover,a.loc-btn-ghost:hover,.booking-cta a.btn-book:hover,button.cf-submit:hover,a.btn-book-sm:hover,a.btn-outline-sm:hover,a.rm-btn:hover,
+  a.rm-btn-primary:hover,a.rm-btn-ghost:hover,a.loc-map-btn:hover,a.tr-cta:hover,a.pkg-cta:hover,a.cta-soc:hover,a.ig-cta-btn:hover,a.instr-cta-btn:hover,
+  a.btn-nav-cta:hover,nav a.btn-book:hover,#nav a.btn-book:hover{transform:none !important;}
+}

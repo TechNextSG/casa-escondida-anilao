@@ -2,3 +2,6 @@
 node_modules/
 desktop.ini
 **/desktop.ini
+
+# key-free local QA copy of the booking page (never publish)
+_qa_book-now.html

@@ -139,6 +139,25 @@
       cf_submit_bn: 'Send Booking Request',
       cf_error: 'Something went wrong. Please try again or email us directly.',
       cf_success: 'Thank you! Your booking request has been sent. We\'ll reply by email with availability and a quotation.',
+      cf_req_legend: 'Fields marked * are required.',
+      cf_month_select: 'Select month',
+      cf_err_required: 'Please fill in all required fields.',
+      cf_err_name: 'Please enter your full name.',
+      cf_err_email: 'Please enter a valid email address.',
+      cf_err_phone: 'Please enter a phone number we can reach you on.',
+      cf_err_nights: 'Please enter how many nights you are staying (1–365).',
+      cf_err_month: 'Please choose your tentative month of travel.',
+      cf_err_guests: 'Please enter the total number of guests (1–200).',
+      cf_err_divers: 'Divers must be a number between 0 and 200.',
+      cf_err_fields: 'Please check these fields and try again: {fields}.',
+      cf_err_check: 'Please check your details and try again.',
+      cf_err_rate: 'We\'ve had several messages from your connection. Please email us directly, or try again later.',
+      cf_err_network: 'We couldn\'t send your message. Please check your connection and try again.',
+      cf_sending: 'Sending…',
+      cf_sending_slow: 'Still sending… the first message can take up to 30 seconds',
+      cf_file_hint: 'PDF, JPG or PNG · max 5 MB per file · up to 2 files in total',
+      cf_file_err_type: '{name}: only PDF, JPG or PNG files are accepted.',
+      cf_file_err_size: '{name}: larger than 5 MB.',
 
       /* About */
       our_story:          'Our Story',
@@ -308,7 +327,7 @@
       gallery_stat_2:       'Dive Sites',
       gallery_stat_3:       'TripAdvisor Reviews',
       gallery_stat_4:       'Overall Rating',
-      gallery_hero_cta_ghost:   'Book Your Stay →',
+      gallery_hero_cta_ghost:   'Book Your Stay',
       gallery_hero_cta_primary: 'Follow on Instagram',
       gallery_fb_eyebrow:   'Facebook',
       gallery_fb_h2:        'Live from Our <em>Facebook Page</em>',
@@ -352,7 +371,7 @@
       blog_stat_1:        'Articles',
       blog_stat_2:        'Categories',
       blog_stat_3:        'Dive Sites Covered',
-      blog_hero_cta_ghost:    'Explore Diving →',
+      blog_hero_cta_ghost:    'Explore Diving',
       blog_hero_cta_primary:  'Book Your Stay',
       cat_all:            'All',
       cat_dive:           'Dive Guide',
@@ -419,7 +438,7 @@
       dive_title:         "Dive Into <em>Anilao's</em><br>Legendary Depths",
       dive_sub:           "Anilao is where Philippine scuba diving was born — and remains one of the world's finest dive destinations for coral diversity and macro life. Our professional PADI dive center puts you at the epicenter.",
       dive_cta_primary:   'Book a Dive Package',
-      dive_cta_secondary: 'Explore Dive Center →',
+      dive_cta_secondary: 'Explore Dive Center',
 
       /* ── SERVICES badges ── */
       svc_badge_1:        'Dive Center',
@@ -459,7 +478,7 @@
 
       /* ── GALLERY (homepage) ── */
       gallery_lead:       'Every corner of Casa Escondida tells a story — from the brilliant corals beneath the surface to the warm glow of a beach BBQ at sunset. This is Anilao at its finest.',
-      gallery_fb_btn:     'More on Facebook →',
+      gallery_fb_btn:     'More on Facebook',
       gallery_cta:        'Book Your Stay',
       mo_cap_1:           'Casa Escondida',
       mo_cap_2:           'Beachfront Terrace',
@@ -499,11 +518,11 @@
       rv_name_3:          'Sarah L.',
       rv_meta_3:          'January 2025',
       rv_source_3:        'TripAdvisor',
-      reviews_read_all:   'Read All 81 Reviews on TripAdvisor →',
+      reviews_read_all:   'Read All 81 Reviews on TripAdvisor',
       reviews_cta:        'Join Our Guests — Book Now',
 
       /* ── LOCATION (homepage) ── */
-      loc_map_btn:        'View on Google Maps →',
+      loc_map_btn:        'View on Google Maps',
       location_lead:      'Located in the heart of Anilao — the Philippines\' diving capital — Casa Escondida is easily reachable from Manila for a perfect weekend or week-long escape.',
       loc_lbl_address:    'Address',
       loc_val_address:    'Brgy. Ligaya, Mabini, Batangas Province, Philippines 4202',
@@ -634,7 +653,7 @@
       rooms_stat_3_label: 'Optional Breakfast',
       rooms_stat_4_number:'8',
       rooms_stat_4_label: 'Ocean View Rooms',
-      rooms_hero_cta_ghost:   'Explore Rooms →',
+      rooms_hero_cta_ghost:   'Explore Rooms',
       rooms_hero_cta_primary: 'Book Your Room',
       inc_breakfast_title:'Breakfast',
       inc_breakfast_desc: 'Breakfast is optional and available as an add-on. Full board is also available — from lunch on arrival to lunch on departure day.',
@@ -736,7 +755,7 @@
       rooms_cta_btn_outline: 'Message on Facebook',
 
       /* ── DIVE PAGE ── */
-      dive_hero_cta_ghost:   'View Dive Packages →',
+      dive_hero_cta_ghost:   'View Dive Packages',
       dive_hero_cta_primary: 'Explore Courses',
       dive_overview_eyebrow: 'Our Dive Center',
       dive_overview_h2:      'Where Every <em>Dive Begins</em>',
@@ -814,7 +833,7 @@
       dive_pkgs_note:        'Add-on available: Additional 3rd dive within the same day. All packages include use of rinse tanks and camera rinse station.',
       dive_pkgs_cta_heading: 'Not sure which package is right for you?',
       dive_pkgs_cta_sub:     'Our dive team is happy to help you choose. Get in touch and we\'ll put together the perfect dive plan.',
-      dive_pkgs_cta_btn:     'Talk to Our Dive Team →',
+      dive_pkgs_cta_btn:     'Talk to Our Dive Team',
       dive_equip_eyebrow:    'Equipment & Facilities',
       dive_equip_h2:         'Everything You <em>Need</em>',
       dive_equip_sub:        'Travelling light? Our full-service dive center has everything covered.',
@@ -881,7 +900,7 @@
       dive_cta_h2:           'Ready to <em>Take the Plunge?</em>',
       dive_cta_p:            "Whether you're a first-timer or a seasoned diver, the reefs of Anilao are waiting. Book your stay and dive package with us today.",
       dive_cta_btn_primary:  'Book Your Dive Stay',
-      dive_cta_btn_ghost:    'How to Get Here →',
+      dive_cta_btn_ghost:    'How to Get Here',
 
       /* ── INSTRUCTORS ── */
       instr_eyebrow:      'Meet Our Instructors',
@@ -897,7 +916,7 @@
       instr_2_bio:        'Holding the prestigious Master Scuba Diver Trainer designation, Andrew combines precision technique with patient teaching — the ideal guide for divers serious about mastering their craft.',
       instr_label_padi:   'PADI No.',
       instr_label_since:  'Certified Since',
-      instr_cta:          'Book a Session →',
+      instr_cta:          'Book a Session',
       team_eyebrow:       'The Dive Shop',
       team_title:         'Meet the Dive Team',
       team_sub:           'The crew behind every safe, unforgettable dive at Casa Escondida — from our dive centre manager to our divemasters and support team.',
@@ -912,7 +931,7 @@
       location_stat_2:    'By Car',
       location_stat_3:    'Dive Sites',
       location_hero_cta_ghost:   'Contact Us',
-      location_hero_cta_primary: 'Get Directions →',
+      location_hero_cta_primary: 'Get Directions',
       location_qc_address_lbl: 'Address',
       location_qc_address_val: 'Brgy. Ligaya, Mabini\nBatangas 4202, Philippines',
       location_qc_phone_lbl:   'Phone',
@@ -1047,7 +1066,7 @@
       location_cta_h2:        'See You in <em>Anilao</em>',
       location_cta_p:         "Ready to make the trip? Book your stay and we'll handle the rest — directions, transfers, dive plans.",
       location_cta_btn_primary: 'Book Your Stay',
-      location_cta_btn_ghost:   'Get Directions ↗',
+      location_cta_btn_ghost:   'Get Directions',
 
       /* ── ROOMS PAGE hero stat labels ── */
       hero_cta_primary:   'Reserve Your Stay',
@@ -1181,6 +1200,25 @@
       cf_submit_bn: '发送预订请求',
       cf_error: '出了点问题，请重试或直接给我们发邮件。',
       cf_success: '谢谢！您的预订请求已发送。我们将通过电子邮件回复空房情况与报价。',
+      cf_req_legend: '标 * 为必填项。',
+      cf_month_select: '选择月份',
+      cf_err_required: '请填写所有必填项。',
+      cf_err_name: '请输入您的姓名。',
+      cf_err_email: '请输入有效的电子邮件地址。',
+      cf_err_phone: '请输入可联系到您的电话号码。',
+      cf_err_nights: '请输入入住晚数（1–365）。',
+      cf_err_month: '请选择您计划出行的月份。',
+      cf_err_guests: '请输入团队总人数（1–200）。',
+      cf_err_divers: '潜水人数须为 0 至 200 之间的数字。',
+      cf_err_fields: '请检查以下字段后重试：{fields}。',
+      cf_err_check: '请检查您的信息后重试。',
+      cf_err_rate: '您的网络已发送多条信息，请直接给我们发邮件，或稍后再试。',
+      cf_err_network: '信息未能发送，请检查网络连接后重试。',
+      cf_sending: '发送中…',
+      cf_sending_slow: '仍在发送… 首次发送最长可能需要 30 秒',
+      cf_file_hint: 'PDF、JPG 或 PNG · 每个文件最大 5 MB · 最多 2 个文件',
+      cf_file_err_type: '{name}：仅接受 PDF、JPG 或 PNG 文件。',
+      cf_file_err_size: '{name}：超过 5 MB。',
 
       /* About */
       our_story:          '我们的故事',
@@ -1350,7 +1388,7 @@
       gallery_stat_2:       '潜点数量',
       gallery_stat_3:       'TripAdvisor评价',
       gallery_stat_4:       '综合评分',
-      gallery_hero_cta_ghost:   '预订住宿 →',
+      gallery_hero_cta_ghost:   '预订住宿',
       gallery_hero_cta_primary: '关注Instagram',
       gallery_fb_eyebrow:   'Facebook',
       gallery_fb_h2:        '来自我们Facebook主页的实时动态',
@@ -1394,7 +1432,7 @@
       blog_stat_1:        '篇文章',
       blog_stat_2:        '个分类',
       blog_stat_3:        '个潜点报道',
-      blog_hero_cta_ghost:    '探索潜水 →',
+      blog_hero_cta_ghost:    '探索潜水',
       blog_hero_cta_primary:  '预订住宿',
       cat_all:            '全部',
       cat_dive:           '潜水指南',
@@ -1461,7 +1499,7 @@
       dive_title:         '潜入阿尼劳传奇深处',
       dive_sub:           '阿尼劳是菲律宾水肺潜水的发源地，至今仍是全球珊瑚多样性与微距生物最丰富的顶级潜水胜地之一。我们的专业PADI潜水中心让您置身这一水下王国的核心。',
       dive_cta_primary:   '预订潜水套餐',
-      dive_cta_secondary: '探索潜水中心 →',
+      dive_cta_secondary: '探索潜水中心',
 
       /* ── SERVICES badges ── */
       svc_badge_1:        '潜水中心',
@@ -1501,7 +1539,7 @@
 
       /* ── GALLERY (homepage) ── */
       gallery_lead:       '卡萨埃斯孔迪达的每个角落都诉说着故事——从水下绚烂的珊瑚，到夕阳下海滩烧烤的温暖光芒。这就是阿尼劳最美好的样子。',
-      gallery_fb_btn:     '更多内容在Facebook →',
+      gallery_fb_btn:     '更多内容在Facebook',
       gallery_cta:        '预订住宿',
       mo_cap_1:           '卡萨埃斯孔迪达',
       mo_cap_2:           '海滨露台',
@@ -1541,11 +1579,11 @@
       rv_name_3:          '莎拉·L.',
       rv_meta_3:          '2025年1月',
       rv_source_3:        'TripAdvisor',
-      reviews_read_all:   '查看TripAdvisor全部81条评价 →',
+      reviews_read_all:   '查看TripAdvisor全部81条评价',
       reviews_cta:        '加入我们的宾客——立即预订',
 
       /* ── LOCATION (homepage) ── */
-      loc_map_btn:        '在Google地图中查看 →',
+      loc_map_btn:        '在Google地图中查看',
       location_lead:      '卡萨埃斯孔迪达坐落于阿尼劳的心脏地带——菲律宾潜水之都，从马尼拉轻松可达，是完美的周末或长假度假胜地。',
       loc_lbl_address:    '地址',
       loc_val_address:    'Brgy. Ligaya, Mabini, 八打雁省, 菲律宾 4202',
@@ -1676,7 +1714,7 @@
       rooms_stat_3_label: '可选早餐',
       rooms_stat_4_number:'8',
       rooms_stat_4_label: '海景客房',
-      rooms_hero_cta_ghost:   '浏览客房 →',
+      rooms_hero_cta_ghost:   '浏览客房',
       rooms_hero_cta_primary: '预订客房',
       inc_breakfast_title:'早餐',
       inc_breakfast_desc: '早餐为可选项目，可另行预订。亦提供全食宿方案——从抵达当天午餐起至离店当天午餐止。',
@@ -1778,7 +1816,7 @@
       rooms_cta_btn_outline: '在Facebook上留言',
 
       /* ── DIVE PAGE ── */
-      dive_hero_cta_ghost:   '查看潜水套餐 →',
+      dive_hero_cta_ghost:   '查看潜水套餐',
       dive_hero_cta_primary: '探索潜水课程',
       dive_overview_eyebrow: '我们的潜水中心',
       dive_overview_h2:      '每次潜水的起点',
@@ -1856,7 +1894,7 @@
       dive_pkgs_note:        '可选附加服务：当天同一套餐内的第3次额外潜水。所有套餐均包含使用冲洗水槽及相机冲洗站。',
       dive_pkgs_cta_heading: '不确定哪个套餐适合您？',
       dive_pkgs_cta_sub:     '我们的潜水团队很乐意为您提供建议。欢迎联系我们，我们将为您制定完美的潜水计划。',
-      dive_pkgs_cta_btn:     '联系我们的潜水团队 →',
+      dive_pkgs_cta_btn:     '联系我们的潜水团队',
       dive_equip_eyebrow:    '装备与设施',
       dive_equip_h2:         '一应俱全',
       dive_equip_sub:        '轻装出行？我们的全服务潜水中心为您备齐一切。',
@@ -1923,7 +1961,7 @@
       dive_cta_h2:           '准备好纵身入海了吗？',
       dive_cta_p:            '无论您是初次体验还是资深潜水员，阿尼劳的礁盘正在等待。立即预订住宿与潜水套餐。',
       dive_cta_btn_primary:  '预订潜水住宿',
-      dive_cta_btn_ghost:    '如何抵达 →',
+      dive_cta_btn_ghost:    '如何抵达',
 
       /* ── INSTRUCTORS ── */
       instr_eyebrow:      '认识我们的教练',
@@ -1939,7 +1977,7 @@
       instr_2_bio:        '荣获硕士水肺潜水训练员资格，Andrew将精准的技术与耐心的教学融为一体——是每一位认真进阶的潜水员的理想导师。',
       instr_label_padi:   'PADI 编号',
       instr_label_since:  '认证时间',
-      instr_cta:          '预约课程 →',
+      instr_cta:          '预约课程',
       team_eyebrow:       '潜水中心团队',
       team_title:         '认识我们的潜水团队',
       team_sub:           'Casa Escondida 每一次安全、难忘潜水的幕后团队——从潜水中心经理到潜导及后勤人员。',
@@ -1954,7 +1992,7 @@
       location_stat_2:    '驾车时间',
       location_stat_3:    '个潜水点',
       location_hero_cta_ghost:   '联系我们',
-      location_hero_cta_primary: '前往导航 →',
+      location_hero_cta_primary: '前往导航',
       location_qc_address_lbl: '地址',
       location_qc_address_val: 'Brgy. Ligaya, 马比尼\n八打雁 4202, 菲律宾',
       location_qc_phone_lbl:   '电话',
@@ -2089,7 +2127,7 @@
       location_cta_h2:        '期待在阿尼劳与您相见',
       location_cta_p:         '准备好出发了吗？预订您的住宿，剩下的交给我们——路线指引、接送安排、潜水计划，一切为您打理。',
       location_cta_btn_primary: '预订住宿',
-      location_cta_btn_ghost:   '获取路线 ↗',
+      location_cta_btn_ghost:   '获取路线',
 
       /* ── ROOMS PAGE hero stat labels / extra ── */
       hero_cta_primary:   '预订住宿',
@@ -2231,7 +2269,7 @@
       /* Common CTA */
       '.hero-cta-primary[href="/#booking"],.hero-cta-primary[href="/"]':
                             { en:'Book Your Stay', zh:'预订住宿' },
-      '.loc-btn-primary':   { en:'Get Directions →', zh:'获取路线 →' },
+      '.loc-btn-primary':   { en:'Get Directions', zh:'获取路线' },
       '.loc-btn-ghost':     { en:'Contact Us', zh:'联系我们' },
       /* Theme toggle label */
       '#themeLabel':        { en:'', zh:'' },  /* keep as-is */

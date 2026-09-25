@@ -21,6 +21,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('config', 'G-BHGE4494ZY');
   </script>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="buttons.css?v=1" />
   <script>(function(){var t=localStorage.getItem('ce-theme')||'night';document.documentElement.setAttribute('data-theme',t);})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book Now — Request a Quotation | Casa Escondida Anilao</title>
@@ -709,6 +710,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       .cf-step-tab.done::after{animation:none;}
       .cf-step-tab:hover .cf-step-ic,.cm-item:hover .cm-ic,.cm-item:hover .cm-ic svg,.bn-cta:hover .bn-ico-down,.cc-btn:hover .bn-ico,.cf-room-add:hover:enabled svg,.cf-room-remove:hover svg{transform:none;}
     }
+    /* form audit 2026-09-25: required markers, inline field errors, keyboard focus, aside list */
+    .cf-req-legend{font-size:.72rem;color:var(--text2);margin:-.4rem 0 1.1rem;}
+    .cf-lbl[data-req]::after{content:" *";color:var(--accent);font-weight:600;letter-spacing:0;}
+    .cf-field-msg{display:block;margin-top:.35rem;font-size:.72rem;line-height:1.4;color:#e07070;}
+    .cf-field-msg[hidden]{display:none;}
+    .contact-form.cf-done>*:not(#cfSuccess):not(.cf-head){display:none !important;}
+    .contact-form.cf-done>#cfSuccess{margin-top:1.2rem;}
+    .cf-input[aria-invalid="true"],.cf-select[aria-invalid="true"],.cf-textarea[aria-invalid="true"]{border-color:rgba(220,60,60,.65) !important;}
+    .cf-input:focus-visible,.cf-select:focus-visible,.cf-textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+    .cf-pill-radio:focus-visible+.cf-pill,.cf-room-add:focus-visible,.cf-room-remove:focus-visible,.cf-step-tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+    .bn-list li{padding-left:1.2rem;}
+    .bn-list li::before{top:.5em;width:6px;height:6px;transform:translateY(1px);}
   </style>
 
   <!-- BOOKING REQUEST -->
@@ -724,6 +737,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <form class="contact-form rv rv-d1" id="inquiryForm" data-casa-contact-form novalidate aria-label="Send an inquiry">
           <div class="cf-head" data-i18n="cf_head">Your <em style="color:var(--accent);font-style:italic">Booking Request</em></div>
           <div class="cf-sub" data-i18n="cf_sub">Tell us about your trip and we'll reply with availability and a quotation. We typically reply within a few hours.</div>
+          <div class="cf-req-legend" data-i18n="cf_req_legend">Fields marked * are required.</div>
 
           <!-- Honeypot: hidden from people, bots fill it -> silent success -->
           <div class="casa-hp" aria-hidden="true">
@@ -745,18 +759,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <div class="cf-field">
-            <label class="cf-lbl" for="cf-name" data-i18n="cf_name">Full name</label>
-            <input class="cf-input" type="text" id="cf-name" name="name" required autocomplete="name" placeholder="Your full name" data-i18n-placeholder="cf_name_ph">
+            <label class="cf-lbl" data-req for="cf-name" data-i18n="cf_name">Full name</label>
+            <input class="cf-input" type="text" id="cf-name" name="name" required aria-required="true" autocomplete="name" placeholder="Your full name" data-i18n-placeholder="cf_name_ph">
           </div>
 
           <div class="cf-row">
             <div class="cf-field">
-              <label class="cf-lbl" for="cf-email" data-i18n="cf_email">Email</label>
-              <input class="cf-input" type="email" id="cf-email" name="email" required autocomplete="email" placeholder="you@example.com">
+              <label class="cf-lbl" data-req for="cf-email" data-i18n="cf_email">Email</label>
+              <input class="cf-input" type="email" id="cf-email" name="email" required aria-required="true" autocomplete="email" placeholder="you@example.com">
             </div>
             <div class="cf-field">
-              <label class="cf-lbl" for="cf-phone" data-i18n="cf_phone">Phone</label>
-              <input class="cf-input" type="tel" id="cf-phone" name="phone" required autocomplete="tel" placeholder="+63 9xx xxx xxxx">
+              <label class="cf-lbl" data-req for="cf-phone" data-i18n="cf_phone">Phone</label>
+              <input class="cf-input" type="tel" id="cf-phone" name="phone" required aria-required="true" autocomplete="tel" placeholder="+63 9xx xxx xxxx">
             </div>
           </div>
 
@@ -777,12 +791,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <div class="cf-section-sub" data-i18n="cf_trip_sub">The basics &mdash; when you're coming, how many of you, and what rooms you'll need.</div>
                   <div class="cf-row">
                     <div class="cf-field">
-                      <label class="cf-lbl" for="cf-nights" data-i18n="cf_nights">Nights staying</label>
-                      <input class="cf-input" type="number" id="cf-nights" name="nights" min="1" max="365" inputmode="numeric" placeholder="e.g. 4" data-i18n-placeholder="cf_nights_ph">
+                      <label class="cf-lbl" data-req for="cf-nights" data-i18n="cf_nights">Nights staying</label>
+                      <input class="cf-input" type="number" id="cf-nights" name="nights" aria-required="true" min="1" max="365" inputmode="numeric" placeholder="e.g. 4" data-i18n-placeholder="cf_nights_ph">
                     </div>
                     <div class="cf-field">
-                      <label class="cf-lbl" for="cf-travel-month" data-i18n="cf_month">Tentative month of travel</label>
-                      <input class="cf-input" type="month" id="cf-travel-month" name="travel_month">
+                      <label class="cf-lbl" data-req for="cf-travel-month" data-i18n="cf_month">Tentative month of travel</label>
+                      <input class="cf-input" type="month" id="cf-travel-month" name="travel_month" aria-required="true">
                     </div>
                   </div>
                   <div class="cf-field">
@@ -800,8 +814,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                   </div>
                   <div class="cf-field">
-                    <label class="cf-lbl" for="cf-total-guests" data-i18n="cf_total">Total number of guests in your group</label>
-                    <input class="cf-input" type="number" id="cf-total-guests" name="total_guests" min="1" max="200" inputmode="numeric" placeholder="e.g. 6" data-i18n-placeholder="cf_total_ph">
+                    <label class="cf-lbl" data-req for="cf-total-guests" data-i18n="cf_total">Total number of guests in your group</label>
+                    <input class="cf-input" type="number" id="cf-total-guests" name="total_guests" aria-required="true" min="1" max="200" inputmode="numeric" placeholder="e.g. 6" data-i18n-placeholder="cf_total_ph">
                   </div>
                   <div class="cf-field">
                     <span class="cf-lbl" data-i18n="cf_rooms">Rooms</span>
@@ -882,16 +896,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <!-- ===== Instructor / Agent extra fields ===== -->
           <div class="cf-extra cf-hidden" data-casa-inquiry-extra>
             <div class="cf-extra-intro" data-i18n="cf_extra_intro">For instructor/agent, kindly upload the following:</div>
+            <div class="cf-hint" data-i18n="cf_file_hint">PDF, JPG or PNG · max 5 MB per file · up to 2 files in total</div>
             <div class="cf-row">
               <div class="cf-field">
                 <label class="cf-lbl" for="cf-credentials" data-i18n="cf_credentials">Credentials</label>
-                <input class="cf-input" type="file" id="cf-credentials" name="credentials" disabled accept="application/pdf,image/*">
+                <input class="cf-input" type="file" id="cf-credentials" name="credentials" disabled accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png">
                 <span class="cf-hint" data-casa-hint="instructor" data-i18n="cf_cred_hint_instr">e.g. your PADI/SSI instructor eCard</span>
                 <span class="cf-hint cf-hidden" data-casa-hint="agent" data-i18n="cf_cred_hint_agent">e.g. company / business registration</span>
               </div>
               <div class="cf-field">
                 <label class="cf-lbl" for="cf-permit" data-i18n="cf_permit">Business Permit</label>
-                <input class="cf-input" type="file" id="cf-permit" name="business_permit" disabled accept="application/pdf,image/*">
+                <input class="cf-input" type="file" id="cf-permit" name="business_permit" disabled accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png">
               </div>
             </div>
             <!-- Instructor-only -->
@@ -902,7 +917,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
               <div class="cf-field">
                 <label class="cf-lbl" for="cf-country" data-i18n="cf_country">Country</label>
-                <input class="cf-input" type="text" id="cf-country" name="country" disabled placeholder="Country of residence" data-i18n-placeholder="cf_country_ph">
+                <input class="cf-input" type="text" id="cf-country" name="country" disabled autocomplete="country-name" placeholder="Country of residence" data-i18n-placeholder="cf_country_ph">
               </div>
             </div>
             <!-- Agent-only -->
@@ -920,7 +935,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="cf-row">
                 <div class="cf-field">
                   <label class="cf-lbl" for="cf-agency" data-i18n="cf_agency">Agency</label>
-                  <input class="cf-input" type="text" id="cf-agency" name="agency" disabled placeholder="Agency / company name" data-i18n-placeholder="cf_agency_ph">
+                  <input class="cf-input" type="text" id="cf-agency" name="agency" disabled autocomplete="organization" placeholder="Agency / company name" data-i18n-placeholder="cf_agency_ph">
                 </div>
                 <div class="cf-field">
                   <label class="cf-lbl" for="cf-agency-address" data-i18n="cf_agency_addr">Diving Agency Address</label>
@@ -935,7 +950,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <textarea class="cf-textarea" id="cf-message" name="message" placeholder="Dietary needs, celebrations, accessibility, flight times, or anything else we should know." data-i18n-placeholder="cf_message_ph"></textarea>
           </div>
 
-          <button type="submit" class="cf-submit" data-i18n="cf_submit_bn">Send Booking Request</button>
+          <button type="submit" class="cf-submit"><span data-i18n="cf_submit_bn">Send Booking Request</span><svg class="bn-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
           <div class="cf-error" id="cfError" role="alert" hidden data-i18n="cf_error">Something went wrong. Please try again or email us directly.</div>
           <div class="cf-success" id="cfSuccess" role="status" aria-live="polite" hidden data-i18n="cf_success">Thank you! Your booking request has been sent. We'll reply by email with availability and a quotation.</div>
         </form>
@@ -1124,6 +1139,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const roomTemplate = roomsBox ? roomsBox.querySelector("[data-casa-room-row]").cloneNode(true) : null;
     let stepIndex = 0, advanceTimer = null, submitting = false;
 
+    /* i18n for runtime messages (translate.js dictionary, English fallback) */
+    const T = (key, fb) => { try { const ct = window.CETranslate; const d = ct && ct.dict[ct.getLang()]; return (d && d[key]) || (ct && ct.dict.en[key]) || fb; } catch(_) { return fb; } };
+
+    /* Firefox / Safari desktop have no month picker: swap the input for a
+       select of the next 18 months (same name, same YYYY-MM values). */
+    const monthInput = form.querySelector("#cf-travel-month");
+    if(monthInput && monthInput.type !== "month"){
+      const sel = document.createElement("select");
+      sel.className = "cf-select"; sel.id = monthInput.id; sel.name = monthInput.name; sel.setAttribute("aria-required","true");
+      sel.appendChild(new Option(T("cf_month_select","Select month"), ""));
+      const now = new Date();
+      for(let i = 0; i < 18; i++){
+        const d = new Date(now.getFullYear(), now.getMonth() + i, 1);
+        const v = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0");
+        let label = v; try { label = d.toLocaleDateString(document.documentElement.lang || "en", { month:"long", year:"numeric" }); } catch(_) {}
+        sel.appendChild(new Option(label, v));
+      }
+      monthInput.replaceWith(sel);
+    }
+
     const topic = () => (topicGroup.querySelector("input:checked") || {value:"see_rates"}).value;
     const setEnabled = (block, on) => { if(block) block.querySelectorAll("input,select,textarea,button").forEach(c => c.disabled = !on); };
 
@@ -1164,7 +1199,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     }
     function stepComplete(step){
-      for(const inp of step.querySelectorAll("input.cf-input:not(.cf-optional)")) if(!inp.value.trim()) return false;
+      for(const inp of step.querySelectorAll("input.cf-input:not(.cf-optional),select.cf-select[name]")) if(!inp.value.trim()) return false;
       const names = new Set([...step.querySelectorAll("input[type=radio]")].map(r => r.name));
       for(const n of names) if(!step.querySelector('input[type=radio][name="'+n+'"]:checked')) return false;
       for(const row of step.querySelectorAll("[data-casa-room-row]"))
@@ -1209,6 +1244,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     const showError = msg => { if(errorBox){ errorBox.textContent = msg; errorBox.hidden = false; } };
+    /* per-field messages: injected after the control, cleared as soon as it is edited */
+    function fieldMsg(input, msg){
+      let m = input.nextElementSibling;
+      if(!(m && m.classList && m.classList.contains("cf-field-msg"))){
+        if(!msg) return;
+        m = document.createElement("span"); m.className = "cf-field-msg"; m.setAttribute("role","alert");
+        input.insertAdjacentElement("afterend", m);
+      }
+      m.textContent = msg; m.hidden = !msg;
+    }
+    function setInvalid(input, msg){ input.classList.add("invalid"); input.setAttribute("aria-invalid","true"); fieldMsg(input, msg); }
+    function clearInvalid(input){ input.classList.remove("invalid"); input.removeAttribute("aria-invalid"); fieldMsg(input, ""); }
     const text = v => (String(v||"").trim() || null);
     const intOrNull = v => { const n = parseInt(v,10); return Number.isFinite(n) ? n : null; };
     /* TEMPORARY: fire-and-forget copy of the enquiry to TEMP_COPY_EMAIL. Never
@@ -1239,6 +1286,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     /* ── Events ── */
     topicGroup.addEventListener("change", syncConditional);
+    form.addEventListener("input", e => { const i = e.target; if(i && i.classList && i.classList.contains("invalid")) clearInvalid(i); });
+    /* attachments: tell people why a file was refused instead of dropping it silently */
+    extraBlock.querySelectorAll("input[type=file]").forEach(inp => inp.addEventListener("change", () => {
+      const bad = [...(inp.files || [])].map(f =>
+        f.size > ATTACH_MAX_BYTES ? T("cf_file_err_size","{name}: larger than 5 MB.").replace("{name}", f.name)
+        : (!ATTACH_MIMES.includes(f.type) ? T("cf_file_err_type","{name}: only PDF, JPG or PNG files are accepted.").replace("{name}", f.name) : null)
+      ).filter(Boolean);
+      if(bad.length){ setInvalid(inp, bad.join(" ")); inp.value = ""; } else clearInvalid(inp);
+    }));
     if(roomAddBtn) roomAddBtn.addEventListener("click", () => {
       if(!roomsBox || !roomTemplate || roomCount() >= MAX_ROOMS) return;
       roomsBox.appendChild(roomTemplate.cloneNode(true));
@@ -1267,22 +1323,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if(submitting) return;
       const data = Object.fromEntries(new FormData(form).entries());
       const t = topic();
-      const required = ["name","email","phone"];
-      if(t === "see_rates") required.push("nights","travel_month","total_guests");
+      /* required + format checks (type=email, number min/max) with a message on the field */
+      const checks = [
+        { name:"name", key:"cf_err_name", fb:"Please enter your full name." },
+        { name:"email", key:"cf_err_email", fb:"Please enter a valid email address." },
+        { name:"phone", key:"cf_err_phone", fb:"Please enter a phone number we can reach you on." }
+      ];
+      if(t === "see_rates") checks.push(
+        { name:"nights", key:"cf_err_nights", fb:"Please enter how many nights you are staying (1\u2013365)." },
+        { name:"travel_month", key:"cf_err_month", fb:"Please choose your tentative month of travel.", altName:"checkin" },
+        { name:"total_guests", key:"cf_err_guests", fb:"Please enter the total number of guests (1\u2013200)." },
+        { name:"divers", key:"cf_err_divers", fb:"Divers must be a number between 0 and 200.", optional:true }
+      );
       let firstInvalid = null;
-      form.querySelectorAll(".cf-input,.cf-textarea").forEach(i => i.classList.remove("invalid"));
-      for(const f of required){
-        const input = form.querySelector('[name="'+f+'"]');
-        if(!input) continue;
-        const empty = !String(data[f]||"").trim();
-        input.classList.toggle("invalid", empty);
-        if(empty && !firstInvalid) firstInvalid = input;
+      form.querySelectorAll(".invalid").forEach(clearInvalid);
+      for(const c of checks){
+        const input = form.querySelector('[name="'+c.name+'"]');
+        if(!input || input.disabled) continue;
+        const val = String(data[c.name]||"").trim();
+        const filledElsewhere = !!(c.altName && String(data[c.altName]||"").trim());
+        const bad = c.optional ? (!!val && !input.checkValidity()) : ((!val && !filledElsewhere) || (!!val && !input.checkValidity()));
+        if(!bad) continue;
+        setInvalid(input, T(c.key, c.fb));
+        if(!firstInvalid) firstInvalid = input;
       }
       if(firstInvalid){
         const step = firstInvalid.closest("[data-casa-step]");
         const idx = step ? steps.indexOf(step) : -1;
         if(idx >= 0 && idx !== stepIndex) showStep(idx, idx < stepIndex);
-        showError("Please fill in all required fields.");
+        showError(T("cf_err_required", "Please fill in all required fields."));
         firstInvalid.focus();
         return;
       }
@@ -1312,10 +1381,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       /* doc §7: the staging container sleeps when idle — the first request can
          take 10–30s. Show progress so nobody double-submits or gives up. */
       const submitBtn = form.querySelector(".cf-submit");
-      const submitLabel = submitBtn ? submitBtn.textContent : "";
-      if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = "Sending\u2026"; }
+      const submitLbl = submitBtn ? (submitBtn.querySelector("span") || submitBtn) : null;
+      const submitLabel = submitLbl ? submitLbl.textContent : "";
+      if(submitBtn){ submitBtn.disabled = true; submitLbl.textContent = T("cf_sending", "Sending\u2026"); }
       const slowTimer = setTimeout(() => {
-        if(submitBtn && submitBtn.disabled) submitBtn.textContent = "Still sending\u2026 the first message can take up to 30 seconds";
+        if(submitBtn && submitBtn.disabled) submitLbl.textContent = T("cf_sending_slow", "Still sending\u2026 the first message can take up to 30 seconds");
       }, 8000);
       let odooNote = "not sent";
       try {
@@ -1340,11 +1410,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             console.warn("Inquiry 422:", err.detail);
             fields = (err.detail || []).map(d => (d.loc || []).slice(-1)[0]).filter(Boolean).join(", ");
           } catch(_) {}
-          showError(fields ? "Please check these fields and try again: " + fields + "." : "Please check your details and try again.");
+          showError(fields ? T("cf_err_fields", "Please check these fields and try again: {fields}.").replace("{fields}", fields) : T("cf_err_check", "Please check your details and try again."));
           odooNote = "rejected (422)" + (fields ? ": " + fields : "");
         } else if(res.status === 429){
           /* doc §3: shared per-IP budget — back off, never auto-retry in a loop */
-          showError("We've had several messages from your connection. Please email us directly, or try again later.");
+          showError(T("cf_err_rate", "We've had several messages from your connection. Please email us directly, or try again later."));
           odooNote = "rate-limited (429)";
         } else if(res.ok){
           const result = await res.json();
@@ -1353,23 +1423,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                should never see it; log so it is diagnosable if it ever happens. */
             odooNote = "lead #" + result.lead_id;
             if(result.lead_id === null) console.warn("Inquiry accepted but no lead was created (silent honeypot path). Check that company_website is empty.");
-            form.hidden = true;
+            form.classList.add("cf-done"); /* keep the form element (the thank-you box lives inside it) */
             if(successBox){ successBox.hidden = false; successBox.scrollIntoView({behavior:"smooth",block:"nearest"}); }
           } else {
             odooNote = "unexpected response";
-            showError("Something went wrong. Please try again or email us directly.");
+            showError(T("cf_error", "Something went wrong. Please try again or email us directly."));
           }
         } else {
           odooNote = "failed (HTTP " + res.status + ")";
-          showError("Something went wrong. Please try again or email us directly.");
+          showError(T("cf_error", "Something went wrong. Please try again or email us directly."));
         }
       } catch(_) {
         odooNote = "network error";
-        showError("We couldn't send your message. Please check your connection and try again.");
+        showError(T("cf_err_network", "We couldn't send your message. Please check your connection and try again."));
       } finally {
         submitting = false;
         clearTimeout(slowTimer);
-        if(submitBtn){ submitBtn.disabled = false; submitBtn.textContent = submitLabel; }
+        if(submitBtn){ submitBtn.disabled = false; submitLbl.textContent = submitLabel; }
         sendTestCopy(payload, odooNote); /* TEMPORARY test copy — see TEMP_COPY_EMAIL */
       }
     });

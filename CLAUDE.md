@@ -36,6 +36,12 @@ Two themes via `data-theme` on `<html>`: **`night`** (default, dark) and **`day`
 
 Always use the tokens, never hard-coded colours, so both themes stay correct.
 
+**Buttons** — one system, defined in `buttons.css` (linked on every page after `style.css`; index.html links it before `</head>`). Don't add per-page button CSS.
+- Two sizes: **lg** 52px (hero + section CTAs: `hero-cta-primary/ghost`, `btn-hero-primary/ghost`, `cta-btn-main/outline`, `loc-btn-primary/ghost`, `.booking-cta .btn-book`, `cf-submit`) and **md** 44px (card/inline: `btn-book-sm`, `rm-btn*`, `pkg-cta`, `tr-cta`, `loc-map-btn`, `cta-soc`, `ig-cta-btn`, `instr-cta-btn`, `btn-outline-sm`). Both 48px on phones. Header pill = `btn-nav-cta` / nav `.btn-book`.
+- Variants: filled (accent), ghost (outline; white outline on photography), gold (`gold-cta`, featured room, homepage booking CTA). 2px radius, DM Sans 500, uppercase, .12em tracking, 1px border on every variant so filled and ghost siblings are the same height.
+- Motion: hover lifts 2px (+shadow on filled), press scales .97, focus ring, all disabled under `prefers-reduced-motion`. The old shimmer/wipe overlays are switched off.
+- Arrows are **never text**: markup is `<a class="…"><span data-i18n="key">Label</span><svg class="bn-ico">…</svg></a>` (copy the SVG from any button). `.bn-ico` nudges 3px on hover, `.bn-ico-ext` (↗) 2px up-right, `.bn-ico-down` 2px down. Dictionary values carry no arrow. translate.js leaves an `<a>` alone when the label lives in a child span, so the icon survives language switches.
+
 **Typography** (Google Fonts)
 - **Playfair Display** (serif) — headings / display.
 - **DM Sans** (sans-serif) — body, UI, labels.
