@@ -1473,12 +1473,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ;
 
   /* ── Inquiry form (pills + 4-slide wizard + rooms + uploads → POST JSON) ──
-     Endpoint contract: POST /estimate-api/v1/inquiry/submit (see handoff README).
-     NOTE: point ENDPOINT at the PRODUCTION Odoo host and enable CORS for
-     https://www.casaescondida-anilao.com before going live. Until then the
-     browser will block the cross-origin submit. */
+     Implements the Odoo dev handoff (estimate-api-inquiry-examples.txt, 2026-09-25):
+     config-variable base URL (§1), JSON contract for all three inquirer types (§3),
+     422 detail parsing + 429 back-off (§3), no credentials mode (§5). The api-key
+     is deliberately NOT embedded: it is optional and ignored on this public route
+     (§2), this page is public static HTML, and the handoff says to keep the key
+     private — it also unlocks the protected estimate/booking routes. Verified
+     2026-09-25 against staging: guest / agent / instructor each created a real
+     lead, and a browser submit from a CORS-whitelisted origin returned 200.
+     Honeypot = company_website (silent ok, lead_id null).
+
+     TO GO LIVE (one external gate, then a one-line swap):
+       1. The Odoo dev must add our production origins to the CORS allow-list —
+            https://www.casaescondida-anilao.com  and  https://casaescondida-anilao.com
+          (verified 2026-09-25: preflight from the prod origin is still 400).
+       2. Set API_BASE to the PRODUCTION host. The staging host's build id
+          (…-37790335.dev.odoo.com) CHANGES on every Odoo.sh rebuild — never ship
+          a *.dev.odoo.com URL to production. Then move this form into
+          location.html and drop the noindex. */
   (function(){
-    const ENDPOINT = "https://casa-escondida-03-staging-web-37790335.dev.odoo.com/estimate-api/v1/inquiry/submit";
+    /* API config (handoff doc §1–2). Keep the base in ONE variable: swapping
+       API_BASE to the production host is the only change needed to go live. */
+    const API_BASE = "https://casa-escondida-03-staging-web-37790335.dev.odoo.com/estimate-api";
+    const ENDPOINT = API_BASE + "/v1/inquiry/submit";
     const ATTACH_MAX_FILES = 2;
     const ATTACH_MAX_BYTES = 5 * 1024 * 1024;
     const ATTACH_MIMES = ["application/pdf","image/jpeg","image/png"];
@@ -1658,8 +1675,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if(errorBox) errorBox.hidden = true;
       try {
         payload.attachments = await collectAttachments();
-        const res = await fetch(ENDPOINT, { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(payload) });
-        if(res.status === 429){
+        /* doc §3d: JSON body. The api-key header is deliberately OMITTED: this
+           route is public and ignores it (doc §2), and this page is public static
+           HTML — embedding the key would publish it (doc: "keep private") and
+           expose the protected estimate/booking routes. doc §5: no
+           credentials:"include". */
+        const res = await fetch(ENDPOINT, {
+          method:"POST",
+          headers:{ "Content-Type":"application/json" },
+          body: JSON.stringify(payload)
+        });
+        if(res.status === 422){
+          /* doc §3: standard FastAPI shape — detail = [{loc, msg, type}, ...] */
+          let fields = "";
+          try {
+            const err = await res.json();
+            console.warn("Inquiry 422:", err.detail);
+            fields = (err.detail || []).map(d => (d.loc || []).slice(-1)[0]).filter(Boolean).join(", ");
+          } catch(_) {}
+          showError(fields ? "Please check these fields and try again: " + fields + "." : "Please check your details and try again.");
+        } else if(res.status === 429){
+          /* doc §3: shared per-IP budget — back off, never auto-retry in a loop */
           showError("We've had several messages from your connection. Please email us directly, or try again later.");
         } else if(res.ok){
           const result = await res.json();
