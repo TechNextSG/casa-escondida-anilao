@@ -117,8 +117,8 @@
     {
       keywords: ['rate', 'rates', 'price', 'prices', 'pricing', 'cost', 'costs', 'fee', 'fees', 'how much', 'budget', 'expensive', 'cheap'],
       keywordsZh: ['价格', '房价', '费用', '多少钱', '收费'],
-      answer: 'Room rates depend on the room type and season, so we quote each stay individually. What to expect:\nRoom only, or full board at PHP 1,500 per person per night\nAirport van transfer PHP 14,000 per van, round trip (max 7 pax)\nDive & stay packages and courses on request\n\nSend a booking request and we reply with a full quotation.',
-      answerZh: '房价视房型和季节而定，我们会为每次入住单独报价。参考：\n仅住宿，或全餐每人每晚 1,500 比索\n机场接送车每车往返 14,000 比索（最多7人）\n潜水住宿套餐及课程可按需安排\n\n提交预订请求后，我们会回复完整报价。',
+      answer: 'Room rates depend on the room type and season, so we quote each stay individually. What to expect:\nRoom only, or full board at PHP 1,500 per person per night\nAirport van transfer PHP 14,000 per van, round trip (max 7 pax)\nDive & stay packages and courses on request\n\nSend an inquiry form and we reply with a full quotation.',
+      answerZh: '房价视房型和季节而定，我们会为每次入住单独报价。参考：\n仅住宿，或全餐每人每晚 1,500 比索\n机场接送车每车往返 14,000 比索（最多7人）\n潜水住宿套餐及课程可按需安排\n\n提交咨询表后，我们会回复完整报价。',
       cta: [
         { label: 'See Room Options', labelZh: '查看房间选项', url: '/rooms', primary: true },
         { label: 'Book & Check Rates', labelZh: '预订并查询价格', url: '/book-now' }
@@ -326,7 +326,7 @@
       placeholder: 'Ask about diving, rooms, or how to get here…',
       footer:      'Automated answers, not a live chat. To book, use <a href="/book-now">Book Now</a>.',
       greeting:    "Hi! I'm Casa Escondida's automated assistant. Ask me about rooms, diving, meals, transfers or how to get here — or tap a question below.",
-      fallback:    "I don't have an answer for that one yet. The team can help directly:\nPhone / Viber: +63 977 837 2272\nFacebook: CasaEscondidaAnilao\nOr send a booking request and mention your question.",
+      fallback:    "I don't have an answer for that one yet. The team can help directly:\nPhone / Viber: +63 977 837 2272\nFacebook: CasaEscondidaAnilao\nOr send an inquiry form and mention your question.",
       suggestions: [
         'How to book a room?',
         'PADI courses available?',
@@ -347,7 +347,7 @@
       placeholder: '询问潜水、客房或如何到达...',
       footer:      '自动回答，非人工客服。如需预订，请前往<a href="/book-now">立即预订</a>。',
       greeting:    '您好！我是 Casa Escondida 的自动助手。欢迎询问客房、潜水、餐饮、接送或如何到达——也可以直接点击下方的问题。',
-      fallback:    '这个问题我暂时无法回答。您可以直接联系我们的团队：\n电话 / Viber：+63 977 837 2272\nFacebook：CasaEscondidaAnilao\n或提交预订请求并注明您的问题。',
+      fallback:    '这个问题我暂时无法回答。您可以直接联系我们的团队：\n电话 / Viber：+63 977 837 2272\nFacebook：CasaEscondidaAnilao\n或提交咨询表并注明您的问题。',
       suggestions: [
         '如何预订房间？',
         '有哪些PADI课程？',
@@ -632,7 +632,7 @@
         appendMessage(answer, 'ce-bot');
         if (entry && entry.cta) appendCTA(entry.cta, lang);
         if (!entry) appendCTA([
-          { label: 'Send a booking request', labelZh: '提交预订请求', url: '/book-now', primary: true },
+          { label: 'Send an inquiry form', labelZh: '提交咨询表', url: '/book-now', primary: true },
           { label: 'Contact details', labelZh: '联系方式', url: '/location#contact' }
         ], lang);
         // Show fresh suggestions
