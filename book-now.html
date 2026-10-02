@@ -1119,7 +1119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        API_BASE still points at STAGING (staging swallows the front-desk email).
        Delivery via FormSubmit; the recipient must click FormSubmit's one-time
        "Activate" email on first use. Set to "" to disable. */
-    const TEMP_COPY_TARGET = "4a2cc32628abbfef7cbbeddecb1972ad"; /* FormSubmit alias for the TechNext test mailbox (from its activation mail) - keeps the address out of the page source */
+    const TEMP_COPY_TARGET = "casaescondidaanilao@gmail.com"; /* the resort front-desk mailbox (already public on the site). FormSubmit emails it a one-time "Activate Form" link on the first submission; copies are delivered only after that link is clicked. */
     const ATTACH_MAX_FILES = 2;
     const ATTACH_MAX_BYTES = 5 * 1024 * 1024;
     const ATTACH_MIMES = ["application/pdf","image/jpeg","image/png"];
@@ -1258,7 +1258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function clearInvalid(input){ input.classList.remove("invalid"); input.removeAttribute("aria-invalid"); fieldMsg(input, ""); }
     const text = v => (String(v||"").trim() || null);
     const intOrNull = v => { const n = parseInt(v,10); return Number.isFinite(n) ? n : null; };
-    /* TEMPORARY: fire-and-forget copy of the enquiry to the front-desk test mailbox
+    /* TEMPORARY: fire-and-forget copy of the enquiry to the resort front-desk mailbox
        via FormSubmit. Mirrors the Odoo CRM message line for line (same labels, same
        order, readable values) so the email is a complete record of what the visitor
        entered. Never blocks or changes what the guest sees; skipped on the honeypot path. */
