@@ -1119,7 +1119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        API_BASE still points at STAGING (staging swallows the front-desk email).
        Delivery via FormSubmit; the recipient must click FormSubmit's one-time
        "Activate" email on first use. Set to "" to disable. */
-    const TEMP_COPY_TARGET = "casaescondidaanilao@gmail.com"; /* the resort front-desk mailbox (already public on the site). FormSubmit emails it a one-time "Activate Form" link on the first submission; copies are delivered only after that link is clicked. */
+    const TEMP_COPY_TARGET = ""; /* DISABLED 2026-10-05 at the client's request: Odoo CRM is the single channel (every inquiry becomes a lead). To re-enable the FormSubmit email copy, put a recipient address here; FormSubmit then sends that mailbox a one-time "Activate Form" link on the first submission. */
     const ATTACH_MAX_FILES = 2;
     const ATTACH_MAX_BYTES = 5 * 1024 * 1024;
     const ATTACH_MIMES = ["application/pdf","image/jpeg","image/png"];
