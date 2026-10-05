@@ -1265,7 +1265,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const TYPE_LABEL = { see_rates: "See rates", agent: "Travel agent", instructor: "Dive instructor" };
     const yn = v => v === "yes" ? "Yes" : (v === "no" ? "No" : v);
     const cap = s => String(s || "").replace(/_/g, " ").replace(/^[a-z]/, c => c.toUpperCase());
-    function sendTestCopy(p, note, x){
+    function sendTestCopy(p, x){
       if(!TEMP_COPY_TARGET || p.company_website) return; /* skip bots (honeypot filled) */
       x = x || {};
       const type = TYPE_LABEL[p.inquiry_type] || cap(p.inquiry_type);
@@ -1282,8 +1282,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         ["Contact person", p.contact_person], ["Agent name", p.agent_name], ["Agency", p.agency],
         ["Agency address", p.agency_address], ["Diving agency", p.diving_agency], ["Country", p.country],
         ["Attachments", files ? files + " file(s) - stored on the Odoo lead, not attached to this email" : null],
-        ["Odoo CRM", x.leadUrl ? note + " - " + x.leadUrl : note],
-        ["Submitted from", window.location.href]
       ];
       const body = { _subject: "New website enquiry (" + type + ") - " + (p.name || ""), _template: "table", _captcha: "false", _replyto: p.email || "" };
       rows.forEach(function(r){ if(r[1] !== null && r[1] !== undefined && r[1] !== "") body[r[0]] = String(r[1]); });
@@ -1397,7 +1395,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const slowTimer = setTimeout(() => {
         if(submitBtn && submitBtn.disabled) submitLbl.textContent = T("cf_sending_slow", "Still sending\u2026 the first message can take up to 30 seconds");
       }, 8000);
-      let odooNote = "not sent", leadUrl = null;
+      let odooNote = "not sent";
       try {
         payload.attachments = await collectAttachments();
         /* doc §3: optional fields are "leave it out (or empty)" — omit blanks
@@ -1432,7 +1430,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             /* doc §3: lead_id is null only on the honeypot path — a real guest
                should never see it; log so it is diagnosable if it ever happens. */
             odooNote = "lead #" + result.lead_id;
-            if(Number.isFinite(result.lead_id)){ try { leadUrl = new URL(API_BASE).origin + "/odoo/crm/" + result.lead_id; } catch(_) {} }
             if(result.lead_id === null) console.warn("Inquiry accepted but no lead was created (silent honeypot path). Check that company_website is empty.");
             form.classList.add("cf-done"); /* keep the form element (the thank-you box lives inside it) */
             if(successBox){ successBox.hidden = false; successBox.scrollIntoView({behavior:"smooth",block:"nearest"}); }
@@ -1451,7 +1448,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         submitting = false;
         clearTimeout(slowTimer);
         if(submitBtn){ submitBtn.disabled = false; submitLbl.textContent = submitLabel; }
-        sendTestCopy(payload, odooNote, { messageText: text(data.message), checkin: text(data.checkin), leadUrl: leadUrl }); /* TEMPORARY copy — see TEMP_COPY_TARGET */
+        sendTestCopy(payload, { messageText: text(data.message), checkin: text(data.checkin) }); /* TEMPORARY copy — see TEMP_COPY_TARGET */
       }
     });
 
